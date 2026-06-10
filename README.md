@@ -150,7 +150,8 @@ any MCP client (Claude Desktop, Cursor, Claude Code) can scan an agent, map an a
 verify a receipt inline — without ever executing the agent it is scanning.
 
 ```bash
-pip install "openagentontology[mcp]"
+git clone https://github.com/CWNApps/openagentontology && cd openagentontology
+pip install -e ".[mcp]"
 python -m openagentontology.mcp_server      # stdio transport
 ```
 

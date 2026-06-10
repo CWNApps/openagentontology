@@ -14,7 +14,7 @@ turned into an SSRF or arbitrary-checkout primitive. Every list handed back is c
 huge agent cannot blow the caller's context window.
 
 Run (stdio transport):  python -m openagentontology.mcp_server
-Install the optional dep: pip install "openagentontology[mcp]"
+Install the optional dep from the repo root: pip install -e ".[mcp]"  (or: pip install mcp)
 """
 from __future__ import annotations
 

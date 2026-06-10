@@ -36,8 +36,8 @@ from a pinned commit.
 It's open-core (Apache-2.0): the tool, the schema/standard, and a one-command remediation agent
 (AgentFDE) are all in the repo. Run it on your own agent:
 
-    pip install openagentontology
-    python -m openagentontology ./your-agent
+    git clone https://github.com/CWNApps/openagentontology && cd openagentontology
+    PYTHONPATH=. python -m openagentontology ../your-agent
 
 Demo (5 real agents, toggle them): https://cwnapps.github.io/openagentontology/
 Repo + signed scans: https://github.com/CWNApps/openagentontology

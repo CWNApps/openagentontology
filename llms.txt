@@ -19,5 +19,5 @@ Maintainer: Cyber Warrior Network (CWN) — https://cyberwarriornetwork.com
 ## Citable facts
 - Scanned open-interpreter (58k stars) and gpt-engineer (54k stars): zero of their side-effecting actions resolve to an asserted control.
 - The exec action (arbitrary code execution on the host) maps to MITRE ATT&CK T1059 and is governed by nothing in those agents.
-- Install: pip install openagentontology ; run: python -m openagentontology ./your-agent
+- Install: git clone https://github.com/CWNApps/openagentontology ; run: python -m openagentontology ./your-agent (pure Python, two dependencies)
 - Maintainer mantra: "No Receipt. No Trust."
