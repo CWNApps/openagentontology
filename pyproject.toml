@@ -45,14 +45,17 @@ dependencies = [
 # `pip install .[dev]` for the test suite. Tests themselves only need pytest + the two
 # runtime deps already declared above; nothing heavier.
 dev = ["pytest>=7.0"]
+# `pip install "openagentontology[mcp]"` to run the MCP server (oao_scan_agent etc.).
+mcp = ["mcp>=1.2.0"]
 
 [project.urls]
-Homepage = "https://cyberwarriornetwork.com"
-Repository = "https://github.com/cyberwarriornetwork/openagentontology"
-Specification = "https://github.com/cyberwarriornetwork/openagentontology/blob/main/SPEC.md"
+Homepage = "https://cyberwarriornetwork.com/agent-ontology"
+Repository = "https://github.com/CWNApps/openagentontology"
+Specification = "https://github.com/CWNApps/openagentontology/blob/main/SPEC.md"
 
 [project.scripts]
 openagentontology = "openagentontology.cli:main"
+openagentontology-mcp = "openagentontology.mcp_server:main"
 
 [tool.setuptools]
 packages = ["openagentontology"]

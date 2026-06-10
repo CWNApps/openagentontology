@@ -143,6 +143,33 @@ python ci/pr_check.py --head head.scan.json --base base.scan.json --report repor
 
 ---
 
+## Use it as an MCP server
+
+Let your agent govern agents. The MCP server exposes the pipeline as four read-only tools so
+any MCP client (Claude Desktop, Cursor, Claude Code) can scan an agent, map an action, or
+verify a receipt inline — without ever executing the agent it is scanning.
+
+```bash
+pip install "openagentontology[mcp]"
+python -m openagentontology.mcp_server      # stdio transport
+```
+
+Add it to a client (Claude Desktop `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "openagentontology": { "command": "python", "args": ["-m", "openagentontology.mcp_server"] }
+  }
+}
+```
+
+Tools: `oao_scan_agent(path)` · `oao_map_action(label, source_reason?)` ·
+`oao_verify_receipt(receipt)` · `oao_explain()`. All read-only, local-path only (no clone,
+no network), every list capped — the server cannot be turned into an SSRF or exec primitive.
+
+---
+
 ## Tests
 
 The suite is runnable with **no install step** (a `conftest.py` puts the package on the
