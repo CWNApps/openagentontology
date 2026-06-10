@@ -253,9 +253,18 @@ its own; the registry is the network effect on top.
 | Ontology + cross-walk | yes | yes |
 | Trust Profile + badge | yes | yes |
 | Self-signed receipt | yes | yes |
+| Graph-grounded resolution + live threat signals | — | yes |
+| Verified-or-abstain gate (PROCEED / FLAG / ESCALATE) | — | yes |
 | Cross-org verification | — | yes |
 | Public trust ledger | — | yes |
 | Continuous re-scoring | — | yes |
+
+The hosted layer resolves each scanned action through a live control graph and runs a
+deterministic **verified-or-abstain gate** that turns every resolution into a runtime action —
+PROCEED, PROCEED-FLAGGED, or ESCALATE to a human when governance is not grounded enough to act
+on. The gate composes *above* the signed receipt; it never replaces the cryptographic proof. A
+worked output is committed at [docs/scans/open-interpreter/graph_resolutions.json](./docs/scans/open-interpreter/graph_resolutions.json)
+(15 of open-interpreter's 21 actions escalate) and rendered live in the demo's Graph Model Preview.
 
 ---
 

@@ -247,6 +247,8 @@ footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
 .prov-chips .chip{border:1px solid var(--border);color:var(--dim)}
 .gms-wrap{border:1.5px solid var(--border);max-height:520px;overflow:auto}
 .chip-graph{border:1px solid var(--dimLo);color:var(--cream);background:rgba(239,235,226,.05)}
+.chip-ok{border:1px solid var(--green);color:#86efac;background:rgba(34,197,94,.06)}
+.chip-flag{border:1px solid var(--yellow);color:#fcd34d;background:rgba(245,158,11,.06)}
 .gms-act{font-family:var(--mono);color:var(--cream)} .gms-act.ungov{color:#fca5a5}
 .gms-cve{font-family:var(--mono);font-size:11px;color:var(--dim);margin:2px 0;line-height:1.5}
 .gms-cve b{color:var(--cream);font-weight:500}
@@ -450,13 +452,17 @@ footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
   <p class="body-text" style="max-width:720px;margin-bottom:18px">
     The OSS scanner is deterministic and offline. The hosted
     <b style="color:var(--cream)">CWN Graph Model Service</b> resolves each scanned action against
-    a control crosswalk and live NVD-derived threat signals, and returns its own triple-signed
-    resolution receipt. Below is the verbatim resolution file for the open-interpreter scan,
+    a control crosswalk and live NVD-derived threat signals, then a deterministic
+    <b style="color:var(--cream)">verified-or-abstain gate</b> turns each resolution into an action:
+    <b style="color:var(--cream)">PROCEED</b>, <b style="color:var(--cream)">PROCEED-FLAGGED</b>, or
+    <b style="color:var(--cream)">ESCALATE</b> to a human when governance is not grounded enough to act on.
+    Below is the verbatim resolution file for the open-interpreter scan,
     <span class="mono" style="color:var(--orange)">docs/scans/open-interpreter/graph_resolutions.json</span>.</p>
-  <div class="pl-banner">GRAPH_INFERRED by the hosted CWN Graph Model Service - not ASSERTED until declared in source or confirmed by a human governance record.</div>
+  <div class="pl-banner">GRAPH_INFERRED by the hosted CWN Graph Model Service - not ASSERTED until declared in source or confirmed by a human governance record. The gate verdict never replaces the signed receipt; it composes above it.</div>
   <div class="prov-chips" id="gms-prov"></div>
+  <div id="gms-gate-summary" style="margin:8px 0 14px;font-family:var(--mono,monospace);font-size:13px"></div>
   <div class="gms-wrap"><table>
-    <thead><tr><th>Action</th><th>ATT&amp;CK Technique</th><th>Recommended Canonical Reasons</th><th>Live CVE Signals</th><th>Confidence</th></tr></thead>
+    <thead><tr><th>Action</th><th>ATT&amp;CK Technique</th><th>Recommended Canonical Reasons</th><th>Live CVE Signals</th><th>Confidence</th><th>Gate</th></tr></thead>
     <tbody id="gms-body"></tbody></table></div>
 </div></section>
 
@@ -1284,11 +1290,25 @@ function renderGms(g){
     tr.appendChild(c4);
     var c5=el("td");
     c5.appendChild(el("span","chip chip-graph",r.mapping_confidence));
-    if(r.human_review_required)c5.appendChild(el("div","gms-cve","human review required"));
     if((r.recommendation||{}).severity)c5.appendChild(el("div","gms-cve","severity: "+r.recommendation.severity));
     tr.appendChild(c5);
+    var c6=el("td");
+    var ga=((r.gate||{}).gate_action)||"ESCALATE";
+    var gcls=ga==="ESCALATE"?"chip-ungoverned":(ga==="PROCEED_FLAGGED"?"chip-flag":"chip-ok");
+    c6.appendChild(el("span","chip "+gcls,ga.replace("_","-")));
+    if((r.gate||{}).verdict)c6.appendChild(el("div","gms-cve",String(r.gate.verdict||"").toLowerCase()));
+    tr.appendChild(c6);
     body.appendChild(tr);
   });
+  var gs=g.gate_summary||{};
+  var sumEl=document.getElementById("gms-gate-summary");
+  if(sumEl&&gs.actions){
+    while(sumEl.firstChild)sumEl.removeChild(sumEl.firstChild);
+    var strong=el("b",null,gs.escalate+" of "+gs.actions+" actions ESCALATE");
+    strong.style.color="var(--red)";
+    sumEl.appendChild(strong);
+    sumEl.appendChild(document.createTextNode(" - governance not grounded enough to act autonomously. Verified-or-abstain, deterministic, composed above the signed receipt."));
+  }
 }
 
 /* -- fetch + boot --------------------------------------------------------- */
