@@ -1,6 +1,6 @@
 """cli.py — the command-line face of the pipeline.
 
-    python -m openagentontology <path> [--out DIR] [--json] [--no-receipt]
+    python -m openagentontology <path> [--out DIR] [--json] [--no-receipt] [--sarif FILE]
 
 One target (a file or a directory), one governance scan. The CLI is a THIN driver: it parses
 args, calls pipeline.run_pipeline (which owns all the stage logic), writes the four artifacts,
@@ -11,6 +11,9 @@ Artifacts (written to <out>/ where <out> defaults to <target>/.openagentontology
     trust_profile.json  the scored tier + 0..100 score + subscores + rationale
     badge.svg           a standalone, embeddable SVG governance badge
     receipt.json        the Ed25519 cert-only receipt (skipped with --no-receipt)
+
+--sarif FILE additionally writes the scan as a SARIF 2.1.0 log (sarif.to_sarif) so GitHub
+code scanning / any SARIF viewer can render the ungoverned + ambiguous findings inline.
 
 Exit codes (so a CI gate can branch on them):
     0   pipeline ran and validation passed (ok == True)
@@ -65,6 +68,9 @@ def _build_parser() -> argparse.ArgumentParser:
                         "human summary)")
     p.add_argument("--no-receipt", action="store_true", dest="no_receipt",
                    help="skip minting the Ed25519 receipt (hermetic, no disk/key access)")
+    p.add_argument("--sarif", metavar="FILE", default=None,
+                   help="also write the scan as a SARIF 2.1.0 log to FILE (for GitHub "
+                        "code scanning / any SARIF viewer)")
     p.add_argument("--version", action="version",
                    version=f"openagentontology {VERSION}")
     return p
@@ -125,6 +131,15 @@ def _print_summary(result, written: dict, out_dir: Path, note: str) -> None:
         cells = [f"{k}={subs[k]}" for k in order if k in subs]
         cells += [f"{k}={v}" for k, v in subs.items() if k not in order]
         p(_c("2", "  subscores: " + "  ".join(cells)))
+
+    # v0.2 risk split (additive; the trust tier above is unchanged by these)
+    risk = getattr(result, "risk_profile", None)
+    if risk is not None:
+        p(_c("2", "  risk:      "
+                  f"declaration={risk.declaration_coverage}  "
+                  f"enforcement={risk.enforcement_evidence}  "
+                  f"extraction={risk.extraction_confidence}  "
+                  f"exposure={risk.risk_exposure}"))
     p("")
 
     # counts
@@ -194,6 +209,8 @@ def _print_summary(result, written: dict, out_dir: Path, note: str) -> None:
     for name in ("ontology.json", "trust_profile.json", "badge.svg", "receipt.json"):
         if name in written:
             p(f"    - {name}")
+    if "sarif" in written:
+        p(f"    - {written['sarif']}  (SARIF 2.1.0)")
     p("")
 
     # the confirm-note is MANDATORY on every run (pol.must_do.143)
@@ -207,6 +224,7 @@ def _json_payload(result, written: dict, note: str) -> dict:
     Top-level keys (in order of usefulness for a CI gate):
       summary       — tier + score + counts + ungoverned list (quick read)
       profile       — full subscores + rationale (deep read)
+      risk_profile  -- the v0.2 four risk sub-scores + rationale (additive)
       findings      — validator results (error/warn/info)
       ontology      — full nodes/edges/action_maps (the hashed evidence)
       receipt       — Ed25519 cert-only receipt ({} when --no-receipt)
@@ -239,10 +257,13 @@ def _json_payload(result, written: dict, note: str) -> dict:
         "refs": list(result.refs),
     }
 
+    risk = getattr(result, "risk_profile", None)
+
     return {
         "version": VERSION,
         "summary": summary,
         "profile": result.profile.to_dict(),
+        "risk_profile": risk.to_dict() if risk is not None else {},
         "findings": findings,
         "ontology": ontology,
         "receipt": result.receipt,
@@ -274,6 +295,19 @@ def main(argv=None) -> int:
     except OSError as exc:
         print(f"error: could not write artifacts to {out_dir}: {exc}", file=sys.stderr)
         return 2
+
+    if args.sarif:
+        from .sarif import to_sarif  # local import keeps the default path light
+        sarif_fp = Path(args.sarif).expanduser().resolve()
+        try:
+            sarif_fp.parent.mkdir(parents=True, exist_ok=True)
+            sarif_fp.write_text(
+                json.dumps(to_sarif(result), indent=2, sort_keys=True, ensure_ascii=True)
+                + "\n", encoding="ascii")
+            written["sarif"] = str(sarif_fp)
+        except OSError as exc:
+            print(f"error: could not write SARIF to {sarif_fp}: {exc}", file=sys.stderr)
+            return 2
 
     note = result.ontology.note  # crosswalk.CONFIRM_NOTE, carried verbatim
 

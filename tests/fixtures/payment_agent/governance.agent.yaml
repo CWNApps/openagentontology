@@ -1,0 +1,26 @@
+# payment_agent -- governance manifest (golden fixture).
+#
+# The capability NAMES its canonical deny reason verbatim (dual_control_required), the
+# same way examples/hardened_agent does. That source-declared reason is what makes the
+# crosswalk return ASSERTED mappings instead of a verb-heuristic guess.
+name: payment-agent
+owner: fixtures-team
+description: >
+  Test fixture: a payment agent whose initiate_payment capability declares the
+  canonical reason dual_control_required in its governance manifest.
+
+capabilities:
+  - id: initiate_payment
+    name: initiate_payment
+    action: initiate_payment
+    reason: dual_control_required
+
+gates:
+  - id: dual_control_gate
+    name: dual control on payment release
+    reason: dual_control_required
+
+policy:
+  id: payments_policy
+  name: payments fail-closed firewall
+  source: payments.rego

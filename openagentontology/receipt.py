@@ -44,6 +44,10 @@ try:
 except Exception:  # pragma: no cover - exercised only on a crypto-less host
     _HAS_CRYPTO = False
 
+# Optional post-quantum legs (ML-DSA-65 / SLH-DSA). Soft import: the base tool keeps its
+# no-install promise and stays Ed25519-only when these aren't present. See pqsign.py.
+from . import pqsign
+
 # Default, reproducible key location. Env-overridable so CI / a host can pin a stable key.
 # A fresh ephemeral key is generated (and persisted) on first run if none exists.
 _DEFAULT_KEY = os.getenv(
@@ -146,36 +150,85 @@ def mint_receipt(ontology, *, decision: str | None = None,
         "signed_at": when,
     }
 
+    # Every signature leg signs these exact bytes -- the canonical body that commits to the
+    # evidence hash. Ed25519 is the primary, always-present leg; the PQ legs are additive.
+    signed_bytes = _canon(body).encode("ascii")
+
     sk, pub_b64 = _load_key(key_path)
     if sk is not None:
-        sig = base64.b64encode(sk.sign(_canon(body).encode("ascii"))).decode("ascii")
+        sig = base64.b64encode(sk.sign(signed_bytes)).decode("ascii")
         alg, signed = "Ed25519", True
     else:
         sig, alg, signed = "", "none", False
 
-    return {
+    out = {
         **body,
         "evidence": evidence,
         "alg": alg,
         "signature_b64": sig,
         "verify_pubkey_b64": pub_b64,
         "signed": signed,
-        "note_pq": "Hosted CWN notary receipts add ML-DSA-65 (NIST FIPS 204) over the same hash.",
     }
+
+    # Hybrid post-quantum legs over the SAME signed_bytes. Present only when a PQ backend is
+    # installed; absent fields => an Ed25519-only receipt that still verifies everywhere.
+    # Harvest-now-decrypt-later defence: ML-DSA-65 (lattice) + SLH-DSA (hash-based diversity).
+    key_base = str(Path(key_path or _DEFAULT_KEY))
+    ml_sig, ml_pub = pqsign.sign_ml_dsa(key_base, signed_bytes)
+    slh_sig, slh_pub = pqsign.sign_slh_dsa(key_base, signed_bytes)
+    if ml_sig:
+        out["ml_dsa_signature_b64"] = ml_sig
+        out["ml_dsa_public_key_b64"] = ml_pub
+    if slh_sig:
+        out["slh_dsa_signature_b64"] = slh_sig
+        out["slh_dsa_public_key_b64"] = slh_pub
+
+    # signature_alg names every leg actually on this receipt; alg stays "Ed25519" for any
+    # existing verifier that only reads the classical field.
+    out["signature_alg"] = pqsign.signature_alg() if signed else "none"
+    out["note_pq"] = (
+        "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) "
+        "added when a PQ backend is installed. Each leg signs the same canonical body; any "
+        "one verifying proves authenticity. Install: pip install \"openagentontology[pq]\"."
+    )
+    return out
+
+
+def _verify_ed25519(sig_b64: str, pub_b64: str, signed_bytes: bytes) -> bool:
+    """True iff the Ed25519 signature verifies. False if cryptography is absent or it fails."""
+    if not (_HAS_CRYPTO and sig_b64 and pub_b64):
+        return False
+    try:
+        pub = ed25519.Ed25519PublicKey.from_public_bytes(base64.b64decode(pub_b64))
+        pub.verify(base64.b64decode(sig_b64), signed_bytes)
+        return True
+    except Exception:  # InvalidSignature or malformed key/sig
+        return False
 
 
 def verify_receipt(receipt: dict) -> dict:
-    """Re-check a receipt from the cert alone. Returns:
-      {ok, hash_ok, sig_ok, signed, reason}
+    """Re-check a receipt from the cert alone -- no network, no database, no trusting us.
+    Returns:
+      {ok, hash_ok, sig_ok, signed, legs, signature_alg, reason}
 
-    hash_ok  recomputed sha256(_canon(evidence)) == receipt.evidence_hash
-    sig_ok   Ed25519 verify of receipt.signature_b64 over _canon(body) with verify_pubkey_b64
-    signed   whether the receipt claims a real signature (alg == "Ed25519")
-    ok       hash_ok AND (sig_ok if signed else True)  -- an unsigned receipt can still be
-             hash-valid; ok stays True but `signed` flags that it carries no cryptographic proof.
+    hash_ok        recomputed sha256(_canon(evidence)) == receipt.evidence_hash
+    legs           per-leg status over the SAME canonical body:
+                     "ok"           present and verified
+                     "fail"         present and verification FAILED  -> tamper
+                     "absent"       no signature for this leg
+                     "unverifiable" present but this host lacks the backend to check it
+    sig_ok         at least one signature leg verified ("any leg verifies")
+    signed         the receipt carries at least one signature
+    ok             hash_ok AND no leg failed AND (sig_ok OR receipt is unsigned)
+
+    The PQ legs (ML-DSA-65 / SLH-DSA) sign the identical body as Ed25519, so a verifier that
+    has only one backend can still prove authenticity from whichever leg it can check; a verifier
+    that can check a leg and finds it broken reports tamper. An older Ed25519-only receipt
+    verifies exactly as before -- the new legs are simply "absent".
     """
-    out = {"ok": False, "hash_ok": False, "sig_ok": False,
-           "signed": False, "reason": ""}
+    out = {"ok": False, "hash_ok": False, "sig_ok": False, "signed": False,
+           "legs": {}, "signature_alg": receipt.get("signature_alg", "") if isinstance(receipt, dict) else "",
+           "reason": ""}
     if not isinstance(receipt, dict):
         out["reason"] = "receipt is not a dict"
         return out
@@ -191,32 +244,47 @@ def verify_receipt(receipt: dict) -> dict:
         out["reason"] = "evidence_hash mismatch -- evidence was altered"
         return out
 
-    alg = receipt.get("alg", "none")
-    sig_b64 = receipt.get("signature_b64", "")
-    pub_b64 = receipt.get("verify_pubkey_b64", "")
-    out["signed"] = (alg == "Ed25519" and bool(sig_b64) and bool(pub_b64))
-
-    if not out["signed"]:
-        # hash is valid but there is no cryptographic proof of origin.
-        out["ok"] = True
-        out["reason"] = "hash valid; receipt is UNSIGNED (no Ed25519 signature present)"
-        return out
-
-    if not _HAS_CRYPTO:
-        out["reason"] = "cannot verify signature: cryptography not installed on this host"
-        return out
-
-    # body = the receipt minus evidence + the non-signed envelope fields. MUST be the exact
-    # dict that was signed in mint_receipt (atom_id/type/decision/evidence_hash/signed_at).
+    # body = the exact dict signed in mint_receipt (every leg signs these bytes).
     body = {k: receipt[k] for k in
             ("atom_id", "type", "decision", "evidence_hash", "signed_at") if k in receipt}
-    try:
-        pub = ed25519.Ed25519PublicKey.from_public_bytes(base64.b64decode(pub_b64))
-        pub.verify(base64.b64decode(sig_b64), _canon(body).encode("ascii"))
-        out["sig_ok"] = True
+    signed_bytes = _canon(body).encode("ascii")
+
+    def _leg(sig_b64: str, pub_b64: str, can_check: bool, verify) -> str:
+        if not (sig_b64 and pub_b64):
+            return "absent"
+        if not can_check:
+            return "unverifiable"
+        return "ok" if verify(pub_b64, signed_bytes, sig_b64) else "fail"
+
+    legs = {
+        "ed25519": _leg(
+            receipt.get("signature_b64", ""), receipt.get("verify_pubkey_b64", ""),
+            _HAS_CRYPTO, lambda p, m, s: _verify_ed25519(s, p, m)),
+        "ml_dsa": _leg(
+            receipt.get("ml_dsa_signature_b64", ""), receipt.get("ml_dsa_public_key_b64", ""),
+            pqsign.ML_DSA_AVAILABLE, pqsign.verify_ml_dsa),
+        "slh_dsa": _leg(
+            receipt.get("slh_dsa_signature_b64", ""), receipt.get("slh_dsa_public_key_b64", ""),
+            pqsign.SLH_DSA_AVAILABLE, pqsign.verify_slh_dsa),
+    }
+    out["legs"] = legs
+    out["signed"] = any(v != "absent" for v in legs.values())
+    out["sig_ok"] = any(v == "ok" for v in legs.values())
+    tampered = any(v == "fail" for v in legs.values())
+
+    if not out["signed"]:
         out["ok"] = True
-        out["reason"] = "hash valid and Ed25519 signature verified from the cert alone"
-    except Exception as exc:  # InvalidSignature or malformed key/sig
-        out["sig_ok"] = False
-        out["reason"] = f"signature verification FAILED: {type(exc).__name__}"
+        out["reason"] = "hash valid; receipt is UNSIGNED (no signature present)"
+        return out
+    if tampered:
+        broken = ", ".join(k for k, v in legs.items() if v == "fail")
+        out["reason"] = f"signature verification FAILED on: {broken}"
+        return out
+    if out["sig_ok"]:
+        proved = ", ".join(k for k, v in legs.items() if v == "ok")
+        out["ok"] = True
+        out["reason"] = f"hash valid; verified from the cert alone via: {proved}"
+        return out
+    out["reason"] = ("cannot verify any signature leg on this host -- install 'cryptography' "
+                     "for Ed25519 or 'openagentontology[pq]' for the post-quantum legs")
     return out

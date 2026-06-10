@@ -47,6 +47,11 @@ dependencies = [
 dev = ["pytest>=7.0"]
 # `pip install "openagentontology[mcp]"` to run the MCP server (oao_scan_agent etc.).
 mcp = ["mcp>=1.2.0"]
+# `pip install "openagentontology[pq]"` turns on the post-quantum receipt legs: ML-DSA-65
+# (FIPS 204) via the pure-Python dilithium_py. The SLH-DSA leg (FIPS 205) additionally needs
+# liboqs-python, which ships a native lib -- install it explicitly when you want all three.
+# Without this extra the receipt stays Ed25519-only and still verifies everywhere.
+pq = ["dilithium-py>=1.0"]
 
 [project.urls]
 Homepage = "https://agent-ontology.cyberwarriornetwork.com"

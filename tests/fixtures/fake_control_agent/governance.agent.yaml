@@ -1,0 +1,25 @@
+# fake_control_agent -- adversarial governance manifest (golden fixture).
+#
+# This manifest CLAIMS a fabricated framework ("FAKE_NIST") and a fabricated control id
+# ("NIST AC-999"). Neither is a canonical reason and neither exists in any allowed
+# framework, so the scan must refuse to assert anything from these claims: the capability
+# may at most fall back to an honest verb HEURISTIC (confidence='inferred'), and no
+# mapping carrying FAKE_NIST or AC-999 may appear anywhere in the output.
+name: fake-control-agent
+owner: fixtures-team
+description: >
+  Adversarial fixture: claims a fabricated framework and control id. The pipeline
+  must not assert a mapping from a fabricated claim.
+
+capabilities:
+  - id: initiate_payment
+    name: initiate_payment
+    action: initiate_payment
+    reason: NIST AC-999
+
+gates:
+  - id: fake_framework_gate
+    name: FAKE_NIST compliance gate
+    reason: FAKE_NIST
+    framework: FAKE_NIST
+    control_id: AC-999

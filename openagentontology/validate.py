@@ -14,6 +14,9 @@ ERROR (fail-closed — voids trust, pol.must_do.143):
   E_EMPTY       the ontology has 0 nodes
   E_FAKE_ID     a confidence=='asserted' mapping whose (fw,id) pair is not in ASSERTED_TABLE
                 (a typo / bad edit that smuggled an id past Layer 1 fails closed here)
+  E_MATCHED_VIA an ActionMap claims matched_via=='asserted_table' but carries zero mappings
+                (an asserted-path claim with no evidence -- a tampered or hand-built doc;
+                 map_action never produces this shape)
 
 WARN (does not block; the trust profile reads these):
   W_UNGOVERNED  a Decision/Gate/Capability whose ActionMap.matched_via == 'none'
@@ -83,6 +86,9 @@ def validate(doc) -> tuple:
     for am in doc.action_maps:
         if am.matched_via == "none":
             warn("W_UNGOVERNED", f"action '{am.subject_id}' has no mapped control (ungoverned)")
+        if am.matched_via == "asserted_table" and not am.mappings:
+            err("E_MATCHED_VIA", f"action '{am.subject_id}' claims matched_via=asserted_table "
+                                 "but carries no mappings (claim without evidence)")
         for m in am.mappings:
             if m.fw not in ALLOWED_FRAMEWORKS:
                 err("E_FRAMEWORK", f"mapping fw '{m.fw}' on '{am.subject_id}' is outside ALLOWED_FRAMEWORKS")

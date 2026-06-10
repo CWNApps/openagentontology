@@ -1,0 +1,206 @@
+# skills-v0.2.0.yaml -- the OpenAgentOntology governed skill catalog.
+#
+# Each entry names ONE high-stakes skill class an autonomous agent commonly carries, the
+# canonical deny-reasons (controls) that must answer for it, and the evidence a governed
+# execution should leave behind. The catalog is a VOCABULARY, not a verdict: a scanner maps
+# observed agent actions onto these skill classes; whether the required controls are actually
+# declared and enforced is what the scan measures.
+#
+# Honesty rules (mirror the reference implementation):
+#   - required_controls values come ONLY from the 10 canonical reasons in the crosswalk
+#     ASSERTED_TABLE (crosswalk-v0.1.0.json). Nothing here invents a framework control id.
+#   - advisory_mitre carries a MITRE ATT&CK technique ONLY where the mapping is obvious and
+#     already used by the reference crosswalk (advisory confidence -- confirm with an analyst;
+#     it never counts toward any score).
+#   - default_severity is the catalog's prior for the skill class (critical/high/medium/low);
+#     a deployment may raise it, never silently lower it.
+#
+# Standard: https://agent-ontology.cyberwarriornetwork.com
+# Reference implementation: https://github.com/CWNApps/openagentontology
+
+catalog: openagentontology-governed-skills
+version: 0.2.0
+
+canonical_reasons:
+  - dual_control_required
+  - over_threshold
+  - beneficiary_unverified
+  - human_review_required
+  - classification_above_ceiling
+  - out_of_scope_domain
+  - regulated_egress_blocked
+  - change_freeze_active
+  - approval_required
+  - high_blast_needs_named_approver
+
+severity_levels: [critical, high, medium, low]
+
+skills:
+  - skill_id: oao.skill.shell_execution
+    name: Shell command execution
+    risk_domain: execution
+    default_severity: critical
+    action_effect: execute
+    required_controls: [approval_required, out_of_scope_domain]
+    required_evidence: [policy_decision_log, command_transcript, signed_receipt]
+    advisory_mitre: [T1059]
+
+  - skill_id: oao.skill.python_execution
+    name: Python / interpreter code execution
+    risk_domain: execution
+    default_severity: critical
+    action_effect: execute
+    required_controls: [approval_required, out_of_scope_domain]
+    required_evidence: [policy_decision_log, command_transcript, signed_receipt]
+    advisory_mitre: [T1059]
+
+  - skill_id: oao.skill.network_post
+    name: Outbound network POST
+    risk_domain: egress
+    default_severity: high
+    action_effect: egress
+    required_controls: [regulated_egress_blocked]
+    required_evidence: [destination_allowlist_check, policy_decision_log, signed_receipt]
+    advisory_mitre: [T1048]
+
+  - skill_id: oao.skill.telemetry_send
+    name: Telemetry / analytics send
+    risk_domain: egress
+    default_severity: high
+    action_effect: egress
+    required_controls: [regulated_egress_blocked, classification_above_ceiling]
+    required_evidence: [destination_allowlist_check, data_classification_label, signed_receipt]
+    advisory_mitre: [T1048]
+
+  - skill_id: oao.skill.file_write
+    name: Filesystem write
+    risk_domain: mutation
+    default_severity: medium
+    action_effect: write
+    required_controls: [out_of_scope_domain]
+    required_evidence: [path_scope_check, signed_receipt]
+
+  - skill_id: oao.skill.file_delete
+    name: Filesystem delete
+    risk_domain: destruction
+    default_severity: high
+    action_effect: delete
+    required_controls: [change_freeze_active, high_blast_needs_named_approver]
+    required_evidence: [named_approver_identity, freeze_window_check, signed_receipt]
+    advisory_mitre: [T1485]
+
+  - skill_id: oao.skill.database_write
+    name: Database write / upsert
+    risk_domain: mutation
+    default_severity: medium
+    action_effect: write
+    required_controls: [approval_required, out_of_scope_domain]
+    required_evidence: [change_ticket_reference, signed_receipt]
+
+  - skill_id: oao.skill.database_delete
+    name: Database delete / truncate
+    risk_domain: destruction
+    default_severity: high
+    action_effect: delete
+    required_controls: [change_freeze_active, high_blast_needs_named_approver]
+    required_evidence: [named_approver_identity, backup_verification, signed_receipt]
+    advisory_mitre: [T1485]
+
+  - skill_id: oao.skill.cloud_deploy
+    name: Cloud / production deploy
+    risk_domain: deployment
+    default_severity: high
+    action_effect: deploy
+    required_controls: [approval_required, change_freeze_active, high_blast_needs_named_approver]
+    required_evidence: [change_ticket_reference, named_approver_identity, signed_receipt]
+    advisory_mitre: [T1543]
+
+  - skill_id: oao.skill.identity_change
+    name: Identity / privilege change
+    risk_domain: identity
+    default_severity: critical
+    action_effect: escalate
+    required_controls: [dual_control_required, human_review_required, out_of_scope_domain]
+    required_evidence: [second_authorizer_identity, policy_decision_log, signed_receipt]
+    advisory_mitre: [T1078, T1098]
+
+  - skill_id: oao.skill.secret_read
+    name: Secret / credential read
+    risk_domain: secrets
+    default_severity: high
+    action_effect: read
+    required_controls: [classification_above_ceiling, out_of_scope_domain]
+    required_evidence: [data_classification_label, access_scope_check, signed_receipt]
+
+  - skill_id: oao.skill.email_send
+    name: Outbound email send
+    risk_domain: egress
+    default_severity: high
+    action_effect: egress
+    required_controls: [regulated_egress_blocked, human_review_required]
+    required_evidence: [recipient_allowlist_check, policy_decision_log, signed_receipt]
+    advisory_mitre: [T1048]
+
+  - skill_id: oao.skill.payment_initiate
+    name: Payment / funds transfer initiation
+    risk_domain: financial
+    default_severity: critical
+    action_effect: transfer
+    required_controls: [dual_control_required, over_threshold, beneficiary_unverified]
+    required_evidence: [second_authorizer_identity, beneficiary_verification_record, amount_threshold_check, signed_receipt]
+
+  - skill_id: oao.skill.model_memory_write
+    name: Model / agent memory write
+    risk_domain: memory
+    default_severity: medium
+    action_effect: write
+    required_controls: [classification_above_ceiling, human_review_required]
+    required_evidence: [memory_provenance_record, signed_receipt]
+
+  - skill_id: oao.skill.tool_install
+    name: Tool / package install
+    risk_domain: supply_chain
+    default_severity: high
+    action_effect: write
+    required_controls: [approval_required, change_freeze_active]
+    required_evidence: [package_provenance_record, change_ticket_reference, signed_receipt]
+
+  - skill_id: oao.skill.mcp_tool_register
+    name: MCP tool registration (dynamic)
+    risk_domain: supply_chain
+    default_severity: high
+    action_effect: write
+    required_controls: [approval_required, out_of_scope_domain]
+    required_evidence: [tool_manifest_snapshot, registration_approval_record, signed_receipt]
+
+  - skill_id: oao.skill.repo_commit
+    name: Repository commit
+    risk_domain: code_integrity
+    default_severity: medium
+    action_effect: write
+    required_controls: [approval_required]
+    required_evidence: [commit_signature, signed_receipt]
+
+  - skill_id: oao.skill.pr_merge
+    name: Pull-request merge
+    risk_domain: code_integrity
+    default_severity: high
+    action_effect: write
+    required_controls: [dual_control_required, approval_required]
+    required_evidence: [reviewer_identity, status_check_results, signed_receipt]
+
+  - skill_id: oao.skill.policy_modify
+    name: Policy / guardrail modification
+    risk_domain: governance
+    default_severity: critical
+    action_effect: write
+    required_controls: [dual_control_required, change_freeze_active, high_blast_needs_named_approver]
+    required_evidence: [second_authorizer_identity, policy_diff_record, signed_receipt]
+
+  - skill_id: oao.skill.workflow_trigger
+    name: Workflow / automation trigger
+    risk_domain: orchestration
+    default_severity: medium
+    action_effect: execute
+    required_controls: [approval_required, out_of_scope_domain]
+    required_evidence: [workflow_definition_snapshot, signed_receipt]

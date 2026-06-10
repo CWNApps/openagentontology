@@ -7,16 +7,23 @@ The standard is generated, never hand-typed, so it can never drift from the impl
 
 Writes, into schema/:
   agent-ontology-v0.1.schema.json   JSON Schema for an ontology doc + trust profile + receipt
+  agent-ontology-v0.2.0.schema.json v0.2 additive superset: risk_profile sub-scores + receipt
+                                    post-quantum legs (ML-DSA-65 / SLH-DSA / signature_alg)
   crosswalk-v0.1.json               the canonical deny-reasons -> framework controls (the core)
   frameworks-v0.1.json              allowed frameworks, trust tiers, scoring weights
 """
+import copy
+import dataclasses
 import json
 
 from openagentontology import crosswalk as C
+from openagentontology import risk_profile as RP
 from openagentontology import schema as S
 from openagentontology import trust_profile as TP
 
 CANON_URL = "https://agent-ontology.cyberwarriornetwork.com/schema/v0.1"
+CANON_URL_V02 = "https://agent-ontology.cyberwarriornetwork.com/schema/v0.2"
+VERSION_V02 = "0.2.0"
 
 # The 13 canonical edge relations (Universal Agentic Ontology). Documented vocabulary; the
 # crosswalk emits a subset (HAS_CAPABILITY / GATED_BY / EXECUTES / ...).
@@ -123,6 +130,55 @@ def ontology_schema() -> dict:
     }
 
 
+def ontology_schema_v02() -> dict:
+    """v0.2 schema = the v0.1 schema plus the ADDITIVE v0.2 fields, generated from the same
+    code the scanner runs (the sub-score names come from the RiskProfile dataclass itself,
+    so the published standard can never drift from the implementation). Every valid v0.1
+    document is also a valid v0.2 document -- nothing was removed or tightened."""
+    sch = copy.deepcopy(ontology_schema())
+    sch["$id"] = f"{CANON_URL_V02}/agent-ontology.schema.json"
+    sch["title"] = f"Agent Ontology v{VERSION_V02}"
+    sch["description"] += (
+        " v0.2 is additive: a four-axis risk_profile (complementing the trust_profile) and "
+        "optional hybrid post-quantum receipt legs (ML-DSA-65 FIPS 204, SLH-DSA FIPS 205).")
+
+    # risk_profile: four 0..100 sub-scores + rationale, names taken from the dataclass.
+    risk_keys = [f.name for f in dataclasses.fields(RP.RiskProfile) if f.name != "rationale"]
+    sch["$defs"]["risk_profile"] = {
+        "type": "object",
+        "description": "The v0.2 risk-side split: how exposed is this agent, and how much "
+                       "should the scan itself be trusted. Additive -- trust_profile axes, "
+                       "weights, and tier bands are unchanged.",
+        "required": risk_keys,
+        "properties": {
+            **{k: {"type": "integer", "minimum": 0, "maximum": 100} for k in risk_keys},
+            "rationale": {"type": "array", "items": {"type": "string"},
+                          "description": "one ASCII line per sub-score saying WHY, "
+                                         "including why a zero is zero"},
+        },
+    }
+
+    # receipt: optional hybrid post-quantum legs. Every leg signs the SAME canonical body
+    # as Ed25519; absent fields mean an Ed25519-only receipt that verifies exactly as before.
+    sch["$defs"]["receipt"]["properties"].update({
+        "ml_dsa_signature_b64": {
+            "type": "string",
+            "description": "ML-DSA-65 (FIPS 204) signature over the same canonical body"},
+        "ml_dsa_public_key_b64": {"type": "string"},
+        "slh_dsa_signature_b64": {
+            "type": "string",
+            "description": "SLH-DSA (FIPS 205) signature over the same canonical body"},
+        "slh_dsa_public_key_b64": {"type": "string"},
+        "signature_alg": {
+            "type": "string",
+            "description": "names every signature leg actually on this receipt, e.g. "
+                           "'Ed25519+ML-DSA-65+SLH-DSA'; alg stays 'Ed25519' for older "
+                           "verifiers that only read the classical field"},
+        "note_pq": {"type": "string"},
+    })
+    return sch
+
+
 def crosswalk_json() -> dict:
     table = {}
     for reason, mappings in C.ASSERTED_TABLE.items():
@@ -160,6 +216,7 @@ def frameworks_json() -> dict:
 def main():
     out = {
         f"schema/agent-ontology-v{S.VERSION}.schema.json": ontology_schema(),
+        f"schema/agent-ontology-v{VERSION_V02}.schema.json": ontology_schema_v02(),
         f"schema/crosswalk-v{S.VERSION}.json": crosswalk_json(),
         f"schema/frameworks-v{S.VERSION}.json": frameworks_json(),
     }

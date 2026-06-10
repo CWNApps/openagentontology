@@ -143,10 +143,12 @@ def test_tampered_signature_fails(receipt):
     import copy
     bad = copy.deepcopy(receipt)
     raw = bytearray(base64.b64decode(bad["signature_b64"]))
-    raw[0] ^= 0xFF  # corrupt one byte of the signature
+    raw[0] ^= 0xFF  # corrupt one byte of the Ed25519 signature
     bad["signature_b64"] = base64.b64encode(bytes(raw)).decode("ascii")
     v = verify_receipt(bad)
-    assert v["sig_ok"] is False and v["ok"] is False
+    # A broken leg is always detected as tamper, even if hybrid PQ legs still verify.
+    assert v["ok"] is False
+    assert v["legs"]["ed25519"] == "fail"
 
 
 def test_wrong_public_key_fails(receipt):
@@ -157,7 +159,8 @@ def test_wrong_public_key_fails(receipt):
     other_pub = ed25519.Ed25519PrivateKey.generate().public_key().public_bytes_raw()
     bad["verify_pubkey_b64"] = base64.b64encode(other_pub).decode("ascii")
     v = verify_receipt(bad)
-    assert v["sig_ok"] is False and v["ok"] is False
+    assert v["ok"] is False
+    assert v["legs"]["ed25519"] == "fail"
 
 
 # ── soft-crypto degradation (still hash-verifiable, clearly flagged) ──────────
@@ -166,9 +169,10 @@ def test_unsigned_receipt_is_hash_valid_but_flagged():
                       nodes=[__import__("openagentontology").Node("n1", "Resource", "r")],
                       note=CONFIRM_NOTE)
     r = mint_receipt(doc)
-    # simulate a crypto-less host by stripping the signature envelope
+    # simulate a crypto-less host: strip EVERY signature leg (classical + post-quantum).
+    for k in ("signature_b64", "ml_dsa_signature_b64", "slh_dsa_signature_b64"):
+        r[k] = ""
     r["alg"] = "none"
-    r["signature_b64"] = ""
     r["signed"] = False
     v = verify_receipt(r)
     assert v["hash_ok"] is True

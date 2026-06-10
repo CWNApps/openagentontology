@@ -1,0 +1,932 @@
+{
+  "source": "OpenInterpreter/open-interpreter@e00f08e",
+  "gms_version": "oao-gms-0.1.0",
+  "resolved_at": "2026-06-10T05:02:29.733791+00:00",
+  "graph_snapshot_hash": "6e0b0777109ea407377abf99a212017e66448b18d72f0470484d03fbee61fee8",
+  "resolutions": [
+    {
+      "action": "delete_event",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "deletion",
+      "technique": {
+        "id": "T1485",
+        "tactics": [
+          "impact"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-41383",
+          "title": "CVE-2026-41383: OpenClaw before 2026.4.2 contains an arbitrary directory deletion vulnerability in mirror mode"
+        },
+        {
+          "cve": "CVE-2026-5478",
+          "title": "CVE-2026-5478: The Everest Forms plugin for WordPress is vulnerable to Arbitrary File Read and Deletion in all"
+        },
+        {
+          "cve": "CVE-2026-6940",
+          "title": "CVE-2026-6940: radare2 prior to 6.1.4 contains a path traversal vulnerability in project deletion that allows "
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "change_freeze_active",
+          "approval_required"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "NIST 800-53 CP-9",
+          "OWASP LLM06"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "exec",
+      "scan_matched_via": "none",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "export_to_markdown",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        },
+        {
+          "cve": "CVE-2026-2941",
+          "title": "CVE-2026-2941: The Linksy Search and Replace plugin for WordPress is vulnerable to unauthorized modification o"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "migrate_app_directory",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "deployment",
+      "technique": {
+        "id": "T1543",
+        "tactics": [
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2025-71260",
+          "title": "CVE-2025-71260: BMC FootPrints ITSM versions 20.20.02 through 20.24.01.001 contain a deserialization of untrus"
+        },
+        {
+          "cve": "CVE-2026-41468",
+          "title": "CVE-2026-41468: Beghelli Sicuro24 SicuroWeb embeds AngularJS 1.5.2, an end-of-life component containing known "
+        },
+        {
+          "cve": "CVE-2026-33613",
+          "title": "CVE-2026-33613: Due to the improper neutralisation of special elements used in an OS command, a remote attacke"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "change_freeze_active",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "NIST 800-53 CM-5",
+          "EU AI Act Article 14"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "migrate_profile",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "deployment",
+      "technique": {
+        "id": "T1543",
+        "tactics": [
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2025-71260",
+          "title": "CVE-2025-71260: BMC FootPrints ITSM versions 20.20.02 through 20.24.01.001 contain a deserialization of untrus"
+        },
+        {
+          "cve": "CVE-2026-41468",
+          "title": "CVE-2026-41468: Beghelli Sicuro24 SicuroWeb embeds AngularJS 1.5.2, an end-of-life component containing known "
+        },
+        {
+          "cve": "CVE-2026-33613",
+          "title": "CVE-2026-33613: Due to the improper neutralisation of special elements used in an OS command, a remote attacke"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "change_freeze_active",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "NIST 800-53 CM-5",
+          "EU AI Act Article 14"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "migrate_user_app_directory",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "deployment",
+      "technique": {
+        "id": "T1543",
+        "tactics": [
+          "persistence",
+          "privilege-escalation"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2025-71260",
+          "title": "CVE-2025-71260: BMC FootPrints ITSM versions 20.20.02 through 20.24.01.001 contain a deserialization of untrus"
+        },
+        {
+          "cve": "CVE-2026-41468",
+          "title": "CVE-2026-41468: Beghelli Sicuro24 SicuroWeb embeds AngularJS 1.5.2, an end-of-life component containing known "
+        },
+        {
+          "cve": "CVE-2026-33613",
+          "title": "CVE-2026-33613: Due to the improper neutralisation of special elements used in an OS command, a remote attacke"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "change_freeze_active",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "NIST 800-53 CM-5",
+          "EU AI Act Article 14"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "run",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_applescript",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_applescript_capture",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_async_main",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_auth_server",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_function_calling_llm",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_server",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_text_llm",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "run_tool_calling_llm",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "code_execution",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-40029",
+          "title": "CVE-2026-40029: parseusbs before 1.9 contains an OS command injection vulnerability in parseUSBs.py where LNK "
+        },
+        {
+          "cve": "CVE-2026-39866",
+          "title": "CVE-2026-39866: Lawnchair is a free, open-source home app for Android. Prior to commit fcba413f55dd47f8a392144"
+        },
+        {
+          "cve": "CVE-2026-35020",
+          "title": "CVE-2026-35020: Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability i"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "approval_required",
+          "high_blast_needs_named_approver"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "EU AI Act Article 14",
+          "OWASP LLM06"
+        ],
+        "severity": "critical"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_MED",
+      "human_review_required": true
+    },
+    {
+      "action": "send",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2018-25204",
+          "title": "CVE-2018-25204: Library CMS 1.0 contains an SQL injection vulnerability that allows unauthenticated attackers "
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "send_message",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        },
+        {
+          "cve": "CVE-2026-2941",
+          "title": "CVE-2026-2941: The Linksy Search and Replace plugin for WordPress is vulnerable to unauthorized modification o"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "send_output",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        },
+        {
+          "cve": "CVE-2026-2941",
+          "title": "CVE-2026-2941: The Linksy Search and Replace plugin for WordPress is vulnerable to unauthorized modification o"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "send_past_conversations",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        },
+        {
+          "cve": "CVE-2026-2941",
+          "title": "CVE-2026-2941: The Linksy Search and Replace plugin for WordPress is vulnerable to unauthorized modification o"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "send_telemetry",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "network_egress",
+      "technique": {
+        "id": "TA0010",
+        "tactics": []
+      },
+      "work_role_categories": [],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-23659",
+          "title": "CVE-2026-23659: Exposure of sensitive information to an unauthorized actor in Azure Data Factory allows an una"
+        },
+        {
+          "cve": "CVE-2026-42826",
+          "title": "CVE-2026-42826: Exposure of sensitive information to an unauthorized actor in Azure DevOps allows an unauthori"
+        },
+        {
+          "cve": "CVE-2026-2941",
+          "title": "CVE-2026-2941: The Linksy Search and Replace plugin for WordPress is vulnerable to unauthorized modification o"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "regulated_egress_blocked",
+          "classification_above_ceiling"
+        ],
+        "controls": [
+          "NIST 800-53 SC-7",
+          "EU AI Act Article 14",
+          "OWASP LLM02"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    },
+    {
+      "action": "terminate",
+      "scan_matched_via": "heuristic",
+      "risk_domain": "deletion",
+      "technique": {
+        "id": "T1059",
+        "tactics": [
+          "execution"
+        ]
+      },
+      "work_role_categories": [
+        "OVERSIGHT and GOVERNANCE",
+        "DESIGN and DEVELOPMENT",
+        "IMPLEMENTATION and OPERATION",
+        "PROTECTION and DEFENSE"
+      ],
+      "live_threat_signals": [
+        {
+          "cve": "CVE-2026-41383",
+          "title": "CVE-2026-41383: OpenClaw before 2026.4.2 contains an arbitrary directory deletion vulnerability in mirror mode"
+        },
+        {
+          "cve": "CVE-2026-27651",
+          "title": "CVE-2026-27651: When the ngx_mail_auth_http_module\u00a0module is enabled on NGINX Plus or NGINX Open Source, undis"
+        },
+        {
+          "cve": "CVE-2026-5478",
+          "title": "CVE-2026-5478: The Everest Forms plugin for WordPress is vulnerable to Arbitrary File Read and Deletion in all"
+        }
+      ],
+      "recommendation": {
+        "canonical_reasons": [
+          "change_freeze_active",
+          "approval_required"
+        ],
+        "controls": [
+          "NIST 800-53 CM-3",
+          "NIST 800-53 CP-9",
+          "OWASP LLM06"
+        ],
+        "severity": "high"
+      },
+      "mapping_confidence": "GRAPH_INFERRED_HIGH",
+      "human_review_required": true
+    }
+  ],
+  "note": "GRAPH_INFERRED resolutions. Nothing here is ASSERTED: only a source-declared canonical reason or a confirmed human governance record can assert. Live threat signals are retrieved NVD-derived Signal nodes, never generated. Produced by the hosted CWN Graph Model Service; the OSS scanner remains deterministic and offline.",
+  "receipt": {
+    "atom_id": "gms-5e0161364906",
+    "type": "SemanticResolutionReceipt",
+    "gms_version": "oao-gms-0.1.0",
+    "evidence_hash": "5e0161364906cbdcd53705e27da993a048390dc240bbeaa1cbab6e6c3f6ed864",
+    "signed_at": "2026-06-10T05:02:29.734437+00:00",
+    "signature_b64": "nzxvy5YZ1A4JdJILLkRpQE0dLYkS0YsYVbJQO9Y17ldFThWcsmQ/2ESDLM5gvR4uF9FU7rsm/isorHJjwdElBg==",
+    "verify_pubkey_b64": "47QYzYTrFxIA2NcYLJvqIQ32Iub1pBCVyvXZp8joc88=",
+    "ml_dsa_signature_b64": "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",
+    "ml_dsa_public_key_b64": "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",
+    "slh_dsa_signature_b64": "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",
+    "slh_dsa_public_key_b64": "4xP3mYAvQi63J+r4BSBjxHo5qStu4Zya067ygJbBbfU=",
+    "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA"
+  }
+}

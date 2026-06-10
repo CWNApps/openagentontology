@@ -30,3 +30,6 @@ venv/
 
 # Paper drafts stay local until reviewed + sent to arXiv (not the tool repo)
 paper/
+
+# Rendered HTML previews of markdown docs (local review only)
+docs/**/*.html

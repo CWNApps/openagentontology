@@ -95,7 +95,7 @@ path.
 | **Cross-walk** | Each capability / decision / gate mapped to its framework controls, confidence-tagged |
 | **Trust Profile** | A 0–100 score and a tier: `SOVEREIGN` / `HARDENED` / `DEVELOPING` / `UNGOVERNED` |
 | **Badge** | A shareable SVG showing tier, score, framework count, and citable control refs |
-| **Receipt** | An Ed25519 cert-only proof of the ontology, verifiable from the cert alone |
+| **Receipt** | A cert-only proof of the ontology, verifiable from the cert alone — Ed25519 always, plus post-quantum **ML-DSA-65** (FIPS 204) and **SLH-DSA** (FIPS 205) legs when the `[pq]` extra is installed |
 
 ---
 
@@ -178,7 +178,8 @@ path):
 
 ```bash
 pip install pytest          # the only test-time dependency beyond the two runtime deps
-pytest                      # 80 tests: crosswalk rigor, ingest safety, e2e, receipt, CI gate
+pytest                      # 152 tests: crosswalk rigor, ingest safety, e2e, receipt, CI gate,
+                            # risk profile, SARIF, golden fixtures, mutation, Proof Lab demo
 ```
 
 The tests prove the honesty guarantees mechanically: no framework outside the allowed set,
@@ -217,6 +218,15 @@ a browser or any Ed25519 tool reproduces the Python hash exactly:
 
 No network. No trusting our logs. If `cryptography` is absent the receipt is
 emitted unsigned and clearly flagged — never a faked signature.
+
+**Post-quantum legs.** A signature you trust today should still hold when the curve
+falls — otherwise an adversary can *harvest now, decrypt later*: store the receipt and
+forge it once a quantum computer breaks Ed25519. So with `pip install "openagentontology[pq]"`
+the receipt is **hybrid triple-signed** over the same body: Ed25519 + **ML-DSA-65**
+(NIST FIPS 204, lattice) + **SLH-DSA** (NIST FIPS 205, hash-based — survives a lattice break).
+Each leg signs identical bytes, so any single one verifying proves authenticity, and a verifier
+that can check a leg and finds it broken reports tamper. The legs are additive: a receipt with
+no PQ legs (or a verifier with no PQ backend) still checks Ed25519 and the hash exactly as before.
 
 ---
 
@@ -257,6 +267,21 @@ lives in [`schema/`](./schema/), generated from the code so it can never drift. 
 specification is [SPEC.md](./SPEC.md); the case for the category is [the manifesto](./docs/MANIFESTO.md).
 The reference [CWN AgentFDE](./examples/agent_fde/) — the agent that operationalizes all of this —
 is itself defined to the standard and scores SOVEREIGN. The standard is versioned; this is `v0.1.0`.
+
+### Standards documents
+
+The honesty contract behind the standard, each verified against the code and tests:
+
+- **[Claims and non-claims](./docs/CLAIMS_AND_NON_CLAIMS.md)**: the six claims this tool
+  makes, the seven it deliberately does not, and the test that pins each one.
+- **[Threat model](./docs/THREAT_MODEL.md)**: protected assets, trust boundaries, and six
+  receipt-tampering scenarios with their verified verification outcomes.
+- **[Crosswalk rationale](./docs/crosswalk-rationale/)**: one file per canonical reason
+  (ten total), with the boundary to its neighbors, the real controls it maps to, and a
+  true-positive plus false-positive example for each.
+- **[Reproducibility](./docs/REPRODUCIBILITY.md)**: exact commands to re-run the suite,
+  the example scans, and the two real-world scans from their pinned commits, and to verify
+  the committed triple-signed receipts including the post-quantum legs.
 
 ---
 

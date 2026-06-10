@@ -221,6 +221,52 @@ footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
   .tab-btn{font-size:12px;padding:9px 13px}
   table{font-size:12px}
 }
+
+/* == Proof Lab ========================================================== */
+.v-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.v-row:last-child{border-bottom:none}
+.v-label{font-family:var(--label);font-size:14px;letter-spacing:.1em;color:var(--cream);width:170px;flex-shrink:0;padding-top:2px}
+.v-body{flex:1;min-width:240px;font-family:var(--mono);font-size:12px;color:var(--dim);line-height:1.6}
+.v-chip{display:inline-block;font-family:var(--label);font-size:12px;letter-spacing:.1em;padding:3px 10px;margin-bottom:6px;margin-right:8px}
+.v-chip.ok{color:var(--green);border:1px solid rgba(34,197,94,.45);background:rgba(34,197,94,.08)}
+.v-chip.fail{color:var(--red);border:1px solid rgba(239,68,68,.45);background:rgba(239,68,68,.08)}
+.v-chip.na{color:var(--dim);border:1px solid var(--dimLo);background:var(--cardBg)}
+.v-chip.load{color:var(--orange);border:1px solid var(--border);background:rgba(255,69,0,.07)}
+.hashbox{word-break:break-all;background:#070707;border:1px solid var(--border);padding:7px 10px;margin-top:6px;font-size:11px;color:var(--cream)}
+.hashbox b{color:var(--orange);font-weight:500}
+.hashbox.bad{border-color:rgba(239,68,68,.45);color:#fca5a5}
+.tamper-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;border:1.5px solid var(--border);background:var(--border);margin-bottom:18px}
+.tamper-btn{background:var(--cardBg);color:var(--cream);border:none;padding:16px 14px;cursor:pointer;text-align:left;font-family:var(--body);transition:background .15s}
+.tamper-btn b{display:block;font-family:var(--head);font-size:13px;margin-bottom:5px}
+.tamper-btn span{font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.04em}
+.tamper-btn:hover{background:rgba(239,68,68,.10)}
+.tamper-btn.active{background:rgba(239,68,68,.14)}
+.tamper-btn[disabled]{opacity:.4;cursor:not-allowed}
+.pl-banner{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--cream);border:1.5px solid var(--dimLo);background:rgba(239,235,226,.04);padding:13px 16px;margin-bottom:14px}
+.prov-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.prov-chips .chip{border:1px solid var(--border);color:var(--dim)}
+.gms-wrap{border:1.5px solid var(--border);max-height:520px;overflow:auto}
+.chip-graph{border:1px solid var(--dimLo);color:var(--cream);background:rgba(239,235,226,.05)}
+.gms-act{font-family:var(--mono);color:var(--cream)} .gms-act.ungov{color:#fca5a5}
+.gms-cve{font-family:var(--mono);font-size:11px;color:var(--dim);margin:2px 0;line-height:1.5}
+.gms-cve b{color:var(--cream);font-weight:500}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.ba-state{font-family:var(--label);font-size:12px;letter-spacing:.14em;color:var(--dim);margin-bottom:12px}
+.ba-score{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.ba-score .num{font-family:var(--head);font-size:clamp(2.6rem,6vw,3.6rem);line-height:.9}
+.ba-score .of{font-family:var(--mono);font-size:13px;color:var(--dimLo)}
+.ba-score .tier{font-family:var(--label);font-size:clamp(1rem,2.4vw,1.3rem);letter-spacing:.12em}
+.ba-list{margin-left:18px;color:var(--dim);font-size:14px;line-height:1.7}
+.ba-list li{margin-bottom:8px}
+.ba-list b{color:var(--cream)} .ba-list .k{font-family:var(--mono);color:var(--orange);font-size:.92em}
+.projected-flag{display:inline-block;font-family:var(--head);font-size:18px;letter-spacing:.18em;color:var(--bg);background:var(--orange);padding:7px 16px;margin-bottom:14px}
+.ba-after{border-color:rgba(255,69,0,.5)}
+@media(max-width:540px){
+  .v-label{width:100%;padding-top:0}
+  .tamper-grid{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
+  .gms-wrap{max-height:420px}
+}
 </style>
 </head>
 <body>
@@ -229,6 +275,7 @@ footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
   <div class="wordmark">OPEN·AGENT·<span>ONTOLOGY</span></div>
   <div class="navlinks">
     <a href="#what">Category</a><a href="#graph">Structure</a><a href="#data">Live Data</a><a href="#score">Trust Profile</a>
+    <a href="#verify">Verify</a><a href="#tamper">Tamper Lab</a><a href="#gms">Graph Model</a><a href="#projected">Projected</a>
     <a href="#flow">Crosswalk</a><a href="#fde">AgentFDE</a><a href="#faq">FAQ</a>
   </div>
 </div></nav>
@@ -363,6 +410,89 @@ footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
     <div class="section-label" style="margin-bottom:12px">RATIONALE</div>
     <ul id="rationale-list" style="margin-left:18px;color:var(--dim);font-size:14px;line-height:1.7"></ul>
   </div>
+</div></section>
+
+<!-- ====== PROOF LAB 1 : RECEIPT VERIFIER ============================== -->
+<section id="verify"><div class="inner">
+  <div class="section-label">PROOF LAB -- VERIFY IT YOURSELF</div>
+  <h2 class="h2">Receipt verifier</h2>
+  <p class="body-text" style="max-width:720px;margin-bottom:22px">
+    This page fetches the signed open-interpreter receipt shipped in this repo at
+    <span class="mono" style="color:var(--orange)">docs/scans/open-interpreter/receipt.json</span>,
+    recomputes the evidence hash in <b style="color:var(--cream)">your browser</b> with WebCrypto,
+    and checks the Ed25519 signature. No server round-trip, no trust in this page's claims:
+    the math runs on your machine, from the certificate alone.</p>
+  <div class="card" id="v-card">
+    <p class="body-text mono" style="font-size:12px">Loading receipt...</p>
+  </div>
+  <div class="card" id="v-pq" style="margin-top:14px"></div>
+</div></section>
+
+<!-- ====== PROOF LAB 2 : TAMPER LAB ==================================== -->
+<section id="tamper"><div class="inner">
+  <div class="section-label">PROOF LAB -- TRY TO CHEAT</div>
+  <h2 class="h2">Tamper lab</h2>
+  <p class="body-text" style="max-width:720px;margin-bottom:18px">
+    Each button clones the genuine receipt, applies one forgery, and re-runs the exact verifier
+    above. Every one fails. And if a forger also recomputes <span class="mono" style="color:var(--orange)">evidence_hash</span>
+    to cover the edit, the signed body no longer matches and the Ed25519 leg fails instead --
+    the only path to a clean receipt is the signing key.</p>
+  <div class="tamper-grid" id="tamper-grid"></div>
+  <div class="card" id="t-result">
+    <p class="body-text mono" style="font-size:12px">Pick a forgery above. The verifier will catch it.</p>
+  </div>
+</div></section>
+
+<!-- ====== PROOF LAB 3 : GRAPH MODEL PREVIEW =========================== -->
+<section id="gms"><div class="inner">
+  <div class="section-label">PROOF LAB -- THE HOSTED LAYER</div>
+  <h2 class="h2">Graph model preview</h2>
+  <p class="body-text" style="max-width:720px;margin-bottom:18px">
+    The OSS scanner is deterministic and offline. The hosted
+    <b style="color:var(--cream)">CWN Graph Model Service</b> resolves each scanned action against
+    a control crosswalk and live NVD-derived threat signals, and returns its own triple-signed
+    resolution receipt. Below is the verbatim resolution file for the open-interpreter scan,
+    <span class="mono" style="color:var(--orange)">docs/scans/open-interpreter/graph_resolutions.json</span>.</p>
+  <div class="pl-banner">GRAPH_INFERRED by the hosted CWN Graph Model Service - not ASSERTED until declared in source or confirmed by a human governance record.</div>
+  <div class="prov-chips" id="gms-prov"></div>
+  <div class="gms-wrap"><table>
+    <thead><tr><th>Action</th><th>ATT&amp;CK Technique</th><th>Recommended Canonical Reasons</th><th>Live CVE Signals</th><th>Confidence</th></tr></thead>
+    <tbody id="gms-body"></tbody></table></div>
+</div></section>
+
+<!-- ====== PROOF LAB 4 : BEFORE / AFTER (PROJECTED) ==================== -->
+<section id="projected"><div class="inner">
+  <div class="section-label">PROOF LAB -- THE REMEDIATION, HONESTLY LABELED</div>
+  <h2 class="h2">Before / after (projected)</h2>
+  <div class="ba-grid">
+    <div class="card ba-before">
+      <div class="ba-state" style="color:var(--cream)">MEASURED -- SIGNED SCAN</div>
+      <div class="ba-score">
+        <span class="num" style="color:var(--red)">15</span><span class="of">/ 100</span>
+        <span class="tier" style="color:var(--red)">UNGOVERNED</span>
+      </div>
+      <ul class="ba-list">
+        <li><b>exec</b>: no mapping -- nothing answers for arbitrary code execution</li>
+        <li><b>run_* / send_* / migrate_*</b>: ambiguous verb matches -- 20 actions backed only by a heuristic guess, each needs human confirmation</li>
+      </ul>
+    </div>
+    <div class="card ba-after">
+      <div class="projected-flag">PROJECTED</div>
+      <div class="ba-state">NOT RE-SCANNED -- COMPUTED FROM THE PROPOSED REMEDIATION</div>
+      <div class="ba-score">
+        <span class="num" style="color:var(--yellow)">66</span><span class="of">/ 100</span>
+        <span class="tier" style="color:var(--yellow)">DEVELOPING</span>
+      </div>
+      <ul class="ba-list">
+        <li><b>exec</b>: proposed <span class="k">approval_required</span> -- human confirmation required before it counts as governed</li>
+        <li><b>9 run_* actions</b>: still open -- ambiguity does not clear by declaration alone</li>
+      </ul>
+    </div>
+  </div>
+  <p class="body-text mono" style="margin-top:16px;font-size:12px;color:var(--dimLo)">
+    An after-state stays <b style="color:var(--orange)">PROJECTED</b> until runtime enforcement is
+    wired and the agent is re-scanned. We do not sign projections; only the measured scan above
+    carries a receipt.</p>
 </div></section>
 
 <!-- ═══ CROSSWALK FLOW ═════════════════════════════════════════════════ -->
@@ -881,6 +1011,316 @@ function render(key){
   });
 
   render("sample");
+})();
+</script>
+<script>
+/* == OAO PROOF LAB ======================================================
+   Receipt verifier + tamper lab + graph model preview. All data is fetched
+   from RELATIVE paths inside this repo; nothing external, nothing built. */
+(function(){
+"use strict";
+var RECEIPT_URL="../docs/scans/open-interpreter/receipt.json";
+var GMS_URL="../docs/scans/open-interpreter/graph_resolutions.json";
+var GENUINE=null;
+var ED25519_LINE="hash verified; signature requires a runtime with WebCrypto Ed25519";
+var PQ_LINE="post-quantum legs verify offline via the CLI (FIPS 204/205); browsers cannot yet";
+
+/* canon(x): recursively key-sorted JSON, compact separators, ASCII.
+   Mirrors tests/test_receipt.py js_like_canon byte-for-byte: Python's
+   json.dumps(sort_keys=True, separators=(",",":"), ensure_ascii=True). */
+function asciiJson(v){
+  return JSON.stringify(v).replace(/[\u0080-\uffff]/g,function(c){
+    return "\\u"+("000"+c.charCodeAt(0).toString(16)).slice(-4);
+  });
+}
+function canon(x){
+  if(Array.isArray(x))return "["+x.map(canon).join(",")+"]";
+  if(x&&typeof x==="object"){
+    var k=Object.keys(x).sort();
+    return "{"+k.map(function(j){return asciiJson(j)+":"+canon(x[j]);}).join(",")+"}";
+  }
+  return asciiJson(x);
+}
+function b64bytes(s){
+  var bin=atob(s),out=new Uint8Array(bin.length);
+  for(var i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);
+  return out;
+}
+function hexOf(buf){
+  var v=new Uint8Array(buf),s="";
+  for(var i=0;i<v.length;i++)s+=("0"+v[i].toString(16)).slice(-2);
+  return s;
+}
+function sha256Hex(str){
+  return crypto.subtle.digest("SHA-256",new TextEncoder().encode(str)).then(hexOf);
+}
+function verifyEd25519(pubB64,sigB64,msg){
+  /* resolves true | false | "unsupported" (feature-detect, honest fallback) */
+  try{
+    return crypto.subtle.importKey("raw",b64bytes(pubB64),{name:"Ed25519"},false,["verify"])
+      .then(function(key){
+        return crypto.subtle.verify({name:"Ed25519"},key,b64bytes(sigB64),
+          new TextEncoder().encode(msg));
+      })
+      .catch(function(){return "unsupported";});
+  }catch(e){return Promise.resolve("unsupported");}
+}
+function verifyReceipt(r){
+  /* {nosubtle} | {hashOk, expected, recomputed, sig: true|false|"unsupported"} */
+  if(!(window.crypto&&crypto.subtle))return Promise.resolve({nosubtle:true});
+  return sha256Hex(canon(r.evidence)).then(function(recomputed){
+    var body={atom_id:r.atom_id,type:r.type,decision:r.decision,
+              evidence_hash:r.evidence_hash,signed_at:r.signed_at};
+    return verifyEd25519(r.verify_pubkey_b64,r.signature_b64,canon(body)).then(function(sig){
+      return {hashOk:recomputed===r.evidence_hash,expected:r.evidence_hash,
+              recomputed:recomputed,sig:sig};
+    });
+  });
+}
+
+/* -- shared row builders (safe DOM only; el() is the page helper) ------- */
+function vRow(parent,label){
+  var row=el("div","v-row");
+  row.appendChild(el("div","v-label",label));
+  var body=el("div","v-body");
+  row.appendChild(body);parent.appendChild(row);
+  return body;
+}
+function chip(cls,txt){return el("span","v-chip "+cls,txt);}
+function hashBox(parent,caption,hash,bad){
+  var box=el("div","hashbox"+(bad?" bad":""));
+  box.appendChild(el("b",null,caption+"  "));
+  box.appendChild(document.createTextNode(hash));
+  parent.appendChild(box);
+}
+function clearBox(id){var n=document.getElementById(id);while(n.firstChild)n.removeChild(n.firstChild);return n;}
+
+/* -- module 1: receipt verifier ----------------------------------------- */
+function renderVerifier(r,res){
+  var card=clearBox("v-card");
+  var b1=vRow(card,"RECEIPT");
+  b1.appendChild(chip("load","LOADED"));
+  b1.appendChild(el("div",null,r.atom_id+"  /  "+r.type));
+  b1.appendChild(el("div",null,"decision: "+r.decision+"  /  signed_at: "+r.signed_at));
+
+  if(res.nosubtle){
+    var bx=vRow(card,"WEBCRYPTO");
+    bx.appendChild(chip("na","UNAVAILABLE"));
+    bx.appendChild(el("div",null,
+      "crypto.subtle needs a secure context. Open this page over https (GitHub Pages) or http://localhost -- then both checks run here."));
+    return;
+  }
+  var b2=vRow(card,"EVIDENCE HASH");
+  b2.appendChild(chip(res.hashOk?"ok":"fail",res.hashOk?"MATCH":"MISMATCH"));
+  b2.appendChild(el("div",null,"sha256(canon(evidence)) recomputed in this browser, just now:"));
+  hashBox(b2,"expected ",res.expected,false);
+  hashBox(b2,"recomputed",res.recomputed,!res.hashOk);
+
+  var b3=vRow(card,"ED25519 LEG");
+  if(res.sig===true){
+    b3.appendChild(chip("ok","VERIFIED"));
+    b3.appendChild(el("div",null,
+      "signature_b64 verifies over canon(body) against verify_pubkey_b64 -- WebCrypto Ed25519, in this browser."));
+  }else if(res.sig===false){
+    b3.appendChild(chip("fail","FAIL"));
+    b3.appendChild(el("div",null,"the Ed25519 signature does not verify over the signed body."));
+  }else{
+    b3.appendChild(chip("na","HASH ONLY"));
+    b3.appendChild(el("div",null,res.hashOk?ED25519_LINE:
+      "this browser lacks WebCrypto Ed25519; the hash check above still stands."));
+  }
+}
+function renderPq(r){
+  var card=clearBox("v-pq");
+  var rows=[
+    ["ML-DSA-65 (FIPS 204)",r.ml_dsa_signature_b64,r.ml_dsa_public_key_b64],
+    ["SLH-DSA (FIPS 205)",r.slh_dsa_signature_b64,r.slh_dsa_public_key_b64]
+  ];
+  rows.forEach(function(row){
+    var present=!!(row[1]&&row[2]);
+    var b=vRow(card,row[0]);
+    b.appendChild(chip(present?"load":"na",present?"PRESENT":"ABSENT"));
+    if(present){
+      b.appendChild(el("div",null,
+        "signature: "+b64bytes(row[1]).length+" bytes  /  public key: "+b64bytes(row[2]).length+" bytes"));
+    }else{
+      b.appendChild(el("div",null,"not in this receipt (pq extra not installed at mint time)."));
+    }
+  });
+  var b=vRow(card,"HYBRID");
+  b.appendChild(el("div",null,"signature_alg: "+(r.signature_alg||r.alg)));
+  b.appendChild(el("div",null,PQ_LINE));
+}
+
+/* -- module 2: tamper lab ------------------------------------------------ */
+var TAMPERS=[
+  {label:"Score 15 -> 95",
+   sub:"inject a forged score",
+   desc:"Injects score: 95 into the hashed evidence summary. The signed scan grades this agent UNGOVERNED 15/100.",
+   apply:function(r){r.evidence.summary.score=95;}},
+  {label:"Tier UNGOVERNED -> SOVEREIGN",
+   sub:"rewrite the verdict",
+   desc:"Rewrites the decision to GOVERNED:SOVEREIGN and doctors the summary to agree (asserted_covered 0 -> 21, ungoverned_actions 1 -> 0). The hash catches the doctored evidence; the Ed25519 leg catches the rewritten decision.",
+   apply:function(r){r.decision="GOVERNED:SOVEREIGN";
+     r.evidence.summary.asserted_covered=21;r.evidence.summary.ungoverned_actions=0;}},
+  {label:"exec: none -> asserted_table",
+   sub:"auto-assert without a source",
+   desc:"Flips exec's matched_via from none to asserted_table. ASSERTED requires a source-declared canonical reason -- exactly what the hash forbids forging.",
+   apply:function(r){r.evidence.ontology.action_maps.forEach(function(a){
+     if(a.subject_id==="fn_exec")a.matched_via="asserted_table";});}},
+  {label:"Inject fake control NIST AC-999",
+   sub:"fabricate a framework id",
+   desc:"Adds AC-999 -- a control id that does not exist in NIST 800-53 -- to exec's mappings. The tool never fabricates a framework id; neither can a forger.",
+   apply:function(r){r.evidence.ontology.action_maps.forEach(function(a){
+     if(a.subject_id==="fn_exec")a.mappings.push({
+       basis:"injected by the tamper lab; AC-999 does not exist in NIST 800-53",
+       confidence:"asserted",fw:"NIST SP 800-53r5",id:"AC-999",
+       name:"(no such control)",provenance:"FORGED"});});}},
+  {label:"Delete the exec action",
+   sub:"the forgery of omission",
+   desc:"Removes the one UNGOVERNED action from the hashed ontology: its action map, node, and edges. Hiding the problem breaks the hash like any other edit.",
+   apply:function(r){var o=r.evidence.ontology;
+     o.action_maps=o.action_maps.filter(function(a){return a.subject_id!=="fn_exec";});
+     o.nodes=o.nodes.filter(function(n){return n.id!=="fn_exec";});
+     o.edges=o.edges.filter(function(e){return e.src!=="fn_exec"&&e.dst!=="fn_exec";});}}
+];
+function renderTamperButtons(){
+  var grid=clearBox("tamper-grid");
+  TAMPERS.forEach(function(t,i){
+    var btn=el("button","tamper-btn");
+    btn.appendChild(el("b",null,t.label));
+    btn.appendChild(el("span",null,t.sub));
+    if(!GENUINE)btn.setAttribute("disabled","disabled");
+    btn.addEventListener("click",function(){
+      document.querySelectorAll(".tamper-btn").forEach(function(b){b.classList.remove("active");});
+      btn.classList.add("active");
+      runTamper(t);
+    });
+    grid.appendChild(btn);
+  });
+}
+function runTamper(t){
+  var bad=JSON.parse(JSON.stringify(GENUINE));
+  t.apply(bad);
+  verifyReceipt(bad).then(function(res){
+    var card=clearBox("t-result");
+    var b0=vRow(card,"TAMPER");
+    b0.appendChild(el("div",null,t.label));
+    b0.appendChild(el("div",null,t.desc));
+    if(res.nosubtle){
+      var bn=vRow(card,"WEBCRYPTO");
+      bn.appendChild(chip("na","UNAVAILABLE"));
+      bn.appendChild(el("div",null,"crypto.subtle needs https or localhost to run the check here."));
+      return;
+    }
+    var b1=vRow(card,"EVIDENCE HASH");
+    b1.appendChild(chip(res.hashOk?"ok":"fail",res.hashOk?"MATCH":"MISMATCH"));
+    hashBox(b1,"expected ",res.expected,false);
+    hashBox(b1,"recomputed",res.recomputed,!res.hashOk);
+    var b2=vRow(card,"ED25519 LEG");
+    if(res.sig===true){
+      b2.appendChild(chip("ok","BODY INTACT"));
+      b2.appendChild(el("div",null,
+        "the signed body still verifies -- but it committed to the ORIGINAL evidence_hash, so the doctored evidence cannot hide behind it."));
+    }else if(res.sig===false){
+      b2.appendChild(chip("fail","FAIL"));
+      b2.appendChild(el("div",null,"the Ed25519 signature no longer verifies over the rewritten body."));
+    }else{
+      b2.appendChild(chip("na","HASH ONLY"));
+      b2.appendChild(el("div",null,ED25519_LINE));
+    }
+    var b3=vRow(card,"VERDICT");
+    var failed=!res.hashOk||res.sig===false;
+    b3.appendChild(chip(failed?"fail":"ok",failed?"TAMPER DETECTED":"CLEAN"));
+    b3.appendChild(el("div",null,!res.hashOk
+      ?"FAIL -- evidence_hash mismatch. The forged receipt cannot reproduce its own hash; verification fails from the certificate alone, no database, no network."
+      :(res.sig===false
+        ?"FAIL -- signature invalid. The body was rewritten after signing."
+        :"unexpected: this tamper was not detected (report it as a bug).")));
+  });
+}
+
+/* -- module 3: graph model preview --------------------------------------- */
+function renderGms(g){
+  var prov=clearBox("gms-prov");
+  var rc=g.receipt||{};
+  [["sig "+(rc.signature_alg||"unsigned"),null],
+   ["graph_snapshot "+String(g.graph_snapshot_hash||"").slice(0,16)+"...",g.graph_snapshot_hash],
+   [g.gms_version,null],
+   ["resolved "+String(g.resolved_at||"").slice(0,10),g.resolved_at],
+   ["source "+g.source,null]
+  ].forEach(function(c){
+    if(!c[0])return;
+    var s=el("span","chip",c[0]);
+    if(c[1])s.setAttribute("title",c[1]);
+    prov.appendChild(s);
+  });
+  var body=clearBox("gms-body");
+  (g.resolutions||[]).forEach(function(r){
+    var tr=el("tr");
+    var c1=el("td");
+    c1.appendChild(el("div","gms-act"+(r.scan_matched_via==="none"?" ungov":""),r.action));
+    if(r.scan_matched_via==="none")c1.appendChild(el("span","chip chip-ungoverned","UNGOVERNED IN SCAN"));
+    else c1.appendChild(el("span","chip chip-graph",r.scan_matched_via));
+    tr.appendChild(c1);
+    var t=r.technique||{};
+    var c2=el("td","mono");
+    c2.appendChild(el("div",null,t.id||""));
+    c2.appendChild(el("div","gms-cve",(t.tactics||[]).join(", ")));
+    tr.appendChild(c2);
+    var c3=el("td");
+    ((r.recommendation||{}).canonical_reasons||[]).forEach(function(reason){
+      c3.appendChild(el("span","chip chip-graph",reason));
+    });
+    tr.appendChild(c3);
+    var c4=el("td");
+    (r.live_threat_signals||[]).forEach(function(s){
+      var d=el("div","gms-cve");
+      d.appendChild(el("b",null,s.cve));
+      var title=String(s.title||"").replace(s.cve+": ","");
+      d.appendChild(document.createTextNode(" "+(title.length>84?title.slice(0,84)+"...":title)));
+      c4.appendChild(d);
+    });
+    tr.appendChild(c4);
+    var c5=el("td");
+    c5.appendChild(el("span","chip chip-graph",r.mapping_confidence));
+    if(r.human_review_required)c5.appendChild(el("div","gms-cve","human review required"));
+    if((r.recommendation||{}).severity)c5.appendChild(el("div","gms-cve","severity: "+r.recommendation.severity));
+    tr.appendChild(c5);
+    body.appendChild(tr);
+  });
+}
+
+/* -- fetch + boot --------------------------------------------------------- */
+function fetchFail(id,url){
+  var card=clearBox(id);
+  var b=vRow(card,"FETCH FAILED");
+  b.appendChild(chip("na","NOT LOADED"));
+  b.appendChild(el("div",null,"could not load "+url));
+  b.appendChild(el("div",null,
+    "file:// blocks fetch. Serve the repo root -- python -m http.server -- then open http://localhost:8000/demo/. On GitHub Pages this loads automatically."));
+}
+fetch(RECEIPT_URL).then(function(resp){
+  if(!resp.ok)throw new Error("HTTP "+resp.status);
+  return resp.json();
+}).then(function(r){
+  GENUINE=r;
+  renderPq(r);
+  renderTamperButtons();
+  return verifyReceipt(r).then(function(res){renderVerifier(r,res);});
+}).catch(function(){
+  fetchFail("v-card",RECEIPT_URL);
+  renderTamperButtons();
+});
+fetch(GMS_URL).then(function(resp){
+  if(!resp.ok)throw new Error("HTTP "+resp.status);
+  return resp.json();
+}).then(renderGms).catch(function(){
+  var body=clearBox("gms-body");
+  var tr=el("tr"),td=el("td","mono","could not load "+GMS_URL+" -- serve the repo root or view on GitHub Pages.");
+  td.setAttribute("colspan","5");tr.appendChild(td);body.appendChild(tr);
+});
+renderTamperButtons();
 })();
 </script>
 </body>

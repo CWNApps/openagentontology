@@ -7,6 +7,7 @@ package owns, in order, with NO new business logic of its own:
     generate(ing)       -> OntologyDoc             (carries nodes, drops dangling edges, crosswalk)
     validate(doc)       -> (ok, [Finding])         (fail-closed rigor gate)
     trust_profile.score(doc) -> TrustProfile       (deterministic tier + score)
+    risk_profile.score_risk(doc) -> RiskProfile    (v0.2 four risk sub-scores, additive)
     receipt.mint_receipt(doc) -> dict              (Ed25519 cert-only, soft-degrades to unsigned)
     badge.render_badge(...)  -> str                (standalone SVG, honest about low tiers)
 
@@ -21,8 +22,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from . import badge, receipt, trust_profile
+from . import badge, receipt, risk_profile as risk_profile_mod, trust_profile
 from .crosswalk import compact_refs
+from .risk_profile import RiskProfile
 from .generate import generate
 from .ingest import ingest
 from .schema import OntologyDoc, TrustProfile
@@ -40,12 +42,17 @@ class PipelineResult:
     badge_svg: str
     refs: list                     # compact asserted control tokens (badge chips)
     receipt: dict = field(default_factory=dict)  # {} when make_receipt=False
+    # v0.2 ADDITIVE field (defaulted, so the frozen constructor contract is unchanged):
+    # the four risk sub-scores from risk_profile.score_risk. None only if a caller builds
+    # a PipelineResult by hand without one.
+    risk_profile: RiskProfile | None = None
 
     def to_dict(self) -> dict:
         return {
             "source": self.source,
             "ok": self.ok,
             "profile": self.profile.to_dict(),
+            "risk_profile": self.risk_profile.to_dict() if self.risk_profile else {},
             "findings": [f.to_dict() for f in self.findings],
             "refs": list(self.refs),
             "ontology": self.ontology.to_dict(),
@@ -95,6 +102,7 @@ def run_pipeline(path, *, make_receipt: bool = True, key_path: str | None = None
     doc = generate(ing)
     ok, findings = validate(doc)
     profile = trust_profile.score(doc)
+    risk = risk_profile_mod.score_risk(doc)
     refs = _collect_refs(doc)
 
     title = f"OpenAgentOntology -- {profile.tier} {profile.score}/100 -- {doc.source}"
@@ -107,4 +115,5 @@ def run_pipeline(path, *, make_receipt: bool = True, key_path: str | None = None
 
     return PipelineResult(
         source=doc.source, ontology=doc, ok=ok, findings=findings,
-        profile=profile, badge_svg=badge_svg, refs=refs, receipt=rcpt)
+        profile=profile, badge_svg=badge_svg, refs=refs, receipt=rcpt,
+        risk_profile=risk)
