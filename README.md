@@ -266,7 +266,7 @@ JSON Schema, the canonical reason→control crosswalk, frameworks, tiers, and sc
 lives in [`schema/`](./schema/), generated from the code so it can never drift. The prose
 specification is [SPEC.md](./SPEC.md); the case for the category is [the manifesto](./docs/MANIFESTO.md).
 The reference [CWN AgentFDE](./examples/agent_fde/) — the agent that operationalizes all of this —
-is itself defined to the standard and scores SOVEREIGN. The standard is versioned; this is `v0.1.0`.
+is itself defined to the standard and scores SOVEREIGN. The standard is versioned; this is `v0.2.0`.
 
 ### Standards documents
 
