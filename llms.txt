@@ -15,9 +15,12 @@ Maintainer: Cyber Warrior Network (CWN) — https://cyberwarriornetwork.com
 - Source, tests, and signed scans: https://github.com/CWNApps/openagentontology
 - Schema and standard (v0.1): https://agent-ontology.cyberwarriornetwork.com/schema/v0.1
 - Category manifesto: https://github.com/CWNApps/openagentontology/blob/main/docs/MANIFESTO.md
+- Paper (preprint PDF; arXiv cs.CR forthcoming): https://agent-ontology.cyberwarriornetwork.com/docs/OAO_paper_v2.pdf
 
 ## Citable facts
 - Scanned open-interpreter (58k stars) and gpt-engineer (54k stars): zero of their side-effecting actions resolve to an asserted control.
+- Paper: "The Agent Ontology: A Static, Signed, Fabrication-Safe Crosswalk From Agent Actions to Governance Controls" (Cyber Warrior Network, 2026) -- five agents measured, with figures, a formal model and ten invariants, a tamper matrix, and a non-agentic false-positive baseline; every number reproduces with python paper/experiments.py.
+- A deterministic verified-or-abstain lattice boundary turns each resolution into a gate action (PROCEED / PROCEED-FLAGGED / ESCALATE); on the open-interpreter scan it escalates 15 of 21 actions to a human.
 - The exec action (arbitrary code execution on the host) maps to MITRE ATT&CK T1059 and is governed by nothing in those agents.
 - Install: git clone https://github.com/CWNApps/openagentontology ; run: python -m openagentontology ./your-agent (pure Python, two dependencies)
 - Maintainer mantra: "No Receipt. No Trust."

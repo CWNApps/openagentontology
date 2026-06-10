@@ -19,7 +19,9 @@ or someone's head. OpenAgentOntology reads the agent's own source and writes tha
 record down — typed, scored, signed, and the same every time.
 
 This is the first **Agent Ontology** — a missing layer of the agent stack.
-**[Read the manifesto →](./docs/MANIFESTO.md)**
+**[Read the manifesto →](./docs/MANIFESTO.md)** · **[Read the paper (preprint PDF) →](./docs/OAO_paper_v2.pdf)**
+
+> **Paper:** *The Agent Ontology: A Static, Signed, Fabrication-Safe Crosswalk From Agent Actions to Governance Controls* — measured on five agents, with figures, a formal model, a tamper matrix, and a non-agentic false-positive baseline. Every number reproduces with `python paper/experiments.py`. Preprint PDF above; an arXiv cs.CR version is forthcoming.
 
 ---
 
