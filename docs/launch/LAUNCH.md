@@ -1,8 +1,12 @@
 # Launch playbook — OpenAgentOntology
 
-The headline is the proof, not the pitch: *we scanned the top AI agents on GitHub and mapped
-every action to MITRE ATT&CK — most are governed by nothing.* Every post below leads with a
-number a reader can verify in one click.
+The headline is the proof, not the pitch: *we scanned the top AI agents on GitHub, mapped every
+action to MITRE ATT&CK, and found their most dangerous actions answer to no control at all.*
+Every post below leads with a number a reader can verify in one click. Precision matters here:
+the claim is zero *declared* governance bindings (every control we surface, we had to infer),
+and the single most dangerous action ungoverned even by that inference. Do not say "no control
+answers for any action" -- the heuristic layer maps most verbs, and a reader who runs the tool
+will see that.
 
 > Live URLs (already inlined below): repo `https://github.com/CWNApps/openagentontology` ·
 > demo `https://cwnapps.github.io/openagentontology/`. Swap the demo to the custom domain
@@ -49,8 +53,9 @@ stdlib-only and offline.
 Everyone's auditing the AI *model*. Nobody's auditing the *agent*.
 
 We scanned the 2 most-starred AI coding agents on GitHub.
-Both: 0 of their actions have a control that answers.
-`exec` → MITRE T1059 → governed by nothing. 🧵
+Neither declares a single governance binding. Every control we found, we had to infer.
+And the most dangerous thing each one does answers to nothing:
+`exec` → MITRE T1059 → governed by nothing, not even a guess. 🧵
 
 **2.** Your model didn't wire the money. Your *agent* did. Frameworks made agents capable;
 tracing told you what they did *after*. Nobody mapped what each action is *allowed* to do — or
@@ -89,8 +94,9 @@ better-observed after the fact (tracing, evals). Nobody mapped what it's *allowe
 answers when it acts.
 
 So we measured it. We pointed our scanner at the two most-starred autonomous coding agents on
-GitHub. Zero of their side-effecting actions resolve to a control that answers. `exec` —
-arbitrary code execution on the host — maps to MITRE ATT&CK T1059 and is governed by nothing.
+GitHub. Neither declares a single governance binding; every control the scan surfaced, it had to
+infer from a verb name. And the most dangerous action each one takes, `exec`, arbitrary code
+execution on the host, maps to MITRE ATT&CK T1059 and is governed by nothing, not even by inference.
 
 That's not a bug in those projects. It's the state of every agent shipping today, finally
 measured. Knight Capital lost $440M in 45 minutes from one unguarded automated deploy — and that
