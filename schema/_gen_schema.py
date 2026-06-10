@@ -16,7 +16,7 @@ from openagentontology import crosswalk as C
 from openagentontology import schema as S
 from openagentontology import trust_profile as TP
 
-CANON_URL = "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1"
+CANON_URL = "https://agent-ontology.cyberwarriornetwork.com/schema/v0.1"
 
 # The 13 canonical edge relations (Universal Agentic Ontology). Documented vocabulary; the
 # crosswalk emits a subset (HAS_CAPABILITY / GATED_BY / EXECUTES / ...).

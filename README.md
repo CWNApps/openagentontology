@@ -6,7 +6,7 @@ action — in one ontology that speaks every framework at once: NIST 800-53, EU 
 Act, OWASP LLM Top 10, and **MITRE ATT&CK** — every action carries the technique
 your SOC already hunts (`exec` → T1059, egress → T1048, destructive change → T1485).
 
-**By [Cyber Warrior Network](https://cyberwarriornetwork.com)** · Home: [cyberwarriornetwork.com/agent-ontology](https://cyberwarriornetwork.com/agent-ontology) · Live demo: [cwnapps.github.io/openagentontology](https://cwnapps.github.io/openagentontology/)
+**By [Cyber Warrior Network](https://cyberwarriornetwork.com)** · Home: [agent-ontology.cyberwarriornetwork.com](https://agent-ontology.cyberwarriornetwork.com) · Live demo: [cwnapps.github.io/openagentontology](https://cwnapps.github.io/openagentontology/)
 
 ```
 SOVEREIGN  ·  score 93  ·  3 frameworks  ·  NIST 800-53 AC-5 · EU AI Act Art 14 · OWASP LLM06
@@ -76,7 +76,7 @@ and no database.
 No install step. Pure Python, three dependencies (`pyyaml`, `cryptography`).
 
 ```bash
-git clone https://github.com/cyberwarriornetwork/openagentontology
+git clone https://github.com/CWNApps/openagentontology
 cd openagentontology
 PYTHONPATH=. python -m openagentontology examples/sample_agent
 ```

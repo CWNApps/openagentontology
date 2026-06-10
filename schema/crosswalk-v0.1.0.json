@@ -1,5 +1,5 @@
 {
-  "$schema_url": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/crosswalk.json",
+  "$schema_url": "https://agent-ontology.cyberwarriornetwork.com/schema/v0.1/crosswalk.json",
   "asserted_table": {
     "approval_required": [
       {

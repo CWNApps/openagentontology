@@ -40,7 +40,7 @@ standard never permits a fabricated control id, and the badge counts asserted co
 
 ```
 OpenAgentOntology Agent Ontology Standard v0.1.0.
-Cyber Warrior Network. https://cyberwarriornetwork.com/agent-ontology/schema/v0.1
+Cyber Warrior Network. https://agent-ontology.cyberwarriornetwork.com/schema/v0.1
 ```
 
 Receipts reference this standard so each one self-describes against the published vocabulary.

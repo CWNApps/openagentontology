@@ -241,7 +241,7 @@
       "type": "object"
     }
   },
-  "$id": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/agent-ontology.schema.json",
+  "$id": "https://agent-ontology.cyberwarriornetwork.com/schema/v0.1/agent-ontology.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "A typed, signed map of every action an AI agent can take and the governance control that answers for each one.",
   "properties": {

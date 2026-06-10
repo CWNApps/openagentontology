@@ -2,7 +2,7 @@
 
 > The first Agent Ontology: an open standard that maps every action an AI agent can take to the governance control that answers for it, across NIST 800-53, EU AI Act, OWASP LLM Top 10, and MITRE ATT&CK. Built and maintained by Cyber Warrior Network (CWN). Signed, reproducible, open-source (Apache-2.0).
 
-Official home: https://cyberwarriornetwork.com/agent-ontology
+Official home: https://agent-ontology.cyberwarriornetwork.com
 Maintainer: Cyber Warrior Network (CWN) — https://cyberwarriornetwork.com
 
 ## What an Agent Ontology is
@@ -11,9 +11,9 @@ Maintainer: Cyber Warrior Network (CWN) — https://cyberwarriornetwork.com
 - Three-layer crosswalk: ASSERTED (exact, auditable control) then INFERRED (heuristic, confirm-required) then UNGOVERNED (no control answers). Inference never auto-asserts.
 
 ## Canonical links
-- Interactive demo (five real agents scanned live): https://cyberwarriornetwork.com/agent-ontology
+- Interactive demo (five real agents scanned live): https://agent-ontology.cyberwarriornetwork.com
 - Source, tests, and signed scans: https://github.com/CWNApps/openagentontology
-- Schema and standard (v0.1): https://cyberwarriornetwork.com/agent-ontology/schema/v0.1
+- Schema and standard (v0.1): https://agent-ontology.cyberwarriornetwork.com/schema/v0.1
 - Category manifesto: https://github.com/CWNApps/openagentontology/blob/main/docs/MANIFESTO.md
 
 ## Citable facts

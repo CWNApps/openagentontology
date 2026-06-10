@@ -1,5 +1,5 @@
 {
-  "$schema_url": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/frameworks.json",
+  "$schema_url": "https://agent-ontology.cyberwarriornetwork.com/schema/v0.1/frameworks.json",
   "allowed_frameworks": [
     "NIST SP 800-53r5",
     "EU AI Act",
