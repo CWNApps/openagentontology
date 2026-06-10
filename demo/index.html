@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAgentOntology — Map every AI agent action to its governance control (NIST · EU AI Act · MITRE ATT&CK)</title>
+<meta name="description" content="The first Agent Ontology: maps every AI agent action to the governance control that answers for it — NIST 800-53, EU AI Act, OWASP LLM Top 10, and MITRE ATT&CK. Signed, reproducible, open-source.">
+<link rel="canonical" href="https://cyberwarriornetwork.com/agent-ontology">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenAgentOntology — the first Agent Ontology">
+<meta property="og:description" content="Map every AI agent action to the governance control that answers for it: NIST 800-53, EU AI Act, OWASP LLM Top 10, MITRE ATT&CK. Open-source.">
+<meta property="og:url" content="https://cyberwarriornetwork.com/agent-ontology">
+<meta property="og:site_name" content="Cyber Warrior Network">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "OpenAgentOntology",
+  "description": "The first Agent Ontology: a typed, signed map of every action an AI agent can take and the governance control that answers for each one, across NIST 800-53, EU AI Act, OWASP LLM Top 10, and MITRE ATT&CK.",
+  "url": "https://cyberwarriornetwork.com/agent-ontology",
+  "sameAs": ["https://github.com/CWNApps/openagentontology", "https://cwnapps.github.io/openagentontology/"],
+  "codeRepository": "https://github.com/CWNApps/openagentontology",
+  "programmingLanguage": "Python",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "applicationCategory": "SecurityApplication",
+  "author": { "@type": "Organization", "name": "Cyber Warrior Network", "url": "https://cyberwarriornetwork.com" },
+  "publisher": { "@type": "Organization", "name": "Cyber Warrior Network", "url": "https://cyberwarriornetwork.com" },
+  "keywords": "AI agent governance, Agent Ontology, MITRE ATT&CK, NIST 800-53, EU AI Act, AI compliance, agent security, Compliance as Code, AI accountability"
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=DM+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Canonical Trust Gate tokens (verbatim from app/page.tsx) ─────────── */
+:root{
+  --bg:#0A0A0A; --orange:#FF4500; --cream:#EFEBE2;
+  --dim:rgba(239,235,226,0.5); --dimLo:rgba(239,235,226,0.25);
+  --cardBg:rgba(239,235,226,0.05); --border:rgba(255,69,0,0.2);
+  --green:#22c55e; --red:#ef4444; --yellow:#f59e0b;
+  --head:'Archivo Black',sans-serif; --label:'Bebas Neue',sans-serif;
+  --mono:'JetBrains Mono',monospace; --body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6}
+a{text-decoration:none}
+
+.inner{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:clamp(40px,6vw,64px) 0;border-top:1px solid var(--border)}
+.section-label{font-family:var(--label);font-size:13px;letter-spacing:.2em;color:var(--orange);margin-bottom:14px}
+.h2{font-family:var(--head);font-size:clamp(22px,4vw,38px);color:var(--cream);line-height:1.12;margin-bottom:16px}
+.body-text{color:var(--dim);font-size:15px;line-height:1.65}
+.card{background:var(--cardBg);border:1.5px solid var(--border);padding:24px}
+.mono{font-family:var(--mono)}
+
+nav{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);
+  backdrop-filter:blur(8px);padding:14px 0}
+nav .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.wordmark{font-family:var(--head);font-size:15px;color:var(--cream);letter-spacing:.02em}
+.wordmark span{color:var(--orange)}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap}
+.navlinks a{font-family:var(--mono);font-size:11px;color:var(--dim);padding:6px 12px;border:1px solid var(--border);
+  transition:border-color .15s,color .15s}
+.navlinks a:hover{border-color:var(--orange);color:var(--cream)}
+
+.hero{padding:clamp(44px,7vw,80px) 0 clamp(32px,5vw,56px)}
+.hero h1{font-family:var(--head);font-size:clamp(30px,6vw,60px);color:var(--cream);line-height:1.02;
+  margin-bottom:22px;max-width:880px}
+.hero h1 span{color:var(--orange)}
+.tagcmd{display:inline-block;font-family:var(--mono);font-size:13px;color:var(--orange);
+  background:rgba(255,69,0,.08);border:1px solid var(--border);padding:9px 16px;margin-top:6px}
+
+/* ── Before/After toggle ─────────────────────────────────────────────── */
+.toggle{display:inline-flex;border:1.5px solid var(--border);margin-bottom:16px;flex-wrap:wrap}
+.tog-btn{display:flex;flex-direction:column;gap:3px;align-items:flex-start;background:transparent;
+  color:var(--dim);border:none;border-right:1px solid var(--border);padding:11px 22px;cursor:pointer;
+  font-family:var(--body);transition:background .18s,color .18s}
+.tog-btn:last-child{border-right:none}
+.tog-btn b{font-family:var(--head);font-size:14px}
+.tog-btn span{font-family:var(--mono);font-size:10px;letter-spacing:.12em}
+.tog-btn:hover{color:var(--cream)}
+.tog-btn.active{background:var(--orange);color:var(--bg)}
+.tog-btn.active span{color:var(--bg)}
+.tog-cap{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-bottom:24px;max-width:780px;line-height:1.6}
+.tog-cap b{color:var(--cream)} .tog-cap .up{color:var(--orange)} .tog-cap .down{color:var(--red)}
+
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;border:1.5px solid var(--border)}
+.stat-cell{background:var(--cardBg);padding:22px 20px;border-right:1px solid var(--border)}
+.stat-num{font-family:var(--head);font-size:clamp(30px,5vw,46px);line-height:1}
+.stat-cap{font-family:var(--body);font-size:12px;color:var(--dim);margin-top:8px;line-height:1.4}
+.n-orange{color:var(--orange)} .n-cream{color:var(--cream)} .n-red{color:var(--red)} .n-dim{color:var(--dim)}
+
+/* ── Graph ───────────────────────────────────────────────────────────── */
+.graph-wrap{display:grid;grid-template-columns:1fr 318px;gap:1px;border:1.5px solid var(--border);background:var(--border)}
+.graph-stage{background:#070707;position:relative;min-height:0;overflow:hidden}
+svg.g-root{width:100%;height:auto;display:block}
+svg.g-root .edge{fill:none;stroke:rgba(239,235,226,0.12);stroke-width:1.2;transition:stroke .25s,stroke-width .25s,opacity .25s}
+svg.g-root .node-g{cursor:pointer;transition:opacity .25s}
+svg.g-root .node-g .box{transition:transform .2s,filter .2s;transform-box:fill-box;transform-origin:center}
+svg.g-root.dim .node-g:not(.hl){opacity:.16}
+svg.g-root.dim .edge:not(.hl){opacity:.05}
+svg.g-root .edge.hl{stroke:var(--orange);stroke-width:2;opacity:1}
+svg.g-root .node-g.hl .box{transform:scale(1.07)}
+.node-rect{stroke-width:1.5}
+.node-txt{font-family:var(--mono);font-size:12px;fill:var(--cream);dominant-baseline:middle}
+.st-agent .node-rect{fill:var(--orange);stroke:var(--orange)}
+.st-agent .node-txt{fill:var(--bg);font-family:var(--head);font-size:14px}
+.st-asserted .node-rect{fill:rgba(255,69,0,0.16);stroke:var(--orange)}
+.st-asserted .node-txt{fill:var(--cream)}
+.st-inferred .node-rect{fill:rgba(239,235,226,0.04);stroke:rgba(239,235,226,0.38);stroke-dasharray:4 3}
+.st-inferred .node-txt{fill:var(--dim)}
+.st-ungoverned .node-rect{fill:rgba(239,68,68,0.10);stroke:var(--red)}
+.st-ungoverned .node-txt{fill:#fca5a5}
+.st-op .node-rect{fill:transparent;stroke:rgba(239,235,226,0.22)}
+.st-op .node-txt{fill:var(--dimLo);font-size:11px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.graph-panel{background:var(--bg);padding:20px;display:flex;flex-direction:column;gap:12px;min-height:360px}
+.gp-hint{font-family:var(--mono);font-size:12px;color:var(--dimLo);line-height:1.6}
+.gp-hint b{color:var(--cream)}
+.gp-title{font-family:var(--head);font-size:16px;color:var(--cream);word-break:break-word}
+.gp-meta{font-family:var(--mono);font-size:11px;color:var(--dim);word-break:break-all}
+.gp-state{display:inline-block;font-family:var(--label);font-size:12px;letter-spacing:.12em;padding:4px 10px;width:fit-content}
+.gp-state.asserted{color:var(--orange);background:rgba(255,69,0,.1);border:1px solid var(--border)}
+.gp-state.inferred{color:var(--cream);background:rgba(239,235,226,.06);border:1px solid var(--dimLo)}
+.gp-state.ungoverned{color:var(--red);background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.4)}
+.gp-state.agent,.gp-state.op{color:var(--dim);background:var(--cardBg);border:1px solid var(--border)}
+.gp-maprow{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11px;padding:7px 0;border-bottom:1px solid var(--border)}
+.gp-maprow .fw{color:var(--cream)} .gp-maprow .cf{color:var(--dim)}
+.gp-fix{border:1px solid var(--border);background:rgba(255,69,0,.05);padding:11px 13px;font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--dim)}
+.gp-fix.ungov{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.35)}
+.gp-fix .lead{display:block;font-family:var(--label);letter-spacing:.1em;font-size:11px;margin-bottom:5px;color:var(--cream)}
+.gp-fix .k{color:var(--orange)} .gp-fix.ungov .k{color:#fca5a5}
+.g-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.g-legend span{display:flex;align-items:center;gap:7px}
+.g-legend i{width:16px;height:12px;display:inline-block;border:1.5px solid}
+.lg-asserted{background:rgba(255,69,0,.16);border-color:var(--orange)}
+.lg-inferred{background:rgba(239,235,226,.04);border-color:rgba(239,235,226,.38)}
+.lg-ungoverned{background:rgba(239,68,68,.10);border-color:var(--red)}
+.lg-agent{background:var(--orange);border-color:var(--orange)}
+.lg-op{background:transparent;border-color:rgba(239,235,226,.22)}
+
+.tabs{display:flex;gap:1px;flex-wrap:wrap}
+.tab-btn{padding:11px 20px;font-family:var(--label);font-size:14px;letter-spacing:.06em;border:1px solid var(--border);
+  background:var(--cardBg);color:var(--dim);cursor:pointer;transition:color .15s,background .15s}
+.tab-btn:hover{color:var(--cream)}
+.tab-btn.active{background:var(--orange);color:var(--bg)}
+.tab-panel{display:none;border:1.5px solid var(--border);border-top:none;max-height:480px;overflow:auto;animation:fadeIn .3s}
+.tab-panel.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:13px}
+/* opaque header (#1f100a = obsidian + 8% orange, baked solid) so scrolling rows can't bleed through;
+   sticks to top:0 of the panel's OWN scroll box, not the page nav */
+th{background:#1f100a;color:var(--orange);padding:11px 12px;text-align:left;
+  font-family:var(--label);font-size:12px;letter-spacing:.1em;position:sticky;top:0;z-index:2;
+  border-bottom:1.5px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--cream)}
+td.mono{color:var(--dim)}
+tr:hover td{background:rgba(255,69,0,.04)}
+td.fix{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+td.fix .k{color:var(--orange)} td.fix.none{color:var(--dimLo)} td.fix.ungov .k{color:#fca5a5}
+.chip{display:inline-block;padding:2px 8px;font-size:11px;font-family:var(--mono);margin:2px}
+.chip-asserted{background:var(--orange);color:var(--bg)}
+.chip-inferred{border:1px solid var(--dimLo);color:var(--dim)}
+.chip-ungoverned{border:1px solid var(--red);color:#fca5a5}
+.chip-advisory{border:1px solid var(--border);color:var(--dim)}
+
+.score-hero{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.score-num{font-family:var(--head);font-size:clamp(3.6rem,10vw,6rem);line-height:.9}
+.score-tier{font-family:var(--label);font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:.12em}
+.score-of{font-family:var(--mono);font-size:14px;color:var(--dimLo)}
+.score-delta{font-family:var(--mono);font-size:13px;padding:4px 10px;border:1px solid var(--border)}
+.bar-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.bar-label{width:96px;font-family:var(--label);font-size:14px;letter-spacing:.06em;text-align:right;color:var(--cream);flex-shrink:0}
+.bar-track{flex:1;height:30px;background:rgba(239,235,226,0.05);border:1px solid var(--border);position:relative;overflow:hidden}
+.bar-fill{height:100%;width:0;background:var(--orange);transition:width 1s cubic-bezier(.2,.7,.2,1),background .4s}
+.bar-fill.low{background:var(--red)}
+.bar-val{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:12px;color:var(--cream)}
+.bar-weight{width:54px;font-family:var(--mono);font-size:11px;color:var(--dimLo);flex-shrink:0}
+
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;border:1.5px solid var(--border)}
+.flow-step{background:var(--cardBg);padding:22px;display:flex;flex-direction:column;gap:12px}
+.flow-head{display:flex;align-items:center;gap:12px}
+.flow-num{width:34px;height:34px;background:var(--orange);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:15px;flex-shrink:0}
+.flow-num.red{background:var(--red)} .flow-num.dim{background:transparent;border:1.5px solid var(--dimLo);color:var(--dim)}
+.flow-title{font-family:var(--head);font-size:14px;color:var(--cream)}
+.flow-code{background:#070707;border:1px solid var(--border);color:var(--cream);padding:12px;font-family:var(--mono);font-size:11.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+
+.zml{border:1.5px solid var(--border)}
+.zml-section{padding:22px 26px;border-bottom:1px solid var(--border)}
+.zml-section:last-child{border-bottom:none}
+.zml-label{font-family:var(--label);font-size:14px;color:var(--orange);letter-spacing:.14em;margin-bottom:10px}
+.zml-section p{color:var(--dim);font-size:15px;line-height:1.65}
+.zml-section p.bottomline{color:var(--cream);font-style:italic}
+.zml-section ul{margin-left:20px;color:var(--dim)}
+.zml-section li{margin-bottom:6px;font-size:14px}
+.zml-cmd{background:#070707;border:1px solid var(--border);color:var(--orange);padding:10px 16px;font-family:var(--mono);font-size:14px;display:inline-block;margin-top:8px}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────── */
+.faq-item{border:1.5px solid var(--border);margin-bottom:-1px}
+.faq-item summary{cursor:pointer;padding:18px 22px;font-family:var(--head);font-size:15px;color:var(--cream);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:color .15s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';color:var(--orange);font-family:var(--mono);font-size:20px;flex-shrink:0}
+.faq-item[open] summary::after{content:'\2013'}
+.faq-item summary:hover{color:var(--orange)}
+.faq-a{padding:0 22px 20px;color:var(--dim);font-size:14px;line-height:1.65}
+.faq-a code{font-family:var(--mono);color:var(--orange);font-size:.92em}
+.faq-a b{color:var(--cream)}
+
+footer{border-top:1px solid var(--border);padding:24px 0}
+footer .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+footer span{font-family:var(--mono);font-size:11px;color:var(--dimLo)}
+
+@media(max-width:820px){
+  .graph-wrap{grid-template-columns:1fr}
+  .graph-panel{min-height:0;border-top:1px solid var(--border)}
+}
+@media(max-width:540px){
+  .bar-label{width:72px;font-size:12px}
+  .tab-btn{font-size:12px;padding:9px 13px}
+  table{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="inner">
+  <div class="wordmark">OPEN·AGENT·<span>ONTOLOGY</span></div>
+  <div class="navlinks">
+    <a href="#what">Category</a><a href="#graph">Structure</a><a href="#data">Live Data</a><a href="#score">Trust Profile</a>
+    <a href="#flow">Crosswalk</a><a href="#fde">AgentFDE</a><a href="#faq">FAQ</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="inner">
+  <div class="section-label">THE FIRST AGENT ONTOLOGY · OPEN-CORE · v0.1.0</div>
+  <h1>Your agent can wire money and deploy code.<br><span>Which control answers for it?</span></h1>
+  <p class="body-text" style="max-width:660px;margin-bottom:22px">
+    Frameworks made agents powerful. Observability told you what they did.
+    <b style="color:var(--cream)">Nobody mapped who answers when an agent acts</b> — until now.
+    OpenAgentOntology reads your agent's code, policies, and specs (never executing them) and emits a
+    signed ontology that maps every action to the control that governs it. One scan. Every framework. One receipt.</p>
+  <div style="font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:18px">
+    Speaks <b style="color:var(--cream)">NIST 800-53 · EU AI Act · OWASP LLM Top 10 · <span style="color:var(--orange)">MITRE ATT&CK</span></b>
+    — every action also carries the technique your SOC already hunts (<span style="color:var(--orange)">T1059</span>, <span style="color:var(--orange)">T1048</span>, <span style="color:var(--orange)">T1485</span>…).</div>
+  <div class="tagcmd">python -m openagentontology your-agent-dir/</div>
+</div></header>
+
+<!-- ═══ WHAT IS AN AGENT ONTOLOGY ═══════════════════════════════════════ -->
+<section id="what"><div class="inner">
+  <div class="section-label">A NEW CATEGORY</div>
+  <h2 class="h2">What is an Agent Ontology?</h2>
+  <p class="body-text" style="max-width:700px;font-size:17px;color:var(--cream)">
+    A typed, signed map of every action an AI agent can take — and the governance control that
+    answers for each one. This is the first one.</p>
+
+  <div style="margin-top:30px">
+    <div class="section-label" style="color:var(--dim);margin-bottom:10px">THE AGENT STACK HAS THREE LAYERS. THE INDUSTRY SHIPPED TWO.</div>
+    <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <div class="stat-cell">
+        <div style="font-family:var(--label);font-size:19px;letter-spacing:.08em;color:var(--dim)">FRAMEWORKS</div>
+        <div class="stat-cap">LangChain · CrewAI · MCP — makes agents <b style="color:var(--cream)">capable</b>. Crowded.</div>
+      </div>
+      <div class="stat-cell">
+        <div style="font-family:var(--label);font-size:19px;letter-spacing:.08em;color:var(--dim)">OBSERVABILITY</div>
+        <div class="stat-cap">LangSmith · OpenTelemetry — tells you what they <b style="color:var(--cream)">did</b>. Crowded.</div>
+      </div>
+      <div class="stat-cell" style="background:rgba(255,69,0,.09)">
+        <div style="font-family:var(--label);font-size:19px;letter-spacing:.08em;color:var(--orange)">AGENT ONTOLOGY</div>
+        <div class="stat-cap">who <b style="color:var(--orange)">answers</b> for each action. <b style="color:var(--cream)">Empty — until now.</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:24px">
+    <div class="stat-cell">
+      <div class="section-label">COMPLIANCE-AS-CODE, FOR AGENTS</div>
+      <p class="body-text" style="font-size:14px">You know <b style="color:var(--cream)">Compliance as Code</b> — OPA, Chef InSpec,
+        HashiCorp Sentinel, Checkov — proving your <i>cloud config</i> meets the rule. This is the same rigor for the thing the
+        cloud now runs: <b style="color:var(--cream)">autonomous agents</b>. New surface, same proof.</p>
+    </div>
+    <div class="stat-cell">
+      <div class="section-label">WHY IT'S REMARKABLE</div>
+      <p class="body-text" style="font-size:14px">The <b style="color:var(--cream)">org chart</b> for your non-human workforce.
+        The <b style="color:var(--cream)">safety data sheet</b> for autonomous software. The <b style="color:var(--cream)">building
+        inspection</b> — not the smoke-detector log that fires after the breach.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:26px;font-family:var(--label);font-size:19px;letter-spacing:.04em;color:var(--cream);line-height:1.5">
+    Frameworks make agents powerful. Observability tells you what they did.
+    <span style="color:var(--orange)">The Agent Ontology tells you who answers.</span></p>
+  <p class="body-text" style="margin-top:14px;font-size:13px">Grounded in a live <b style="color:var(--cream)">NICE × MITRE ATT&CK × O*NET</b> control crosswalk, so every governed action also carries the <b style="color:var(--cream)">ATT&CK technique your SOC already hunts</b>. The map isn't guessed; it's retrieved.</p>
+</div></section>
+
+<!-- ═══ GRAPH ══════════════════════════════════════════════════════════ -->
+<section id="graph"><div class="inner">
+  <div class="section-label">THE SHAPE OF GOVERNANCE</div>
+  <h2 class="h2" id="graph-title">Ontology structure</h2>
+
+  <div class="toggle" id="toggle">
+    <button class="tog-btn" data-ds="sample"><b>sample_agent</b><span>BEFORE · UNGOVERNED</span></button>
+    <button class="tog-btn" data-ds="hardened"><b>hardened_agent</b><span>AFTER · GOVERNED</span></button>
+    <button class="tog-btn" data-ds="fde"><b>CWN AgentFDE</b><span>DOGFOOD · SOVEREIGN</span></button>
+    <button class="tog-btn" data-ds="oi"><b>open-interpreter</b><span>REAL · IN THE WILD</span></button>
+    <button class="tog-btn" data-ds="gpte"><b>gpt-engineer</b><span>REAL · IN THE WILD</span></button>
+  </div>
+  <p class="tog-cap" id="tog-cap"></p>
+
+  <div class="stat-grid" id="summary" style="margin-bottom:24px"></div>
+
+  <div class="graph-wrap">
+    <div class="graph-stage">
+      <svg class="g-root" id="g-root" viewBox="0 0 1060 720" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="Radial governance map"></svg>
+    </div>
+    <div class="graph-panel" id="g-panel"></div>
+  </div>
+
+  <div class="g-legend">
+    <span><i class="lg-agent"></i> Agent</span>
+    <span><i class="lg-asserted"></i> Asserted control</span>
+    <span><i class="lg-inferred"></i> Inferred (confirm)</span>
+    <span><i class="lg-ungoverned"></i> Ungoverned</span>
+    <span><i class="lg-op"></i> Runtime operation</span>
+  </div>
+</div></section>
+
+<!-- ═══ LIVE DATA ══════════════════════════════════════════════════════ -->
+<section id="data"><div class="inner">
+  <div class="section-label">RAW OUTPUT</div>
+  <h2 class="h2">Live demo — the actual ontology</h2>
+  <p class="body-text mono" id="data-sub" style="margin-bottom:22px;font-size:13px"></p>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="t-nodes">Nodes</button>
+    <button class="tab-btn" data-tab="t-edges">Edges</button>
+    <button class="tab-btn" data-tab="t-maps">Action Maps</button>
+  </div>
+  <div class="tab-panel active" id="t-nodes"><table>
+    <thead><tr><th>ID</th><th>Type</th><th>Name</th><th>Provenance</th></tr></thead>
+    <tbody id="nodes-body"></tbody></table></div>
+  <div class="tab-panel" id="t-edges"><table>
+    <thead><tr><th>Source</th><th>Relationship</th><th>Target</th></tr></thead>
+    <tbody id="edges-body"></tbody></table></div>
+  <div class="tab-panel" id="t-maps"><table>
+    <thead><tr><th>Action</th><th>Matched Via</th><th>Framework Mappings</th><th>To Assert</th></tr></thead>
+    <tbody id="maps-body"></tbody></table></div>
+</div></section>
+
+<!-- ═══ SCORECARD ══════════════════════════════════════════════════════ -->
+<section id="score"><div class="inner">
+  <div class="section-label">TRUST PROFILE</div>
+  <h2 class="h2">Scored posture</h2>
+  <div class="score-hero">
+    <span class="score-num" id="score-num">0</span>
+    <span class="score-of">/ 100</span>
+    <span class="score-tier" id="score-tier"></span>
+    <span class="score-delta" id="score-delta" style="display:none"></span>
+  </div>
+  <div id="bars"></div>
+  <div class="card" style="margin-top:24px">
+    <div class="section-label" style="margin-bottom:12px">RATIONALE</div>
+    <ul id="rationale-list" style="margin-left:18px;color:var(--dim);font-size:14px;line-height:1.7"></ul>
+  </div>
+</div></section>
+
+<!-- ═══ CROSSWALK FLOW ═════════════════════════════════════════════════ -->
+<section id="flow"><div class="inner">
+  <div class="section-label">HOW A CONTROL IS RESOLVED</div>
+  <h2 class="h2">Three layers. One verdict.</h2>
+  <p class="body-text" style="margin-bottom:24px;max-width:680px">
+    Every action drops through three layers in order. The first that matches wins — and the layer it
+    matched on becomes the confidence you can trust. <b style="color:var(--cream)">Hardening an agent means
+    pushing every action up to Layer&nbsp;1.</b></p>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-head"><div class="flow-num">1</div><div class="flow-title">ASSERTED TABLE</div></div>
+      <p class="body-text" style="font-size:13px">The action declares a <span class="mono" style="color:var(--orange)">reason:</span>
+        that's a canonical deny key. Exact match. Full-confidence, auditable mappings.</p>
+      <div class="flow-code" id="flow-ex-1"></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-head"><div class="flow-num dim">2</div><div class="flow-title">HEURISTIC</div></div>
+      <p class="body-text" style="font-size:13px">No declared reason. The label matches a strong verb, so controls
+        are emitted but <span class="chip chip-inferred">INFERRED</span> — a guess you must confirm.</p>
+      <div class="flow-code" id="flow-ex-2"></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-head"><div class="flow-num red">3</div><div class="flow-title">NO MATCH</div></div>
+      <p class="body-text" style="font-size:13px">No reason, no verb. The action is
+        <span class="chip chip-ungoverned">UNGOVERNED</span>. Empty mappings. Fix these first.</p>
+      <div class="flow-code" id="flow-ex-3"></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ AGENTFDE ════════════════════════════════════════════════════════ -->
+<section id="fde"><div class="inner">
+  <div class="section-label">FROM UNGOVERNED TO GOVERNED — ONE COMMAND</div>
+  <h2 class="h2">CWN AgentFDE</h2>
+  <p class="body-text" style="max-width:700px">
+    A human Forward Deployed Engineer scans your agent, finds the ungoverned actions, writes the
+    policy gates, proves the tier moved, and hands off a report. <b style="color:var(--cream)">AgentFDE
+    does it autonomously</b> — scan → triage → generate the governance → re-score → notarize → hand off.
+    Deploy it against any agent, workflow, or policy set to make onboarding a single command.</p>
+  <div class="tagcmd" style="margin:20px 0">python -m openagentontology.fde your-agent-dir/</div>
+  <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">
+    <div class="stat-cell"><div class="stat-num n-red">41</div><div class="stat-cap">sample_agent — before, UNGOVERNED</div></div>
+    <div class="stat-cell"><div class="stat-num" style="color:var(--orange)">→</div><div class="stat-cap">AgentFDE writes governance.agent.yaml + governance.rego + a signed receipt</div></div>
+    <div class="stat-cell"><div class="stat-num n-cream">88</div><div class="stat-cap">after, projected — HARDENED, +47</div></div>
+  </div>
+  <p class="body-text" style="margin-top:16px;font-size:13px;color:var(--dimLo)">
+    It never runs your code. The generated manifest scans <b style="color:var(--cream)">SOVEREIGN 96</b> on its own
+    — real governance, not a stub. And AgentFDE itself is a governed agent (<b style="color:var(--cream)">SOVEREIGN 94</b>):
+    the tool governs the tool that does the governing.</p>
+</div></section>
+
+<!-- ═══ ZML ════════════════════════════════════════════════════════════ -->
+<section id="zml"><div class="inner">
+  <div class="section-label">ZML EXPLANATION</div>
+  <h2 class="h2">What this is, in four lines</h2>
+  <div class="zml">
+    <div class="zml-section">
+      <div class="zml-label">Bottom Line</div>
+      <p class="bottomline">OAO reads your agent's code, policies, and API specs — never executing them — and
+        outputs a signed ontology that maps every action to the governance control that answers for it.
+        One scan. Every framework. One receipt.</p>
+    </div>
+    <div class="zml-section">
+      <div class="zml-label">So What?</div>
+      <p>If your agent can wire money, deploy code, or export data, someone is liable when it misbehaves.
+        OAO tells you which controls cover each action, which are only inferred (need human confirmation),
+        and which are completely ungoverned (fix first). Toggle <b style="color:var(--cream)">before/after</b>
+        above: declaring a canonical reason on every action moves the same agent from 41 to 93.</p>
+    </div>
+    <div class="zml-section">
+      <div class="zml-label">What's True</div>
+      <ul>
+        <li>13 node types (Agent, Capability, Tool, Task, Decision, Policy, Gate, Evidence, Outcome, Resource, Domain, Workflow, Actor)</li>
+        <li>13 edge types (OWNS, DELEGATES_TO, HAS_CAPABILITY, USES, EXECUTES, PART_OF, PRODUCES, MAKES, GOVERNED_BY, SUPPORTED_BY, ENFORCES, GATED_BY, OPERATES_ON)</li>
+        <li>7 ingestion formats (Rego, OpenAPI, MCP, speckit, agentdef, Python AST, directory)</li>
+        <li>3-layer crosswalk: ASSERTED (exact, auditable) → HEURISTIC (verb-based, confirm) → UNGOVERNED (no match, fix first)</li>
+        <li>10 canonical deny reasons, 35+ control mappings across NIST 800-53, EU AI Act, OWASP LLM Top 10, NIST AI RMF, MITRE ATT&CK, OCSF, NICE</li>
+        <li>4 trust tiers: SOVEREIGN (≥90), HARDENED (≥75), DEVELOPING (≥50), UNGOVERNED (&lt;50)</li>
+        <li>Ed25519 signed receipt — verifiable from the certificate alone, no network call</li>
+      </ul>
+    </div>
+    <div class="zml-section">
+      <div class="zml-label">What You Need To Do</div>
+      <p>Run the scan, read the trust profile, and declare a canonical reason on every ungoverned or inferred action.</p>
+      <div class="zml-cmd">python -m openagentontology your-agent-dir/</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ FAQ ════════════════════════════════════════════════════════════ -->
+<section id="faq"><div class="inner">
+  <div class="section-label">QUESTIONS A SKEPTIC ASKS</div>
+  <h2 class="h2">FAQ</h2>
+  <div style="margin-top:8px">
+    <details class="faq-item" open>
+      <summary>How is this different from OPA (or any policy engine)?</summary>
+      <div class="faq-a">OPA <b>enforces</b> policy at runtime — it's the gate that returns allow/deny.
+        OpenAgentOntology <b>maps</b> your agent's actions to the controls that should govern them and shows
+        which ones have <b>no gate at all</b>. OPA is the lock; OAO is the audit that walks the building and
+        finds the doors with no lock — then translates each into NIST 800-53, EU AI Act, and OWASP so your
+        auditor, regulator, and board each read it in their own language. They compose: OAO ingests your
+        <code>.rego</code> as input, and an action behind an OPA gate with a canonical deny reason scores
+        <b>ASSERTED</b>. OAO doesn't enforce anything; it tells you where enforcement is missing.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How is this different from tracing / observability (LangSmith, OpenTelemetry)?</summary>
+      <div class="faq-a">Tracing tells you what your agent <b>did</b> on a given run. OAO tells you — statically,
+        from the source, before it runs — what it <b>can</b> do and which control answers for each action.
+        Observability is the flight recorder; OAO is the pre-flight inspection that maps every control surface.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Does it run my agent's code?</summary>
+      <div class="faq-a">No. It parses source as an AST and reads text — it <b>never executes</b> anything, and the
+        core pipeline makes <b>no network calls</b>. Nothing you point it at runs. The receipt is signed locally.</div>
+    </details>
+    <details class="faq-item">
+      <summary>"Inferred" sounds like guessing — why should I trust it?</summary>
+      <div class="faq-a">Because it's <b>labeled</b> as a guess. A verb heuristic (<code>send_*</code> → egress
+        controls) is tagged <b>INFERRED</b> so you confirm it; only an exact, declared canonical reason becomes
+        <b>ASSERTED</b>. The badge counts asserted controls only, and the tool never constructs a framework id
+        it can't source. Honest by construction.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I fake a passing score?</summary>
+      <div class="faq-a">No. The receipt is Ed25519-signed over a hash of the exact ontology. Edit one action to
+        inflate the grade and verification fails with <code>evidence_hash mismatch</code>. You cannot change the
+        score without breaking the receipt — that's the difference between a log and a receipt.</div>
+    </details>
+  </div>
+</div></section>
+
+<footer><div class="inner">
+  <span>OPENAGENTONTOLOGY v0.1.0 · OPEN-CORE · NO RECEIPT. NO TRUST.</span>
+  <span>Ed25519 · NIST 800-53 · EU AI Act · OWASP LLM Top 10</span>
+</div></footer>
+
+<script src="data.js?v=5"></script>
+<script>
+/* ═══ datasets (real pipeline output, from data.js) ═════════════════════ */
+var DATASETS={sample:DATA_SAMPLE, hardened:DATA_HARDENED, fde:DATA_FDE, oi:DATA_OI, gpte:DATA_GPTE};
+var META={
+  sample:{label:"sample_agent", cmd:"examples/sample_agent",
+    blurb:"A fintech agent wired together with no declared governance. Most of its money- and deploy-actions fall through to a verb guess — or nothing at all."},
+  hardened:{label:"hardened_agent", cmd:"examples/hardened_agent",
+    blurb:"The same shape of agent — but every capability and gate declares a canonical reason. Watch the inferred and ungoverned actions collapse to asserted."},
+  fde:{label:"CWN AgentFDE  (dogfood)", cmd:"examples/agent_fde",
+    blurb:"The agent that DOES the governing — scored against the same standard. SOVEREIGN 94: it declares a canonical reason on every action and wires a fail-closed gate. We don't ask you to do anything the tool doesn't do to its own author."},
+  oi:{label:"open-interpreter  (real scan)", cmd:"open-interpreter   # cloned @ e00f08e",
+    blurb:"Not a synthetic example. OpenInterpreter — ~58K★, the agent that runs code and shell on your machine — scanned as-is from GitHub. 21 side-effecting functions; exec answers to no control at all. This is the signed receipt, verbatim."},
+  gpte:{label:"gpt-engineer  (real scan)", cmd:"gpt-engineer   # cloned @ a90fcd5",
+    blurb:"A second real agent, the same verdict. gpt-engineer — ~54K★, autonomous code generation — scanned from GitHub. 6 side-effecting actions, zero asserted. The gap isn't one repo; it's the field."}
+};
+var SHORT={"NIST SP 800-53r5":"NIST 800-53","EU AI Act":"EU AI Act","OWASP LLM Top 10 (2025)":"OWASP",
+  "NIST AI RMF":"NIST AI RMF","MITRE ATT&CK":"MITRE"};
+var active="sample";
+var _shownScore=0;
+
+/* verb heuristic mirror of crosswalk.HEURISTICS — the canonical reason the tool WOULD assert */
+var HEUR=[
+  [/(?<![a-z])(?:pay|payment|wire|transfer|remit|invoice|disburse|refund)(?![a-z])/i,"dual_control_required"],
+  [/(?<![a-z])(?:export|egress|exfil|exfiltrate|upload|send|forward|transmit|share|leak)(?![a-z])/i,"regulated_egress_blocked"],
+  [/(?<![a-z])(?:pii|ssn|secret|credential|password|classif|classify|confidential|restricted|redact)(?![a-z])/i,"classification_above_ceiling"],
+  [/(?<![a-z])(?:delete|drop|purge|wipe|destroy|truncate|erase)(?![a-z])/i,"change_freeze_active"],
+  [/(?<![a-z])(?:deploy|release|ship|rollout|reconfigure|provision|migrate|publish)(?![a-z])/i,"approval_required"],
+  [/(?<![a-z])(?:approve|deny|reject|decline|cancel|adverse|terminate|suspend)(?![a-z])/i,"human_review_required"],
+  [/(?<![a-z])(?:scope|domain|admin|privilege|elevate|escalate|impersonate|root|sudo)(?![a-z])/i,"out_of_scope_domain"]
+];
+function guessReason(label){
+  for(var i=0;i<HEUR.length;i++){ if(HEUR[i][0].test(label||"")) return HEUR[i][1]; }
+  return null;
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+function stateOf(n,AM){
+  if(n.type==="Agent")return "agent";
+  var a=AM[n.id];
+  if(!a)return "op";  /* a Task with no crosswalk = a mirror runtime op (faint) */
+  if(a.matched_via==="asserted_table")return "asserted";
+  if(a.matched_via==="heuristic")return "inferred";
+  return "ungoverned";
+}
+/* the remediation move for an inferred/ungoverned action */
+function fixFor(n,AM){
+  var st=stateOf(n,AM),a=AM[n.id];
+  if(st==="inferred"){
+    var lbl=(n.props&&n.props.action)||a.label||n.name;
+    return {kind:"inferred",reason:guessReason(lbl)||"a canonical reason"};
+  }
+  if(st==="ungoverned")return {kind:"ungoverned",reason:null};
+  return null;
+}
+
+/* ═══ SUMMARY STRIP ═════════════════════════════════════════════════════ */
+function renderSummary(DATA){
+  var asserted=0,inferred=0,ungoverned=0;
+  DATA.action_maps.forEach(function(a){
+    if(a.matched_via==="asserted_table")asserted++;
+    else if(a.matched_via==="heuristic")inferred++;
+    else ungoverned++;
+  });
+  var cells=[
+    {n:DATA.nodes.length,c:"n-cream",cap:"nodes in the ontology"},
+    {n:DATA.edges.length,c:"n-cream",cap:"governance edges"},
+    {n:asserted,c:"n-orange",cap:"asserted — an exact control answers"},
+    {n:inferred,c:inferred?"n-dim":"n-dim",cap:"inferred — verb-guessed, confirm"},
+    {n:ungoverned,c:ungoverned?"n-red":"n-dim",cap:"ungoverned — nothing answers"}
+  ];
+  var box=document.getElementById("summary");
+  while(box.firstChild)box.removeChild(box.firstChild);
+  cells.forEach(function(c){
+    var cell=el("div","stat-cell");
+    cell.appendChild(el("div","stat-num "+c.c,c.n));
+    cell.appendChild(el("div","stat-cap",c.cap));
+    box.appendChild(cell);
+  });
+  return {asserted:asserted,inferred:inferred,ungoverned:ungoverned};
+}
+
+/* ═══ GRAPH ═════════════════════════════════════════════════════════════ */
+var SVGNS="http://www.w3.org/2000/svg";
+var _pinnedId=null;
+function buildDefaultPanel(){
+  var d=el("div","gp-hint");
+  function line(strong,rest){var p=el("span");p.appendChild(el("b",null,strong));p.appendChild(document.createTextNode(rest));return p;}
+  d.appendChild(document.createTextNode("Each node is an action the agent can take."));
+  d.appendChild(el("br"));d.appendChild(el("br"));
+  d.appendChild(line("Orange"," = asserted (an exact control answers)."));d.appendChild(el("br"));
+  d.appendChild(line("Dashed"," = inferred (a verb heuristic guessed — confirm it)."));d.appendChild(el("br"));
+  d.appendChild(line("Red"," = ungoverned (nothing answers — fix first)."));
+  d.appendChild(el("br"));d.appendChild(el("br"));
+  d.appendChild(document.createTextNode("Hover to trace · click to pin."));
+  return d;
+}
+function renderGraph(DATA,AM){
+  var svg=document.getElementById("g-root");
+  var panel=document.getElementById("g-panel");
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  while(panel.firstChild)panel.removeChild(panel.firstChild);
+  panel.appendChild(buildDefaultPanel());
+  _pinnedId=null; svg.classList.remove("dim");
+
+  var VBW=1060,VBH=720,CX=VBW/2,CY=VBH/2+8;
+  function abbr(s){return s.length>22?s.slice(0,20)+"…":s;}
+  function boxW(label,isAgent){var per=isAgent?9.2:7.3;return Math.max(isAgent?150:76,Math.min(224,label.length*per+26));}
+  var P={};
+  function place(n,x,y,isAgent){var lab=abbr(n.name);P[n.id]={x:x,y:y,sx:x,sy:y,w:boxW(lab,isAgent),h:isAgent?40:30,lab:lab};}
+
+  var agent=DATA.nodes.find(function(n){return n.type==="Agent";});
+  place(agent,CX,CY,true);
+  /* children ordered by type so each type occupies a contiguous arc; 1 ring if few, 2 if many */
+  var kids=DATA.nodes.filter(function(n){return n.type==="Capability";})
+    .concat(DATA.nodes.filter(function(n){return n.type==="Gate";}))
+    .concat(DATA.nodes.filter(function(n){return n.type==="Task";}));
+  var n=kids.length,two=n>9;
+  kids.forEach(function(node,i){
+    var ang=-Math.PI/2+i*(2*Math.PI/n);
+    var R=two?(i%2?212:330):288;
+    place(node,CX+R*Math.cos(ang),CY+R*Math.sin(ang));
+  });
+
+  /* AABB collision relaxation + pull-to-seed (agent pinned) */
+  var ids=Object.keys(P),PADX=16,PADY=14,M=14;
+  for(var it=0;it<260;it++){
+    for(var i=0;i<ids.length;i++)for(var j=i+1;j<ids.length;j++){
+      var a=P[ids[i]],b=P[ids[j]];
+      var dx=b.x-a.x,dy=b.y-a.y;
+      var ox=(a.w+b.w)/2+PADX-Math.abs(dx),oy=(a.h+b.h)/2+PADY-Math.abs(dy);
+      if(ox>0&&oy>0){
+        if(ox<oy){var s=(dx<0?-1:1)*ox/2;a.x-=s;b.x+=s;}
+        else{var t=(dy<0?-1:1)*oy/2;a.y-=t;b.y+=t;}
+      }
+    }
+    ids.forEach(function(id){
+      var p=P[id];
+      if(id===agent.id){p.x=CX;p.y=CY;return;}
+      p.x+=(p.sx-p.x)*0.015;p.y+=(p.sy-p.y)*0.015;
+      p.x=Math.max(M+p.w/2,Math.min(VBW-M-p.w/2,p.x));
+      p.y=Math.max(M+p.h/2,Math.min(VBH-M-p.h/2,p.y));
+    });
+  }
+
+  /* edges */
+  var edgeEls={};
+  DATA.edges.forEach(function(e){
+    var s=P[e.src],d=P[e.dst];if(!s||!d)return;
+    var mx=(s.x+d.x)/2,my=(s.y+d.y)/2,nx=-(d.y-s.y),ny=(d.x-s.x),L=Math.hypot(nx,ny)||1;
+    var off=Math.hypot(d.x-s.x,d.y-s.y)*0.10;
+    var path=document.createElementNS(SVGNS,"path");
+    path.setAttribute("d","M"+s.x+" "+s.y+" Q"+(mx+nx/L*off)+" "+(my+ny/L*off)+" "+d.x+" "+d.y);
+    path.setAttribute("class","edge");svg.appendChild(path);
+    (edgeEls[e.src]=edgeEls[e.src]||[]).push(path);
+    (edgeEls[e.dst]=edgeEls[e.dst]||[]).push(path);
+    var len=path.getTotalLength();path.style.strokeDasharray=len;path.style.strokeDashoffset=len;
+    requestAnimationFrame(function(){path.style.transition="stroke-dashoffset .85s ease, stroke .25s, opacity .25s";path.style.strokeDashoffset=0;});
+  });
+
+  /* nodes */
+  var idx=0;
+  function neighbors(id){var set={};set[id]=1;DATA.edges.forEach(function(e){if(e.src===id)set[e.dst]=1;if(e.dst===id)set[e.src]=1;});return set;}
+  DATA.nodes.forEach(function(node){
+    var p=P[node.id];if(!p)return;
+    var st=stateOf(node,AM);
+    var g=document.createElementNS(SVGNS,"g");
+    g.setAttribute("class","node-g st-"+st);g.setAttribute("data-id",node.id);
+    g.style.opacity="0";g.style.animation="fadeIn .45s ease "+(idx*0.02)+"s forwards";idx++;
+    var rect=document.createElementNS(SVGNS,"rect");rect.setAttribute("class","box node-rect");
+    rect.setAttribute("x",p.x-p.w/2);rect.setAttribute("y",p.y-p.h/2);
+    rect.setAttribute("width",p.w);rect.setAttribute("height",p.h);
+    var txt=document.createElementNS(SVGNS,"text");txt.setAttribute("class","node-txt");
+    txt.setAttribute("x",p.x);txt.setAttribute("y",p.y+1);txt.setAttribute("text-anchor","middle");txt.textContent=p.lab;
+    g.appendChild(rect);g.appendChild(txt);svg.appendChild(g);
+    function highlight(on){
+      var nb=neighbors(node.id);
+      svg.classList.toggle("dim",on);
+      svg.querySelectorAll(".node-g").forEach(function(elm){elm.classList.toggle("hl",on&&!!nb[elm.getAttribute("data-id")]);});
+      svg.querySelectorAll(".edge").forEach(function(elm){elm.classList.remove("hl");});
+      if(on)(edgeEls[node.id]||[]).forEach(function(elm){elm.classList.add("hl");});
+    }
+    g.addEventListener("mouseenter",function(){if(!_pinnedId){highlight(true);renderPanel(node,AM);}});
+    g.addEventListener("mouseleave",function(){if(!_pinnedId){highlight(false);resetPanel();}});
+    g.addEventListener("click",function(ev){
+      ev.stopPropagation();
+      if(_pinnedId===node.id){_pinnedId=null;highlight(false);resetPanel();return;}
+      _pinnedId=node.id;highlight(true);renderPanel(node,AM);
+    });
+  });
+  svg.addEventListener("click",function(){
+    if(_pinnedId){_pinnedId=null;svg.classList.remove("dim");
+      svg.querySelectorAll(".node-g.hl,.edge.hl").forEach(function(e){e.classList.remove("hl");});resetPanel();}
+  });
+
+  function resetPanel(){while(panel.firstChild)panel.removeChild(panel.firstChild);panel.appendChild(buildDefaultPanel());}
+  var WORD={agent:"AGENT",asserted:"ASSERTED",inferred:"INFERRED",ungoverned:"UNGOVERNED",op:"RUNTIME OP"};
+  function renderPanel(node,AM){
+    var st=stateOf(node,AM),a=AM[node.id];
+    while(panel.firstChild)panel.removeChild(panel.firstChild);
+    panel.appendChild(el("div","gp-title",node.name));
+    panel.appendChild(el("div","gp-meta",node.type+" · "+node.id));
+    panel.appendChild(el("div","gp-state "+st,WORD[st]));
+    if(st==="op"){panel.appendChild(el("div","gp-hint","A runtime operation the agent executes. Governance is carried by its matching capability."));return;}
+    if(a&&a.mappings.length){
+      panel.appendChild(el("div","gp-meta","matched_via: "+a.matched_via));
+      a.mappings.forEach(function(m){
+        var row=el("div","gp-maprow");
+        row.appendChild(el("span","fw",(SHORT[m.fw]||m.fw)+" "+m.id));
+        row.appendChild(el("span","cf",m.confidence));
+        panel.appendChild(row);
+      });
+    }
+    /* remediation */
+    var fx=fixFor(node,AM);
+    if(fx){
+      var box=el("div","gp-fix"+(fx.kind==="ungoverned"?" ungov":""));
+      if(fx.kind==="inferred"){
+        box.appendChild(el("span","lead","TO ASSERT"));
+        box.appendChild(document.createTextNode("Declare "));
+        box.appendChild(el("span","k","reason: "+fx.reason));
+        box.appendChild(document.createTextNode(" on this capability and wire the matching gate. The controls above flip from inferred to asserted."));
+      }else{
+        box.appendChild(el("span","lead","TO GOVERN"));
+        box.appendChild(document.createTextNode("No control matched. Add an OPA gate with a "));
+        box.appendChild(el("span","k","canonical deny reason"));
+        box.appendChild(document.createTextNode(", or mark out of scope if it is genuinely read-only."));
+      }
+      panel.appendChild(box);
+    }
+  }
+}
+
+/* ═══ TABLES ════════════════════════════════════════════════════════════ */
+function renderTables(DATA,AM){
+  var nb=document.getElementById("nodes-body");while(nb.firstChild)nb.removeChild(nb.firstChild);
+  DATA.nodes.forEach(function(n){
+    var tr=el("tr");
+    [["mono",n.id],["",n.type],["",n.name],["",n.provenance||"EXTRACTED"]].forEach(function(c){
+      var td=el("td",c[0]||null,c[1]);tr.appendChild(td);});
+    nb.appendChild(tr);
+  });
+  var eb=document.getElementById("edges-body");while(eb.firstChild)eb.removeChild(eb.firstChild);
+  DATA.edges.forEach(function(e){
+    var tr=el("tr");
+    [["mono",e.src],["",e.rel],["mono",e.dst]].forEach(function(c){tr.appendChild(el("td",c[0]||null,c[1]));});
+    eb.appendChild(tr);
+  });
+  var mb=document.getElementById("maps-body");while(mb.firstChild)mb.removeChild(mb.firstChild);
+  DATA.action_maps.forEach(function(am){
+    var tr=el("tr");
+    tr.appendChild(el("td",null,am.label));
+    var c2=el("td");var chip=el("span","chip");
+    if(am.matched_via==="asserted_table"){chip.className="chip chip-asserted";chip.textContent="ASSERTED";}
+    else if(am.matched_via==="heuristic"){chip.className="chip chip-inferred";chip.textContent="INFERRED";}
+    else{chip.className="chip chip-ungoverned";chip.textContent="UNGOVERNED";}
+    c2.appendChild(chip);tr.appendChild(c2);
+    var c3=el("td");
+    if(!am.mappings.length){c3.appendChild(el("span","chip chip-ungoverned","no mappings"));}
+    else am.mappings.forEach(function(m){
+      var s=el("span","chip");
+      if(m.confidence==="asserted")s.classList.add("chip-asserted");
+      else if(m.confidence==="advisory")s.classList.add("chip-advisory");
+      else if(m.confidence==="inferred")s.classList.add("chip-inferred");
+      else s.classList.add("chip-ungoverned");
+      s.textContent=(SHORT[m.fw]||m.fw)+" "+m.id;c3.appendChild(s);
+    });
+    tr.appendChild(c3);
+    /* remediation cell */
+    var c4;
+    if(am.matched_via==="asserted_table"){c4=el("td","fix none","—");}
+    else if(am.matched_via==="heuristic"){
+      c4=el("td","fix");c4.appendChild(document.createTextNode("declare "));
+      c4.appendChild(el("span","k","reason: "+(guessReason(am.label)||"…")));
+    }else{c4=el("td","fix ungov");c4.appendChild(el("span","k","add a gate"));}
+    tr.appendChild(c4);
+    mb.appendChild(tr);
+  });
+}
+
+/* ═══ SCORECARD (animates from previous score → new) ════════════════════ */
+var _barRefs=null;
+function renderScore(DATA){
+  var tp=DATA.trust_profile,score=tp.score,tier=tp.tier;
+  var tierColor={SOVEREIGN:"var(--green)",HARDENED:"var(--cream)",DEVELOPING:"var(--yellow)",UNGOVERNED:"var(--red)"}[tier]||"var(--orange)";
+  var numEl=document.getElementById("score-num"),tierEl=document.getElementById("score-tier");
+  numEl.style.color=tierColor;tierEl.textContent=tier;tierEl.style.color=tierColor;
+  var from=_shownScore,to=score,t0=null;
+  function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/750);numEl.textContent=Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(step);else _shownScore=to;}
+  requestAnimationFrame(step);
+  /* delta badge vs the sample baseline */
+  var delta=document.getElementById("score-delta");
+  if(active==="hardened"){
+    var base=DATASETS.sample.trust_profile.score;
+    delta.style.display="";delta.textContent="+"+(score-base)+" vs before";
+    delta.style.color="var(--orange)";delta.style.borderColor="var(--border)";
+  }else delta.style.display="none";
+
+  var weights={coverage:.45,rigor:.25,breadth:.15,structure:.15};
+  var bars=document.getElementById("bars");
+  if(!_barRefs){
+    _barRefs={};
+    ["coverage","rigor","breadth","structure"].forEach(function(k){
+      var row=el("div","bar-row");
+      row.appendChild(el("div","bar-label",k));
+      var track=el("div","bar-track"),fill=el("div","bar-fill"),val=el("span","bar-val","0%");
+      track.appendChild(fill);track.appendChild(val);
+      row.appendChild(track);row.appendChild(el("div","bar-weight","w="+weights[k]));
+      bars.appendChild(row);_barRefs[k]={fill:fill,val:val};
+    });
+  }
+  ["coverage","rigor","breadth","structure"].forEach(function(k){
+    var v=tp.subscores[k],r=_barRefs[k];
+    r.fill.classList.toggle("low",v<50);
+    requestAnimationFrame(function(){requestAnimationFrame(function(){r.fill.style.width=v+"%";r.val.textContent=v+"%";});});
+  });
+  var rl=document.getElementById("rationale-list");while(rl.firstChild)rl.removeChild(rl.firstChild);
+  tp.rationale.forEach(function(line){rl.appendChild(el("li",null,line));});
+}
+
+/* ═══ TOGGLE + caption ══════════════════════════════════════════════════ */
+function renderToggle(counts,DATA){
+  document.querySelectorAll(".tog-btn").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-ds")===active);});
+  document.getElementById("graph-title").textContent="Ontology structure — "+META[active].label;
+  document.getElementById("data-sub").textContent=
+    DATA.nodes.length+" nodes · "+DATA.edges.length+" edges · "+DATA.action_maps.length+
+    " action maps — python -m openagentontology "+META[active].cmd;
+  var cap=document.getElementById("tog-cap");while(cap.firstChild)cap.removeChild(cap.firstChild);
+  cap.appendChild(document.createTextNode(META[active].blurb+"  "));
+  var b=el("b",null,counts.asserted+" asserted · "+counts.inferred+" inferred · "+counts.ungoverned+" ungoverned · ");
+  cap.appendChild(b);
+  var tierSpan=el("span",active==="hardened"?"up":"down",DATA.trust_profile.score+" / "+DATA.trust_profile.tier);
+  cap.appendChild(tierSpan);
+}
+
+/* ═══ render(key) — drives every dataset-dependent surface ══════════════ */
+function render(key){
+  active=key;var DATA=DATASETS[key];
+  var AM={};DATA.action_maps.forEach(function(a){AM[a.subject_id]=a;});
+  var counts=renderSummary(DATA);
+  renderToggle(counts,DATA);
+  renderGraph(DATA,AM);
+  renderTables(DATA,AM);
+  renderScore(DATA);
+}
+
+/* ═══ static: crosswalk examples + tab + toggle wiring ══════════════════ */
+(function(){
+  document.getElementById("flow-ex-1").textContent=
+    'action: "dual_control_required"\nsource_reason: "dual_control_required"\n'+
+    'lookup: ASSERTED_TABLE[reason]\nresult:\n'+
+    '  NIST 800-53 AC-5   Separation of Duties   [asserted]\n'+
+    '  EU AI Act Art 14   Human oversight        [asserted]\n'+
+    '  OWASP LLM06        Excessive Agency       [asserted]\n'+
+    'matched_via: asserted_table';
+  document.getElementById("flow-ex-2").textContent=
+    'action: "deploy_service"\nsource_reason: null\n'+
+    'regex: /deploy/  ->  "approval_required"\n'+
+    'downgrade: asserted -> inferred\nresult:\n'+
+    '  NIST 800-53 CM-3   Config Change Control  [inferred]\n'+
+    '  EU AI Act Art 14   Human oversight        [inferred]\n'+
+    'matched_via: heuristic';
+  document.getElementById("flow-ex-3").textContent=
+    'action: "read_status"\nsource_reason: null\n'+
+    'regex: none  (read is not side-effecting)\n'+
+    'result: []\nmatched_via: none\n'+
+    'status: UNGOVERNED  ->  review';
+
+  document.querySelectorAll(".tab-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      document.querySelectorAll(".tab-btn").forEach(function(b){b.classList.remove("active");});
+      document.querySelectorAll(".tab-panel").forEach(function(p){p.classList.remove("active");});
+      btn.classList.add("active");
+      document.getElementById(btn.getAttribute("data-tab")).classList.add("active");
+    });
+  });
+  document.querySelectorAll(".tog-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){var k=btn.getAttribute("data-ds");if(k!==active)render(k);});
+  });
+
+  render("sample");
+})();
+</script>
+</body>
+</html>

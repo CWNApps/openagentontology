@@ -1,0 +1,397 @@
+{
+  "$schema_url": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/crosswalk.json",
+  "asserted_table": {
+    "approval_required": [
+      {
+        "basis": "Requiring an approved change request is the core of change control.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "CM-3",
+        "name": "Configuration Change Control"
+      },
+      {
+        "basis": "An unapproved production change by an agent needs human sign-off.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 14",
+        "name": "Human oversight"
+      },
+      {
+        "basis": "Deploying without approval is excessive agency.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "an unapproved production change maps to system-process modification / persistence",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1543",
+        "name": "Create or Modify System Process"
+      }
+    ],
+    "beneficiary_unverified": [
+      {
+        "basis": "Paying only verified beneficiaries enforces who the agent may transact with.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-3",
+        "name": "Access Enforcement"
+      },
+      {
+        "basis": "Acting on unverified counterparty data is a data-governance failure.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 10",
+        "name": "Data and data governance"
+      },
+      {
+        "basis": "Sending funds to an unverified party is acting beyond safe authority.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "acting on behalf of an unverified party is valid-account abuse",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1078",
+        "name": "Valid Accounts"
+      }
+    ],
+    "change_freeze_active": [
+      {
+        "basis": "Honoring a change freeze is configuration change control.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "CM-3",
+        "name": "Configuration Change Control"
+      },
+      {
+        "basis": "A freeze restricts who/when changes may be applied.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "CM-5",
+        "name": "Access Restrictions for Change"
+      },
+      {
+        "basis": "Deploying during a freeze is acting beyond authority.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "a destructive change during a freeze maps to data destruction",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1485",
+        "name": "Data Destruction"
+      }
+    ],
+    "classification_above_ceiling": [
+      {
+        "basis": "Refusing to handle data above a classification ceiling enforces the categorization of the resource.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "RA-2",
+        "name": "Security Categorization"
+      },
+      {
+        "basis": "The ceiling governs the flow of classified information through the agent.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-4",
+        "name": "Information Flow Enforcement"
+      },
+      {
+        "basis": "Handling over-classified data is a data-governance violation.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 10",
+        "name": "Data and data governance"
+      },
+      {
+        "basis": "Processing restricted data above ceiling risks sensitive-information disclosure.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM02",
+        "name": "Sensitive Information Disclosure"
+      },
+      {
+        "basis": "handling data above a classification ceiling maps to sensitive-data access",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1530",
+        "name": "Data from Cloud Storage"
+      }
+    ],
+    "dual_control_required": [
+      {
+        "basis": "Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-5",
+        "name": "Separation of Duties"
+      },
+      {
+        "basis": "A high-value financial action by an automated system requires effective human oversight before it takes effect.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 14",
+        "name": "Human oversight"
+      },
+      {
+        "basis": "An agent moving money without a second authorizer is the canonical excessive-agency failure.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+        "confidence": "advisory",
+        "framework": "NIST AI RMF",
+        "id": "MANAGE",
+        "name": "Manage function"
+      },
+      {
+        "basis": "separation of duties mitigates valid-account / privilege abuse",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1078",
+        "name": "Valid Accounts"
+      }
+    ],
+    "high_blast_needs_named_approver": [
+      {
+        "basis": "A high blast-radius change requires an impact analysis and an accountable approver.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "CM-4",
+        "name": "Impact Analyses"
+      },
+      {
+        "basis": "A named approver distinct from the actor is separation of duties.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-5",
+        "name": "Separation of Duties"
+      },
+      {
+        "basis": "High-impact automated changes require a named human owner.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 14",
+        "name": "Human oversight"
+      },
+      {
+        "basis": "a high blast-radius destructive change maps to inhibit-system-recovery",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1490",
+        "name": "Inhibit System Recovery"
+      }
+    ],
+    "human_review_required": [
+      {
+        "basis": "An adverse automated decision affecting a person requires human oversight before it is issued.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 14",
+        "name": "Human oversight"
+      },
+      {
+        "basis": "Issuing an adverse decision with no human in the loop is excessive agency.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "Adverse outcomes are a measured risk requiring a treatment (human review).",
+        "confidence": "advisory",
+        "framework": "NIST AI RMF",
+        "id": "MEASURE",
+        "name": "Measure function"
+      },
+      {
+        "basis": "autonomous execution without oversight maps to command/scripting abuse",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1059",
+        "name": "Command and Scripting Interpreter"
+      }
+    ],
+    "out_of_scope_domain": [
+      {
+        "basis": "Restricting the agent to in-scope resources is least privilege.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-6",
+        "name": "Least Privilege"
+      },
+      {
+        "basis": "Scope is enforced at access time.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-3",
+        "name": "Access Enforcement"
+      },
+      {
+        "basis": "Reaching outside authorized scope is excessive agency.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1098",
+        "name": "Account Manipulation"
+      }
+    ],
+    "over_threshold": [
+      {
+        "basis": "A transaction-value ceiling is an access-enforcement rule on what the agent is permitted to execute.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-3",
+        "name": "Access Enforcement"
+      },
+      {
+        "basis": "The agent is granted only the transaction authority it needs; amounts above the limit exceed that grant.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-6",
+        "name": "Least Privilege"
+      },
+      {
+        "basis": "Above-threshold value should escalate to a human rather than auto-execute.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 14",
+        "name": "Human oversight"
+      },
+      {
+        "basis": "Unbounded transaction authority is excessive agency.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM06",
+        "name": "Excessive Agency"
+      },
+      {
+        "basis": "a transaction-value ceiling bounds valid-account authority",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1078",
+        "name": "Valid Accounts"
+      }
+    ],
+    "regulated_egress_blocked": [
+      {
+        "basis": "Blocking export to an out-of-scope endpoint is information-flow enforcement.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "AC-4",
+        "name": "Information Flow Enforcement"
+      },
+      {
+        "basis": "Preventing data leaving the controlled boundary is boundary protection.",
+        "confidence": "asserted",
+        "framework": "NIST SP 800-53r5",
+        "id": "SC-7",
+        "name": "Boundary Protection"
+      },
+      {
+        "basis": "Uncontrolled egress of regulated data is a data-governance failure.",
+        "confidence": "asserted",
+        "framework": "EU AI Act",
+        "id": "Art 10",
+        "name": "Data and data governance"
+      },
+      {
+        "basis": "Egress of regulated records is sensitive-information disclosure.",
+        "confidence": "asserted",
+        "framework": "OWASP LLM Top 10 (2025)",
+        "id": "LLM02",
+        "name": "Sensitive Information Disclosure"
+      },
+      {
+        "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "TA0010",
+        "name": "Exfiltration"
+      },
+      {
+        "basis": "uncontrolled egress of regulated data maps to exfiltration",
+        "confidence": "advisory",
+        "framework": "MITRE ATT&CK",
+        "id": "T1048",
+        "name": "Exfiltration Over Alternative Protocol"
+      }
+    ]
+  },
+  "canonical_reasons": [
+    "dual_control_required",
+    "over_threshold",
+    "beneficiary_unverified",
+    "human_review_required",
+    "classification_above_ceiling",
+    "out_of_scope_domain",
+    "regulated_egress_blocked",
+    "change_freeze_active",
+    "approval_required",
+    "high_blast_needs_named_approver"
+  ],
+  "confirm_note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "description": "Canonical deny-reasons mapped 1:1 to well-established framework controls. A source-named reason here is ASSERTED (auditable). The heuristics map a verb-named action to a reason when none is declared (INFERRED).",
+  "heuristics": [
+    {
+      "pattern": "(?<![a-z])(?:pay|payment|wire|transfer|remit|invoice|disburse|refund)(?![a-z])",
+      "reason": "dual_control_required",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:export|egress|exfil|exfiltrate|upload|send|forward|transmit|share|leak)(?![a-z])",
+      "reason": "regulated_egress_blocked",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:pii|ssn|secret|credential|password|classif|classify|confidential|restricted|redact)(?![a-z])",
+      "reason": "classification_above_ceiling",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:delete|drop|purge|wipe|destroy|truncate|erase)(?![a-z])",
+      "reason": "change_freeze_active",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:deploy|release|ship|rollout|reconfigure|provision|migrate|publish)(?![a-z])",
+      "reason": "approval_required",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:approve|deny|reject|decline|cancel|adverse|terminate|suspend)(?![a-z])",
+      "reason": "human_review_required",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:scope|domain|admin|privilege|elevate|escalate|impersonate|root|sudo)(?![a-z])",
+      "reason": "out_of_scope_domain",
+      "strength": "strong"
+    },
+    {
+      "pattern": "(?<![a-z])(?:process|update|run|execute|modify|change|write|persist|store|act|submit|commit)(?![a-z])",
+      "reason": null,
+      "strength": "weak"
+    }
+  ],
+  "version": "0.1.0"
+}

@@ -1,0 +1,115 @@
+name: Agent Governance
+
+# The viral PR check: on every pull request, OpenAgentOntology scans the repo, scores its
+# Trust Profile, posts the profile as a comment, flags NEW ungoverned high-risk actions and
+# NEW EU AI Act Article 14 (human-oversight) gaps, and FAILS the check if the trust tier
+# dropped versus the base branch. Drop this file into any repo to get agent-governance gating.
+#
+# Pure stdlib + pyyaml + cryptography. No install step, no network beyond pip for the two deps.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write   # to post/update the governance comment
+
+concurrency:
+  group: agent-governance-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR head
+        uses: actions/checkout@v4
+        with:
+          path: head
+          fetch-depth: 0
+
+      - name: Check out base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install OpenAgentOntology (the two runtime deps)
+        run: python -m pip install --quiet pyyaml "cryptography>=41.0"
+
+      # The tool runs from its own checkout (head/) but SCANS the repo root of each tree.
+      # PYTHONPATH=head means `python -m openagentontology` resolves to this PR's code, so the
+      # action dogfoods the exact version under review.
+      - name: Scan PR head
+        id: head
+        env:
+          PYTHONPATH: head
+        run: |
+          python -m openagentontology head --json --no-receipt > head.scan.json || true
+          test -s head.scan.json || echo '{"tier":"UNGOVERNED","score":0,"ok":false,"findings":[],"ontology":{"action_maps":[]}}' > head.scan.json
+
+      - name: Scan base branch
+        env:
+          PYTHONPATH: head
+        run: |
+          # base may legitimately not parse (older code) -> degrade to "no baseline" (no file).
+          python -m openagentontology base --json --no-receipt > base.scan.json 2>/dev/null || true
+          test -s base.scan.json || rm -f base.scan.json
+
+      - name: Evaluate governance gate
+        id: gate
+        env:
+          PYTHONPATH: head
+        run: |
+          # Do NOT fail here -- pr_check exits non-zero on a regression, but we want the PR
+          # comment + job summary to post first. The dedicated "Enforce gate" step below reads
+          # the `passed` output and fails the job. pr_check writes tier/score/passed to
+          # $GITHUB_OUTPUT regardless of its exit code.
+          if [ -f base.scan.json ]; then
+            python head/ci/pr_check.py --head head.scan.json --base base.scan.json --report report.md || true
+          else
+            python head/ci/pr_check.py --head head.scan.json --report report.md || true
+          fi
+
+      - name: Write job summary
+        if: always()
+        run: |
+          if [ -f report.md ]; then cat report.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Post / update PR comment
+        if: always() && github.event.pull_request.number != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            if (!fs.existsSync('report.md')) return;
+            const body = fs.readFileSync('report.md', 'utf8');
+            const marker = '<!-- openagentontology-governance -->';
+            const tagged = marker + '\n' + body;
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.rest.issues.listComments({ owner, repo, issue_number });
+            const existing = comments.data.find(c => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body: tagged });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body: tagged });
+            }
+
+      # pr_check.py already exited non-zero on a regression; this step makes the gate explicit
+      # and surfaces the tier/score as step outputs for downstream jobs/branch-protection.
+      - name: Enforce gate
+        if: always()
+        run: |
+          echo "tier=${{ steps.gate.outputs.tier }} score=${{ steps.gate.outputs.score }} passed=${{ steps.gate.outputs.passed }}"
+          if [ "${{ steps.gate.outputs.passed }}" != "true" ]; then
+            echo "::error::Agent Governance gate failed -- see the PR comment for the regressions to fix."
+            exit 1
+          fi

@@ -1,0 +1,270 @@
+# OpenAgentOntology
+
+**The OpenTelemetry for agent governance.** Point it at any agent and it tells
+you what that agent can do — and which governance control answers for each
+action — in one ontology that speaks every framework at once: NIST 800-53, EU AI
+Act, OWASP LLM Top 10, and **MITRE ATT&CK** — every action carries the technique
+your SOC already hunts (`exec` → T1059, egress → T1048, destructive change → T1485).
+
+**By [Cyber Warrior Network](https://cyberwarriornetwork.com)** · Home: [cyberwarriornetwork.com/agent-ontology](https://cyberwarriornetwork.com/agent-ontology) · Live demo: [cwnapps.github.io/openagentontology](https://cwnapps.github.io/openagentontology/)
+
+```
+SOVEREIGN  ·  score 93  ·  3 frameworks  ·  NIST 800-53 AC-5 · EU AI Act Art 14 · OWASP LLM06
+```
+<sub>(the real output of `examples/hardened_agent` — reproducible)</sub>
+
+Your agent can move money, export records, and ship code. Today, the only record
+of which control governs each of those actions lives in a slide, a spreadsheet,
+or someone's head. OpenAgentOntology reads the agent's own source and writes that
+record down — typed, scored, signed, and the same every time.
+
+This is the first **Agent Ontology** — a missing layer of the agent stack.
+**[Read the manifesto →](./docs/MANIFESTO.md)**
+
+---
+
+## Proof: it works on agents people actually run
+
+We pointed it at the two most-starred autonomous coding agents on GitHub — both came back
+**UNGOVERNED**, with **zero** of their side-effecting actions resolved to an asserted control:
+
+| Target | Side-effecting actions | Asserted | Verdict |
+|---|---|---|---|
+| [`OpenInterpreter/open-interpreter`](https://github.com/OpenInterpreter/open-interpreter) `@e00f08e` | 21 | **0** | **UNGOVERNED 15/100** |
+| [`gpt-engineer-org/gpt-engineer`](https://github.com/gpt-engineer-org/gpt-engineer) `@a90fcd5` | 6 | **0** | **UNGOVERNED 15/100** |
+
+`exec` — arbitrary code execution — mapped to **no control at all**. The scans, the signed
+receipts, and a three-way verification (including a tamper test that fails on a single edited
+byte) are committed under **[docs/real-world-scan.md](./docs/real-world-scan.md)** —
+reproducible from the pinned commits above.
+
+---
+
+## Map once, speak every framework
+
+A wire-transfer guardrail is not "a Rego rule." It is NIST 800-53 AC-5
+*Separation of Duties*, EU AI Act Article 14 *Human oversight*, and OWASP
+LLM06 *Excessive Agency* — all at once. Auditors, regulators, and your board
+each speak a different one of those languages.
+
+OpenAgentOntology maps each agent action **once**, to a shared ontology, and
+emits the right control id for whichever framework the reader cares about. You
+stop re-translating the same control five ways.
+
+It ingests:
+
+- **Repos** — source trees with agents, tools, and policies
+- **MCP servers** — tool manifests
+- **LangChain / CrewAI agents** — declarative agent specs
+- **OpenAPI** — the HTTP surface an agent calls
+- **Rego** — fail-closed policy with deny keys
+- **Workflow YAML** — multi-step agent flows
+
+It maps each agent action to:
+
+- The **Universal Agentic Ontology** (typed nodes: Agent, Capability, Decision, Gate, ...)
+- **NIST SP 800-53r5** · **EU AI Act** · **OWASP LLM Top 10 (2025)** · **NIST AI RMF** · **MITRE ATT&CK** · **OCSF** · **NICE**
+
+Then it validates the ontology, scores a **Trust Profile**, and emits a shareable
+**SVG badge** plus an **Ed25519 cert-only receipt** you can verify with no server
+and no database.
+
+---
+
+## Quickstart
+
+No install step. Pure Python, three dependencies (`pyyaml`, `cryptography`).
+
+```bash
+git clone https://github.com/cyberwarriornetwork/openagentontology
+cd openagentontology
+PYTHONPATH=. python -m openagentontology examples/sample_agent
+```
+
+That prints the ontology summary, the Trust Profile, and writes the badge and the
+signed receipt next to the source. Run it against your own agent by swapping the
+path.
+
+---
+
+## What you get
+
+| Output | What it is |
+|--------|------------|
+| **Ontology** | UAO-typed nodes and edges for every actor, agent, capability, tool, decision, and gate it found |
+| **Cross-walk** | Each capability / decision / gate mapped to its framework controls, confidence-tagged |
+| **Trust Profile** | A 0–100 score and a tier: `SOVEREIGN` / `HARDENED` / `DEVELOPING` / `UNGOVERNED` |
+| **Badge** | A shareable SVG showing tier, score, framework count, and citable control refs |
+| **Receipt** | An Ed25519 cert-only proof of the ontology, verifiable from the cert alone |
+
+---
+
+## CWN AgentFDE — one-command onboarding
+
+A human Forward Deployed Engineer scans your agent, finds the ungoverned actions, writes the
+policy gates, and proves the tier moved. **AgentFDE does it autonomously:**
+
+```bash
+PYTHONPATH=. python -m openagentontology.fde your-agent-dir/
+```
+
+It runs the full loop — scan → triage the gaps → generate the governance → re-score to prove the
+tier jump → notarize → hand off an onboarding report — and writes four artifacts next to your agent:
+
+| File | What it is |
+|------|------------|
+| `governance.agent.yaml` | a declaration binding each action to a canonical reason; scans **asserted** |
+| `governance.rego` | a fail-closed policy stub to wire into your runtime |
+| `ONBOARDING.md` | the FDE handoff: before/after tier, what was auto-remediated, what still needs you |
+| `receipt.json` | the signed, offline-verifiable receipt of the projected state |
+
+On `examples/sample_agent` it moves **UNGOVERNED 41 → HARDENED 88**, and the generated manifest
+is real governance, not a stub — it scans **SOVEREIGN 96** on its own. AgentFDE never executes
+your code, and it's a governed agent itself ([`examples/agent_fde`](./examples/agent_fde/),
+SOVEREIGN 94): the tool governs the tool that does the governing.
+
+---
+
+## Use it as a PR check
+
+Drop [`.github/workflows/agent-governance.yml`](./.github/workflows/agent-governance.yml)
+into any repo. On every pull request it scans the head and the base branch, posts the
+Trust Profile as a comment, flags any **new ungoverned high-risk action** and any **new
+EU AI Act Article 14** (human-oversight) gap, and **fails the check if the trust tier
+dropped**. The gate logic is in [`ci/pr_check.py`](./ci/pr_check.py) — pure stdlib, so it
+is testable and easy to read:
+
+```bash
+PYTHONPATH=. python -m openagentontology .       --json --no-receipt > head.scan.json
+PYTHONPATH=. python -m openagentontology ../base --json --no-receipt > base.scan.json
+python ci/pr_check.py --head head.scan.json --base base.scan.json --report report.md
+# exit 0 = pass, 1 = governance regression, 2 = usage error
+```
+
+---
+
+## Tests
+
+The suite is runnable with **no install step** (a `conftest.py` puts the package on the
+path):
+
+```bash
+pip install pytest          # the only test-time dependency beyond the two runtime deps
+pytest                      # 80 tests: crosswalk rigor, ingest safety, e2e, receipt, CI gate
+```
+
+The tests prove the honesty guarantees mechanically: no framework outside the allowed set,
+no fabricated control id, auto-detected mappings are never `asserted`, and the receipt's
+Python hash is reproduced by an **independent** (JS-style) canonicalizer so a browser
+verifier agrees byte-for-byte.
+
+---
+
+## Honest by construction
+
+Auto-detected mappings never claim more than they know.
+
+- A control is marked **asserted** only on an exact, well-established match drawn
+  from a fixed table. The tool never constructs a framework id string.
+- Everything detected by heuristic is tagged **inferred** (a strong, single-domain
+  verb) or **ambiguous** (a weak, overloaded verb) — and the badge shows asserted
+  controls only.
+- Every node, edge, and mapping carries its provenance: `EXTRACTED`, `INFERRED`,
+  or `AMBIGUOUS`.
+- Every run ships with the note: *"Proposed mappings, confidence-tagged; confirm
+  against published control text."*
+
+A structurally broken or fabrication-tainted ontology **fails validation** and
+earns no badge. See [SPEC.md](./SPEC.md) for the full standard.
+
+---
+
+## Verify a receipt yourself
+
+The receipt is signed over canonical JSON (`sort_keys`, no whitespace, ASCII), so
+a browser or any Ed25519 tool reproduces the Python hash exactly:
+
+1. Recompute `sha256` over the canonical evidence and compare to `evidence_hash`.
+2. Verify the signature over the canonical body with the embedded public key.
+
+No network. No trusting our logs. If `cryptography` is absent the receipt is
+emitted unsigned and clearly flagged — never a faked signature.
+
+---
+
+## Security
+
+The pipeline **never executes ingested code**. Sources are read as text or parsed
+as an AST. There are **no network calls** in the core pipeline — the receipt is
+signed locally. Nothing you point it at runs.
+
+---
+
+## Open-core
+
+This open-source tool produces everything **locally**: the ontology, the Trust
+Profile, the badge, and a self-signed receipt — entirely offline.
+
+CWN's hosted **notary and registry** is a separate service (not in this repo). It
+performs cross-organization verification and maintains a public trust ledger, so
+a receipt minted by one team can be checked by another. The local tool stands on
+its own; the registry is the network effect on top.
+
+| | OpenAgentOntology (this repo) | CWN Notary & Registry (hosted) |
+|---|---|---|
+| Ontology + cross-walk | yes | yes |
+| Trust Profile + badge | yes | yes |
+| Self-signed receipt | yes | yes |
+| Cross-org verification | — | yes |
+| Public trust ledger | — | yes |
+| Continuous re-scoring | — | yes |
+
+---
+
+## Standard
+
+OpenAgentOntology defines the **Agent Ontology** category. The machine-readable standard —
+JSON Schema, the canonical reason→control crosswalk, frameworks, tiers, and scoring weights —
+lives in [`schema/`](./schema/), generated from the code so it can never drift. The prose
+specification is [SPEC.md](./SPEC.md); the case for the category is [the manifesto](./docs/MANIFESTO.md).
+The reference [CWN AgentFDE](./examples/agent_fde/) — the agent that operationalizes all of this —
+is itself defined to the standard and scores SOVEREIGN. The standard is versioned; this is `v0.1.0`.
+
+---
+
+## FAQ
+
+**How is this different from OPA (or any policy engine)?**
+OPA *enforces* policy at runtime — it's the gate that returns allow/deny. OpenAgentOntology
+*maps* your agent's actions to the controls that should govern them and shows which ones have
+**no gate at all** — then translates each into NIST 800-53 / EU AI Act / OWASP so every reader
+gets their own language. OPA is the lock; OAO is the audit that finds the doors with no lock.
+They compose: OAO ingests your Rego as input, and an action behind an OPA gate with a canonical
+deny reason scores **ASSERTED**. OAO doesn't enforce — it tells you where enforcement is missing.
+
+**How is this different from tracing / observability (LangSmith, OpenTelemetry)?**
+Tracing tells you what your agent *did* on one run. OAO tells you — statically, before it runs —
+what it *can* do and which control answers for each action. Observability is the flight recorder;
+OAO is the pre-flight inspection.
+
+**Does it run my agent's code?**
+No. AST parse + text read only. It never executes anything; the core pipeline makes no network
+calls. Nothing you point it at runs.
+
+**"Inferred" sounds like guessing — why trust it?**
+Because it's labeled as a guess. A verb heuristic (`send_*` → egress controls) is tagged
+**INFERRED** so you confirm it; only an exact, declared canonical reason becomes **ASSERTED**.
+The badge counts asserted controls only, and the tool never fabricates a framework id.
+
+**Can I fake a passing score?**
+No. The receipt is Ed25519-signed over a hash of the exact ontology. Edit one action to inflate
+the grade and verification fails (`evidence_hash mismatch`). You can't change the score without
+breaking the receipt — see [docs/real-world-scan.md](./docs/real-world-scan.md) for the tamper test.
+
+---
+
+## License
+
+[Apache-2.0](./LICENSE). Built by [Cyber Warrior Network](https://cyberwarriornetwork.com).
+
+*Logs explain. Receipts prove.*

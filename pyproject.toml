@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openagentontology"
+version = "0.1.0"
+description = "Auto-generate a governance ontology, Trust Profile, and signed badge for any agent, MCP server, repo, OpenAPI, Rego, or workflow. The OpenTelemetry for agent governance."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Cyber Warrior Network", email = "apps@cyberwarriornetwork.com" }]
+keywords = [
+    "ai-governance",
+    "agent",
+    "ontology",
+    "compliance",
+    "eu-ai-act",
+    "nist-800-53",
+    "owasp-llm",
+    "mcp",
+    "trust",
+    "ed25519",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Typing :: Typed",
+]
+
+# stdlib + pyyaml + cryptography ONLY. cryptography is a hard dep for the signed
+# receipt; the package still imports and runs (unsigned, clearly flagged) without it.
+dependencies = [
+    "pyyaml>=6.0",
+    "cryptography>=41.0",
+]
+
+[project.optional-dependencies]
+# `pip install .[dev]` for the test suite. Tests themselves only need pytest + the two
+# runtime deps already declared above; nothing heavier.
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://cyberwarriornetwork.com"
+Repository = "https://github.com/cyberwarriornetwork/openagentontology"
+Specification = "https://github.com/cyberwarriornetwork/openagentontology/blob/main/SPEC.md"
+
+[project.scripts]
+openagentontology = "openagentontology.cli:main"
+
+[tool.setuptools]
+packages = ["openagentontology"]
+
+[tool.setuptools.package-data]
+openagentontology = ["py.typed"]
+
+[tool.pytest.ini_options]
+# Run from the repo root: `pytest` (no install needed -- conftest puts the package on sys.path).
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"

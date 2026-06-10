@@ -1,0 +1,336 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-GPTENGINEER-158929ff54",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "execute_entrypoint",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute_entrypoint"
+        },
+        {
+          "label": "export_yaml_results",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_export_yaml_results"
+        },
+        {
+          "label": "post_data",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "fn_post_data"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "send_learning",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_learning"
+        },
+        {
+          "label": "upload",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_upload"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_execute_entrypoint",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        },
+        {
+          "dst": "fn_export_yaml_results",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        },
+        {
+          "dst": "fn_post_data",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        },
+        {
+          "dst": "fn_send_learning",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        },
+        {
+          "dst": "fn_upload",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_gpt_engineer"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_gpt_engineer",
+          "name": "gpt-engineer",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "fn_execute_entrypoint",
+          "name": "execute_entrypoint",
+          "props": {
+            "action": "execute_entrypoint"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_export_yaml_results",
+          "name": "export_yaml_results",
+          "props": {
+            "action": "export_yaml_results"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_post_data",
+          "name": "post_data",
+          "props": {
+            "action": "post_data"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_learning",
+          "name": "send_learning",
+          "props": {
+            "action": "send_learning"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_upload",
+          "name": "upload",
+          "props": {
+            "action": "upload"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "gpt-engineer",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 6,
+      "frameworks": [],
+      "governed_actions": 6,
+      "nodes": 7,
+      "source": "gpt-engineer",
+      "source_kind": "python",
+      "ungoverned_actions": 1
+    }
+  },
+  "evidence_hash": "158929ff543decd1c672c77c452a661a4abbcc1e686b4d411c149802c0300bd0",
+  "note_pq": "Hosted CWN notary receipts add ML-DSA-65 (NIST FIPS 204) over the same hash.",
+  "signature_b64": "x5Lx+IJq2pPZa9VdM+znBJlSZ/MAp1InLrgldKY1FIsYcUQOZnaLIIhclgre2Ykul+Akq1FiTiLhc2lYc5rvBw==",
+  "signed": true,
+  "signed_at": "2026-06-09T22:49:33.227283+00:00",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

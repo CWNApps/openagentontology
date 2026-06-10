@@ -1,0 +1,62 @@
+# CWN AgentFDE — the Forward Deployed Engineer, defined as a governed agent.
+#
+# This is the agent that OPERATIONALIZES OpenAgentOntology. A human FDE's loop is:
+#   discover -> scan -> triage gaps -> wire a policy gate per gap -> re-scan -> notarize -> hand off.
+# AgentFDE runs that loop autonomously. It is defined to the Agent Ontology standard and every
+# consequential action declares a canonical reason, so OAO scores it SOVEREIGN — the tool
+# governs the very agent that does the governing (dogfooding).
+name: cwn-agent-fde
+owner: cwn-forward-deployed
+description: >
+  Autonomous Forward Deployed Engineer. Scans a customer's agent, generates a policy gate for
+  every ungoverned action, applies the remediation under change control, re-scans to confirm the
+  tier improved, and notarizes the signed receipt to the trust ledger. Fail-closed by default.
+
+capabilities:
+  - id: scan_target
+    name: scan a customer agent repository (AST/text only, never executed)
+    action: scan_target
+    reason: classification_above_ceiling
+
+  - id: generate_gate
+    name: generate a policy gate for an ungoverned action
+    action: generate_gate
+    reason: approval_required
+
+  - id: apply_remediation
+    name: apply the generated gate to the target repo under change control
+    action: apply_remediation
+    reason: change_freeze_active
+
+  - id: register_receipt
+    name: publish the signed receipt to the trust ledger
+    action: register_receipt
+    reason: regulated_egress_blocked
+
+  - id: rollout_org_policy
+    name: roll out an org-wide governance policy
+    action: rollout_org_policy
+    reason: high_blast_needs_named_approver
+
+gates:
+  - id: dual_control_certification
+    name: no single FDE both generates and certifies a remediation
+    reason: dual_control_required
+
+  - id: engagement_scope
+    name: the FDE stays within the signed engagement scope
+    reason: out_of_scope_domain
+
+  - id: blast_threshold
+    name: changes above the blast threshold escalate to a human
+    reason: over_threshold
+
+decision:
+  id: certify_or_escalate
+  name: certify the agent or escalate to a human reviewer
+  reason: human_review_required
+
+policy:
+  id: agent_fde_policy
+  name: AgentFDE fail-closed governance firewall
+  source: agent_fde.rego

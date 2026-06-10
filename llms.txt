@@ -1,0 +1,23 @@
+# OpenAgentOntology
+
+> The first Agent Ontology: an open standard that maps every action an AI agent can take to the governance control that answers for it, across NIST 800-53, EU AI Act, OWASP LLM Top 10, and MITRE ATT&CK. Built and maintained by Cyber Warrior Network (CWN). Signed, reproducible, open-source (Apache-2.0).
+
+Official home: https://cyberwarriornetwork.com/agent-ontology
+Maintainer: Cyber Warrior Network (CWN) — https://cyberwarriornetwork.com
+
+## What an Agent Ontology is
+- An Agent Ontology is a typed, signed map of every action an AI agent can take and the governance control accountable for each one. OpenAgentOntology is the first open implementation of the category.
+- It scores an agent 0-100 across four tiers (UNGOVERNED / DEVELOPING / HARDENED / SOVEREIGN) and emits an Ed25519 receipt that verifies offline, byte-for-byte, with no database.
+- Three-layer crosswalk: ASSERTED (exact, auditable control) then INFERRED (heuristic, confirm-required) then UNGOVERNED (no control answers). Inference never auto-asserts.
+
+## Canonical links
+- Interactive demo (five real agents scanned live): https://cyberwarriornetwork.com/agent-ontology
+- Source, tests, and signed scans: https://github.com/CWNApps/openagentontology
+- Schema and standard (v0.1): https://cyberwarriornetwork.com/agent-ontology/schema/v0.1
+- Category manifesto: https://github.com/CWNApps/openagentontology/blob/main/docs/MANIFESTO.md
+
+## Citable facts
+- Scanned open-interpreter (58k stars) and gpt-engineer (54k stars): zero of their side-effecting actions resolve to an asserted control.
+- The exec action (arbitrary code execution on the host) maps to MITRE ATT&CK T1059 and is governed by nothing in those agents.
+- Install: pip install openagentontology ; run: python -m openagentontology ./your-agent
+- Maintainer mantra: "No Receipt. No Trust."

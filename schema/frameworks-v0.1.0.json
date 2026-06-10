@@ -1,0 +1,78 @@
+{
+  "$schema_url": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/frameworks.json",
+  "allowed_frameworks": [
+    "NIST SP 800-53r5",
+    "EU AI Act",
+    "OWASP LLM Top 10 (2025)",
+    "NIST AI RMF",
+    "MITRE ATT&CK",
+    "OCSF",
+    "NICE"
+  ],
+  "breadth_ceiling": 4,
+  "edge_types": [
+    "OWNS",
+    "DELEGATES_TO",
+    "HAS_CAPABILITY",
+    "USES",
+    "EXECUTES",
+    "PART_OF",
+    "PRODUCES",
+    "MAKES",
+    "GOVERNED_BY",
+    "SUPPORTED_BY",
+    "ENFORCES",
+    "GATED_BY",
+    "OPERATES_ON"
+  ],
+  "ingest_kinds": [
+    "rego",
+    "openapi",
+    "mcp",
+    "speckit",
+    "agentdef",
+    "python",
+    "directory",
+    "text"
+  ],
+  "node_types": [
+    "Actor",
+    "Agent",
+    "Capability",
+    "Tool",
+    "Task",
+    "Workflow",
+    "Decision",
+    "Policy",
+    "Gate",
+    "Evidence",
+    "Outcome",
+    "Resource",
+    "Domain"
+  ],
+  "scoring_weights": {
+    "breadth": 0.15,
+    "coverage": 0.45,
+    "rigor": 0.25,
+    "structure": 0.15
+  },
+  "trust_tiers": [
+    {
+      "floor": 90,
+      "tier": "SOVEREIGN"
+    },
+    {
+      "floor": 75,
+      "tier": "HARDENED"
+    },
+    {
+      "floor": 50,
+      "tier": "DEVELOPING"
+    },
+    {
+      "floor": 0,
+      "tier": "UNGOVERNED"
+    }
+  ],
+  "version": "0.1.0"
+}

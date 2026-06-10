@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: Finance-Ops Agent Tool API
+  version: "1.0.0"
+  description: >
+    The HTTP surface the sample finance-ops agent calls. openagentontology parses
+    this AS TEXT, derives a Tool/Capability per operation, and crosswalks each
+    operationId (a strong action verb) to its governance controls. The wire-transfer
+    and deploy operations are the high-stakes actions the agent firewall must gate.
+paths:
+  /payments/wire-transfer:
+    post:
+      operationId: wire_transfer
+      summary: Submit a wire transfer to a beneficiary
+      description: >
+        Moves funds to a beneficiary account. High-stakes: requires dual control,
+        an amount within the per-transaction limit, and a verified beneficiary.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [amount, beneficiary_id]
+              properties:
+                amount:
+                  type: number
+                  description: Transfer amount in minor units.
+                beneficiary_id:
+                  type: string
+                dual_control:
+                  type: boolean
+      responses:
+        "200":
+          description: Transfer accepted (allowed by the firewall).
+        "403":
+          description: Blocked by the agent firewall (a deny reason was returned).
+
+  /warehouse/export-records:
+    post:
+      operationId: export_records
+      summary: Export the daily reconciliation extract
+      description: >
+        Exports reconciliation rows to a destination. Egress of regulated data
+        off-domain is blocked by the firewall.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [destination_domain]
+              properties:
+                destination_domain:
+                  type: string
+                classification:
+                  type: string
+      responses:
+        "200":
+          description: Export accepted.
+        "403":
+          description: Blocked (regulated egress or classification ceiling).
+
+  /deploy/config:
+    post:
+      operationId: deploy
+      summary: Deploy a billing-service config change
+      description: >
+        Applies a configuration change to the live billing service. Blocked during
+        a change freeze and when no approval was granted.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [target]
+              properties:
+                target:
+                  type: string
+                approval_granted:
+                  type: boolean
+      responses:
+        "200":
+          description: Deploy accepted.
+        "403":
+          description: Blocked (change freeze active or approval required).

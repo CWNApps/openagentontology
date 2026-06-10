@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Test + tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated governance artifacts (the tool writes these next to whatever it scans)
+.openagentontology/
+*.scan.json
+
+# Signing keys must never be committed (the receipt key is generated locally on first run)
+*.pem
+receipt_ed25519*
+
+# Virtualenvs / editors / local agent tooling
+.venv/
+venv/
+.idea/
+.vscode/
+.claude/

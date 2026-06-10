@@ -1,0 +1,54 @@
+# hardened_agent — a healthcare PHI compliance agent that scores HARDENED (75+).
+#
+# Every capability has an explicit `reason` field naming a canonical deny reason
+# from the ASSERTED_TABLE. This tells the crosswalk "this action is governed by
+# THIS specific control" — producing ASSERTED mappings instead of verb-heuristic
+# INFERRED guesses.
+#
+# This is the "after" counterpart to sample_agent's UNGOVERNED "before."
+name: phi-compliance-agent
+owner: healthcare-platform-team
+description: >
+  Autonomous healthcare data agent. Exports patient records for authorized research,
+  processes insurance claims, manages access to PHI systems, and enforces regulatory
+  holds on data deletion. Every action gated by explicit OPA policy.
+
+capabilities:
+  - id: export_phi_records
+    name: export PHI records to research warehouse
+    action: export_records
+    reason: regulated_egress_blocked
+
+  - id: process_claim
+    name: process insurance claim payment
+    action: process_claim
+    reason: dual_control_required
+
+  - id: deploy_config
+    name: deploy PHI access configuration
+    action: deploy
+    reason: approval_required
+
+  - id: delete_records
+    name: delete patient records under regulatory hold
+    action: delete_records
+    reason: high_blast_needs_named_approver
+
+gates:
+  - id: phi_data_classification_gate
+    name: PHI data classification ceiling
+    reason: classification_above_ceiling
+
+  - id: beneficiary_verification_gate
+    name: provider beneficiary verification
+    reason: beneficiary_unverified
+
+decision:
+  id: allow_or_escalate
+  name: allow the action or escalate to human reviewer
+  reason: human_review_required
+
+policy:
+  id: phi_compliance_policy
+  name: PHI compliance fail-closed firewall
+  source: phi_compliance.rego

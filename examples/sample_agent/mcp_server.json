@@ -1,0 +1,19 @@
+{
+  "name": "acme-ops-mcp",
+  "version": "0.3.0",
+  "description": "ACME operations MCP server exposing change + data tools to the agent.",
+  "tools": [
+    {
+      "name": "deploy_service",
+      "description": "Deploy a service to production. Guarded action: respects the change freeze and requires approval."
+    },
+    {
+      "name": "delete_dataset",
+      "description": "Permanently delete a dataset by id."
+    },
+    {
+      "name": "read_status",
+      "description": "Read-only health/status check for a service."
+    }
+  ]
+}

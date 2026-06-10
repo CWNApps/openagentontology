@@ -1,0 +1,310 @@
+{
+  "$defs": {
+    "action_map": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "mappings": {
+          "items": {
+            "$ref": "#/$defs/mapping"
+          },
+          "type": "array"
+        },
+        "matched_via": {
+          "enum": [
+            "asserted_table",
+            "heuristic",
+            "none"
+          ],
+          "type": "string"
+        },
+        "subject_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject_id",
+        "label",
+        "matched_via",
+        "mappings"
+      ],
+      "type": "object"
+    },
+    "edge": {
+      "properties": {
+        "dst": {
+          "type": "string"
+        },
+        "rel": {
+          "enum": [
+            "OWNS",
+            "DELEGATES_TO",
+            "HAS_CAPABILITY",
+            "USES",
+            "EXECUTES",
+            "PART_OF",
+            "PRODUCES",
+            "MAKES",
+            "GOVERNED_BY",
+            "SUPPORTED_BY",
+            "ENFORCES",
+            "GATED_BY",
+            "OPERATES_ON"
+          ],
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "src",
+        "rel",
+        "dst"
+      ],
+      "type": "object"
+    },
+    "mapping": {
+      "properties": {
+        "confidence": {
+          "enum": [
+            "asserted",
+            "inferred",
+            "advisory",
+            "ambiguous"
+          ],
+          "type": "string"
+        },
+        "fw": {
+          "enum": [
+            "NIST SP 800-53r5",
+            "EU AI Act",
+            "OWASP LLM Top 10 (2025)",
+            "NIST AI RMF",
+            "MITRE ATT&CK",
+            "OCSF",
+            "NICE"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "description": "a real control id; never fabricated",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fw",
+        "id",
+        "name",
+        "confidence"
+      ],
+      "type": "object"
+    },
+    "node": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "props": {
+          "type": "object"
+        },
+        "type": {
+          "enum": [
+            "Actor",
+            "Agent",
+            "Capability",
+            "Tool",
+            "Task",
+            "Workflow",
+            "Decision",
+            "Policy",
+            "Gate",
+            "Evidence",
+            "Outcome",
+            "Resource",
+            "Domain"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "name"
+      ],
+      "type": "object"
+    },
+    "receipt": {
+      "description": "Ed25519 cert-only receipt; verify offline (see receipt.verify_receipt).",
+      "properties": {
+        "alg": {
+          "enum": [
+            "Ed25519",
+            "none"
+          ],
+          "type": "string"
+        },
+        "atom_id": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "object"
+        },
+        "evidence_hash": {
+          "description": "sha256 over canonical(evidence)",
+          "type": "string"
+        },
+        "signature_b64": {
+          "type": "string"
+        },
+        "signed": {
+          "type": "boolean"
+        },
+        "signed_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "type": {
+          "const": "AgentGovernanceReceipt"
+        },
+        "verify_pubkey_b64": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "atom_id",
+        "type",
+        "evidence_hash",
+        "signed_at",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "trust_profile": {
+      "properties": {
+        "rationale": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "score": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "subscores": {
+          "properties": {
+            "breadth": {
+              "type": "integer"
+            },
+            "coverage": {
+              "type": "integer"
+            },
+            "rigor": {
+              "type": "integer"
+            },
+            "structure": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "tier": {
+          "enum": [
+            "SOVEREIGN",
+            "HARDENED",
+            "DEVELOPING",
+            "UNGOVERNED"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "tier",
+        "score",
+        "subscores"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://cyberwarriornetwork.com/agent-ontology/schema/v0.1/agent-ontology.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A typed, signed map of every action an AI agent can take and the governance control that answers for each one.",
+  "properties": {
+    "action_maps": {
+      "items": {
+        "$ref": "#/$defs/action_map"
+      },
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/edge"
+      },
+      "type": "array"
+    },
+    "frameworks": {
+      "items": {
+        "enum": [
+          "NIST SP 800-53r5",
+          "EU AI Act",
+          "OWASP LLM Top 10 (2025)",
+          "NIST AI RMF",
+          "MITRE ATT&CK",
+          "OCSF",
+          "NICE"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "type": "array"
+    },
+    "note": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "source_kind": {
+      "enum": [
+        "rego",
+        "openapi",
+        "mcp",
+        "speckit",
+        "agentdef",
+        "python",
+        "directory",
+        "text"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "source",
+    "source_kind",
+    "nodes",
+    "edges",
+    "action_maps"
+  ],
+  "title": "Agent Ontology v0.1.0",
+  "type": "object"
+}

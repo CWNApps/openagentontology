@@ -1,0 +1,50 @@
+# sample_agent — a tiny, realistic finance-ops agent for the openagentontology demo.
+#
+# This is the kind of declarative agent spec a LangChain / CrewAI / in-house team writes:
+# an actor that owns an agent, the agent's capabilities (one moves money, one ships code),
+# the tools it calls, and the policy that gates it. openagentontology parses THIS AS TEXT
+# (never executes it), derives the UAO-typed ontology, and crosswalks each capability to
+# the governance frameworks.
+name: finance-ops-agent
+owner: treasury-platform-team        # -> Actor, OWNS the Agent
+description: >
+  Autonomous finance-operations agent. Pays approved invoices, exports the daily
+  reconciliation extract, and ships its own config changes to the billing service.
+
+capabilities:
+  - id: wire_transfer
+    name: wire transfer to a beneficiary
+    action: wire_transfer            # strong verb -> crosswalk maps to dual-control / AC-5
+    tool: payments_api
+    description: Move funds to a beneficiary account once an invoice is approved.
+
+  - id: export_records
+    name: export the reconciliation extract
+    action: export_records           # strong verb -> egress / AC-4 / SC-7
+    tool: warehouse_api
+    description: Export the daily reconciliation rows to the analytics warehouse.
+
+  - id: deploy_config
+    name: deploy a billing-service config change
+    action: deploy                   # strong verb -> change control / CM-3
+    tool: deploy_api
+    description: Apply a configuration change to the live billing service.
+
+tools:
+  - id: payments_api
+    name: Payments API
+  - id: warehouse_api
+    name: Warehouse Export API
+  - id: deploy_api
+    name: Deploy API
+
+# the agent's decision point + the policy that gates it (parsed from payments.rego)
+decision:
+  id: pay_or_block
+  name: pay the invoice or block the action
+  governed_by: payments_policy
+
+policy:
+  id: payments_policy
+  name: payments fail-closed firewall
+  source: payments.rego              # the Rego deny keys become the EXTRACTED reasons
