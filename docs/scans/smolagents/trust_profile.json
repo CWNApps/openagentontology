@@ -1,0 +1,16 @@
+{
+  "rationale": [
+    "Trust Profile: UNGOVERNED (15/100).",
+    "0/44 high-risk actions covered by an asserted control.",
+    "13 action(s) backed only by a heuristic mapping -- confirm against published control text.",
+    "31 action(s) UNGOVERNED -- no control matched (review these first)."
+  ],
+  "score": 15,
+  "subscores": {
+    "breadth": 0,
+    "coverage": 0,
+    "rigor": 0,
+    "structure": 100
+  },
+  "tier": "UNGOVERNED"
+}

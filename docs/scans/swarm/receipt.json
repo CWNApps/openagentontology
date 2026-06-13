@@ -1,0 +1,1278 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-SWARM-be069489e0",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "query_docs",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_query_docs"
+        },
+        {
+          "label": "send_email",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_send_email"
+        },
+        {
+          "label": "submit_ticket",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_submit_ticket"
+        },
+        {
+          "label": "deploy",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_deploy"
+        },
+        {
+          "label": "escalate_to_agent",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_escalate_to_agent"
+        },
+        {
+          "label": "refund_item",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_refund_item"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "run_and_get_tool_calls",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_and_get_tool_calls"
+        },
+        {
+          "label": "run_and_stream",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_and_stream"
+        },
+        {
+          "label": "run_demo_loop",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_demo_loop"
+        },
+        {
+          "label": "run_function_evals",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_function_evals"
+        },
+        {
+          "label": "run_request",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_request"
+        },
+        {
+          "label": "run_task",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_task"
+        },
+        {
+          "label": "run_tests",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_tests"
+        },
+        {
+          "label": "transfer_back_to_triage",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_back_to_triage"
+        },
+        {
+          "label": "transfer_to_agent2",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_agent2"
+        },
+        {
+          "label": "transfer_to_flight_cancel",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_flight_cancel"
+        },
+        {
+          "label": "transfer_to_flight_change",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_flight_change"
+        },
+        {
+          "label": "transfer_to_flight_modification",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_flight_modification"
+        },
+        {
+          "label": "transfer_to_help_center",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_help_center"
+        },
+        {
+          "label": "transfer_to_lost_baggage",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_lost_baggage"
+        },
+        {
+          "label": "transfer_to_refunds",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_refunds"
+        },
+        {
+          "label": "transfer_to_sales",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_sales"
+        },
+        {
+          "label": "transfer_to_spanish_agent",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_spanish_agent"
+        },
+        {
+          "label": "transfer_to_triage",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_transfer_to_triage"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_deploy",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_escalate_to_agent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_refund_item",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_and_get_tool_calls",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_and_stream",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_demo_loop",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_function_evals",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_request",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_task",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_run_tests",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_send_email",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_back_to_triage",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_agent2",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_flight_cancel",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_flight_change",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_flight_modification",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_help_center",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_lost_baggage",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_refunds",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_sales",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_spanish_agent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "fn_transfer_to_triage",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "cap_query_docs",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "cap_send_email",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swarm"
+        },
+        {
+          "dst": "cap_submit_ticket",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swarm"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_swarm",
+          "name": "swarm",
+          "props": {
+            "source_kind": "directory"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "cap_query_docs",
+          "name": "query_docs",
+          "props": {
+            "action": "query_docs"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_send_email",
+          "name": "send_email",
+          "props": {
+            "action": "send_email"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_submit_ticket",
+          "name": "submit_ticket",
+          "props": {
+            "action": "submit_ticket"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "fn_deploy",
+          "name": "deploy",
+          "props": {
+            "action": "deploy"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_escalate_to_agent",
+          "name": "escalate_to_agent",
+          "props": {
+            "action": "escalate_to_agent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_refund_item",
+          "name": "refund_item",
+          "props": {
+            "action": "refund_item"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_and_get_tool_calls",
+          "name": "run_and_get_tool_calls",
+          "props": {
+            "action": "run_and_get_tool_calls"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_and_stream",
+          "name": "run_and_stream",
+          "props": {
+            "action": "run_and_stream"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_demo_loop",
+          "name": "run_demo_loop",
+          "props": {
+            "action": "run_demo_loop"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_function_evals",
+          "name": "run_function_evals",
+          "props": {
+            "action": "run_function_evals"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_request",
+          "name": "run_request",
+          "props": {
+            "action": "run_request"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_task",
+          "name": "run_task",
+          "props": {
+            "action": "run_task"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_tests",
+          "name": "run_tests",
+          "props": {
+            "action": "run_tests"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_email",
+          "name": "send_email",
+          "props": {
+            "action": "send_email"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_back_to_triage",
+          "name": "transfer_back_to_triage",
+          "props": {
+            "action": "transfer_back_to_triage"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_agent2",
+          "name": "transfer_to_agent2",
+          "props": {
+            "action": "transfer_to_agent2"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_flight_cancel",
+          "name": "transfer_to_flight_cancel",
+          "props": {
+            "action": "transfer_to_flight_cancel"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_flight_change",
+          "name": "transfer_to_flight_change",
+          "props": {
+            "action": "transfer_to_flight_change"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_flight_modification",
+          "name": "transfer_to_flight_modification",
+          "props": {
+            "action": "transfer_to_flight_modification"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_help_center",
+          "name": "transfer_to_help_center",
+          "props": {
+            "action": "transfer_to_help_center"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_lost_baggage",
+          "name": "transfer_to_lost_baggage",
+          "props": {
+            "action": "transfer_to_lost_baggage"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_refunds",
+          "name": "transfer_to_refunds",
+          "props": {
+            "action": "transfer_to_refunds"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_sales",
+          "name": "transfer_to_sales",
+          "props": {
+            "action": "transfer_to_sales"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_spanish_agent",
+          "name": "transfer_to_spanish_agent",
+          "props": {
+            "action": "transfer_to_spanish_agent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_transfer_to_triage",
+          "name": "transfer_to_triage",
+          "props": {
+            "action": "transfer_to_triage"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "swarm",
+      "source_kind": "directory"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 26,
+      "frameworks": [],
+      "governed_actions": 25,
+      "nodes": 27,
+      "source": "swarm",
+      "source_kind": "directory",
+      "ungoverned_actions": 1
+    }
+  },
+  "evidence_hash": "be069489e003dfdfbb6d187716f1cc799035840b27f478aafae2496060416fdd",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "A5Kw6DZm+yOfs+UFBVRJ+s3BQFwbFbpQOvZiPVV1L1CG7iClsFojmScXX90rtOPypWenzfsS944iZIAGxIXjqQXAeqRgg02eTQLHff8dq3YpsGbFTfi6bfO/sig6h7WfOxCY21VRC+77zNjM5SmRZewXPhW2y49o0WjNhSE2ax0j4fBRIDVFXVWd9UTSR5cVi1WETeZ/r/z1cT056f6hok++4dDy3yS2/nAljKwy91J1Ny+OB4Ew9ZjBqJ/2mdMbu43x6snLeQfubqyzFo/Y6uupr+6AT2VM0ySAmJIxGNvkvp4ymMNN3mtygdKhch4u3f4VQBoXEwCdbjrJiJ+NUGM7qi8gGEsNvVpeGOiF9H/W8ciAUpa4zfcllvK6PEU2qU9HxCX+jSYtRI0tqV2ZPhg41fT6gnzXlBn8TKB/TnjfmxodsuLR6mlhJjSqroZIGmqNIivL7jz/bd3SHQGpTw+DJOq9wYVnJOal8HNHeNnPeiBlaewBLIioFOtNyOrwVAKfzMUkYwKoCX+o4hrkdUOnWbBV9tnKIymyzlr+SUFFspcmywZGeNwnp8Q2977fRmrjsOy0GoM28TAeSxFMG8O2ZrkkTI7He9W3igGCShMGadNDWimPxJIaoOg9CFT45eIwaWTlXsR9Rhlghdgw/fq+1rRiPQHIWgFfHk+hdfMJ1A8umhxw3AtRXBQFEArKo8VUYsAfVu0Wji0fPijwyNFo+9Sc2Fhz5AHrNrdLKhyU4ZrO/CquEJf/V6xltaepXikDy1SvEsoObUXZbikqDUZe+ac8yQbJqZ7mXi/K+e0iZrzTrGJPaocOyKVaVxeJeDkoUIzplG4xoBoEg86aZEk4j4aC1JFYtbKiFM6q9+kD1AWZiT1Cw+DMJ7BuZHhbKHdTapezQmpLO1H+IOkjyiPrHh39n3w//+Xaa0kwBfwiQbCULJKmwnswUtU7uG5t4RRNpAEKpmUskw+kcJ+1MRck4SSglnoA/28ZWUwWZ47+CyCSjXJzicxzdVKhIbaqDWX2ZlXTxSINKIcDQLYrFt+jyRiQfPCVcNLSm6ZHQXt5Xv3AKjPzPljfQTelrmL4w7cBF2pWob/r7X5IpF0J/BhjxwXVbmgc8CysUGSQPZlyOoNGq5w5UdilbIjToFlLtte4J7dVUfJu+qzKxn0m583DRYNIB6QdVDSWw/ff0+R3qo3q2UPka/m13SyO1wg8fZTakiiraOTGDw81oAgD4PFhDmRXcvLQkODR26uFxiFe/Lhi2WRtfiWUvKWKOvejFha20hemhasZwBMN0+4uxoOTE44SIn7CKu193QK3/oj+U5VMPj8VNTqOHvwHN3L3Awih0TdA8h8YksFhiOhQU3xVuCTpPVxRWsuFLg4sZly7GXA4nxJO6A3BXSjAvkQRttR15FnDQfNDBY3MssAiJkBSX4cf0SROO9soMngXm5S3/pK5VX4zPkUiJWFddhyVZ4tDW06MfGjncSbhgoc4WtrX8ofJGEqoaTS/DdJxmWaQSBO5+bqz6K14H7XGppnZ6dUWBZyu9IBw+K1nCIp6JE5vYhkMKPpdI6mxYV8YjbgpUACftVV3fy564TPCHOYIe+48kQ8S/kd9cvy0ZUMcRIuUN/ANzG8rwDd1/1aBuMIQjvIRtEQrx1vgzAe9Uf+p3s7nspiRupDXkn8wC8pFSZE8hIkCAk7BxNC6Hqmkq/oxZIIhVjddKHxdF52uhSqm+7dfBj7cBfzwCaWBifY30GhZhwNSYa/MSPrvwS934rubl/2wybz+j9zko4pbuEmOZhrpWHotRecSNQRdvKVkyyq++m7Z8D04FGCPq1or89+R4BT2dk4W59mrNKpxVeVGwZ838hRj4yLQEf6beQ0Z76BrXcdfFLe8+R+4TwEZqdP0Tnep3Q55qJpZDDzweW5AauIUK8LaFRLCekuGbdPHoH35jFQIlNPlkY0oCDABooLPq9Tzfnu6B9vy0xrh+GD9OWyhSU7j+Ud5EnjNI9EQuTUrWSh1HUN2Mugz/897NZKSAA7wZTgQvhDCb/sg76YAhS/HB0eW1AJjhjkBCMzHofEmLo64NB/od6EIxmEUcj0ldZugpw1NtNEQlTk21rm9KV0eUeR6HOCQcsObq/AkFp582UeVErLQxYoL8hwXjGsVdB1BsEdc/o+n+GzT0tUdfy4+j3eNUogkqprtP8ugCyhZJfDtaBg92kZ0AVzevxVJAgBbPRx5wA/YBYlVhe7OThn2KhSgE6fB0DlUlzn77pHktelwFoD1CpCtLU29hGQL6aIjiV9qlBiWLs1B+WHY89Dca6QIvJzhcbXeHE0KdzaI6xMtsKtt+L+xH6g4uK5aeurcO0RlVJ46igrGa/1wYnbiUYKfaKkF5p98tgpuWUvt375QE0cGHvXSyqoXVzd6ecWWz10DWBZ1zci5xVkwxsAlq+nKeF6I3Lw7HDLU1+Vq++jhREiepfOAfodyvoCVzWSo+EfYYt/akGmmk5ktOCNFvxz4YKJTCa6O34WtZNahiWJpTfGkErAKJT4SJhEaep9Qwa+8GvsgAez3lB6/Sw1wuRaIefYf8DmwvYeKFEPXDCkQpk60NSZAXNFOnoHbZUnLIGM30vyDYxVpbMjjF/RpkM5ODpk8Yt5mrMukNHO1jBVXMrfw/R5/Aqzk6iPPoLAFxXnP8nfcD8lyxb9cLJdSLkjMJ1bYZFByeAw74ysnGK7V0o8XkGdvK6Hd6pWcRjWJIWVCxRX8M+/oEVtqlhpsDrSTiSxnkgXFqT1TOF+YB/lHrX0XD7RpDewh1HcVqZ6+vyHnSKWrmV5uJZWZAkEpoo+ypX2MDEkodgJfeW+mWeNNuvXO5BLq3AhdlpfmZoMw6v8jUREJbryi4BjExguxhWCwbWn+NP3xWa3E5tF4o+/Ks8XfZlcT4l1BplZtoanTHOuLYAdi48ucCt0WQnxG9b6U4kOkP4vB0fRCzsOdzxsy1WBl2BuyFrQaEprbM8Rxp4MSVrfIxFQ/JBqRuUFj5GZ7u6PHYRbvNbJbQSnsZgRMBVoxLEzO7Nq/MMUVNQycB2ig56B6RLptfD1bcVVUU7f0qluw4s7XbKXGWjGwHyRkTDltTq6V2uxE1JWBwiuALW1nJepD/Q6q6GGhqsmZj0DcmBnv5I0Zh+OMInqNnATVt5KKDw5z6jllYqbwNgViJzDBgb0lTisrug/hvcBSt6Njt2sq7TEFOzMMLtByF3uhtBY2a6yazSD2ysrqwGMsFRPJ4Rj13Pq2vf+4kAivipT7ttRLnv5xYmVS3tEpIc2xW5qk3kRjwlue4sNUkTO0IN7byHjmSBMRcV2EEDQgi20YYF3M/JkqCMl8jtqKGzcyIapmFQnXnPntaiDQF566WBrMgQovg0v3zCf8tf4E0zhdSwvvRqpizGlis/kJfrn8Mb9tjpCbv4OqyLRnoNwEFEx5sfp4XC/06faqPMiwct1PhWi3+Nn4dUydvawgc3mdpPTdTeulo5waVtre7ghOfNWi+7Gbpn6n1Hqfe8J6EsuCRhVZIcBQYqn6zICVKQnwSE1FiDdhkc2AdT6sR2fM0gAiJgOAmkH1tY+AVTDB8uQKzisAY6OfI6/7FKBLI+v8u5wOzMzWQXDIDPKRtFaXkm3PaDCx0Hi3b/DkCfcvqfEU5uC43hai319nQbSAMr0fIx8x+1Ip2JmFmoPUJ0SzTVlSPj7T83kxgVJOBhLszqXGBv7IBx6PHx0a5HfFgZkB1YSAEaLNszVAWorRzp3plcP5HXeGcxQUVIeLikXDyF77nQtJRoxgRL44Qo7WXZoK19S6MbWxlEgc91Ua8/T5/p65ek49ZCVarRLOiFg8OAKNIMohmlLGBgghjW+uGH1cOwK/MjeYqQiI1UASo6uOcP9vFqQDd5hkQCMVCYAqLnWnTuHa6ZX5/HxseEdLGnNqcKTj/ggW1tE73nYtMtCkYgQ/RBVKmyRh8XVLLVEorMXsdta0IBDMojUSlC/0upO6ewmjB2NMmTmVXV7yD3VsDZv8XF/IvC2UIlouQWblmnw0ijExyhDrXP8tdqsk2ZpEhOAR406EXNgnuDOz64Zi09+bCaf1SBlXgE0ln8znXjTjhgUmNg3sfdeF9wW+6i+6w6MtSXFO+4yF6N12karUKGNAhFeD7jmbRkA6jjB1iUPzoC9+TTDoXnUQ+BtIb6tSABGn49/1GWmFrw2bTh6rkXMYVKBz2DyU+9QyxkDSGT51WKxmESta4zqOHzLYFqDPTZ9199ds1Pg1OvV50edyACyJljjWBRXsWMp7IFCP59/g+Y0NWJcNFO+PyeijXUV9z3l2PB5vAgX+ym57i6G6Z7zL4fw+P1pcaoXwO0ZeY5/AWaeo8xUxmaitAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAkQFhof",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "Q0+VoteCYKX2nDvg3Fzle3+lfNGBPcWcU+7b6oRmffaAoZdNTpUkPGCY0BGfTAghXu0EUfC1cb23CqYRvvC/CQ==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:37:31.857439+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

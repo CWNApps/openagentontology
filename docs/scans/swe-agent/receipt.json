@@ -1,0 +1,1193 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-SWEAGENT-992b51d43e",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "apply_patch_locally",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "act_apply_patch_locally"
+        },
+        {
+          "label": "open_pr",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "act_open_pr"
+        },
+        {
+          "label": "push_gh_repo_url",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "act_push_gh_repo_url"
+        },
+        {
+          "label": "skip_if_commits_reference_issue",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "act_skip_if_commits_reference_issue"
+        },
+        {
+          "label": "click_mouse",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_click_mouse"
+        },
+        {
+          "label": "close_site",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_close_site"
+        },
+        {
+          "label": "create",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_create"
+        },
+        {
+          "label": "double_click_mouse",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_double_click_mouse"
+        },
+        {
+          "label": "drag_mouse",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_drag_mouse"
+        },
+        {
+          "label": "edit",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_edit"
+        },
+        {
+          "label": "execute_script_on_page",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_execute_script_on_page"
+        },
+        {
+          "label": "exit_forfeit",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_exit_forfeit"
+        },
+        {
+          "label": "filemap",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_filemap"
+        },
+        {
+          "label": "find_file",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_find_file"
+        },
+        {
+          "label": "get_console_output",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_console_output"
+        },
+        {
+          "label": "goto",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_goto"
+        },
+        {
+          "label": "insert",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_insert"
+        },
+        {
+          "label": "move_mouse",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_move_mouse"
+        },
+        {
+          "label": "navigate_back",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_navigate_back"
+        },
+        {
+          "label": "navigate_forward",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'forward'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'forward'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'forward'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'forward'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_navigate_forward"
+        },
+        {
+          "label": "open",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_open"
+        },
+        {
+          "label": "open_site",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_open_site"
+        },
+        {
+          "label": "press_keys_on_page",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_press_keys_on_page"
+        },
+        {
+          "label": "reload_page",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_reload_page"
+        },
+        {
+          "label": "screenshot_site",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_screenshot_site"
+        },
+        {
+          "label": "scroll_down",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_scroll_down"
+        },
+        {
+          "label": "scroll_on_page",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_scroll_on_page"
+        },
+        {
+          "label": "scroll_up",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_scroll_up"
+        },
+        {
+          "label": "search_dir",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_search_dir"
+        },
+        {
+          "label": "search_file",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_search_file"
+        },
+        {
+          "label": "set_browser_window_size",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_set_browser_window_size"
+        },
+        {
+          "label": "str_replace_editor",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_str_replace_editor"
+        },
+        {
+          "label": "submit",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_submit"
+        },
+        {
+          "label": "type_text",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_type_text"
+        },
+        {
+          "label": "view_image",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_view_image"
+        },
+        {
+          "label": "wait_time",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_wait_time"
+        },
+        {
+          "label": "execute_command",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute_command"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "run_from_cli",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_from_cli"
+        },
+        {
+          "label": "run_from_config",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_from_config"
+        },
+        {
+          "label": "run_in_session",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_in_session"
+        },
+        {
+          "label": "run_instance",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_instance"
+        },
+        {
+          "label": "send",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send"
+        },
+        {
+          "label": "send_request",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_request"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "act_apply_patch_locally",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "act_open_pr",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "act_push_gh_repo_url",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "act_skip_if_commits_reference_issue",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_execute_command",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_run_from_cli",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_run_from_config",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_run_in_session",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_run_instance",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_send",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "fn_send_request",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_click_mouse",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_close_site",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_create",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_double_click_mouse",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_drag_mouse",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_edit",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_execute_script_on_page",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_exit_forfeit",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_filemap",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_find_file",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_get_console_output",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_goto",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_insert",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_move_mouse",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_navigate_back",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_navigate_forward",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_open",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_open_site",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_press_keys_on_page",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_reload_page",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_screenshot_site",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_scroll_down",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_scroll_on_page",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_scroll_up",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_search_dir",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_search_file",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_set_browser_window_size",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_str_replace_editor",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_submit",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_type_text",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_view_image",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        },
+        {
+          "dst": "cap_wait_time",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_swe_agent"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "act_apply_patch_locally",
+          "name": "apply_patch_locally",
+          "props": {
+            "action": "apply_patch_locally"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "act_open_pr",
+          "name": "open_pr",
+          "props": {
+            "action": "open_pr"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "act_push_gh_repo_url",
+          "name": "push_gh_repo_url",
+          "props": {
+            "action": "push_gh_repo_url"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "act_skip_if_commits_reference_issue",
+          "name": "skip_if_commits_reference_issue",
+          "props": {
+            "action": "skip_if_commits_reference_issue"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "agent_swe_agent",
+          "name": "swe-agent",
+          "props": {
+            "source_kind": "directory"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "cap_click_mouse",
+          "name": "click_mouse",
+          "props": {
+            "action": "click_mouse"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_close_site",
+          "name": "close_site",
+          "props": {
+            "action": "close_site"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_create",
+          "name": "create",
+          "props": {
+            "action": "create"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_double_click_mouse",
+          "name": "double_click_mouse",
+          "props": {
+            "action": "double_click_mouse"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_drag_mouse",
+          "name": "drag_mouse",
+          "props": {
+            "action": "drag_mouse"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_edit",
+          "name": "edit",
+          "props": {
+            "action": "edit"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_execute_script_on_page",
+          "name": "execute_script_on_page",
+          "props": {
+            "action": "execute_script_on_page"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_exit_forfeit",
+          "name": "exit_forfeit",
+          "props": {
+            "action": "exit_forfeit"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_filemap",
+          "name": "filemap",
+          "props": {
+            "action": "filemap"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_find_file",
+          "name": "find_file",
+          "props": {
+            "action": "find_file"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_console_output",
+          "name": "get_console_output",
+          "props": {
+            "action": "get_console_output"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_goto",
+          "name": "goto",
+          "props": {
+            "action": "goto"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_insert",
+          "name": "insert",
+          "props": {
+            "action": "insert"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_move_mouse",
+          "name": "move_mouse",
+          "props": {
+            "action": "move_mouse"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_navigate_back",
+          "name": "navigate_back",
+          "props": {
+            "action": "navigate_back"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_navigate_forward",
+          "name": "navigate_forward",
+          "props": {
+            "action": "navigate_forward"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_open",
+          "name": "open",
+          "props": {
+            "action": "open"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_open_site",
+          "name": "open_site",
+          "props": {
+            "action": "open_site"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_press_keys_on_page",
+          "name": "press_keys_on_page",
+          "props": {
+            "action": "press_keys_on_page"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_reload_page",
+          "name": "reload_page",
+          "props": {
+            "action": "reload_page"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_screenshot_site",
+          "name": "screenshot_site",
+          "props": {
+            "action": "screenshot_site"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_scroll_down",
+          "name": "scroll_down",
+          "props": {
+            "action": "scroll_down"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_scroll_on_page",
+          "name": "scroll_on_page",
+          "props": {
+            "action": "scroll_on_page"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_scroll_up",
+          "name": "scroll_up",
+          "props": {
+            "action": "scroll_up"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_search_dir",
+          "name": "search_dir",
+          "props": {
+            "action": "search_dir"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_search_file",
+          "name": "search_file",
+          "props": {
+            "action": "search_file"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_set_browser_window_size",
+          "name": "set_browser_window_size",
+          "props": {
+            "action": "set_browser_window_size"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_str_replace_editor",
+          "name": "str_replace_editor",
+          "props": {
+            "action": "str_replace_editor"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_submit",
+          "name": "submit",
+          "props": {
+            "action": "submit"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_type_text",
+          "name": "type_text",
+          "props": {
+            "action": "type_text"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_view_image",
+          "name": "view_image",
+          "props": {
+            "action": "view_image"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_wait_time",
+          "name": "wait_time",
+          "props": {
+            "action": "wait_time"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "fn_execute_command",
+          "name": "execute_command",
+          "props": {
+            "action": "execute_command"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_from_cli",
+          "name": "run_from_cli",
+          "props": {
+            "action": "run_from_cli"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_from_config",
+          "name": "run_from_config",
+          "props": {
+            "action": "run_from_config"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_in_session",
+          "name": "run_in_session",
+          "props": {
+            "action": "run_in_session"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_instance",
+          "name": "run_instance",
+          "props": {
+            "action": "run_instance"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send",
+          "name": "send",
+          "props": {
+            "action": "send"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_request",
+          "name": "send_request",
+          "props": {
+            "action": "send_request"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "swe-agent",
+      "source_kind": "directory"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 44,
+      "frameworks": [],
+      "governed_actions": 44,
+      "nodes": 45,
+      "source": "swe-agent",
+      "source_kind": "directory",
+      "ungoverned_actions": 33
+    }
+  },
+  "evidence_hash": "992b51d43ec503e1d9f0401308a6b62cfc2532bb59a65e3e05abcc2af54701cd",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "f1o+641IIWYQ/HWuw2BsqeOoqEkOBFqj5dm2rMrCY4bmwQ6V6XsSxLz0Ler9XPtvWUw4VTJ/i+P70T7nnfryAA==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:46:40.480936+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

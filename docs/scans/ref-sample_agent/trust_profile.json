@@ -1,0 +1,17 @@
+{
+  "rationale": [
+    "Trust Profile: UNGOVERNED (41/100).",
+    "3/16 high-risk actions covered by an asserted control.",
+    "10 action(s) backed only by a heuristic mapping -- confirm against published control text.",
+    "3 action(s) UNGOVERNED -- no control matched (review these first).",
+    "Touches 3 asserted framework(s): NIST SP 800-53r5, EU AI Act, OWASP LLM Top 10 (2025)."
+  ],
+  "score": 41,
+  "subscores": {
+    "breadth": 75,
+    "coverage": 19,
+    "rigor": 23,
+    "structure": 100
+  },
+  "tier": "UNGOVERNED"
+}

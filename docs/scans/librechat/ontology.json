@@ -1,0 +1,147 @@
+{
+  "action_maps": [
+    {
+      "label": "allowedDomains",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "act_alloweddomains"
+    },
+    {
+      "label": "build",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "act_build"
+    },
+    {
+      "label": "@librechat/api#build",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "act_librechat_api_build"
+    },
+    {
+      "label": "@librechat/client#build",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "act_librechat_client_build"
+    },
+    {
+      "label": "@librechat/data-schemas#build",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "act_librechat_data_schemas_build"
+    },
+    {
+      "label": "e2e-memory",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_e2e_memory"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "act_alloweddomains",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_librechat"
+    },
+    {
+      "dst": "act_build",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_librechat"
+    },
+    {
+      "dst": "act_librechat_api_build",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_librechat"
+    },
+    {
+      "dst": "act_librechat_client_build",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_librechat"
+    },
+    {
+      "dst": "act_librechat_data_schemas_build",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_librechat"
+    },
+    {
+      "dst": "cap_e2e_memory",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_librechat"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "act_alloweddomains",
+      "name": "allowedDomains",
+      "props": {
+        "action": "allowedDomains"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "act_build",
+      "name": "build",
+      "props": {
+        "action": "build"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "act_librechat_api_build",
+      "name": "@librechat/api#build",
+      "props": {
+        "action": "@librechat/api#build"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "act_librechat_client_build",
+      "name": "@librechat/client#build",
+      "props": {
+        "action": "@librechat/client#build"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "act_librechat_data_schemas_build",
+      "name": "@librechat/data-schemas#build",
+      "props": {
+        "action": "@librechat/data-schemas#build"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "agent_librechat",
+      "name": "librechat",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_e2e_memory",
+      "name": "e2e-memory",
+      "props": {
+        "action": "e2e-memory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "librechat",
+  "source_kind": "directory"
+}

@@ -1,0 +1,1174 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-UAGENTS-8956e04de5",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "execute",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute"
+        },
+        {
+          "label": "publish_manifest",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_publish_manifest"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "run_agent",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_agent"
+        },
+        {
+          "label": "run_async",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_async"
+        },
+        {
+          "label": "run_bridge",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_bridge"
+        },
+        {
+          "label": "run_forever",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_forever"
+        },
+        {
+          "label": "run_pydoc_markdown",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_pydoc_markdown"
+        },
+        {
+          "label": "run_server",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_server"
+        },
+        {
+          "label": "run_shutdown_tasks",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_shutdown_tasks"
+        },
+        {
+          "label": "run_startup_tasks",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_startup_tasks"
+        },
+        {
+          "label": "send",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send"
+        },
+        {
+          "label": "send_and_receive",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_and_receive"
+        },
+        {
+          "label": "send_exchange_envelope",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_exchange_envelope"
+        },
+        {
+          "label": "send_message",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_message"
+        },
+        {
+          "label": "send_message_raw",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_message_raw"
+        },
+        {
+          "label": "send_message_to_agent",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_message_to_agent"
+        },
+        {
+          "label": "send_raw",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_raw"
+        },
+        {
+          "label": "send_sync_message",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_sync_message"
+        },
+        {
+          "label": "send_text",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_text"
+        },
+        {
+          "label": "upload",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_upload"
+        },
+        {
+          "label": "upload_packages",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_upload_packages"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_execute",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_publish_manifest",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_agent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_async",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_bridge",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_forever",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_pydoc_markdown",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_server",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_shutdown_tasks",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_run_startup_tasks",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_and_receive",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_exchange_envelope",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_message",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_message_raw",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_message_to_agent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_raw",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_sync_message",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_send_text",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_upload",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        },
+        {
+          "dst": "fn_upload_packages",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_uagents"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_uagents",
+          "name": "uagents",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "fn_execute",
+          "name": "execute",
+          "props": {
+            "action": "execute"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_publish_manifest",
+          "name": "publish_manifest",
+          "props": {
+            "action": "publish_manifest"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_agent",
+          "name": "run_agent",
+          "props": {
+            "action": "run_agent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_async",
+          "name": "run_async",
+          "props": {
+            "action": "run_async"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_bridge",
+          "name": "run_bridge",
+          "props": {
+            "action": "run_bridge"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_forever",
+          "name": "run_forever",
+          "props": {
+            "action": "run_forever"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_pydoc_markdown",
+          "name": "run_pydoc_markdown",
+          "props": {
+            "action": "run_pydoc_markdown"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_server",
+          "name": "run_server",
+          "props": {
+            "action": "run_server"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_shutdown_tasks",
+          "name": "run_shutdown_tasks",
+          "props": {
+            "action": "run_shutdown_tasks"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_startup_tasks",
+          "name": "run_startup_tasks",
+          "props": {
+            "action": "run_startup_tasks"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send",
+          "name": "send",
+          "props": {
+            "action": "send"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_and_receive",
+          "name": "send_and_receive",
+          "props": {
+            "action": "send_and_receive"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_exchange_envelope",
+          "name": "send_exchange_envelope",
+          "props": {
+            "action": "send_exchange_envelope"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_message",
+          "name": "send_message",
+          "props": {
+            "action": "send_message"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_message_raw",
+          "name": "send_message_raw",
+          "props": {
+            "action": "send_message_raw"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_message_to_agent",
+          "name": "send_message_to_agent",
+          "props": {
+            "action": "send_message_to_agent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_raw",
+          "name": "send_raw",
+          "props": {
+            "action": "send_raw"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_sync_message",
+          "name": "send_sync_message",
+          "props": {
+            "action": "send_sync_message"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_text",
+          "name": "send_text",
+          "props": {
+            "action": "send_text"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_upload",
+          "name": "upload",
+          "props": {
+            "action": "upload"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_upload_packages",
+          "name": "upload_packages",
+          "props": {
+            "action": "upload_packages"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "uagents",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 22,
+      "frameworks": [],
+      "governed_actions": 22,
+      "nodes": 23,
+      "source": "uagents",
+      "source_kind": "python",
+      "ungoverned_actions": 0
+    }
+  },
+  "evidence_hash": "8956e04de54157203729577f880e4578ce432107e91b87b6e85d4b39aa2d7d79",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "Mi58lNsmz1TiUHCNtsGsZPWYgkLVw4V0GvSJkPA+GiHFwrPn+ECNzhOqzW/1fkS0jocdZz0fMjSCxe/oAX40Bw==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:39:43.223750+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

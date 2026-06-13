@@ -1,0 +1,16 @@
+{
+  "rationale": [
+    "Trust Profile: SOVEREIGN (94/100).",
+    "17/18 high-risk actions covered by an asserted control.",
+    "1 action(s) UNGOVERNED -- no control matched (review these first).",
+    "Touches 3 asserted framework(s): NIST SP 800-53r5, EU AI Act, OWASP LLM Top 10 (2025)."
+  ],
+  "score": 94,
+  "subscores": {
+    "breadth": 75,
+    "coverage": 94,
+    "rigor": 100,
+    "structure": 100
+  },
+  "tier": "SOVEREIGN"
+}

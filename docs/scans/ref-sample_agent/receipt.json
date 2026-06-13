@@ -1,0 +1,951 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-EXAMPLESSAMP-8fa01ae9ff",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "delete_dataset",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_dataset"
+        },
+        {
+          "label": "deploy a billing-service config change",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_deploy_a_billing_service_config_change"
+        },
+        {
+          "label": "Deploy API",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_deploy_api"
+        },
+        {
+          "label": "deploy_service",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_deploy_service"
+        },
+        {
+          "label": "export the reconciliation extract",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_export_the_reconciliation_extract"
+        },
+        {
+          "label": "Payments API",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_payments_api"
+        },
+        {
+          "label": "deploy",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_deploy_config"
+        },
+        {
+          "label": "wire_transfer",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_payments_wire_transfer"
+        },
+        {
+          "label": "export_records",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_warehouse_export_records"
+        },
+        {
+          "label": "read_status",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_read_status"
+        },
+        {
+          "label": "Warehouse Export API",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_warehouse_export_api"
+        },
+        {
+          "label": "wire transfer to a beneficiary",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'wire'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_wire_transfer_to_a_beneficiary"
+        },
+        {
+          "label": "beneficiary_unverified",
+          "mappings": [
+            {
+              "basis": "Paying only verified beneficiaries enforces who the agent may transact with.",
+              "confidence": "asserted",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "Acting on unverified counterparty data is a data-governance failure.",
+              "confidence": "asserted",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "Sending funds to an unverified party is acting beyond safe authority.",
+              "confidence": "asserted",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "acting on behalf of an unverified party is valid-account abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "asserted_table",
+          "subject_id": "gate_beneficiary_unverified"
+        },
+        {
+          "label": "dual_control_required",
+          "mappings": [
+            {
+              "basis": "Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.",
+              "confidence": "asserted",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-5",
+              "name": "Separation of Duties",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "A high-value financial action by an automated system requires effective human oversight before it takes effect.",
+              "confidence": "asserted",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "An agent moving money without a second authorizer is the canonical excessive-agency failure.",
+              "confidence": "asserted",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+              "confidence": "advisory",
+              "fw": "NIST AI RMF",
+              "id": "MANAGE",
+              "name": "Manage function",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "separation of duties mitigates valid-account / privilege abuse",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "asserted_table",
+          "subject_id": "gate_dual_control_required"
+        },
+        {
+          "label": "over_threshold",
+          "mappings": [
+            {
+              "basis": "A transaction-value ceiling is an access-enforcement rule on what the agent is permitted to execute.",
+              "confidence": "asserted",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "The agent is granted only the transaction authority it needs; amounts above the limit exceed that grant.",
+              "confidence": "asserted",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "Above-threshold value should escalate to a human rather than auto-execute.",
+              "confidence": "asserted",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "Unbounded transaction authority is excessive agency.",
+              "confidence": "asserted",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "a transaction-value ceiling bounds valid-account authority",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "asserted_table",
+          "subject_id": "gate_over_threshold"
+        },
+        {
+          "label": "allow",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "gate_sample_agent_firewall_payments_allow"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "op_post_deploy_config",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "op_post_payments_wire_transfer",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "op_post_warehouse_export_records",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "gate_beneficiary_unverified",
+          "provenance": "EXTRACTED",
+          "rel": "GATED_BY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "gate_dual_control_required",
+          "provenance": "EXTRACTED",
+          "rel": "GATED_BY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "gate_over_threshold",
+          "provenance": "EXTRACTED",
+          "rel": "GATED_BY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "gate_sample_agent_firewall_payments_allow",
+          "provenance": "EXTRACTED",
+          "rel": "GATED_BY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_delete_dataset",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_deploy_a_billing_service_config_change",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_deploy_api",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_deploy_service",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_export_the_reconciliation_extract",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_payments_api",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_post_deploy_config",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_post_payments_wire_transfer",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_post_warehouse_export_records",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_read_status",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_warehouse_export_api",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        },
+        {
+          "dst": "cap_wire_transfer_to_a_beneficiary",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_sample_agent"
+        }
+      ],
+      "frameworks": [
+        "EU AI Act",
+        "NIST SP 800-53r5",
+        "OWASP LLM Top 10 (2025)"
+      ],
+      "nodes": [
+        {
+          "id": "agent_sample_agent",
+          "name": "sample_agent",
+          "props": {
+            "source_kind": "directory"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "cap_delete_dataset",
+          "name": "delete_dataset",
+          "props": {
+            "action": "delete_dataset"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_deploy_a_billing_service_config_change",
+          "name": "deploy a billing-service config change",
+          "props": {
+            "action": "deploy a billing-service config change"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_deploy_api",
+          "name": "Deploy API",
+          "props": {
+            "action": "Deploy API"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_deploy_service",
+          "name": "deploy_service",
+          "props": {
+            "action": "deploy_service"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_export_the_reconciliation_extract",
+          "name": "export the reconciliation extract",
+          "props": {
+            "action": "export the reconciliation extract"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_payments_api",
+          "name": "Payments API",
+          "props": {
+            "action": "Payments API"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_deploy_config",
+          "name": "deploy",
+          "props": {
+            "action": "deploy"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_payments_wire_transfer",
+          "name": "wire_transfer",
+          "props": {
+            "action": "wire_transfer"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_warehouse_export_records",
+          "name": "export_records",
+          "props": {
+            "action": "export_records"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_read_status",
+          "name": "read_status",
+          "props": {
+            "action": "read_status"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_warehouse_export_api",
+          "name": "Warehouse Export API",
+          "props": {
+            "action": "Warehouse Export API"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_wire_transfer_to_a_beneficiary",
+          "name": "wire transfer to a beneficiary",
+          "props": {
+            "action": "wire transfer to a beneficiary"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "gate_beneficiary_unverified",
+          "name": "beneficiary_unverified",
+          "props": {
+            "action": "beneficiary_unverified",
+            "reason": "beneficiary_unverified"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Gate"
+        },
+        {
+          "id": "gate_dual_control_required",
+          "name": "dual_control_required",
+          "props": {
+            "action": "dual_control_required",
+            "reason": "dual_control_required"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Gate"
+        },
+        {
+          "id": "gate_over_threshold",
+          "name": "over_threshold",
+          "props": {
+            "action": "over_threshold",
+            "reason": "over_threshold"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Gate"
+        },
+        {
+          "id": "gate_sample_agent_firewall_payments_allow",
+          "name": "sample.agent_firewall.payments.allow",
+          "props": {
+            "action": "allow"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Gate"
+        },
+        {
+          "id": "op_post_deploy_config",
+          "name": "deploy",
+          "props": {
+            "action": "deploy"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_payments_wire_transfer",
+          "name": "wire_transfer",
+          "props": {
+            "action": "wire_transfer"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_warehouse_export_records",
+          "name": "export_records",
+          "props": {
+            "action": "export_records"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "examples\\sample_agent",
+      "source_kind": "directory"
+    },
+    "summary": {
+      "asserted_covered": 3,
+      "edges": 19,
+      "frameworks": [
+        "EU AI Act",
+        "NIST SP 800-53r5",
+        "OWASP LLM Top 10 (2025)"
+      ],
+      "governed_actions": 16,
+      "nodes": 20,
+      "source": "examples\\sample_agent",
+      "source_kind": "directory",
+      "ungoverned_actions": 3
+    }
+  },
+  "evidence_hash": "8fa01ae9ff840bb85c6ba5c2d07a92711e6dd558e36d6fc508f8ed0134ee2604",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "zNMIMaQDXePTNY2I8rbymRJSaBZNsZz6PW3wPUHHcll4DXMUjJTt5J5ygX7X25mj9pTQz5Wdium7Ahax8s4WCw==",
+  "signed": true,
+  "signed_at": "2026-06-12T05:18:47.095176+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

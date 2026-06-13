@@ -1,0 +1,764 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-AIDER-57c64634cd",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "drop_rel_fname",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_drop_rel_fname"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "run_cmd",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_cmd"
+        },
+        {
+          "label": "run_cmd_pexpect",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_cmd_pexpect"
+        },
+        {
+          "label": "run_cmd_subprocess",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_cmd_subprocess"
+        },
+        {
+          "label": "run_git_diff",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_git_diff"
+        },
+        {
+          "label": "run_git_log",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_git_log"
+        },
+        {
+          "label": "run_help_command",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_help_command"
+        },
+        {
+          "label": "run_install",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_install"
+        },
+        {
+          "label": "run_one",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_one"
+        },
+        {
+          "label": "run_server",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_server"
+        },
+        {
+          "label": "run_shell_commands",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_shell_commands"
+        },
+        {
+          "label": "run_stream",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_stream"
+        },
+        {
+          "label": "run_test",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_test"
+        },
+        {
+          "label": "run_test_real",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_test_real"
+        },
+        {
+          "label": "run_unit_tests",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_unit_tests"
+        },
+        {
+          "label": "send",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send"
+        },
+        {
+          "label": "send_completion",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_completion"
+        },
+        {
+          "label": "send_message",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_message"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_drop_rel_fname",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_cmd",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_cmd_pexpect",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_cmd_subprocess",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_git_diff",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_git_log",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_help_command",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_install",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_one",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_server",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_shell_commands",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_stream",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_test",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_test_real",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_run_unit_tests",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_send",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_send_completion",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        },
+        {
+          "dst": "fn_send_message",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_aider"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_aider",
+          "name": "aider",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "fn_drop_rel_fname",
+          "name": "drop_rel_fname",
+          "props": {
+            "action": "drop_rel_fname"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_cmd",
+          "name": "run_cmd",
+          "props": {
+            "action": "run_cmd"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_cmd_pexpect",
+          "name": "run_cmd_pexpect",
+          "props": {
+            "action": "run_cmd_pexpect"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_cmd_subprocess",
+          "name": "run_cmd_subprocess",
+          "props": {
+            "action": "run_cmd_subprocess"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_git_diff",
+          "name": "run_git_diff",
+          "props": {
+            "action": "run_git_diff"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_git_log",
+          "name": "run_git_log",
+          "props": {
+            "action": "run_git_log"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_help_command",
+          "name": "run_help_command",
+          "props": {
+            "action": "run_help_command"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_install",
+          "name": "run_install",
+          "props": {
+            "action": "run_install"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_one",
+          "name": "run_one",
+          "props": {
+            "action": "run_one"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_server",
+          "name": "run_server",
+          "props": {
+            "action": "run_server"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_shell_commands",
+          "name": "run_shell_commands",
+          "props": {
+            "action": "run_shell_commands"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_stream",
+          "name": "run_stream",
+          "props": {
+            "action": "run_stream"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_test",
+          "name": "run_test",
+          "props": {
+            "action": "run_test"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_test_real",
+          "name": "run_test_real",
+          "props": {
+            "action": "run_test_real"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_unit_tests",
+          "name": "run_unit_tests",
+          "props": {
+            "action": "run_unit_tests"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send",
+          "name": "send",
+          "props": {
+            "action": "send"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_completion",
+          "name": "send_completion",
+          "props": {
+            "action": "send_completion"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_message",
+          "name": "send_message",
+          "props": {
+            "action": "send_message"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "aider",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 19,
+      "frameworks": [],
+      "governed_actions": 19,
+      "nodes": 20,
+      "source": "aider",
+      "source_kind": "python",
+      "ungoverned_actions": 0
+    }
+  },
+  "evidence_hash": "57c64634cdd1cd67d500ccfa6bc2c4eb61f5c7f2b9abc9ee1131eb2740b16d88",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "fH/9/EkgFawMtrRF5PCfMFjaAeW9moOQB6M1kboHWVlswT1O2NnNjf6Uh3EaNN4cCfjyX29/93m7mvvKn+xbAw==",
+  "signed": true,
+  "signed_at": "2026-06-12T05:21:38.224686+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

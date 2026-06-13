@@ -1,0 +1,248 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-LLM-3c7f1156bc",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "delete",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_delete"
+        },
+        {
+          "label": "execute",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute"
+        },
+        {
+          "label": "execute_tool_calls",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute_tool_calls"
+        },
+        {
+          "label": "migrate",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 14",
+              "name": "Human oversight",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "an unapproved production change maps to system-process modification / persistence",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_migrate"
+        },
+        {
+          "label": "run_async",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_async"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_delete",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_llm"
+        },
+        {
+          "dst": "fn_execute",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_llm"
+        },
+        {
+          "dst": "fn_execute_tool_calls",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_llm"
+        },
+        {
+          "dst": "fn_migrate",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_llm"
+        },
+        {
+          "dst": "fn_run_async",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_llm"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_llm",
+          "name": "llm",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "fn_delete",
+          "name": "delete",
+          "props": {
+            "action": "delete"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_execute",
+          "name": "execute",
+          "props": {
+            "action": "execute"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_execute_tool_calls",
+          "name": "execute_tool_calls",
+          "props": {
+            "action": "execute_tool_calls"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_migrate",
+          "name": "migrate",
+          "props": {
+            "action": "migrate"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_async",
+          "name": "run_async",
+          "props": {
+            "action": "run_async"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "llm",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 5,
+      "frameworks": [],
+      "governed_actions": 5,
+      "nodes": 6,
+      "source": "llm",
+      "source_kind": "python",
+      "ungoverned_actions": 0
+    }
+  },
+  "evidence_hash": "3c7f1156bcf43aa331cbe5929d53a1ad2ffa007520504a95f31ed4cce66b98a7",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "yR2qrPjpaDo/VFPc+8oIb9sP21j+2YXpfFCU5WQ5SOQT5/JThyo5/tIwYGi0sVx2okDwzCqu75St0QacMvQGBQ==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:37:35.016409+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "bgIkCZgh9kYlabSAZvcwrGW4aVuezpaQQr01al9dcOkjRLktBIaOQ5AVrbZxfeIbH+mIXN0S9cJKIbRfe51EyL5O8lcfdROA9AkHqF93X0Web43CckW6sCQAleK2InTowL8yGzfVNMFsGYXaGE2CsCuT7DLRuZSyIWdexO1pUMKQ8cmuPtW3HTsLdVPCN+WhGpaXc4uDy7pmDTKuiAlnZQuD05Yn2Ds9Ja23mlpSXevZGFi+4Y75/JifNrEGJ/ODu7bvcMivHyacuhrKDpjIhhfNJV/tpfsam1N0w7IcUAHw6kSwkLZXGa16I+oZiNse9k/meqvcPITOA7vlbHAvNCM6+iz+vnZbHkuDaHLX1Mv3JibLcS+FzGqELjdxH2HD4w7c981UggvQhOb8auBzbo+HdxUuT+d9JNzATJ7+92XBIEbtM+FYCfJhN9iSuXqDczHndmb3TC42eD4i0KXW18TEYAD5PdUdu6ZWZeJ6pH6kW2JxXwTekOgASj1uQ1afyb2S4zC6lVyb1HIAKmHdj36Q4x8rNEdA2kjbZo9oki/IdDTfvQIYzY9vZyLLG55DZu7IyBe3PiKVFeGDT0akn/YccPF6z9hNhmkbCjAL24/nXbHgisVWKckv6Ij5CmoP5jxwu/oFi6ecrBjtYDufh9TP73yJ4DqKI3h+Xc1aKizHlkWrnTz0DUmP6hKSH2QbENzm53fnomDHLKut3+QlPy9zimNaBPgowScM/NEt+dkuhAwajty6HcJMo0YaIyrN45rIPD1ZolDjKgL6ACp6VSB8R+T5TcBuj5i6UurpXcywrmSAg/qxZMT1NNJBy+zRRUHOdh5LIqKzEaQyar6ZQkbe2SIyxtiFj50HmogYkyZC3mNCj2JzCY6zOe2DWKzJOcQYaPoj1Ad419wCNe6HC58qdQRyixptWcK1agFds2laPvNCocLTdBslKH4n044rJWzmSktM3Nt8z54bj8ovtxBqemVRNleoy6sxo9DEX6G04qHhXIS1yWbtq7U6g0+mUEOfeJl8PVWgdnvYNgnulgsGOPdeOcFwGLq/mBPGh+NwHa6Rq48T3kRAEfXIV5k6faNqJ5oK/iJKpAZZkedF+GnF7e+/67jScvg6f+sJHDLg7MBbpTU1VyZiGYX7aEyIKnKKmlBKSBAlx0Z/b5emFfsRsnDmQQmV35ySEx3WRQBjh3XvUinl6wAA6BGnUT9ox2ib3SPRQQciu2BM37MxlPM4yU1P92g2B2s4GSYRZ2qmoy5WOdpkqkoES9alyoAZK+HbeyZW+RFK5c2ZQ88xdW6vbGJGS2T6xXnxCD8og/6hM3FVX18m8Y2V24wRFd7078FBZO9Iog6s7x60/sjVpguH2NgfYQ3W9llsKv/L5l/H9wXeCHLHq5NYRV/4Pk+70heD5d1Az96pqQdsPyIHRt9v9ZoXD865BOcEcgU9feB7GYRqV1MK5+QhWzN0fp1OfVkHk46XWAvm8hc1Ro6XSNwI7WTDu94AQIbowTyHPo3v/9MFhKpgi/WUMM3tIXQc9elLCIVOOfxIWA67QY67XMhZKnL3OCyl4mStyniYlCJiFRdZyj6AcRaXlg6Cu6ob9ZlCN9+IePzkMSFctWvQxtHFn84sZhQufW3LxwRC5slZb0B3knWRb53XWC31At9RGlGjesD764EFS2MZxYzJDWN41DGyB2PerCH8rEopNdA2iOnVioD+QnJmDm8KmWzOEOlumgJIe8onA2RbLjN6iqrSPY83wQXgrxhQZTPxLPtZ5VF2aRdgPSbu4k/EjX2tPl8WmSodB0A7vKCV5wkrfHvU+62mHbgEZqcgusfKhYoOPOU0t/x31eZ2LkVvcTLLlbu9EMsQy4cJRDOwECISk6Ikp4lKl52J2G0kP+2jx541MhtRc+vld71+rDfOe+WdQ5wavVmDLDTcS3jQKN6vWErIKZiL1N0YRZ4rZawrpVf3uFJ5YmxnF9bWcQegN7gnn7zByhGKeS3F4ZOZxsSNZukTfoLpCBEBraHg72EX+d+ZzsMSvBOAca+15X6jpquuYKPDC4GgVS5G0IoFqfuVhT78jLQ2sCbofShAYKWEGH83iQYZu8MJ9G2rOMufKjDz/LI8q/a04aHtdjR1rNvw9t18wVegiB+dRmMqxBPDCHYEvK40PG3LReSWntQ3HG1AGTUindHDNc3bdCmf11bSQIUtnQAsqv3Cd4UrscmluP0YoQ5Ms65gO6S0X5hKqcSBli4Um5zeyBDAlSUJFYpVyA9x1XNq3DtRapystQCb+YBR6t6zJimZb0emS0KumWNxz/khEtjIC4ZRELMun0xWxAoAS/3j68jjuL4jjxig3QVRtVojmC6Iszl3ySrqdXiJKOVQbhpi58uwRiSUXrp5N5jOKKbz+sEZGdPuwWKjxj2sfxrfmESjBo49n4eX7pYxftddyJrQQcw4ow/oIL+IS+NcKRjcK2hwbCH61NZBI9DCIAPx2Bq1WPJlkFEZZV8d2sc00aCevN3n3O+GjSx1JGAkzhA6YAwqBVATCldPoS3s88bzsvzOoETGkzdYSRPXkmIWAbYPoY99mxgY3sqD4sfVj2UJJqxvzRNC89E54gXCkfAYfaulgJI9bVR9vqHOUKMo2l/Ff6pHpFRN1RfbeIPjN8yBm+Z1Pqk7+Ze7tYrm0jajfqPpItXJB7j6U3g05cRj2NeO4JyKuZpi2d5Y7cd/nXoH03izHkCvBLUtz/IJMlZgYSAFKHdtf7r+RL9/MjNhEvrEiTry7YgtpdWZXP170KFRezf3I1x8oWONdIeucb95DW+CQ9WmZBt7CiB6VR+wCIWtP/gCQmsoS1qFWHnmQ/abAXPNIcyCoZHmbnmBtevQvAwx3bHhuILJRxzJSPq6QWrCrAGqoSCqW1MVMsDpK475LLLFzr/FDWioe5x3YujBRQ/IeBIruj4e6DAzwcH1v3YIE8x15hXTL2as0WgyKtf0RQFCfgNV31M5+4eMR1/lRBs5qYXq6ifeL5KRzsYNmLwC6CoAhjW3qNcun7tXQN9EOoARkAdsHjgf2d0IVg5nn3jgf6pSLOiOW0cauMZMEhCtm7IAW2WvvFu6qjDR4dFSvyIr4viiKcCoOSW8N6SlGtQq0A7Uwy6evw0MlrvAQ/Rd7K8IScgDwak+TPSdMNuR8ltB9O5/dtWr/W5nGBuYeTiU3u8iSmkllFvX009uT93vMmc327TI2O0Egaw3AcShLx3UbTAwQgzGdjczt2K8FNBcl5DbBUxH9aCWvB2b6C9BW95mB5is66PSccHUiNG8abArosfAPhT9pDxFf/7YgecwEk0SIwEkAt7FmGh5bgJbv1PNqIo/Cy2afS/gL4RQLlDqmIHKWtp4ZWcVk5JdwCSVubr9Y5ELqWLJdhk6K4++q9DMuPsqP212g9De8GAH8f201YrQhAWximCcC5uzC8/6kJ9c1WiUbgxKYQoSVnUelDDSPM0rwFdxvk/6p7WANDzL/ehgJmW7BYHqP6Vrq+gjrFQCn9j/qiKH28thLkxFOUXDiEcrSZauW3dIPkYVmk9my2SHGp9lgbAG0ut8xgAocevMI6te4zFOyOqLAb0I0SMz5a4mDn8U0q7W/rShIcWz5SejpH7iFd3JhawC/AeWD+RZx9xhaxa+aNoMBBXNisD43BuD4AHcpftmhadpaklzSS73OM68Qa+/5xtQBpaw2tybw0a4W0pRWXcjTHoE66frkwcXqCDWtJ8YSkoPWgg87D1cm53vzxpzU8RRJa9AyuIC2AOteCERZpMXUgtow3vsPjal5U8N4dz1D/p8gweTkmCiN+VCJ2aVDg7OYnL6ajs573ZhwTwskMr9WqyfKb15M7Mvqqg45z8ER7NZAH8ucHgdRgVkJY0mP3Vz9Qb+Ym2DxJCZuBzA3G7gxYdy07cJrGe/tCaVP6lzh5mcAi+XCz8dZ4dPuEJkjIVeuEB8ZYyE1VuJUbxc5JzZkdU67ES/lKEHFU8Gd8MpX3TAidCNWSI5+/86yyhoSkq2pRT6H/V2So77gJy8i9/ok9DpNXIzMEQ6N6H9u0eVBxMc6A1Zb0hpO243sBBSszzP+w4JvoHfVVmEVP2FglHpNgOB5H0x+cvx5ebWfIQNWES2Yeqybgk4C4H+fFgg+Vu80xpFYd6TdxEHlKurilNS4bUCth2oMAZkIt1PaXmbF0wIqXI8tZUXWNcsU8yEmPY0T08zjm68Wkdd2soO349yatp3F3FOYbAYWP3VqUVlJocqB8pM2ibIO2AiAIkZpCicZ3qFFilKoaquQUWSLLa1ZF3bDcm43Pi3nWWMjHPfS8pL/cNQYKgb21TCmw/olv8okVjt5j5HV5p005PdOmSBqloHgr10BKlDnx0f73rAI2SCKkXFgo5egQ9o0pCO1rr3dwprQXCM1Ao6xM42bHnNRU0E4dSrAOPhZ2UZKMDZPcBiXjLpNJAeu8UARJFxrJ6iGvpopTj+L0sGPDdb+nkq6DUHdU4cCw+q1ZOE1R+fpDRH9bgXxU5mnOf4R6x5vWblTxvYJcROArvfuNddwQLxa/cMNoWg/sKXyMdtCkxXJlBOvN5poL5Ph+CjzcjnYlKroJjNSf6d/o2U/DPVzPoB0MuEWH+3txq7y73NSKYURyuQd/O0hgAedWno4dBGtVPqFefOs1axZaidoqsCSBEvpm1kYda8cMTgw1OaswwTWPnqPmOZ11Ks/rRyfwLCc+fQ2GacaauWz/uHgsUZqCzJFUTaWZq703O/OP88ps0AcIubH+lWsyJWX1mFPe2onPgnb2yIDRMWf7xHeeECypaI1DiSuKN2TaXM9dIwY9U3nM9WJCrbyaeYQAMonFvIi2O7yvWNeFirq+34Sh8SisAnLe6iG055MWNGIomEqFIPjVdt6DtfncdjgSvJ11+PBvMkKttOAlDqff+QFV0YRov9dsBw8VuwxeI+VDcnka1ep+n/UEM+yOTp+E3B0KV5TH/I8XF/zuIwBKv2hWj1qAyhMMVyP17ZyvE4+yUnZXowWlAV/6bt8CjhUaLF+bM21+go/LIAGjhdoyd1ejwPQo0kUkF5TJifBwqNPvLDgGLOljM9xVFukg/nYSSmeZ9T9qvNgswQQh50h77gVxQ7+Vqqsmi0omIWrUHfgRnm+R9MEE3zMToZtsXlatlCOGCCLAcWYPskul11fhdRrcxkPr3il2ysnwJojCo5Ulf//7kZJMEervj33c+Mi3NXvuOoyar3kgmCrPhMS66uLH1BSskzrq0jdrmKsHyjOb9rwQT6v6GfVb0EXcTeD+Sp5pfsQPywpFUtuXmp36Uy0iytaU1aeJTvSUK99qs9miRee+t29abB6gOmXE3bANXI6qOvAdUovAsITSzJn0c72KhfsZ1c8r9zg/Rh0k1CBioawf9bOCjj7ROrIzhWrQ4+wG6ubRL9J/fcNvhJWbGoxmfJtmjWpspwzptVE6d4rrAdBSE0Fy0Qsh++4IByhg2Gk3DxHZZzWG9HOmqFf24MjRGswTX1+6ckfo7+py6/yX59I6OTLvonm10RdvBLVYpLb3jGIUquPPYmpOhNlUg7fyj4ZfLxFy1P8+uYnvzqSD+Hqlucvyv1SLo4g+gdOJkX3bJeGsBQzNP1o5rcxO1pGyxDharc+O9gTe4qD3QMhdh4iFHidPkgZs7IcomIOiz05q2ORyg1Q5U4S4ghJiw+GIacmk9VREFOPROKhu9c/SnQ00ZtKL6W95zC0MAm6xE9CmB13vpdfruYPNOdWRSMmV7gUcQkOpx3nbsil2ax0R53UVhQ0NahnfK5kZMXvVRFFSlmXEJOQlZXB60OAuC2FeUgtt3884Pbz5mAOVrYJ0siNtkeaoGF7jpdvDf36hMxXF2xwBkL+GC7237RVlKYjtIy4j8mrk2ZbtV0jaiOqQj0JsLbuD3WExH5xnW7lqK/6CBqQXXFjqN1yOyq5BAJson44WoPvwYO4x8W7DlGEXo8Z7Zq3iZqDvlxp2Z/ZPqnWHahosILcBbRXWyGqwYcYVcAJiYnIBI3tyuVIXw5bPnIaWEoqkPnvT3GHx8wsbTQwBsExHgBIvxpLuF+YtAjs7YTEVcfkdq46trSllqieLxyr+ZFz+gph1MNPG3mycooMBu7yZ9WzvDikK/SJ/D8mb4lwR3ZHdioKqJyYujaO1C6ziDZAw73kA374HYxcQVw82euq8eAz30IoA7cuQBYnihbSvPpd3Dmn1I7IHteeSc7NbRtDIumB15BVB2vXr7qpmoYziXAUHoATQsbDqlJkjOxTgYLQzlYfbOt8pVeuzAWd6p38EeyhgPIB6vuc9a7xMy1nefT0niNEY2ZchTe99h6DDhgu/bGdaOCWqb3pUxe+Dsm3mzOkhRQeJOJzNgcjqFS1DsZXt90GrLgQt0BTqVztwOfnTJO36GqoX8ggxG9I2G9JyTAqQ0Grb5dAMoDK60ygk/8sqXVZOVbJxFvoEHNB+09jzzsEWpMdmw/kG82gS/LBEZsFmbjl6C0CfYL3FhZe0mvulr+HsN5wTGj1DKkiUElfe29ZM5Zrmk8SnGyPfxtYuUviKDLUaevkFwj9j/6NUj5SE1LUrRIMoHTn4m0az5F0IkI2IO6i4Ec04d+FXGTH6/eabiiNC5Gyg9+BRoPA+9tSKOSZYw3Y8gJd1gHKFmn5MUnEHhpOHkhOcL1yKXcrdb83CxAoAeLFfJjl4PRpXV2DEYR4jIty3iGwC7g6r89t7H7urU6sifCaeEdmCWlZV9030z54aVTlnDXEYXwAlaxf+kkZQKy6kK+CDv27rOTCrdOt4FSr6y7W9IXxWnyeDWFsxPuAozL/8H07sv26PV9TcGOH2wWBMvOwMCkipkRpZOp3l10IhHuNyrAcd+Kkk/j3KSfRLABjF494wD5/gA/tAE9pOJAtVpgyw5dO5HKalMP4NOmIDKxk6jGYshRFsoal3UCUMZaRylaWyVUn8Xmxw2IswIkPnRPPl+HVbH0+D4KiXFB8RyaVbf9I5O6YkTfFPSmPaIghg39H8tYgoMOYZ/h8DSiBP8wlDYV1Bpba+Z0qSPQv21vZxABLb6P+qcpkxjxs9qGD7NVTDZM11t2D6HIz+bLZhZ+I2Mn7H7HhZHNEWhCq9n+um4vZUFNYzwaLtm6Mu+z4woSXE0DT7yY7gnVDcKUYOi+vpWAZ//dJlXTZvPi+CqyaisO6E+7GjqaAgi3zA6cpDoICWaIrq7zgDsqiaJaNlqK67CVsMnfs91SdYsqzcFSeqjcfF2C2cPD+8gtasQ1DQZ9+5Iot8ktG0ZeUUVhFv27ysO0bMYOD2ctCO+8m7vURX74rMhkKc+SLBwz3RyUEt9G9fi8I5Z3ubSDNMR4UyBfA7h8TKA6sKTh9lNW0vGKkOsqvkQCjzVf3CpxfxEFilPzyXjqm4Bb+Ibih+IOl+RVWWXivAsC56kAFSZEZlndTuB9V8/VI3NSoRRbT4R0oJq81E+OszSE2IJ7voHAlXOLBUySHWgVr57394bJtnUpUFl/LaydBT7Zsc2B7RUzCbOegyI/O81eOsQk4wmdttn6q1bCW1sRJYHVPyl4dSvp99x7eal5qtYzZ5SXW510FbKwzqltXvbV8El2DHPzNUFg2kgXu30xGGaFEKkRdUtZDWgMHCWtHUMKy6keSHJq0OxeKcZ1iz2iMFO/Iay21eizQtcHBLoS3yhZHPuIe0oVKL2TbRGkh1nSaRdFHvikH89mdozkjwtmB5IUQzlO1le+cL5RK55Gf0TyBoXRFNeTdlUZYXjr9v1nfiQ6KELqMf9Tqzuh69dfrwkd/4kOHiIajU0m749v0BZBBcb8uQQb78M1ZsM819NM9lZ+6yI26WbrPkhn3IVXT6PuBNzB8UbQe+dLB41TaKe3NKbNspMqKpQY0W4GcwxbYVQplJFJR9NxlXwqefw5CFCZX84OsAO4X7ichpOQ50VFSq+Pw/e4DCwniD7XPOKHEew8lUdmdzq2tect/9kOsN2/syMNo297JZHKnbhsUBw8lffShMFpEIhl1tWT2YAxGKs63k9DHv/dA6i5ypfgCa0BYEO9hfh47VPNzWjuQS5lsgc3wDN035BOvF3b3dF1BlmpXff/Bz3119eIgZw3kEFkMFEthgeMBLNAIUHU58VMd3TWNXv9YUcEMlJc1dsf1SELnd7uyxx7qQ7syI1mlYTxwpzkjL+X8EN1+MMjeQ62enVleruYF876wMdWpG40NIGpzjG9FWsOJx6L5qONxPs+3Ar2G6v3qDn2E4aIor3zyA/R/kVa7zoxiHKFUqBDoN675ANMyZnJxMrOogM9BENK9E+KNmm4FH9l9ppY9/VurQhYPULdJ6C6gZHOLvx6yKwuYMC6vsFUhmRMhbYPtfzhFbhMZD+U3riMfTPF3H+gW7T0wvqPFZKJmzfrShEHVXimjknxPHDpjgYmpH5Q+8sunUvFNOHzT2e1IfWUqQ11TAsgiqbnXEHie2BAdsRBSKMWViX1KfeFnSzJ7rKRMnHNLC5FeAv9b1ZLSG4IIx7XN+6ddCNyZgc1rFBpLCXvCODkfd55mQMPJio7hFQzTDnWK7hl2qFk7t9HlvT46kih5N/dmbAH0T5LXKkuYqxBPwsuDGhyGtQsW9rG3pdws2PADDCTwRl6P6u4tDtWnm2q0enI0HF5mCDt1B/GjtUsRWbIFrhIwzjywHm6V2F8CI4VHtS+SW9okgweN/csDwZilkfOhN6uwbF+UiHypOMh7cOp1qYN8CUSO4cMNBhVNKIs7/VzPpSM3n3JaZWgsVVjmOwU/ux1srfn5CHVH1aw7b2IynRXOUsUoP/YJv3UvV0xJJ3m2ynjNtFjxM+Lzzw8u/SfSfe0gcvkz4XhqMn7wW/RWfFAVr+AVEKTwashACOtibpBf3r27DR30NDBalK/LzM+sj3IFDN6BkGPuQGtgwFpIobeVToCbuUm9zeMpOrV0fgM/CbfuzvazG99ctoBzo02HSjT5cykfivjLa2iJ48Oa8gCuhhqxY0dskY0Gco2y2UKAGN2G9Wrr5rdXZ+cGOL8tb0pOWPlSPws+JIZffAUDDGrah+gCOie70X4lyvo0Um+kbgfybuyOMAkb4QZRPhSKuKWWWFFoSLuv4SUt7xc55HTTyDloqB/LXqt+DggcmANgA84kTd4krdqB0/kQcDSC5GhbVSPudHVSSl5ZRSWcqHWE3V8imkphrYrfniG65j3DMucM9v1ygFRBUUbh1jyor4hckrPNkGZE0EG+emXSMMAmEDqJOwDMLYDMnz+6ZDAKrvaALXwCQAn18HR+2SR0pkARXsGN0nArjldE/+NdhQdKZITjVJhO7OGc5zMpSto9m949iS26OBZJYdCpuIuAHJa8sngi+5KVgQcWaMMkCrFdhdCjA+xdXzCV0YZTUZRQEAJGvavNUhz80ipDeS1ZBQLuIfDJ5V8O3JJde8iK473xp7gknMGP1FwBaA9LmI0YXtAkp7Ti888s9NK4Fw79UGBgUwo6EmfwhnTybYrTwIuVp2GrwANKkUbWxbeuLwOvV2mYR1AOmMPXnfm7wieWABt2ibbIbKsIb5YZWcDh5mlrJ8oZguUc5UgIIeclPKpyH4sSAJkDbtdIA4bhEgD2xj7VHnywSw9934G0T4eGUzmh4wYdwv3lAJ36+cyB7ZxxLshG0TcFrk5AI5aYKmXmxwOoAgBNPjyzz2Vt223sDNBjaIckBgeWECzTaCiZI72Mubs51SIFXX+t4lHhhv+3wL+OoVhN0StWafZx5Ezy8aKO/v/OIsXOxeRmlXTLU5kD6732dGhxD8C3X1XbtLEfswkKGtk3gM5Gy+MiABK520aBK/7XRAUBwMe+kCgOmA6h4nDbR75ANvyBVeQJmpo4OziTSKX4JuYK3Sy387jIzMtaJaH8h1F6he/B0VJAcwmmQqqz5T5OmMgndUUpsoU9hDtrBN3E5zIl1nwFAyzulgPUYXG6hGDpicc+vB4dBnTINXHtkVrcOmzpF2YzAlXGdgaYd8FPn+cNoUjGrDWh2ytWLTVNRNrpdrOwwnIjjqQ+goJmWbJEqI+zhyRqDcbbeFbubVJOqFLRf29FQ1zKgip2pqc25XzKiCCwGAecVqvbtJbmMLx0S6LbBRV2PxVqPPZRcUynJo/3MnHHqgVavxDG5HY/zCQxjyhNBPGwGdyQLZhkYmw5lCWsDeCybjluOx4FOitLNywL/fXo9YzMwbn9C2QbVzVC3kSYgfE7orGYKKhRPzoGbWfyTNfABJbgFM55RUYWdWdc8YN+gHI2yKnM0NM+YDSty/P02GSwYkhYeeXhy8klg8VtEI44OPC3cUWKWum3sWh4aYFG0xIL1UwiiwIXz5icbsqDFG2YW4RFj/MQWP/ZlUr7VdX+gZebc72GnH1sD79irrFAkU+/81qYJeqxlKA+aO6kpElPV6oQehdoLLlW9qRFcs7gHjHc7y58FRwPul8D6cSzuZofXMZCw+RsiY=",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

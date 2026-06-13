@@ -1,0 +1,42 @@
+{
+  "action_maps": [
+    {
+      "label": "mcp-docs",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_mcp_docs"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "cap_mcp_docs",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_servers"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_servers",
+      "name": "servers",
+      "props": {
+        "source_kind": "mcp"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_mcp_docs",
+      "name": "mcp-docs",
+      "props": {
+        "action": "mcp-docs"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "servers",
+  "source_kind": "mcp"
+}

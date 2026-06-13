@@ -1,0 +1,3252 @@
+{
+  "action_maps": [
+    {
+      "label": "add_memories",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_add_memories"
+    },
+    {
+      "label": "delete_all_memories",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_all_memories"
+    },
+    {
+      "label": "delete_organization",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_api_v1_orgs_organizations_org_id"
+    },
+    {
+      "label": "remove_organization_member",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_delete_api_v1_orgs_organizations_org_id_members"
+    },
+    {
+      "label": "delete_project",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id"
+    },
+    {
+      "label": "deleteProjectMember",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id_members"
+    },
+    {
+      "label": "delete_webhook",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_api_v1_webhooks_webhook_id"
+    },
+    {
+      "label": "delete_memories",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_memories"
+    },
+    {
+      "label": "memories_batch_delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_batch"
+    },
+    {
+      "label": "memories_delete_all",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_memories"
+    },
+    {
+      "label": "memories_delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_memories_memory_id"
+    },
+    {
+      "label": "entities_delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v2_entities_entity_type_entity_id"
+    },
+    {
+      "label": "get_all_memories_tool",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_get_all_memories_tool"
+    },
+    {
+      "label": "list_memories",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_list_memories"
+    },
+    {
+      "label": "mem0",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_mem0"
+    },
+    {
+      "label": "update_project",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_patch_api_v1_orgs_organizations_org_id_projects_project_id"
+    },
+    {
+      "label": "create_organization",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_api_v1_orgs_organizations"
+    },
+    {
+      "label": "add_organization_member",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_api_v1_orgs_organizations_org_id_members"
+    },
+    {
+      "label": "create_project",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_api_v1_orgs_organizations_org_id_projects"
+    },
+    {
+      "label": "add_project_member",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_api_v1_orgs_organizations_org_id_projects_project_id_members"
+    },
+    {
+      "label": "create_webhook",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_api_v1_webhooks_projects_project_id"
+    },
+    {
+      "label": "agents_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_agents"
+    },
+    {
+      "label": "apps_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_apps"
+    },
+    {
+      "label": "exports_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_exports"
+    },
+    {
+      "label": "exports_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_exports_get"
+    },
+    {
+      "label": "submit_feedback",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_post_v1_feedback"
+    },
+    {
+      "label": "memories_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_memories"
+    },
+    {
+      "label": "memories_search_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_memories_search"
+    },
+    {
+      "label": "runs_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_runs"
+    },
+    {
+      "label": "users_create",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_users"
+    },
+    {
+      "label": "memories_list_v2",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v2_memories"
+    },
+    {
+      "label": "memories_search_v2",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v2_memories_search"
+    },
+    {
+      "label": "memories_list_v3",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v3_memories"
+    },
+    {
+      "label": "memories_add_v3",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v3_memories_add"
+    },
+    {
+      "label": "memories_search_v3",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v3_memories_search"
+    },
+    {
+      "label": "update_organization_member_role",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_put_api_v1_orgs_organizations_org_id_members"
+    },
+    {
+      "label": "update_project_member",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_put_api_v1_orgs_organizations_org_id_projects_project_id_members"
+    },
+    {
+      "label": "update_webhook",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_put_api_v1_webhooks_webhook_id"
+    },
+    {
+      "label": "memories_batch_update",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_put_v1_batch"
+    },
+    {
+      "label": "memories_update",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_put_v1_memories_memory_id"
+    },
+    {
+      "label": "save_memory",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_save_memory"
+    },
+    {
+      "label": "search_graph_memory_tool",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_search_graph_memory_tool"
+    },
+    {
+      "label": "search_memory",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_search_memory"
+    },
+    {
+      "label": "search_memory_tool",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_search_memory_tool"
+    },
+    {
+      "label": "skills",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_skills"
+    },
+    {
+      "label": "store_graph_memory_tool",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_store_graph_memory_tool"
+    },
+    {
+      "label": "store_memory_tool",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_store_memory_tool"
+    },
+    {
+      "label": "delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete"
+    },
+    {
+      "label": "delete_all",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_all"
+    },
+    {
+      "label": "delete_col",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_col"
+    },
+    {
+      "label": "delete_entities",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_entities"
+    },
+    {
+      "label": "execute_query",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_query"
+    },
+    {
+      "label": "execute_side_effect",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_side_effect"
+    },
+    {
+      "label": "post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_post"
+    },
+    {
+      "label": "post_memory",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_post_memory"
+    },
+    {
+      "label": "run",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run"
+    },
+    {
+      "label": "run_agent_rush_add",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_agent_rush_add"
+    },
+    {
+      "label": "run_agent_rush_search",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_agent_rush_search"
+    },
+    {
+      "label": "run_conversation",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_conversation"
+    },
+    {
+      "label": "run_export_script",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_export_script"
+    },
+    {
+      "label": "run_full_script",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_full_script"
+    },
+    {
+      "label": "run_identify",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_identify"
+    },
+    {
+      "label": "run_import_script",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_import_script"
+    },
+    {
+      "label": "run_init",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_init"
+    },
+    {
+      "label": "run_learning_agent",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_learning_agent"
+    },
+    {
+      "label": "run_migration_script",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_migration_script"
+    },
+    {
+      "label": "run_migrations_offline",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_migrations_offline"
+    },
+    {
+      "label": "run_migrations_online",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_migrations_online"
+    },
+    {
+      "label": "run_server",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_server"
+    },
+    {
+      "label": "run_voice_agent",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_voice_agent"
+    },
+    {
+      "label": "run_whoami",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_whoami"
+    },
+    {
+      "label": "send",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send"
+    },
+    {
+      "label": "upload_pdf",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_upload_pdf"
+    },
+    {
+      "label": "organizations_read",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations"
+    },
+    {
+      "label": "get_organization",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations_org_id"
+    },
+    {
+      "label": "get_organization_members",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations_org_id_members"
+    },
+    {
+      "label": "get_projects",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations_org_id_projects"
+    },
+    {
+      "label": "get_project",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations_org_id_projects_project_id"
+    },
+    {
+      "label": "get_project_members",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_orgs_organizations_org_id_projects_project_id_members"
+    },
+    {
+      "label": "get_project_webhooks",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_api_v1_webhooks_projects_project_id"
+    },
+    {
+      "label": "entities_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_entities"
+    },
+    {
+      "label": "entities_filters_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_entities_filters"
+    },
+    {
+      "label": "event_read",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_event_event_id"
+    },
+    {
+      "label": "events_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_events"
+    },
+    {
+      "label": "memories_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_memories"
+    },
+    {
+      "label": "memories_entity_read",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_memories_entity_type_entity_id"
+    },
+    {
+      "label": "memories_events_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_memories_events"
+    },
+    {
+      "label": "memories_read",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_memories_memory_id"
+    },
+    {
+      "label": "memories_history_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_memories_memory_id_history"
+    },
+    {
+      "label": "stats_list",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_stats"
+    },
+    {
+      "label": "entities_read",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v2_entities_entity_type_entity_id"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "fn_delete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_delete_all",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_delete_col",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_delete_entities",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_execute_query",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_execute_side_effect",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_post",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_post_memory",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_agent_rush_add",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_agent_rush_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_conversation",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_export_script",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_full_script",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_identify",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_import_script",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_init",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_learning_agent",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_migration_script",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_migrations_offline",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_migrations_online",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_server",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_voice_agent",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_run_whoami",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_send",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "fn_upload_pdf",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_api_v1_orgs_organizations_org_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_api_v1_orgs_organizations_org_id_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_api_v1_webhooks_webhook_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_v1_batch",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_v1_memories",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_v1_memories_memory_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_delete_v2_entities_entity_type_entity_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations_org_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations_org_id_projects",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations_org_id_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_api_v1_webhooks_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_entities",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_entities_filters",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_event_event_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_events",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_memories",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_memories_entity_type_entity_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_memories_events",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_memories_memory_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_memories_memory_id_history",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v1_stats",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_get_v2_entities_entity_type_entity_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_patch_api_v1_orgs_organizations_org_id_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_api_v1_orgs_organizations",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_api_v1_orgs_organizations_org_id_projects",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_api_v1_webhooks_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_agents",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_apps",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_exports",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_exports_get",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_feedback",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_memories",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_runs",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v1_users",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v2_memories",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v2_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v3_memories",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v3_memories_add",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_post_v3_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_put_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_put_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_put_api_v1_webhooks_webhook_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_put_v1_batch",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "op_put_v1_memories_memory_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_add_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_all_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_api_v1_orgs_organizations_org_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_api_v1_webhooks_webhook_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_v1_batch",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_v1_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_v1_memories_memory_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_delete_v2_entities_entity_type_entity_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_get_all_memories_tool",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_list_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_mem0",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_patch_api_v1_orgs_organizations_org_id_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_api_v1_orgs_organizations",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_api_v1_orgs_organizations_org_id_projects",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_api_v1_webhooks_projects_project_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_agents",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_apps",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_exports",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_exports_get",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_feedback",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_runs",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v1_users",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v2_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v2_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v3_memories",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v3_memories_add",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_post_v3_memories_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_put_api_v1_orgs_organizations_org_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_put_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_put_api_v1_webhooks_webhook_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_put_v1_batch",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_put_v1_memories_memory_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_save_memory",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_search_graph_memory_tool",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_search_memory",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_search_memory_tool",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_skills",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_store_graph_memory_tool",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    },
+    {
+      "dst": "cap_store_memory_tool",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_mem0"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_mem0",
+      "name": "mem0",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_add_memories",
+      "name": "add_memories",
+      "props": {
+        "action": "add_memories"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_all_memories",
+      "name": "delete_all_memories",
+      "props": {
+        "action": "delete_all_memories"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_api_v1_orgs_organizations_org_id",
+      "name": "delete_organization",
+      "props": {
+        "action": "delete_organization"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_api_v1_orgs_organizations_org_id_members",
+      "name": "remove_organization_member",
+      "props": {
+        "action": "remove_organization_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id",
+      "name": "delete_project",
+      "props": {
+        "action": "delete_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "deleteProjectMember",
+      "props": {
+        "action": "deleteProjectMember"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_api_v1_webhooks_webhook_id",
+      "name": "delete_webhook",
+      "props": {
+        "action": "delete_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_memories",
+      "name": "delete_memories",
+      "props": {
+        "action": "delete_memories"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_batch",
+      "name": "memories_batch_delete",
+      "props": {
+        "action": "memories_batch_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_memories",
+      "name": "memories_delete_all",
+      "props": {
+        "action": "memories_delete_all"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_memories_memory_id",
+      "name": "memories_delete",
+      "props": {
+        "action": "memories_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v2_entities_entity_type_entity_id",
+      "name": "entities_delete",
+      "props": {
+        "action": "entities_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_get_all_memories_tool",
+      "name": "get_all_memories_tool",
+      "props": {
+        "action": "get_all_memories_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_list_memories",
+      "name": "list_memories",
+      "props": {
+        "action": "list_memories"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_mem0",
+      "name": "mem0",
+      "props": {
+        "action": "mem0"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_patch_api_v1_orgs_organizations_org_id_projects_project_id",
+      "name": "update_project",
+      "props": {
+        "action": "update_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_api_v1_orgs_organizations",
+      "name": "create_organization",
+      "props": {
+        "action": "create_organization"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_api_v1_orgs_organizations_org_id_members",
+      "name": "add_organization_member",
+      "props": {
+        "action": "add_organization_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_api_v1_orgs_organizations_org_id_projects",
+      "name": "create_project",
+      "props": {
+        "action": "create_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "add_project_member",
+      "props": {
+        "action": "add_project_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_api_v1_webhooks_projects_project_id",
+      "name": "create_webhook",
+      "props": {
+        "action": "create_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_agents",
+      "name": "agents_create",
+      "props": {
+        "action": "agents_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_apps",
+      "name": "apps_create",
+      "props": {
+        "action": "apps_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_exports",
+      "name": "exports_create",
+      "props": {
+        "action": "exports_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_exports_get",
+      "name": "exports_list",
+      "props": {
+        "action": "exports_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_feedback",
+      "name": "submit_feedback",
+      "props": {
+        "action": "submit_feedback"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_memories",
+      "name": "memories_create",
+      "props": {
+        "action": "memories_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_memories_search",
+      "name": "memories_search_create",
+      "props": {
+        "action": "memories_search_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_runs",
+      "name": "runs_create",
+      "props": {
+        "action": "runs_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_users",
+      "name": "users_create",
+      "props": {
+        "action": "users_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v2_memories",
+      "name": "memories_list_v2",
+      "props": {
+        "action": "memories_list_v2"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v2_memories_search",
+      "name": "memories_search_v2",
+      "props": {
+        "action": "memories_search_v2"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v3_memories",
+      "name": "memories_list_v3",
+      "props": {
+        "action": "memories_list_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v3_memories_add",
+      "name": "memories_add_v3",
+      "props": {
+        "action": "memories_add_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v3_memories_search",
+      "name": "memories_search_v3",
+      "props": {
+        "action": "memories_search_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_put_api_v1_orgs_organizations_org_id_members",
+      "name": "update_organization_member_role",
+      "props": {
+        "action": "update_organization_member_role"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_put_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "update_project_member",
+      "props": {
+        "action": "update_project_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_put_api_v1_webhooks_webhook_id",
+      "name": "update_webhook",
+      "props": {
+        "action": "update_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_put_v1_batch",
+      "name": "memories_batch_update",
+      "props": {
+        "action": "memories_batch_update"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_put_v1_memories_memory_id",
+      "name": "memories_update",
+      "props": {
+        "action": "memories_update"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_save_memory",
+      "name": "save_memory",
+      "props": {
+        "action": "save_memory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_search_graph_memory_tool",
+      "name": "search_graph_memory_tool",
+      "props": {
+        "action": "search_graph_memory_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_search_memory",
+      "name": "search_memory",
+      "props": {
+        "action": "search_memory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_search_memory_tool",
+      "name": "search_memory_tool",
+      "props": {
+        "action": "search_memory_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_skills",
+      "name": "skills",
+      "props": {
+        "action": "skills"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_store_graph_memory_tool",
+      "name": "store_graph_memory_tool",
+      "props": {
+        "action": "store_graph_memory_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_store_memory_tool",
+      "name": "store_memory_tool",
+      "props": {
+        "action": "store_memory_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "fn_delete",
+      "name": "delete",
+      "props": {
+        "action": "delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_all",
+      "name": "delete_all",
+      "props": {
+        "action": "delete_all"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_col",
+      "name": "delete_col",
+      "props": {
+        "action": "delete_col"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_entities",
+      "name": "delete_entities",
+      "props": {
+        "action": "delete_entities"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_query",
+      "name": "execute_query",
+      "props": {
+        "action": "execute_query"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_side_effect",
+      "name": "execute_side_effect",
+      "props": {
+        "action": "execute_side_effect"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_post",
+      "name": "post",
+      "props": {
+        "action": "post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_post_memory",
+      "name": "post_memory",
+      "props": {
+        "action": "post_memory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run",
+      "name": "run",
+      "props": {
+        "action": "run"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_agent_rush_add",
+      "name": "run_agent_rush_add",
+      "props": {
+        "action": "run_agent_rush_add"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_agent_rush_search",
+      "name": "run_agent_rush_search",
+      "props": {
+        "action": "run_agent_rush_search"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_conversation",
+      "name": "run_conversation",
+      "props": {
+        "action": "run_conversation"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_export_script",
+      "name": "run_export_script",
+      "props": {
+        "action": "run_export_script"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_full_script",
+      "name": "run_full_script",
+      "props": {
+        "action": "run_full_script"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_identify",
+      "name": "run_identify",
+      "props": {
+        "action": "run_identify"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_import_script",
+      "name": "run_import_script",
+      "props": {
+        "action": "run_import_script"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_init",
+      "name": "run_init",
+      "props": {
+        "action": "run_init"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_learning_agent",
+      "name": "run_learning_agent",
+      "props": {
+        "action": "run_learning_agent"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_migration_script",
+      "name": "run_migration_script",
+      "props": {
+        "action": "run_migration_script"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_migrations_offline",
+      "name": "run_migrations_offline",
+      "props": {
+        "action": "run_migrations_offline"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_migrations_online",
+      "name": "run_migrations_online",
+      "props": {
+        "action": "run_migrations_online"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_server",
+      "name": "run_server",
+      "props": {
+        "action": "run_server"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_voice_agent",
+      "name": "run_voice_agent",
+      "props": {
+        "action": "run_voice_agent"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_whoami",
+      "name": "run_whoami",
+      "props": {
+        "action": "run_whoami"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send",
+      "name": "send",
+      "props": {
+        "action": "send"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_upload_pdf",
+      "name": "upload_pdf",
+      "props": {
+        "action": "upload_pdf"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_api_v1_orgs_organizations_org_id",
+      "name": "delete_organization",
+      "props": {
+        "action": "delete_organization"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_api_v1_orgs_organizations_org_id_members",
+      "name": "remove_organization_member",
+      "props": {
+        "action": "remove_organization_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_api_v1_orgs_organizations_org_id_projects_project_id",
+      "name": "delete_project",
+      "props": {
+        "action": "delete_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "deleteProjectMember",
+      "props": {
+        "action": "deleteProjectMember"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_api_v1_webhooks_webhook_id",
+      "name": "delete_webhook",
+      "props": {
+        "action": "delete_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_batch",
+      "name": "memories_batch_delete",
+      "props": {
+        "action": "memories_batch_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_memories",
+      "name": "memories_delete_all",
+      "props": {
+        "action": "memories_delete_all"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_memories_memory_id",
+      "name": "memories_delete",
+      "props": {
+        "action": "memories_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v2_entities_entity_type_entity_id",
+      "name": "entities_delete",
+      "props": {
+        "action": "entities_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations",
+      "name": "organizations_read",
+      "props": {
+        "action": "organizations_read"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations_org_id",
+      "name": "get_organization",
+      "props": {
+        "action": "get_organization"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations_org_id_members",
+      "name": "get_organization_members",
+      "props": {
+        "action": "get_organization_members"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations_org_id_projects",
+      "name": "get_projects",
+      "props": {
+        "action": "get_projects"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations_org_id_projects_project_id",
+      "name": "get_project",
+      "props": {
+        "action": "get_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "get_project_members",
+      "props": {
+        "action": "get_project_members"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_api_v1_webhooks_projects_project_id",
+      "name": "get_project_webhooks",
+      "props": {
+        "action": "get_project_webhooks"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_entities",
+      "name": "entities_list",
+      "props": {
+        "action": "entities_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_entities_filters",
+      "name": "entities_filters_list",
+      "props": {
+        "action": "entities_filters_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_event_event_id",
+      "name": "event_read",
+      "props": {
+        "action": "event_read"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_events",
+      "name": "events_list",
+      "props": {
+        "action": "events_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_memories",
+      "name": "memories_list",
+      "props": {
+        "action": "memories_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_memories_entity_type_entity_id",
+      "name": "memories_entity_read",
+      "props": {
+        "action": "memories_entity_read"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_memories_events",
+      "name": "memories_events_list",
+      "props": {
+        "action": "memories_events_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_memories_memory_id",
+      "name": "memories_read",
+      "props": {
+        "action": "memories_read"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_memories_memory_id_history",
+      "name": "memories_history_list",
+      "props": {
+        "action": "memories_history_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_stats",
+      "name": "stats_list",
+      "props": {
+        "action": "stats_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v2_entities_entity_type_entity_id",
+      "name": "entities_read",
+      "props": {
+        "action": "entities_read"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_patch_api_v1_orgs_organizations_org_id_projects_project_id",
+      "name": "update_project",
+      "props": {
+        "action": "update_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_api_v1_orgs_organizations",
+      "name": "create_organization",
+      "props": {
+        "action": "create_organization"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_api_v1_orgs_organizations_org_id_members",
+      "name": "add_organization_member",
+      "props": {
+        "action": "add_organization_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_api_v1_orgs_organizations_org_id_projects",
+      "name": "create_project",
+      "props": {
+        "action": "create_project"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "add_project_member",
+      "props": {
+        "action": "add_project_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_api_v1_webhooks_projects_project_id",
+      "name": "create_webhook",
+      "props": {
+        "action": "create_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_agents",
+      "name": "agents_create",
+      "props": {
+        "action": "agents_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_apps",
+      "name": "apps_create",
+      "props": {
+        "action": "apps_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_exports",
+      "name": "exports_create",
+      "props": {
+        "action": "exports_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_exports_get",
+      "name": "exports_list",
+      "props": {
+        "action": "exports_list"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_feedback",
+      "name": "submit_feedback",
+      "props": {
+        "action": "submit_feedback"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_memories",
+      "name": "memories_create",
+      "props": {
+        "action": "memories_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_memories_search",
+      "name": "memories_search_create",
+      "props": {
+        "action": "memories_search_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_runs",
+      "name": "runs_create",
+      "props": {
+        "action": "runs_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_users",
+      "name": "users_create",
+      "props": {
+        "action": "users_create"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v2_memories",
+      "name": "memories_list_v2",
+      "props": {
+        "action": "memories_list_v2"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v2_memories_search",
+      "name": "memories_search_v2",
+      "props": {
+        "action": "memories_search_v2"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v3_memories",
+      "name": "memories_list_v3",
+      "props": {
+        "action": "memories_list_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v3_memories_add",
+      "name": "memories_add_v3",
+      "props": {
+        "action": "memories_add_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v3_memories_search",
+      "name": "memories_search_v3",
+      "props": {
+        "action": "memories_search_v3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_put_api_v1_orgs_organizations_org_id_members",
+      "name": "update_organization_member_role",
+      "props": {
+        "action": "update_organization_member_role"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_put_api_v1_orgs_organizations_org_id_projects_project_id_members",
+      "name": "update_project_member",
+      "props": {
+        "action": "update_project_member"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_put_api_v1_webhooks_webhook_id",
+      "name": "update_webhook",
+      "props": {
+        "action": "update_webhook"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_put_v1_batch",
+      "name": "memories_batch_update",
+      "props": {
+        "action": "memories_batch_update"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_put_v1_memories_memory_id",
+      "name": "memories_update",
+      "props": {
+        "action": "memories_update"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "mem0",
+  "source_kind": "directory"
+}
