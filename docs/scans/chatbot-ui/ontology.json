@@ -1,0 +1,19 @@
+{
+  "action_maps": [],
+  "edges": [],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_chatbot_ui",
+      "name": "chatbot-ui",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "chatbot-ui",
+  "source_kind": "directory"
+}

@@ -1,0 +1,219 @@
+{
+  "action_maps": [
+    {
+      "label": "delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete"
+    },
+    {
+      "label": "execute",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute"
+    },
+    {
+      "label": "execute_tool_calls",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_tool_calls"
+    },
+    {
+      "label": "migrate",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'migrate'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_migrate"
+    },
+    {
+      "label": "run_async",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_async"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "fn_delete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_llm"
+    },
+    {
+      "dst": "fn_execute",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_llm"
+    },
+    {
+      "dst": "fn_execute_tool_calls",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_llm"
+    },
+    {
+      "dst": "fn_migrate",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_llm"
+    },
+    {
+      "dst": "fn_run_async",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_llm"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_llm",
+      "name": "llm",
+      "props": {
+        "source_kind": "python"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "fn_delete",
+      "name": "delete",
+      "props": {
+        "action": "delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute",
+      "name": "execute",
+      "props": {
+        "action": "execute"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_tool_calls",
+      "name": "execute_tool_calls",
+      "props": {
+        "action": "execute_tool_calls"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_migrate",
+      "name": "migrate",
+      "props": {
+        "action": "migrate"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_async",
+      "name": "run_async",
+      "props": {
+        "action": "run_async"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "llm",
+  "source_kind": "python"
+}

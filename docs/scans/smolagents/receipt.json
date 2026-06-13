@@ -1,0 +1,1235 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-SMOLAGENTS-6052d7e4ae",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "boolean_default_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_boolean_default_tool"
+        },
+        {
+          "label": "close_popups",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_close_popups"
+        },
+        {
+          "label": "complex_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_complex_tool"
+        },
+        {
+          "label": "convert_currency",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_convert_currency"
+        },
+        {
+          "label": "coolfunc",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_coolfunc"
+        },
+        {
+          "label": "fake_image_generation_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_fake_image_generation_tool"
+        },
+        {
+          "label": "fake_image_understanding_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_fake_image_understanding_tool"
+        },
+        {
+          "label": "fake_tool_1",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_fake_tool_1"
+        },
+        {
+          "label": "fake_tool_2",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_fake_tool_2"
+        },
+        {
+          "label": "get_choice",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_choice"
+        },
+        {
+          "label": "get_current_time",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_current_time"
+        },
+        {
+          "label": "get_joke",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_joke"
+        },
+        {
+          "label": "get_news_headlines",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_news_headlines"
+        },
+        {
+          "label": "get_random_fact",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_random_fact"
+        },
+        {
+          "label": "get_time_in_timezone",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_time_in_timezone"
+        },
+        {
+          "label": "get_weather",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_get_weather"
+        },
+        {
+          "label": "go_back",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_go_back"
+        },
+        {
+          "label": "image_generation_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_image_generation_tool"
+        },
+        {
+          "label": "multi_decorator_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_multi_decorator_tool"
+        },
+        {
+          "label": "multiline_signature_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_multiline_signature_tool"
+        },
+        {
+          "label": "optional_input_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_optional_input_tool"
+        },
+        {
+          "label": "search_item_ctrl_f",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_search_item_ctrl_f"
+        },
+        {
+          "label": "search_wikipedia",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_search_wikipedia"
+        },
+        {
+          "label": "sql_engine",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_sql_engine"
+        },
+        {
+          "label": "test_tool",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_test_tool"
+        },
+        {
+          "label": "tool_function_with_multiple_assignments",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_tool_function_with_multiple_assignments"
+        },
+        {
+          "label": "union_type_return_tool_function",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_union_type_return_tool_function"
+        },
+        {
+          "label": "valid_tool_function",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_valid_tool_function"
+        },
+        {
+          "label": "visualizer",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_visualizer"
+        },
+        {
+          "label": "weather_api",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_weather_api"
+        },
+        {
+          "label": "delete",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_delete"
+        },
+        {
+          "label": "execute_tool_call",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute_tool_call"
+        },
+        {
+          "label": "run",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run"
+        },
+        {
+          "label": "run_agent_endpoint",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_agent_endpoint"
+        },
+        {
+          "label": "run_agent_in_thread",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_agent_in_thread"
+        },
+        {
+          "label": "run_code_raise_errors",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_code_raise_errors"
+        },
+        {
+          "label": "run_command",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_command"
+        },
+        {
+          "label": "run_in_thread",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_in_thread"
+        },
+        {
+          "label": "run_smolagent",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_smolagent"
+        },
+        {
+          "label": "run_webagent",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_run_webagent"
+        },
+        {
+          "label": "send_tools",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_tools"
+        },
+        {
+          "label": "send_variables",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_send_variables"
+        },
+        {
+          "label": "shutdown",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "fn_shutdown"
+        },
+        {
+          "label": "upload_file",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_upload_file"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_delete",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_execute_tool_call",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_agent_endpoint",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_agent_in_thread",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_code_raise_errors",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_command",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_in_thread",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_smolagent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_run_webagent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_send_tools",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_send_variables",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_shutdown",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "fn_upload_file",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_boolean_default_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_close_popups",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_complex_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_convert_currency",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_coolfunc",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_fake_image_generation_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_fake_image_understanding_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_fake_tool_1",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_fake_tool_2",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_choice",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_current_time",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_joke",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_news_headlines",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_random_fact",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_time_in_timezone",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_get_weather",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_go_back",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_image_generation_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_multi_decorator_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_multiline_signature_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_optional_input_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_search_item_ctrl_f",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_search_wikipedia",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_sql_engine",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_test_tool",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_tool_function_with_multiple_assignments",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_union_type_return_tool_function",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_valid_tool_function",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_visualizer",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        },
+        {
+          "dst": "cap_weather_api",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_smolagents"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_smolagents",
+          "name": "smolagents",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "cap_boolean_default_tool",
+          "name": "boolean_default_tool",
+          "props": {
+            "action": "boolean_default_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_close_popups",
+          "name": "close_popups",
+          "props": {
+            "action": "close_popups"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_complex_tool",
+          "name": "complex_tool",
+          "props": {
+            "action": "complex_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_convert_currency",
+          "name": "convert_currency",
+          "props": {
+            "action": "convert_currency"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_coolfunc",
+          "name": "coolfunc",
+          "props": {
+            "action": "coolfunc"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_fake_image_generation_tool",
+          "name": "fake_image_generation_tool",
+          "props": {
+            "action": "fake_image_generation_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_fake_image_understanding_tool",
+          "name": "fake_image_understanding_tool",
+          "props": {
+            "action": "fake_image_understanding_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_fake_tool_1",
+          "name": "fake_tool_1",
+          "props": {
+            "action": "fake_tool_1"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_fake_tool_2",
+          "name": "fake_tool_2",
+          "props": {
+            "action": "fake_tool_2"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_choice",
+          "name": "get_choice",
+          "props": {
+            "action": "get_choice"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_current_time",
+          "name": "get_current_time",
+          "props": {
+            "action": "get_current_time"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_joke",
+          "name": "get_joke",
+          "props": {
+            "action": "get_joke"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_news_headlines",
+          "name": "get_news_headlines",
+          "props": {
+            "action": "get_news_headlines"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_random_fact",
+          "name": "get_random_fact",
+          "props": {
+            "action": "get_random_fact"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_time_in_timezone",
+          "name": "get_time_in_timezone",
+          "props": {
+            "action": "get_time_in_timezone"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_get_weather",
+          "name": "get_weather",
+          "props": {
+            "action": "get_weather"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_go_back",
+          "name": "go_back",
+          "props": {
+            "action": "go_back"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_image_generation_tool",
+          "name": "image_generation_tool",
+          "props": {
+            "action": "image_generation_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_multi_decorator_tool",
+          "name": "multi_decorator_tool",
+          "props": {
+            "action": "multi_decorator_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_multiline_signature_tool",
+          "name": "multiline_signature_tool",
+          "props": {
+            "action": "multiline_signature_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_optional_input_tool",
+          "name": "optional_input_tool",
+          "props": {
+            "action": "optional_input_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_search_item_ctrl_f",
+          "name": "search_item_ctrl_f",
+          "props": {
+            "action": "search_item_ctrl_f"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_search_wikipedia",
+          "name": "search_wikipedia",
+          "props": {
+            "action": "search_wikipedia"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_sql_engine",
+          "name": "sql_engine",
+          "props": {
+            "action": "sql_engine"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_test_tool",
+          "name": "test_tool",
+          "props": {
+            "action": "test_tool"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_tool_function_with_multiple_assignments",
+          "name": "tool_function_with_multiple_assignments",
+          "props": {
+            "action": "tool_function_with_multiple_assignments"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_union_type_return_tool_function",
+          "name": "union_type_return_tool_function",
+          "props": {
+            "action": "union_type_return_tool_function"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_valid_tool_function",
+          "name": "valid_tool_function",
+          "props": {
+            "action": "valid_tool_function"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_visualizer",
+          "name": "visualizer",
+          "props": {
+            "action": "visualizer"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_weather_api",
+          "name": "weather_api",
+          "props": {
+            "action": "weather_api"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "fn_delete",
+          "name": "delete",
+          "props": {
+            "action": "delete"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_execute_tool_call",
+          "name": "execute_tool_call",
+          "props": {
+            "action": "execute_tool_call"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run",
+          "name": "run",
+          "props": {
+            "action": "run"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_agent_endpoint",
+          "name": "run_agent_endpoint",
+          "props": {
+            "action": "run_agent_endpoint"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_agent_in_thread",
+          "name": "run_agent_in_thread",
+          "props": {
+            "action": "run_agent_in_thread"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_code_raise_errors",
+          "name": "run_code_raise_errors",
+          "props": {
+            "action": "run_code_raise_errors"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_command",
+          "name": "run_command",
+          "props": {
+            "action": "run_command"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_in_thread",
+          "name": "run_in_thread",
+          "props": {
+            "action": "run_in_thread"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_smolagent",
+          "name": "run_smolagent",
+          "props": {
+            "action": "run_smolagent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_run_webagent",
+          "name": "run_webagent",
+          "props": {
+            "action": "run_webagent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_tools",
+          "name": "send_tools",
+          "props": {
+            "action": "send_tools"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_send_variables",
+          "name": "send_variables",
+          "props": {
+            "action": "send_variables"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_shutdown",
+          "name": "shutdown",
+          "props": {
+            "action": "shutdown"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_upload_file",
+          "name": "upload_file",
+          "props": {
+            "action": "upload_file"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "smolagents",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 44,
+      "frameworks": [],
+      "governed_actions": 44,
+      "nodes": 45,
+      "source": "smolagents",
+      "source_kind": "python",
+      "ungoverned_actions": 31
+    }
+  },
+  "evidence_hash": "6052d7e4ae8d8703f80b0264d8ad5acb1e7b7c15215d37611cc797841c4e1f44",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "DrgQgpmZ6MilRDn9AF0nTHEkzXSEK8208F3/vTkwqL3OA3zhExlLIALKPCsfL3kkMr0Lgkpr63kZxZ+s6xV0Cw==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:37:38.551817+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

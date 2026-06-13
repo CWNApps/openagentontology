@@ -1,0 +1,42 @@
+{
+  "action_maps": [
+    {
+      "label": "github",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_github"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "cap_github",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_github_mcp_server"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_github_mcp_server",
+      "name": "github-mcp-server",
+      "props": {
+        "source_kind": "mcp"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_github",
+      "name": "github",
+      "props": {
+        "action": "github"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "github-mcp-server",
+  "source_kind": "mcp"
+}

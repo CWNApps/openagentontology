@@ -1,0 +1,906 @@
+{
+  "action_maps": [
+    {
+      "label": "rand_num",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_rand_num"
+    },
+    {
+      "label": "delete_path",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_path"
+    },
+    {
+      "label": "execute",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute"
+    },
+    {
+      "label": "execute_code",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_code"
+    },
+    {
+      "label": "execute_from_inputs",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_from_inputs"
+    },
+    {
+      "label": "execute_graph_async",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_graph_async"
+    },
+    {
+      "label": "execute_if_triggered",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_if_triggered"
+    },
+    {
+      "label": "execute_items_parallel",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_items_parallel"
+    },
+    {
+      "label": "execute_nodes_parallel",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_nodes_parallel"
+    },
+    {
+      "label": "execute_tool",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_tool"
+    },
+    {
+      "label": "export",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_export"
+    },
+    {
+      "label": "export_manifest",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_export_manifest"
+    },
+    {
+      "label": "export_to_file",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_export_to_file"
+    },
+    {
+      "label": "run",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run"
+    },
+    {
+      "label": "run_batch",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_batch"
+    },
+    {
+      "label": "run_task",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_task"
+    },
+    {
+      "label": "run_with_limit",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_with_limit"
+    },
+    {
+      "label": "run_workflow",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_workflow"
+    },
+    {
+      "label": "send_message",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_message"
+    },
+    {
+      "label": "send_message_sync",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_message_sync"
+    },
+    {
+      "label": "send_text",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_text"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "fn_delete_path",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_code",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_from_inputs",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_graph_async",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_if_triggered",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_items_parallel",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_nodes_parallel",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_execute_tool",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_export",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_export_manifest",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_export_to_file",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_run",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_run_batch",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_run_task",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_run_with_limit",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_run_workflow",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_send_message",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_send_message_sync",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "fn_send_text",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_chatdev"
+    },
+    {
+      "dst": "cap_rand_num",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_chatdev"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_chatdev",
+      "name": "chatdev",
+      "props": {
+        "source_kind": "python"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_rand_num",
+      "name": "rand_num",
+      "props": {
+        "action": "rand_num"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "fn_delete_path",
+      "name": "delete_path",
+      "props": {
+        "action": "delete_path"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute",
+      "name": "execute",
+      "props": {
+        "action": "execute"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_code",
+      "name": "execute_code",
+      "props": {
+        "action": "execute_code"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_from_inputs",
+      "name": "execute_from_inputs",
+      "props": {
+        "action": "execute_from_inputs"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_graph_async",
+      "name": "execute_graph_async",
+      "props": {
+        "action": "execute_graph_async"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_if_triggered",
+      "name": "execute_if_triggered",
+      "props": {
+        "action": "execute_if_triggered"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_items_parallel",
+      "name": "execute_items_parallel",
+      "props": {
+        "action": "execute_items_parallel"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_nodes_parallel",
+      "name": "execute_nodes_parallel",
+      "props": {
+        "action": "execute_nodes_parallel"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_tool",
+      "name": "execute_tool",
+      "props": {
+        "action": "execute_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_export",
+      "name": "export",
+      "props": {
+        "action": "export"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_export_manifest",
+      "name": "export_manifest",
+      "props": {
+        "action": "export_manifest"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_export_to_file",
+      "name": "export_to_file",
+      "props": {
+        "action": "export_to_file"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run",
+      "name": "run",
+      "props": {
+        "action": "run"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_batch",
+      "name": "run_batch",
+      "props": {
+        "action": "run_batch"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_task",
+      "name": "run_task",
+      "props": {
+        "action": "run_task"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_with_limit",
+      "name": "run_with_limit",
+      "props": {
+        "action": "run_with_limit"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_workflow",
+      "name": "run_workflow",
+      "props": {
+        "action": "run_workflow"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_message",
+      "name": "send_message",
+      "props": {
+        "action": "send_message"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_message_sync",
+      "name": "send_message_sync",
+      "props": {
+        "action": "send_message_sync"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_text",
+      "name": "send_text",
+      "props": {
+        "action": "send_text"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "chatdev",
+  "source_kind": "python"
+}

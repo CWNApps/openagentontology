@@ -1,0 +1,14 @@
+{
+  "_about": "Editorial metadata joined onto each scan in docs/scans/ at registry build time. Only verifiable facts (repo URL, pinned commit, target kind). All tiers/scores/counts come from the scan artifacts themselves — never from this file (pol.must_do.143).",
+  "order_hint": ["ref-agent_fde", "ref-hardened_agent", "ref-sample_agent", "open-interpreter", "gpt-engineer", "aider", "mcp-python-sdk", "openai-agents-python"],
+  "entries": {
+    "ref-agent_fde": {"display": "CWN FDE Agent (reference)", "kind": "reference", "repo_url": "https://github.com/CWNApps/openagentontology", "path": "examples/agent_fde", "commit": "", "note": "Governed reference agent shipped in the OAO repo. Shows the SOVEREIGN end of the scale."},
+    "ref-hardened_agent": {"display": "CWN Hardened Agent (reference)", "kind": "reference", "repo_url": "https://github.com/CWNApps/openagentontology", "path": "examples/hardened_agent", "commit": "", "note": "Governed reference agent. Asserted controls on nearly every side-effecting action."},
+    "ref-sample_agent": {"display": "CWN Sample Agent (reference)", "kind": "reference", "repo_url": "https://github.com/CWNApps/openagentontology", "path": "examples/sample_agent", "commit": "", "note": "Partially governed reference — a mid-scale point between governed and ungoverned."},
+    "open-interpreter": {"display": "OpenInterpreter / open-interpreter", "kind": "real", "repo_url": "https://github.com/OpenInterpreter/open-interpreter", "path": "", "commit": "e00f08e", "note": "Autonomous coding agent. exec maps to no asserted control."},
+    "gpt-engineer": {"display": "gpt-engineer-org / gpt-engineer", "kind": "real", "repo_url": "https://github.com/gpt-engineer-org/gpt-engineer", "path": "", "commit": "a90fcd5", "note": "Autonomous coding agent."},
+    "aider": {"display": "aider-ai / aider", "kind": "real", "repo_url": "https://github.com/aider-ai/aider", "path": "", "commit": "5dc9490", "note": "AI pair-programming agent."},
+    "mcp-python-sdk": {"display": "modelcontextprotocol / python-sdk", "kind": "real", "repo_url": "https://github.com/modelcontextprotocol/python-sdk", "path": "", "commit": "7267818", "note": "The official MCP Python SDK + reference servers."},
+    "openai-agents-python": {"display": "openai / openai-agents-python", "kind": "real", "repo_url": "https://github.com/openai/openai-agents-python", "path": "", "commit": "d8068d9", "note": "OpenAI Agents SDK for Python."}
+  }
+}

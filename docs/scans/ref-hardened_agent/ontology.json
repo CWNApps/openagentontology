@@ -1,0 +1,888 @@
+{
+  "action_maps": [
+    {
+      "label": "delete_records",
+      "mappings": [
+        {
+          "basis": "A high blast-radius change requires an impact analysis and an accountable approver.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-4",
+          "name": "Impact Analyses",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "A named approver distinct from the actor is separation of duties.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "High-impact automated changes require a named human owner.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "a high blast-radius destructive change maps to inhibit-system-recovery",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1490",
+          "name": "Inhibit System Recovery",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "cap_delete_patient_records_under_regulatory_hold"
+    },
+    {
+      "label": "deploy",
+      "mappings": [
+        {
+          "basis": "Requiring an approved change request is the core of change control.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "An unapproved production change by an agent needs human sign-off.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Deploying without approval is excessive agency.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "cap_deploy_phi_access_configuration"
+    },
+    {
+      "label": "export_records",
+      "mappings": [
+        {
+          "basis": "Blocking export to an out-of-scope endpoint is information-flow enforcement.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Preventing data leaving the controlled boundary is boundary protection.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Uncontrolled egress of regulated data is a data-governance failure.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Egress of regulated records is sensitive-information disclosure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "cap_export_phi_records_to_research_warehouse"
+    },
+    {
+      "label": "process_claim",
+      "mappings": [
+        {
+          "basis": "Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "A high-value financial action by an automated system requires effective human oversight before it takes effect.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "An agent moving money without a second authorizer is the canonical excessive-agency failure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "cap_process_insurance_claim_payment"
+    },
+    {
+      "label": "approval_required",
+      "mappings": [
+        {
+          "basis": "Requiring an approved change request is the core of change control.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "An unapproved production change by an agent needs human sign-off.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Deploying without approval is excessive agency.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_approval_required"
+    },
+    {
+      "label": "beneficiary_unverified",
+      "mappings": [
+        {
+          "basis": "Paying only verified beneficiaries enforces who the agent may transact with.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-3",
+          "name": "Access Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Acting on unverified counterparty data is a data-governance failure.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Sending funds to an unverified party is acting beyond safe authority.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "acting on behalf of an unverified party is valid-account abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_beneficiary_unverified"
+    },
+    {
+      "label": "classification_above_ceiling",
+      "mappings": [
+        {
+          "basis": "Refusing to handle data above a classification ceiling enforces the categorization of the resource.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "RA-2",
+          "name": "Security Categorization",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "The ceiling governs the flow of classified information through the agent.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Handling over-classified data is a data-governance violation.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Processing restricted data above ceiling risks sensitive-information disclosure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "handling data above a classification ceiling maps to sensitive-data access",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1530",
+          "name": "Data from Cloud Storage",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_classification_above_ceiling"
+    },
+    {
+      "label": "dual_control_required",
+      "mappings": [
+        {
+          "basis": "Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "A high-value financial action by an automated system requires effective human oversight before it takes effect.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "An agent moving money without a second authorizer is the canonical excessive-agency failure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_dual_control_required"
+    },
+    {
+      "label": "allow",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "gate_healthcare_phi_compliance_allow"
+    },
+    {
+      "label": "high_blast_needs_named_approver",
+      "mappings": [
+        {
+          "basis": "A high blast-radius change requires an impact analysis and an accountable approver.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-4",
+          "name": "Impact Analyses",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "A named approver distinct from the actor is separation of duties.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "High-impact automated changes require a named human owner.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "a high blast-radius destructive change maps to inhibit-system-recovery",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1490",
+          "name": "Inhibit System Recovery",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_high_blast_needs_named_approver"
+    },
+    {
+      "label": "human_review_required",
+      "mappings": [
+        {
+          "basis": "An adverse automated decision affecting a person requires human oversight before it is issued.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Issuing an adverse decision with no human in the loop is excessive agency.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Adverse outcomes are a measured risk requiring a treatment (human review).",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MEASURE",
+          "name": "Measure function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "autonomous execution without oversight maps to command/scripting abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1059",
+          "name": "Command and Scripting Interpreter",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_human_review_required"
+    },
+    {
+      "label": "over_threshold",
+      "mappings": [
+        {
+          "basis": "A transaction-value ceiling is an access-enforcement rule on what the agent is permitted to execute.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-3",
+          "name": "Access Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "The agent is granted only the transaction authority it needs; amounts above the limit exceed that grant.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-6",
+          "name": "Least Privilege",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Above-threshold value should escalate to a human rather than auto-execute.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Unbounded transaction authority is excessive agency.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "a transaction-value ceiling bounds valid-account authority",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_over_threshold"
+    },
+    {
+      "label": "PHI data classification ceiling",
+      "mappings": [
+        {
+          "basis": "Refusing to handle data above a classification ceiling enforces the categorization of the resource.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "RA-2",
+          "name": "Security Categorization",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "The ceiling governs the flow of classified information through the agent.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Handling over-classified data is a data-governance violation.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Processing restricted data above ceiling risks sensitive-information disclosure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "handling data above a classification ceiling maps to sensitive-data access",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1530",
+          "name": "Data from Cloud Storage",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_phi_data_classification_ceiling"
+    },
+    {
+      "label": "provider beneficiary verification",
+      "mappings": [
+        {
+          "basis": "Paying only verified beneficiaries enforces who the agent may transact with.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-3",
+          "name": "Access Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Acting on unverified counterparty data is a data-governance failure.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Sending funds to an unverified party is acting beyond safe authority.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "acting on behalf of an unverified party is valid-account abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_provider_beneficiary_verification"
+    },
+    {
+      "label": "regulated_egress_blocked",
+      "mappings": [
+        {
+          "basis": "Blocking export to an out-of-scope endpoint is information-flow enforcement.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Preventing data leaving the controlled boundary is boundary protection.",
+          "confidence": "asserted",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Uncontrolled egress of regulated data is a data-governance failure.",
+          "confidence": "asserted",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Egress of regulated records is sensitive-information disclosure.",
+          "confidence": "asserted",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "asserted_table",
+      "subject_id": "gate_regulated_egress_blocked"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "gate_approval_required",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_beneficiary_unverified",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_classification_above_ceiling",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_dual_control_required",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_healthcare_phi_compliance_allow",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_high_blast_needs_named_approver",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_human_review_required",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_over_threshold",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_phi_data_classification_ceiling",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_provider_beneficiary_verification",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "gate_regulated_egress_blocked",
+      "provenance": "EXTRACTED",
+      "rel": "GATED_BY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "cap_delete_patient_records_under_regulatory_hold",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "cap_deploy_phi_access_configuration",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "cap_export_phi_records_to_research_warehouse",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_hardened_agent"
+    },
+    {
+      "dst": "cap_process_insurance_claim_payment",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_hardened_agent"
+    }
+  ],
+  "frameworks": [
+    "EU AI Act",
+    "NIST SP 800-53r5",
+    "OWASP LLM Top 10 (2025)"
+  ],
+  "nodes": [
+    {
+      "id": "agent_hardened_agent",
+      "name": "hardened_agent",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_delete_patient_records_under_regulatory_hold",
+      "name": "delete patient records under regulatory hold",
+      "props": {
+        "action": "delete_records",
+        "reason": "high_blast_needs_named_approver"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_deploy_phi_access_configuration",
+      "name": "deploy PHI access configuration",
+      "props": {
+        "action": "deploy",
+        "reason": "approval_required"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_export_phi_records_to_research_warehouse",
+      "name": "export PHI records to research warehouse",
+      "props": {
+        "action": "export_records",
+        "reason": "regulated_egress_blocked"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_process_insurance_claim_payment",
+      "name": "process insurance claim payment",
+      "props": {
+        "action": "process_claim",
+        "reason": "dual_control_required"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "gate_approval_required",
+      "name": "approval_required",
+      "props": {
+        "action": "approval_required",
+        "reason": "approval_required"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_beneficiary_unverified",
+      "name": "beneficiary_unverified",
+      "props": {
+        "action": "beneficiary_unverified",
+        "reason": "beneficiary_unverified"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_classification_above_ceiling",
+      "name": "classification_above_ceiling",
+      "props": {
+        "action": "classification_above_ceiling",
+        "reason": "classification_above_ceiling"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_dual_control_required",
+      "name": "dual_control_required",
+      "props": {
+        "action": "dual_control_required",
+        "reason": "dual_control_required"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_healthcare_phi_compliance_allow",
+      "name": "healthcare.phi_compliance.allow",
+      "props": {
+        "action": "allow"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_high_blast_needs_named_approver",
+      "name": "high_blast_needs_named_approver",
+      "props": {
+        "action": "high_blast_needs_named_approver",
+        "reason": "high_blast_needs_named_approver"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_human_review_required",
+      "name": "human_review_required",
+      "props": {
+        "action": "human_review_required",
+        "reason": "human_review_required"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_over_threshold",
+      "name": "over_threshold",
+      "props": {
+        "action": "over_threshold",
+        "reason": "over_threshold"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_phi_data_classification_ceiling",
+      "name": "PHI data classification ceiling",
+      "props": {
+        "action": "PHI data classification ceiling",
+        "reason": "classification_above_ceiling"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_provider_beneficiary_verification",
+      "name": "provider beneficiary verification",
+      "props": {
+        "action": "provider beneficiary verification",
+        "reason": "beneficiary_unverified"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    },
+    {
+      "id": "gate_regulated_egress_blocked",
+      "name": "regulated_egress_blocked",
+      "props": {
+        "action": "regulated_egress_blocked",
+        "reason": "regulated_egress_blocked"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Gate"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "examples\\hardened_agent",
+  "source_kind": "directory"
+}

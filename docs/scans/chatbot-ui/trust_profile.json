@@ -1,0 +1,14 @@
+{
+  "rationale": [
+    "Trust Profile: UNGOVERNED (6/100).",
+    "No governed actions detected (no tool, decision, gate, or side-effecting action) -- nothing to govern means nothing proven."
+  ],
+  "score": 6,
+  "subscores": {
+    "breadth": 0,
+    "coverage": 0,
+    "rigor": 0,
+    "structure": 40
+  },
+  "tier": "UNGOVERNED"
+}

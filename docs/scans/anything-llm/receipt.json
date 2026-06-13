@@ -1,0 +1,2727 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-ANYTHINGLLM-6a711ec248",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "delete /v1/admin/invite/{id}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_admin_invite_id"
+        },
+        {
+          "label": "delete /v1/admin/users/{id}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_admin_users_id"
+        },
+        {
+          "label": "delete /v1/document/remove-folder",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_document_remove_folder"
+        },
+        {
+          "label": "delete /v1/embed/{embedUuid}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_embed_embeduuid"
+        },
+        {
+          "label": "delete /v1/system/remove-documents",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_system_remove_documents"
+        },
+        {
+          "label": "delete /v1/workspace/{slug}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_workspace_slug"
+        },
+        {
+          "label": "delete /v1/workspace/{slug}/thread/{threadSlug}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_delete_v1_workspace_slug_thread_threadslug"
+        },
+        {
+          "label": "post /v1/admin/invite/new",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_invite_new"
+        },
+        {
+          "label": "post /v1/admin/preferences",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_preferences"
+        },
+        {
+          "label": "post /v1/admin/users/{id}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_users_id"
+        },
+        {
+          "label": "post /v1/admin/users/new",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_users_new"
+        },
+        {
+          "label": "post /v1/admin/workspace-chats",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_workspace_chats"
+        },
+        {
+          "label": "post /v1/admin/workspaces/{workspaceId}/update-users",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_workspaces_workspaceid_update_users"
+        },
+        {
+          "label": "post /v1/admin/workspaces/{workspaceSlug}/manage-users",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_admin_workspaces_workspaceslug_manage_users"
+        },
+        {
+          "label": "post /v1/document/create-folder",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_document_create_folder"
+        },
+        {
+          "label": "post /v1/document/move-files",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_document_move_files"
+        },
+        {
+          "label": "post /v1/document/raw-text",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_document_raw_text"
+        },
+        {
+          "label": "post /v1/document/upload",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_document_upload"
+        },
+        {
+          "label": "post /v1/document/upload/{folderName}",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_document_upload_foldername"
+        },
+        {
+          "label": "post /v1/document/upload-link",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_document_upload_link"
+        },
+        {
+          "label": "post /v1/embed/{embedUuid}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_embed_embeduuid"
+        },
+        {
+          "label": "post /v1/embed/new",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_embed_new"
+        },
+        {
+          "label": "post /v1/openai/chat/completions",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_openai_chat_completions"
+        },
+        {
+          "label": "post /v1/openai/embeddings",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_openai_embeddings"
+        },
+        {
+          "label": "post /v1/system/update-env",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_system_update_env"
+        },
+        {
+          "label": "post /v1/workspace/new",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_new"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/chat",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_chat"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/stream-chat",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_stream_chat"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/thread/new",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_thread_new"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/thread/{threadSlug}/chat",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_thread_threadslug_chat"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/thread/{threadSlug}/stream-chat",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_thread_threadslug_stream_chat"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/thread/{threadSlug}/update",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_workspace_slug_thread_threadslug_update"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/update",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_workspace_slug_update"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/update-embeddings",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_workspace_slug_update_embeddings"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/update-pin",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "cap_post_v1_workspace_slug_update_pin"
+        },
+        {
+          "label": "post /v1/workspace/{slug}/vector-search",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "cap_post_v1_workspace_slug_vector_search"
+        },
+        {
+          "label": "get /v1/admin/invites",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "op_get_v1_admin_invites"
+        },
+        {
+          "label": "get /v1/admin/is-multi-user-mode",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "op_get_v1_admin_is_multi_user_mode"
+        },
+        {
+          "label": "get /v1/admin/users",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "op_get_v1_admin_users"
+        },
+        {
+          "label": "get /v1/admin/workspaces/{workspaceId}/users",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-6",
+              "name": "Least Privilege",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-3",
+              "name": "Access Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'admin'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1098",
+              "name": "Account Manipulation",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "op_get_v1_admin_workspaces_workspaceid_users"
+        },
+        {
+          "label": "get /v1/auth",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_auth"
+        },
+        {
+          "label": "get /v1/document/accepted-file-types",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_document_accepted_file_types"
+        },
+        {
+          "label": "get /v1/document/{docName}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_document_docname"
+        },
+        {
+          "label": "get /v1/document/generated-files/{filename}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_document_generated_files_filename"
+        },
+        {
+          "label": "get /v1/document/metadata-schema",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_document_metadata_schema"
+        },
+        {
+          "label": "get /v1/documents",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_documents"
+        },
+        {
+          "label": "get /v1/documents/folder/{folderName}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_documents_folder_foldername"
+        },
+        {
+          "label": "get /v1/embed",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_embed"
+        },
+        {
+          "label": "get /v1/embed/{embedUuid}/chats",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_embed_embeduuid_chats"
+        },
+        {
+          "label": "get /v1/embed/{embedUuid}/chats/{sessionUuid}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_embed_embeduuid_chats_sessionuuid"
+        },
+        {
+          "label": "get /v1/openai/models",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_openai_models"
+        },
+        {
+          "label": "get /v1/openai/vector_stores",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_openai_vector_stores"
+        },
+        {
+          "label": "get /v1/system",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_system"
+        },
+        {
+          "label": "get /v1/system/env-dump",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_system_env_dump"
+        },
+        {
+          "label": "get /v1/system/export-chats",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'export'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "op_get_v1_system_export_chats"
+        },
+        {
+          "label": "get /v1/system/vector-count",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_system_vector_count"
+        },
+        {
+          "label": "get /v1/users",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_users"
+        },
+        {
+          "label": "get /v1/users/{id}/issue-auth-token",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_users_id_issue_auth_token"
+        },
+        {
+          "label": "get /v1/workspace/{slug}",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_workspace_slug"
+        },
+        {
+          "label": "get /v1/workspace/{slug}/chats",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_workspace_slug_chats"
+        },
+        {
+          "label": "get /v1/workspace/{slug}/thread/{threadSlug}/chats",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_workspace_slug_thread_threadslug_chats"
+        },
+        {
+          "label": "get /v1/workspaces",
+          "mappings": [],
+          "matched_via": "none",
+          "subject_id": "op_get_v1_workspaces"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "op_delete_v1_admin_invite_id",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_admin_users_id",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_document_remove_folder",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_embed_embeduuid",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_system_remove_documents",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_workspace_slug",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_delete_v1_workspace_slug_thread_threadslug",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_admin_invites",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_admin_is_multi_user_mode",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_admin_users",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_admin_workspaces_workspaceid_users",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_auth",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_document_accepted_file_types",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_document_docname",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_document_generated_files_filename",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_document_metadata_schema",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_documents",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_documents_folder_foldername",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_embed",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_embed_embeduuid_chats",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_embed_embeduuid_chats_sessionuuid",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_openai_models",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_openai_vector_stores",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_system",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_system_env_dump",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_system_export_chats",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_system_vector_count",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_users",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_users_id_issue_auth_token",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_workspace_slug",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_workspace_slug_chats",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_workspace_slug_thread_threadslug_chats",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_get_v1_workspaces",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_invite_new",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_preferences",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_users_id",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_users_new",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_workspace_chats",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_workspaces_workspaceid_update_users",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_admin_workspaces_workspaceslug_manage_users",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_create_folder",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_move_files",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_raw_text",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_upload",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_upload_foldername",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_document_upload_link",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_embed_embeduuid",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_embed_new",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_openai_chat_completions",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_openai_embeddings",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_system_update_env",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_new",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_chat",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_stream_chat",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_thread_new",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_thread_threadslug_chat",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_thread_threadslug_stream_chat",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_thread_threadslug_update",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_update",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_update_embeddings",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_update_pin",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "op_post_v1_workspace_slug_vector_search",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_admin_invite_id",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_admin_users_id",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_document_remove_folder",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_embed_embeduuid",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_system_remove_documents",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_workspace_slug",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_delete_v1_workspace_slug_thread_threadslug",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_invite_new",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_preferences",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_users_id",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_users_new",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_workspace_chats",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_workspaces_workspaceid_update_users",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_admin_workspaces_workspaceslug_manage_users",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_create_folder",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_move_files",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_raw_text",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_upload",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_upload_foldername",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_document_upload_link",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_embed_embeduuid",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_embed_new",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_openai_chat_completions",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_openai_embeddings",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_system_update_env",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_new",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_chat",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_stream_chat",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_thread_new",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_thread_threadslug_chat",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_thread_threadslug_stream_chat",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_thread_threadslug_update",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_update",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_update_embeddings",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_update_pin",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        },
+        {
+          "dst": "cap_post_v1_workspace_slug_vector_search",
+          "provenance": "EXTRACTED",
+          "rel": "HAS_CAPABILITY",
+          "src": "agent_anything_llm"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_anything_llm",
+          "name": "anything-llm",
+          "props": {
+            "source_kind": "openapi"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "cap_delete_v1_admin_invite_id",
+          "name": "delete /v1/admin/invite/{id}",
+          "props": {
+            "action": "delete /v1/admin/invite/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_admin_users_id",
+          "name": "delete /v1/admin/users/{id}",
+          "props": {
+            "action": "delete /v1/admin/users/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_document_remove_folder",
+          "name": "delete /v1/document/remove-folder",
+          "props": {
+            "action": "delete /v1/document/remove-folder"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_embed_embeduuid",
+          "name": "delete /v1/embed/{embedUuid}",
+          "props": {
+            "action": "delete /v1/embed/{embedUuid}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_system_remove_documents",
+          "name": "delete /v1/system/remove-documents",
+          "props": {
+            "action": "delete /v1/system/remove-documents"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_workspace_slug",
+          "name": "delete /v1/workspace/{slug}",
+          "props": {
+            "action": "delete /v1/workspace/{slug}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_delete_v1_workspace_slug_thread_threadslug",
+          "name": "delete /v1/workspace/{slug}/thread/{threadSlug}",
+          "props": {
+            "action": "delete /v1/workspace/{slug}/thread/{threadSlug}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_invite_new",
+          "name": "post /v1/admin/invite/new",
+          "props": {
+            "action": "post /v1/admin/invite/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_preferences",
+          "name": "post /v1/admin/preferences",
+          "props": {
+            "action": "post /v1/admin/preferences"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_users_id",
+          "name": "post /v1/admin/users/{id}",
+          "props": {
+            "action": "post /v1/admin/users/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_users_new",
+          "name": "post /v1/admin/users/new",
+          "props": {
+            "action": "post /v1/admin/users/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_workspace_chats",
+          "name": "post /v1/admin/workspace-chats",
+          "props": {
+            "action": "post /v1/admin/workspace-chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_workspaces_workspaceid_update_users",
+          "name": "post /v1/admin/workspaces/{workspaceId}/update-users",
+          "props": {
+            "action": "post /v1/admin/workspaces/{workspaceId}/update-users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_admin_workspaces_workspaceslug_manage_users",
+          "name": "post /v1/admin/workspaces/{workspaceSlug}/manage-users",
+          "props": {
+            "action": "post /v1/admin/workspaces/{workspaceSlug}/manage-users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_create_folder",
+          "name": "post /v1/document/create-folder",
+          "props": {
+            "action": "post /v1/document/create-folder"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_move_files",
+          "name": "post /v1/document/move-files",
+          "props": {
+            "action": "post /v1/document/move-files"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_raw_text",
+          "name": "post /v1/document/raw-text",
+          "props": {
+            "action": "post /v1/document/raw-text"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_upload",
+          "name": "post /v1/document/upload",
+          "props": {
+            "action": "post /v1/document/upload"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_upload_foldername",
+          "name": "post /v1/document/upload/{folderName}",
+          "props": {
+            "action": "post /v1/document/upload/{folderName}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_document_upload_link",
+          "name": "post /v1/document/upload-link",
+          "props": {
+            "action": "post /v1/document/upload-link"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_embed_embeduuid",
+          "name": "post /v1/embed/{embedUuid}",
+          "props": {
+            "action": "post /v1/embed/{embedUuid}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_embed_new",
+          "name": "post /v1/embed/new",
+          "props": {
+            "action": "post /v1/embed/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_openai_chat_completions",
+          "name": "post /v1/openai/chat/completions",
+          "props": {
+            "action": "post /v1/openai/chat/completions"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_openai_embeddings",
+          "name": "post /v1/openai/embeddings",
+          "props": {
+            "action": "post /v1/openai/embeddings"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_system_update_env",
+          "name": "post /v1/system/update-env",
+          "props": {
+            "action": "post /v1/system/update-env"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_new",
+          "name": "post /v1/workspace/new",
+          "props": {
+            "action": "post /v1/workspace/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_chat",
+          "name": "post /v1/workspace/{slug}/chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_stream_chat",
+          "name": "post /v1/workspace/{slug}/stream-chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/stream-chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_thread_new",
+          "name": "post /v1/workspace/{slug}/thread/new",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_thread_threadslug_chat",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_thread_threadslug_stream_chat",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/stream-chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/stream-chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_thread_threadslug_update",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/update",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/update"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_update",
+          "name": "post /v1/workspace/{slug}/update",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_update_embeddings",
+          "name": "post /v1/workspace/{slug}/update-embeddings",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update-embeddings"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_update_pin",
+          "name": "post /v1/workspace/{slug}/update-pin",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update-pin"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "cap_post_v1_workspace_slug_vector_search",
+          "name": "post /v1/workspace/{slug}/vector-search",
+          "props": {
+            "action": "post /v1/workspace/{slug}/vector-search"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Capability"
+        },
+        {
+          "id": "op_delete_v1_admin_invite_id",
+          "name": "delete /v1/admin/invite/{id}",
+          "props": {
+            "action": "delete /v1/admin/invite/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_admin_users_id",
+          "name": "delete /v1/admin/users/{id}",
+          "props": {
+            "action": "delete /v1/admin/users/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_document_remove_folder",
+          "name": "delete /v1/document/remove-folder",
+          "props": {
+            "action": "delete /v1/document/remove-folder"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_embed_embeduuid",
+          "name": "delete /v1/embed/{embedUuid}",
+          "props": {
+            "action": "delete /v1/embed/{embedUuid}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_system_remove_documents",
+          "name": "delete /v1/system/remove-documents",
+          "props": {
+            "action": "delete /v1/system/remove-documents"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_workspace_slug",
+          "name": "delete /v1/workspace/{slug}",
+          "props": {
+            "action": "delete /v1/workspace/{slug}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_delete_v1_workspace_slug_thread_threadslug",
+          "name": "delete /v1/workspace/{slug}/thread/{threadSlug}",
+          "props": {
+            "action": "delete /v1/workspace/{slug}/thread/{threadSlug}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_admin_invites",
+          "name": "get /v1/admin/invites",
+          "props": {
+            "action": "get /v1/admin/invites"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_admin_is_multi_user_mode",
+          "name": "get /v1/admin/is-multi-user-mode",
+          "props": {
+            "action": "get /v1/admin/is-multi-user-mode"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_admin_users",
+          "name": "get /v1/admin/users",
+          "props": {
+            "action": "get /v1/admin/users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_admin_workspaces_workspaceid_users",
+          "name": "get /v1/admin/workspaces/{workspaceId}/users",
+          "props": {
+            "action": "get /v1/admin/workspaces/{workspaceId}/users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_auth",
+          "name": "get /v1/auth",
+          "props": {
+            "action": "get /v1/auth"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_document_accepted_file_types",
+          "name": "get /v1/document/accepted-file-types",
+          "props": {
+            "action": "get /v1/document/accepted-file-types"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_document_docname",
+          "name": "get /v1/document/{docName}",
+          "props": {
+            "action": "get /v1/document/{docName}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_document_generated_files_filename",
+          "name": "get /v1/document/generated-files/{filename}",
+          "props": {
+            "action": "get /v1/document/generated-files/{filename}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_document_metadata_schema",
+          "name": "get /v1/document/metadata-schema",
+          "props": {
+            "action": "get /v1/document/metadata-schema"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_documents",
+          "name": "get /v1/documents",
+          "props": {
+            "action": "get /v1/documents"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_documents_folder_foldername",
+          "name": "get /v1/documents/folder/{folderName}",
+          "props": {
+            "action": "get /v1/documents/folder/{folderName}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_embed",
+          "name": "get /v1/embed",
+          "props": {
+            "action": "get /v1/embed"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_embed_embeduuid_chats",
+          "name": "get /v1/embed/{embedUuid}/chats",
+          "props": {
+            "action": "get /v1/embed/{embedUuid}/chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_embed_embeduuid_chats_sessionuuid",
+          "name": "get /v1/embed/{embedUuid}/chats/{sessionUuid}",
+          "props": {
+            "action": "get /v1/embed/{embedUuid}/chats/{sessionUuid}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_openai_models",
+          "name": "get /v1/openai/models",
+          "props": {
+            "action": "get /v1/openai/models"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_openai_vector_stores",
+          "name": "get /v1/openai/vector_stores",
+          "props": {
+            "action": "get /v1/openai/vector_stores"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_system",
+          "name": "get /v1/system",
+          "props": {
+            "action": "get /v1/system"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_system_env_dump",
+          "name": "get /v1/system/env-dump",
+          "props": {
+            "action": "get /v1/system/env-dump"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_system_export_chats",
+          "name": "get /v1/system/export-chats",
+          "props": {
+            "action": "get /v1/system/export-chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_system_vector_count",
+          "name": "get /v1/system/vector-count",
+          "props": {
+            "action": "get /v1/system/vector-count"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_users",
+          "name": "get /v1/users",
+          "props": {
+            "action": "get /v1/users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_users_id_issue_auth_token",
+          "name": "get /v1/users/{id}/issue-auth-token",
+          "props": {
+            "action": "get /v1/users/{id}/issue-auth-token"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_workspace_slug",
+          "name": "get /v1/workspace/{slug}",
+          "props": {
+            "action": "get /v1/workspace/{slug}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_workspace_slug_chats",
+          "name": "get /v1/workspace/{slug}/chats",
+          "props": {
+            "action": "get /v1/workspace/{slug}/chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_workspace_slug_thread_threadslug_chats",
+          "name": "get /v1/workspace/{slug}/thread/{threadSlug}/chats",
+          "props": {
+            "action": "get /v1/workspace/{slug}/thread/{threadSlug}/chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_get_v1_workspaces",
+          "name": "get /v1/workspaces",
+          "props": {
+            "action": "get /v1/workspaces"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_invite_new",
+          "name": "post /v1/admin/invite/new",
+          "props": {
+            "action": "post /v1/admin/invite/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_preferences",
+          "name": "post /v1/admin/preferences",
+          "props": {
+            "action": "post /v1/admin/preferences"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_users_id",
+          "name": "post /v1/admin/users/{id}",
+          "props": {
+            "action": "post /v1/admin/users/{id}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_users_new",
+          "name": "post /v1/admin/users/new",
+          "props": {
+            "action": "post /v1/admin/users/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_workspace_chats",
+          "name": "post /v1/admin/workspace-chats",
+          "props": {
+            "action": "post /v1/admin/workspace-chats"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_workspaces_workspaceid_update_users",
+          "name": "post /v1/admin/workspaces/{workspaceId}/update-users",
+          "props": {
+            "action": "post /v1/admin/workspaces/{workspaceId}/update-users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_admin_workspaces_workspaceslug_manage_users",
+          "name": "post /v1/admin/workspaces/{workspaceSlug}/manage-users",
+          "props": {
+            "action": "post /v1/admin/workspaces/{workspaceSlug}/manage-users"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_create_folder",
+          "name": "post /v1/document/create-folder",
+          "props": {
+            "action": "post /v1/document/create-folder"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_move_files",
+          "name": "post /v1/document/move-files",
+          "props": {
+            "action": "post /v1/document/move-files"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_raw_text",
+          "name": "post /v1/document/raw-text",
+          "props": {
+            "action": "post /v1/document/raw-text"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_upload",
+          "name": "post /v1/document/upload",
+          "props": {
+            "action": "post /v1/document/upload"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_upload_foldername",
+          "name": "post /v1/document/upload/{folderName}",
+          "props": {
+            "action": "post /v1/document/upload/{folderName}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_document_upload_link",
+          "name": "post /v1/document/upload-link",
+          "props": {
+            "action": "post /v1/document/upload-link"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_embed_embeduuid",
+          "name": "post /v1/embed/{embedUuid}",
+          "props": {
+            "action": "post /v1/embed/{embedUuid}"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_embed_new",
+          "name": "post /v1/embed/new",
+          "props": {
+            "action": "post /v1/embed/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_openai_chat_completions",
+          "name": "post /v1/openai/chat/completions",
+          "props": {
+            "action": "post /v1/openai/chat/completions"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_openai_embeddings",
+          "name": "post /v1/openai/embeddings",
+          "props": {
+            "action": "post /v1/openai/embeddings"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_system_update_env",
+          "name": "post /v1/system/update-env",
+          "props": {
+            "action": "post /v1/system/update-env"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_new",
+          "name": "post /v1/workspace/new",
+          "props": {
+            "action": "post /v1/workspace/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_chat",
+          "name": "post /v1/workspace/{slug}/chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_stream_chat",
+          "name": "post /v1/workspace/{slug}/stream-chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/stream-chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_thread_new",
+          "name": "post /v1/workspace/{slug}/thread/new",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/new"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_thread_threadslug_chat",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_thread_threadslug_stream_chat",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/stream-chat",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/stream-chat"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_thread_threadslug_update",
+          "name": "post /v1/workspace/{slug}/thread/{threadSlug}/update",
+          "props": {
+            "action": "post /v1/workspace/{slug}/thread/{threadSlug}/update"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_update",
+          "name": "post /v1/workspace/{slug}/update",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_update_embeddings",
+          "name": "post /v1/workspace/{slug}/update-embeddings",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update-embeddings"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_update_pin",
+          "name": "post /v1/workspace/{slug}/update-pin",
+          "props": {
+            "action": "post /v1/workspace/{slug}/update-pin"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "op_post_v1_workspace_slug_vector_search",
+          "name": "post /v1/workspace/{slug}/vector-search",
+          "props": {
+            "action": "post /v1/workspace/{slug}/vector-search"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "anything-llm",
+      "source_kind": "openapi"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 98,
+      "frameworks": [],
+      "governed_actions": 62,
+      "nodes": 99,
+      "source": "anything-llm",
+      "source_kind": "openapi",
+      "ungoverned_actions": 35
+    }
+  },
+  "evidence_hash": "6a711ec2484b5de385310d034a9635a0adde37605ab82f73f3b7d5910644e4c8",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "E212EpVQNyINdiH470eeUCEPoNfr1XB+suvFuxgUFnh9YirgkKwOMy4HzLXH74hIYz5d9Xm8lZmLoQ5IYo65Ag==",
+  "signed": true,
+  "signed_at": "2026-06-12T07:01:46.025460+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

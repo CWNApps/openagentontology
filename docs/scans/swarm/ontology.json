@@ -1,0 +1,1249 @@
+{
+  "action_maps": [
+    {
+      "label": "query_docs",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_query_docs"
+    },
+    {
+      "label": "send_email",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_send_email"
+    },
+    {
+      "label": "submit_ticket",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_submit_ticket"
+    },
+    {
+      "label": "deploy",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'deploy'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_deploy"
+    },
+    {
+      "label": "escalate_to_agent",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Restricting the agent to in-scope resources is least privilege.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-6",
+          "name": "Least Privilege",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Scope is enforced at access time.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-3",
+          "name": "Access Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'escalate'; confirm against published text (asserted basis: Reaching outside authorized scope is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "reaching outside authorized scope maps to account/privilege manipulation",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1098",
+          "name": "Account Manipulation",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_escalate_to_agent"
+    },
+    {
+      "label": "refund_item",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'refund'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_refund_item"
+    },
+    {
+      "label": "run",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run"
+    },
+    {
+      "label": "run_and_get_tool_calls",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_and_get_tool_calls"
+    },
+    {
+      "label": "run_and_stream",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_and_stream"
+    },
+    {
+      "label": "run_demo_loop",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_demo_loop"
+    },
+    {
+      "label": "run_function_evals",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_function_evals"
+    },
+    {
+      "label": "run_request",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_request"
+    },
+    {
+      "label": "run_task",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_task"
+    },
+    {
+      "label": "run_tests",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_tests"
+    },
+    {
+      "label": "transfer_back_to_triage",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_back_to_triage"
+    },
+    {
+      "label": "transfer_to_agent2",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_agent2"
+    },
+    {
+      "label": "transfer_to_flight_cancel",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_flight_cancel"
+    },
+    {
+      "label": "transfer_to_flight_change",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_flight_change"
+    },
+    {
+      "label": "transfer_to_flight_modification",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_flight_modification"
+    },
+    {
+      "label": "transfer_to_help_center",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_help_center"
+    },
+    {
+      "label": "transfer_to_lost_baggage",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_lost_baggage"
+    },
+    {
+      "label": "transfer_to_refunds",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_refunds"
+    },
+    {
+      "label": "transfer_to_sales",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_sales"
+    },
+    {
+      "label": "transfer_to_spanish_agent",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_spanish_agent"
+    },
+    {
+      "label": "transfer_to_triage",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_to_triage"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "fn_deploy",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_escalate_to_agent",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_refund_item",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_and_get_tool_calls",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_and_stream",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_demo_loop",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_function_evals",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_request",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_task",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_run_tests",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_send_email",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_back_to_triage",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_agent2",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_flight_cancel",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_flight_change",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_flight_modification",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_help_center",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_lost_baggage",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_refunds",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_sales",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_spanish_agent",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "fn_transfer_to_triage",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "cap_query_docs",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "cap_send_email",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_swarm"
+    },
+    {
+      "dst": "cap_submit_ticket",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_swarm"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_swarm",
+      "name": "swarm",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_query_docs",
+      "name": "query_docs",
+      "props": {
+        "action": "query_docs"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_send_email",
+      "name": "send_email",
+      "props": {
+        "action": "send_email"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_submit_ticket",
+      "name": "submit_ticket",
+      "props": {
+        "action": "submit_ticket"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "fn_deploy",
+      "name": "deploy",
+      "props": {
+        "action": "deploy"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_escalate_to_agent",
+      "name": "escalate_to_agent",
+      "props": {
+        "action": "escalate_to_agent"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_refund_item",
+      "name": "refund_item",
+      "props": {
+        "action": "refund_item"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run",
+      "name": "run",
+      "props": {
+        "action": "run"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_and_get_tool_calls",
+      "name": "run_and_get_tool_calls",
+      "props": {
+        "action": "run_and_get_tool_calls"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_and_stream",
+      "name": "run_and_stream",
+      "props": {
+        "action": "run_and_stream"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_demo_loop",
+      "name": "run_demo_loop",
+      "props": {
+        "action": "run_demo_loop"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_function_evals",
+      "name": "run_function_evals",
+      "props": {
+        "action": "run_function_evals"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_request",
+      "name": "run_request",
+      "props": {
+        "action": "run_request"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_task",
+      "name": "run_task",
+      "props": {
+        "action": "run_task"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_tests",
+      "name": "run_tests",
+      "props": {
+        "action": "run_tests"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_email",
+      "name": "send_email",
+      "props": {
+        "action": "send_email"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_back_to_triage",
+      "name": "transfer_back_to_triage",
+      "props": {
+        "action": "transfer_back_to_triage"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_agent2",
+      "name": "transfer_to_agent2",
+      "props": {
+        "action": "transfer_to_agent2"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_flight_cancel",
+      "name": "transfer_to_flight_cancel",
+      "props": {
+        "action": "transfer_to_flight_cancel"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_flight_change",
+      "name": "transfer_to_flight_change",
+      "props": {
+        "action": "transfer_to_flight_change"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_flight_modification",
+      "name": "transfer_to_flight_modification",
+      "props": {
+        "action": "transfer_to_flight_modification"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_help_center",
+      "name": "transfer_to_help_center",
+      "props": {
+        "action": "transfer_to_help_center"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_lost_baggage",
+      "name": "transfer_to_lost_baggage",
+      "props": {
+        "action": "transfer_to_lost_baggage"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_refunds",
+      "name": "transfer_to_refunds",
+      "props": {
+        "action": "transfer_to_refunds"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_sales",
+      "name": "transfer_to_sales",
+      "props": {
+        "action": "transfer_to_sales"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_spanish_agent",
+      "name": "transfer_to_spanish_agent",
+      "props": {
+        "action": "transfer_to_spanish_agent"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_to_triage",
+      "name": "transfer_to_triage",
+      "props": {
+        "action": "transfer_to_triage"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "swarm",
+  "source_kind": "directory"
+}

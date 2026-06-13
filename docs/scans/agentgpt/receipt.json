@@ -1,0 +1,312 @@
+{
+  "alg": "Ed25519",
+  "atom_id": "oao-AGENTGPT-aa96e0fd0a",
+  "decision": "GOVERNED:UNGOVERNED",
+  "evidence": {
+    "ontology": {
+      "action_maps": [
+        {
+          "label": "delete",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_delete"
+        },
+        {
+          "label": "delete_folder",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_delete_folder"
+        },
+        {
+          "label": "drop_database",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-3",
+              "name": "Configuration Change Control",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "CM-5",
+              "name": "Access Restrictions for Change",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'drop'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "a destructive change during a freeze maps to data destruction",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1485",
+              "name": "Data Destruction",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_drop_database"
+        },
+        {
+          "label": "execute_task_agent",
+          "mappings": [
+            {
+              "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+              "confidence": "ambiguous",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM06",
+              "name": "Excessive Agency",
+              "provenance": "AMBIGUOUS"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_execute_task_agent"
+        },
+        {
+          "label": "upload_to_bucket",
+          "mappings": [
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "AC-4",
+              "name": "Information Flow Enforcement",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+              "confidence": "inferred",
+              "fw": "NIST SP 800-53r5",
+              "id": "SC-7",
+              "name": "Boundary Protection",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+              "confidence": "inferred",
+              "fw": "EU AI Act",
+              "id": "Art 10",
+              "name": "Data and data governance",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+              "confidence": "inferred",
+              "fw": "OWASP LLM Top 10 (2025)",
+              "id": "LLM02",
+              "name": "Sensitive Information Disclosure",
+              "provenance": "INFERRED"
+            },
+            {
+              "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "TA0010",
+              "name": "Exfiltration",
+              "provenance": "EXTRACTED"
+            },
+            {
+              "basis": "uncontrolled egress of regulated data maps to exfiltration",
+              "confidence": "advisory",
+              "fw": "MITRE ATT&CK",
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "provenance": "EXTRACTED"
+            }
+          ],
+          "matched_via": "heuristic",
+          "subject_id": "fn_upload_to_bucket"
+        }
+      ],
+      "edges": [
+        {
+          "dst": "fn_delete",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_agentgpt"
+        },
+        {
+          "dst": "fn_delete_folder",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_agentgpt"
+        },
+        {
+          "dst": "fn_drop_database",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_agentgpt"
+        },
+        {
+          "dst": "fn_execute_task_agent",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_agentgpt"
+        },
+        {
+          "dst": "fn_upload_to_bucket",
+          "provenance": "EXTRACTED",
+          "rel": "EXECUTES",
+          "src": "agent_agentgpt"
+        }
+      ],
+      "frameworks": [],
+      "nodes": [
+        {
+          "id": "agent_agentgpt",
+          "name": "agentgpt",
+          "props": {
+            "source_kind": "python"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Agent"
+        },
+        {
+          "id": "fn_delete",
+          "name": "delete",
+          "props": {
+            "action": "delete"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_delete_folder",
+          "name": "delete_folder",
+          "props": {
+            "action": "delete_folder"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_drop_database",
+          "name": "drop_database",
+          "props": {
+            "action": "drop_database"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_execute_task_agent",
+          "name": "execute_task_agent",
+          "props": {
+            "action": "execute_task_agent"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        },
+        {
+          "id": "fn_upload_to_bucket",
+          "name": "upload_to_bucket",
+          "props": {
+            "action": "upload_to_bucket"
+          },
+          "provenance": "EXTRACTED",
+          "type": "Task"
+        }
+      ],
+      "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+      "source": "agentgpt",
+      "source_kind": "python"
+    },
+    "summary": {
+      "asserted_covered": 0,
+      "edges": 5,
+      "frameworks": [],
+      "governed_actions": 5,
+      "nodes": 6,
+      "source": "agentgpt",
+      "source_kind": "python",
+      "ungoverned_actions": 0
+    }
+  },
+  "evidence_hash": "aa96e0fd0a0eabc01ab078b87595d1cb97a96d3534a74ca54af82da9c00695bf",
+  "ml_dsa_public_key_b64": "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",
+  "ml_dsa_signature_b64": "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",
+  "note_pq": "Hybrid signature: Ed25519 always; ML-DSA-65 (FIPS 204) and SLH-DSA (FIPS 205) added when a PQ backend is installed. Each leg signs the same canonical body; any one verifying proves authenticity. Install: pip install \"openagentontology[pq]\".",
+  "signature_alg": "Ed25519+ML-DSA-65+SLH-DSA",
+  "signature_b64": "8ty/mcMimyjnklRBg7gtKK5VrkHhjKi+sG3LBP4x4TylACT3tjojn1Fclgg5W/Ao9bm374RlOMsbc+TPGx92AQ==",
+  "signed": true,
+  "signed_at": "2026-06-12T06:41:18.986609+00:00",
+  "slh_dsa_public_key_b64": "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=",
+  "slh_dsa_signature_b64": "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",
+  "type": "AgentGovernanceReceipt",
+  "verify_pubkey_b64": "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ="
+}

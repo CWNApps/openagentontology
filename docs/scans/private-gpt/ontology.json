@@ -1,0 +1,3449 @@
+{
+  "action_maps": [
+    {
+      "label": "database",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_database"
+    },
+    {
+      "label": "delete_stream_v1_messages_async__message_id__delete_delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_messages_async_message_id_delete"
+    },
+    {
+      "label": "delete_skill_v1_skills__skill_id__delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_skills_skill_id"
+    },
+    {
+      "label": "delete_skill_version_v1_skills__skill_id__versions__version__delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_delete_v1_skills_skill_id_versions_version"
+    },
+    {
+      "label": "maximum_loaded_skills",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_maximum_loaded_skills"
+    },
+    {
+      "label": "chunked_content_retrieval_v1_artifacts_chunked_content_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_artifacts_chunked_content"
+    },
+    {
+      "label": "content_retrieval_v1_artifacts_content_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_artifacts_content"
+    },
+    {
+      "label": "delete_ingested_v1_artifacts_delete_post",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_post_v1_artifacts_delete"
+    },
+    {
+      "label": "delete_ingested_async_v1_artifacts_delete_async_post",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_post_v1_artifacts_delete_async"
+    },
+    {
+      "label": "ingest_content_v1_artifacts_ingest_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_artifacts_ingest"
+    },
+    {
+      "label": "ingest_content_async_v1_artifacts_ingest_async_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_artifacts_ingest_async"
+    },
+    {
+      "label": "create_completion_v1_complete_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_complete"
+    },
+    {
+      "label": "embeddings_generation_v1_embeddings_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_embeddings"
+    },
+    {
+      "label": "chat_messages_v1_messages_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_messages"
+    },
+    {
+      "label": "chat_messages_v1_messages_async_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_messages_async"
+    },
+    {
+      "label": "cancel_stream_v1_messages_async__message_id__cancel_post",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'cancel'; confirm against published text (asserted basis: An adverse automated decision affecting a person requires human oversight before it is issued.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'cancel'; confirm against published text (asserted basis: Issuing an adverse decision with no human in the loop is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Adverse outcomes are a measured risk requiring a treatment (human review).",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MEASURE",
+          "name": "Measure function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "autonomous execution without oversight maps to command/scripting abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1059",
+          "name": "Command and Scripting Interpreter",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "cap_post_v1_messages_async_message_id_cancel"
+    },
+    {
+      "label": "count_message_tokens_v1_messages_count_tokens_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_messages_count_tokens"
+    },
+    {
+      "label": "validate_messages_v1_messages_validate_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_messages_validate"
+    },
+    {
+      "label": "search_v1_primitives_search_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_primitives_search"
+    },
+    {
+      "label": "create_skill_v1_skills_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_skills"
+    },
+    {
+      "label": "create_skill_version_v1_skills__skill_id__versions_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_skills_skill_id_versions"
+    },
+    {
+      "label": "database_query_v1_tools_database_query_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_tools_database_query"
+    },
+    {
+      "label": "semantic_search_v1_tools_semantic_search_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_tools_semantic_search"
+    },
+    {
+      "label": "tabular_data_analysis_v1_tools_tabular_data_analysis_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_tools_tabular_data_analysis"
+    },
+    {
+      "label": "web_fetch_v1_tools_web_fetch_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_tools_web_fetch"
+    },
+    {
+      "label": "web_search_v1_tools_web_search_post",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_post_v1_tools_web_search"
+    },
+    {
+      "label": "skill_injection_mode",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_skill_injection_mode"
+    },
+    {
+      "label": "storage_provider",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "cap_storage_provider"
+    },
+    {
+      "label": "delete",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete"
+    },
+    {
+      "label": "delete_file",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_file"
+    },
+    {
+      "label": "delete_filtered_nodes",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_filtered_nodes"
+    },
+    {
+      "label": "delete_node",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_node"
+    },
+    {
+      "label": "delete_nodes",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_nodes"
+    },
+    {
+      "label": "delete_prefix",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_prefix"
+    },
+    {
+      "label": "delete_session",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_session"
+    },
+    {
+      "label": "delete_skill",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_skill"
+    },
+    {
+      "label": "delete_stream",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_stream"
+    },
+    {
+      "label": "delete_version",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_delete_version"
+    },
+    {
+      "label": "destroy",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'destroy'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'destroy'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'destroy'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_destroy"
+    },
+    {
+      "label": "exec",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_exec"
+    },
+    {
+      "label": "execute",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute"
+    },
+    {
+      "label": "execute_bash",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_bash"
+    },
+    {
+      "label": "execute_query",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_query"
+    },
+    {
+      "label": "execute_query_batched",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_query_batched"
+    },
+    {
+      "label": "execute_tool_call",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_tool_call"
+    },
+    {
+      "label": "execute_with_control",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_execute_with_control"
+    },
+    {
+      "label": "post_process_content",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_post_process_content"
+    },
+    {
+      "label": "publish",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'publish'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_publish"
+    },
+    {
+      "label": "release",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'release'; confirm against published text (asserted basis: Requiring an approved change request is the core of change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'release'; confirm against published text (asserted basis: An unapproved production change by an agent needs human sign-off.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'release'; confirm against published text (asserted basis: Deploying without approval is excessive agency.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "an unapproved production change maps to system-process modification / persistence",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1543",
+          "name": "Create or Modify System Process",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_release"
+    },
+    {
+      "label": "revoke_task",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_revoke_task"
+    },
+    {
+      "label": "rollback_fn",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_rollback_fn"
+    },
+    {
+      "label": "run",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run"
+    },
+    {
+      "label": "run_analysis",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_analysis"
+    },
+    {
+      "label": "run_async_tasks_with_limit_concurrency",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_async_tasks_with_limit_concurrency"
+    },
+    {
+      "label": "run_bash",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_bash"
+    },
+    {
+      "label": "run_callback",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_callback"
+    },
+    {
+      "label": "run_code",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_code"
+    },
+    {
+      "label": "run_command",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_command"
+    },
+    {
+      "label": "run_diff_test",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_diff_test"
+    },
+    {
+      "label": "run_down",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_down"
+    },
+    {
+      "label": "run_in_loop",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_in_loop"
+    },
+    {
+      "label": "run_interceptor_phase",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_interceptor_phase"
+    },
+    {
+      "label": "run_producer",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_producer"
+    },
+    {
+      "label": "run_semantic_search",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_semantic_search"
+    },
+    {
+      "label": "run_summary",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_summary"
+    },
+    {
+      "label": "run_tabular_data_analysis",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_tabular_data_analysis"
+    },
+    {
+      "label": "run_task_in_thread",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_task_in_thread"
+    },
+    {
+      "label": "run_tool",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_tool"
+    },
+    {
+      "label": "run_up",
+      "mappings": [
+        {
+          "basis": "heuristic: side-effecting action with no second authorizer detected -- confirm against published text",
+          "confidence": "ambiguous",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "AMBIGUOUS"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_run_up"
+    },
+    {
+      "label": "send",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send"
+    },
+    {
+      "label": "send_event",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_event"
+    },
+    {
+      "label": "send_ping",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_ping"
+    },
+    {
+      "label": "send_task_sync",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_task_sync"
+    },
+    {
+      "label": "send_wrapper",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'send'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_send_wrapper"
+    },
+    {
+      "label": "shutdown",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "fn_shutdown"
+    },
+    {
+      "label": "transfer_file",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: Dual control is the textbook separation-of-duties control: no single actor (here, one agent) completes a sensitive transaction alone.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-5",
+          "name": "Separation of Duties",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: A high-value financial action by an automated system requires effective human oversight before it takes effect.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 14",
+          "name": "Human oversight",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'transfer'; confirm against published text (asserted basis: An agent moving money without a second authorizer is the canonical excessive-agency failure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Risk treatment: enforce a control commensurate with transaction risk.",
+          "confidence": "advisory",
+          "fw": "NIST AI RMF",
+          "id": "MANAGE",
+          "name": "Manage function",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "separation of duties mitigates valid-account / privilege abuse",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1078",
+          "name": "Valid Accounts",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_transfer_file"
+    },
+    {
+      "label": "upload_file_to_s3",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Blocking export to an out-of-scope endpoint is information-flow enforcement.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "AC-4",
+          "name": "Information Flow Enforcement",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Preventing data leaving the controlled boundary is boundary protection.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "SC-7",
+          "name": "Boundary Protection",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Uncontrolled egress of regulated data is a data-governance failure.)",
+          "confidence": "inferred",
+          "fw": "EU AI Act",
+          "id": "Art 10",
+          "name": "Data and data governance",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'upload'; confirm against published text (asserted basis: Egress of regulated records is sensitive-information disclosure.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM02",
+          "name": "Sensitive Information Disclosure",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "Data leaving to an external domain maps to the Exfiltration tactic; confirm the specific technique with an analyst.",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "TA0010",
+          "name": "Exfiltration",
+          "provenance": "EXTRACTED"
+        },
+        {
+          "basis": "uncontrolled egress of regulated data maps to exfiltration",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1048",
+          "name": "Exfiltration Over Alternative Protocol",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "fn_upload_file_to_s3"
+    },
+    {
+      "label": "get_delete_async_status_v1_artifacts_delete_async__task_id__get",
+      "mappings": [
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Honoring a change freeze is configuration change control.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-3",
+          "name": "Configuration Change Control",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: A freeze restricts who/when changes may be applied.)",
+          "confidence": "inferred",
+          "fw": "NIST SP 800-53r5",
+          "id": "CM-5",
+          "name": "Access Restrictions for Change",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "inferred from action verb 'delete'; confirm against published text (asserted basis: Deploying during a freeze is acting beyond authority.)",
+          "confidence": "inferred",
+          "fw": "OWASP LLM Top 10 (2025)",
+          "id": "LLM06",
+          "name": "Excessive Agency",
+          "provenance": "INFERRED"
+        },
+        {
+          "basis": "a destructive change during a freeze maps to data destruction",
+          "confidence": "advisory",
+          "fw": "MITRE ATT&CK",
+          "id": "T1485",
+          "name": "Data Destruction",
+          "provenance": "EXTRACTED"
+        }
+      ],
+      "matched_via": "heuristic",
+      "subject_id": "op_get_v1_artifacts_delete_async_task_id"
+    },
+    {
+      "label": "get_ingest_async_status_v1_artifacts_ingest_async__task_id__get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_artifacts_ingest_async_task_id"
+    },
+    {
+      "label": "list_ingested_v1_artifacts_list_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_artifacts_list"
+    },
+    {
+      "label": "get_stream_status_v1_messages_async__message_id__status_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_messages_async_message_id_status"
+    },
+    {
+      "label": "observe_stream_v1_messages_async__message_id__stream_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_messages_async_message_id_stream"
+    },
+    {
+      "label": "list_models_v1_models_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_models"
+    },
+    {
+      "label": "get_model_v1_models__model_id__get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_models_model_id"
+    },
+    {
+      "label": "list_skills_v1_skills_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_skills"
+    },
+    {
+      "label": "get_skill_v1_skills__skill_id__get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_skills_skill_id"
+    },
+    {
+      "label": "list_skill_versions_v1_skills__skill_id__versions_get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_skills_skill_id_versions"
+    },
+    {
+      "label": "get_skill_version_v1_skills__skill_id__versions__version__get",
+      "mappings": [],
+      "matched_via": "none",
+      "subject_id": "op_get_v1_skills_skill_id_versions_version"
+    }
+  ],
+  "edges": [
+    {
+      "dst": "fn_delete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_file",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_filtered_nodes",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_node",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_nodes",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_prefix",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_session",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_skill",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_stream",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_delete_version",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_destroy",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_exec",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute_bash",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute_query",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute_query_batched",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute_tool_call",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_execute_with_control",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_post_process_content",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_publish",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_release",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_revoke_task",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_rollback_fn",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_analysis",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_async_tasks_with_limit_concurrency",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_bash",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_callback",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_code",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_command",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_diff_test",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_down",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_in_loop",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_interceptor_phase",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_producer",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_semantic_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_summary",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_tabular_data_analysis",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_task_in_thread",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_tool",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_run_up",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_send",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_send_event",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_send_ping",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_send_task_sync",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_send_wrapper",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_shutdown",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_transfer_file",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "fn_upload_file_to_s3",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_delete_v1_messages_async_message_id_delete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_delete_v1_skills_skill_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_delete_v1_skills_skill_id_versions_version",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_artifacts_delete_async_task_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_artifacts_ingest_async_task_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_artifacts_list",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_messages_async_message_id_status",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_messages_async_message_id_stream",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_models",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_models_model_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_skills",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_skills_skill_id",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_skills_skill_id_versions",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_get_v1_skills_skill_id_versions_version",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_chunked_content",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_content",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_delete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_delete_async",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_ingest",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_artifacts_ingest_async",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_complete",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_embeddings",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_messages",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_messages_async",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_messages_async_message_id_cancel",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_messages_count_tokens",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_messages_validate",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_primitives_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_skills",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_skills_skill_id_versions",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_tools_database_query",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_tools_semantic_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_tools_tabular_data_analysis",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_tools_web_fetch",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "op_post_v1_tools_web_search",
+      "provenance": "EXTRACTED",
+      "rel": "EXECUTES",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_database",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_delete_v1_messages_async_message_id_delete",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_delete_v1_skills_skill_id",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_delete_v1_skills_skill_id_versions_version",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_maximum_loaded_skills",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_chunked_content",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_content",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_delete",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_delete_async",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_ingest",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_artifacts_ingest_async",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_complete",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_embeddings",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_messages",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_messages_async",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_messages_async_message_id_cancel",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_messages_count_tokens",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_messages_validate",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_primitives_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_skills",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_skills_skill_id_versions",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_tools_database_query",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_tools_semantic_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_tools_tabular_data_analysis",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_tools_web_fetch",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_post_v1_tools_web_search",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_skill_injection_mode",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    },
+    {
+      "dst": "cap_storage_provider",
+      "provenance": "EXTRACTED",
+      "rel": "HAS_CAPABILITY",
+      "src": "agent_private_gpt"
+    }
+  ],
+  "frameworks": [],
+  "nodes": [
+    {
+      "id": "agent_private_gpt",
+      "name": "private-gpt",
+      "props": {
+        "source_kind": "directory"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Agent"
+    },
+    {
+      "id": "cap_database",
+      "name": "database",
+      "props": {
+        "action": "database"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_messages_async_message_id_delete",
+      "name": "delete_stream_v1_messages_async__message_id__delete_delete",
+      "props": {
+        "action": "delete_stream_v1_messages_async__message_id__delete_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_skills_skill_id",
+      "name": "delete_skill_v1_skills__skill_id__delete",
+      "props": {
+        "action": "delete_skill_v1_skills__skill_id__delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_delete_v1_skills_skill_id_versions_version",
+      "name": "delete_skill_version_v1_skills__skill_id__versions__version__delete",
+      "props": {
+        "action": "delete_skill_version_v1_skills__skill_id__versions__version__delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_maximum_loaded_skills",
+      "name": "maximum_loaded_skills",
+      "props": {
+        "action": "maximum_loaded_skills"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_chunked_content",
+      "name": "chunked_content_retrieval_v1_artifacts_chunked_content_post",
+      "props": {
+        "action": "chunked_content_retrieval_v1_artifacts_chunked_content_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_content",
+      "name": "content_retrieval_v1_artifacts_content_post",
+      "props": {
+        "action": "content_retrieval_v1_artifacts_content_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_delete",
+      "name": "delete_ingested_v1_artifacts_delete_post",
+      "props": {
+        "action": "delete_ingested_v1_artifacts_delete_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_delete_async",
+      "name": "delete_ingested_async_v1_artifacts_delete_async_post",
+      "props": {
+        "action": "delete_ingested_async_v1_artifacts_delete_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_ingest",
+      "name": "ingest_content_v1_artifacts_ingest_post",
+      "props": {
+        "action": "ingest_content_v1_artifacts_ingest_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_artifacts_ingest_async",
+      "name": "ingest_content_async_v1_artifacts_ingest_async_post",
+      "props": {
+        "action": "ingest_content_async_v1_artifacts_ingest_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_complete",
+      "name": "create_completion_v1_complete_post",
+      "props": {
+        "action": "create_completion_v1_complete_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_embeddings",
+      "name": "embeddings_generation_v1_embeddings_post",
+      "props": {
+        "action": "embeddings_generation_v1_embeddings_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_messages",
+      "name": "chat_messages_v1_messages_post",
+      "props": {
+        "action": "chat_messages_v1_messages_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_messages_async",
+      "name": "chat_messages_v1_messages_async_post",
+      "props": {
+        "action": "chat_messages_v1_messages_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_messages_async_message_id_cancel",
+      "name": "cancel_stream_v1_messages_async__message_id__cancel_post",
+      "props": {
+        "action": "cancel_stream_v1_messages_async__message_id__cancel_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_messages_count_tokens",
+      "name": "count_message_tokens_v1_messages_count_tokens_post",
+      "props": {
+        "action": "count_message_tokens_v1_messages_count_tokens_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_messages_validate",
+      "name": "validate_messages_v1_messages_validate_post",
+      "props": {
+        "action": "validate_messages_v1_messages_validate_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_primitives_search",
+      "name": "search_v1_primitives_search_post",
+      "props": {
+        "action": "search_v1_primitives_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_skills",
+      "name": "create_skill_v1_skills_post",
+      "props": {
+        "action": "create_skill_v1_skills_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_skills_skill_id_versions",
+      "name": "create_skill_version_v1_skills__skill_id__versions_post",
+      "props": {
+        "action": "create_skill_version_v1_skills__skill_id__versions_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_tools_database_query",
+      "name": "database_query_v1_tools_database_query_post",
+      "props": {
+        "action": "database_query_v1_tools_database_query_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_tools_semantic_search",
+      "name": "semantic_search_v1_tools_semantic_search_post",
+      "props": {
+        "action": "semantic_search_v1_tools_semantic_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_tools_tabular_data_analysis",
+      "name": "tabular_data_analysis_v1_tools_tabular_data_analysis_post",
+      "props": {
+        "action": "tabular_data_analysis_v1_tools_tabular_data_analysis_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_tools_web_fetch",
+      "name": "web_fetch_v1_tools_web_fetch_post",
+      "props": {
+        "action": "web_fetch_v1_tools_web_fetch_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_post_v1_tools_web_search",
+      "name": "web_search_v1_tools_web_search_post",
+      "props": {
+        "action": "web_search_v1_tools_web_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_skill_injection_mode",
+      "name": "skill_injection_mode",
+      "props": {
+        "action": "skill_injection_mode"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "cap_storage_provider",
+      "name": "storage_provider",
+      "props": {
+        "action": "storage_provider"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Capability"
+    },
+    {
+      "id": "fn_delete",
+      "name": "delete",
+      "props": {
+        "action": "delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_file",
+      "name": "delete_file",
+      "props": {
+        "action": "delete_file"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_filtered_nodes",
+      "name": "delete_filtered_nodes",
+      "props": {
+        "action": "delete_filtered_nodes"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_node",
+      "name": "delete_node",
+      "props": {
+        "action": "delete_node"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_nodes",
+      "name": "delete_nodes",
+      "props": {
+        "action": "delete_nodes"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_prefix",
+      "name": "delete_prefix",
+      "props": {
+        "action": "delete_prefix"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_session",
+      "name": "delete_session",
+      "props": {
+        "action": "delete_session"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_skill",
+      "name": "delete_skill",
+      "props": {
+        "action": "delete_skill"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_stream",
+      "name": "delete_stream",
+      "props": {
+        "action": "delete_stream"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_delete_version",
+      "name": "delete_version",
+      "props": {
+        "action": "delete_version"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_destroy",
+      "name": "destroy",
+      "props": {
+        "action": "destroy"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_exec",
+      "name": "exec",
+      "props": {
+        "action": "exec"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute",
+      "name": "execute",
+      "props": {
+        "action": "execute"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_bash",
+      "name": "execute_bash",
+      "props": {
+        "action": "execute_bash"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_query",
+      "name": "execute_query",
+      "props": {
+        "action": "execute_query"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_query_batched",
+      "name": "execute_query_batched",
+      "props": {
+        "action": "execute_query_batched"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_tool_call",
+      "name": "execute_tool_call",
+      "props": {
+        "action": "execute_tool_call"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_execute_with_control",
+      "name": "execute_with_control",
+      "props": {
+        "action": "execute_with_control"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_post_process_content",
+      "name": "post_process_content",
+      "props": {
+        "action": "post_process_content"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_publish",
+      "name": "publish",
+      "props": {
+        "action": "publish"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_release",
+      "name": "release",
+      "props": {
+        "action": "release"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_revoke_task",
+      "name": "revoke_task",
+      "props": {
+        "action": "revoke_task"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_rollback_fn",
+      "name": "rollback_fn",
+      "props": {
+        "action": "rollback_fn"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run",
+      "name": "run",
+      "props": {
+        "action": "run"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_analysis",
+      "name": "run_analysis",
+      "props": {
+        "action": "run_analysis"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_async_tasks_with_limit_concurrency",
+      "name": "run_async_tasks_with_limit_concurrency",
+      "props": {
+        "action": "run_async_tasks_with_limit_concurrency"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_bash",
+      "name": "run_bash",
+      "props": {
+        "action": "run_bash"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_callback",
+      "name": "run_callback",
+      "props": {
+        "action": "run_callback"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_code",
+      "name": "run_code",
+      "props": {
+        "action": "run_code"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_command",
+      "name": "run_command",
+      "props": {
+        "action": "run_command"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_diff_test",
+      "name": "run_diff_test",
+      "props": {
+        "action": "run_diff_test"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_down",
+      "name": "run_down",
+      "props": {
+        "action": "run_down"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_in_loop",
+      "name": "run_in_loop",
+      "props": {
+        "action": "run_in_loop"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_interceptor_phase",
+      "name": "run_interceptor_phase",
+      "props": {
+        "action": "run_interceptor_phase"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_producer",
+      "name": "run_producer",
+      "props": {
+        "action": "run_producer"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_semantic_search",
+      "name": "run_semantic_search",
+      "props": {
+        "action": "run_semantic_search"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_summary",
+      "name": "run_summary",
+      "props": {
+        "action": "run_summary"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_tabular_data_analysis",
+      "name": "run_tabular_data_analysis",
+      "props": {
+        "action": "run_tabular_data_analysis"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_task_in_thread",
+      "name": "run_task_in_thread",
+      "props": {
+        "action": "run_task_in_thread"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_tool",
+      "name": "run_tool",
+      "props": {
+        "action": "run_tool"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_run_up",
+      "name": "run_up",
+      "props": {
+        "action": "run_up"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send",
+      "name": "send",
+      "props": {
+        "action": "send"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_event",
+      "name": "send_event",
+      "props": {
+        "action": "send_event"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_ping",
+      "name": "send_ping",
+      "props": {
+        "action": "send_ping"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_task_sync",
+      "name": "send_task_sync",
+      "props": {
+        "action": "send_task_sync"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_send_wrapper",
+      "name": "send_wrapper",
+      "props": {
+        "action": "send_wrapper"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_shutdown",
+      "name": "shutdown",
+      "props": {
+        "action": "shutdown"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_transfer_file",
+      "name": "transfer_file",
+      "props": {
+        "action": "transfer_file"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "fn_upload_file_to_s3",
+      "name": "upload_file_to_s3",
+      "props": {
+        "action": "upload_file_to_s3"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_messages_async_message_id_delete",
+      "name": "delete_stream_v1_messages_async__message_id__delete_delete",
+      "props": {
+        "action": "delete_stream_v1_messages_async__message_id__delete_delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_skills_skill_id",
+      "name": "delete_skill_v1_skills__skill_id__delete",
+      "props": {
+        "action": "delete_skill_v1_skills__skill_id__delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_delete_v1_skills_skill_id_versions_version",
+      "name": "delete_skill_version_v1_skills__skill_id__versions__version__delete",
+      "props": {
+        "action": "delete_skill_version_v1_skills__skill_id__versions__version__delete"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_artifacts_delete_async_task_id",
+      "name": "get_delete_async_status_v1_artifacts_delete_async__task_id__get",
+      "props": {
+        "action": "get_delete_async_status_v1_artifacts_delete_async__task_id__get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_artifacts_ingest_async_task_id",
+      "name": "get_ingest_async_status_v1_artifacts_ingest_async__task_id__get",
+      "props": {
+        "action": "get_ingest_async_status_v1_artifacts_ingest_async__task_id__get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_artifacts_list",
+      "name": "list_ingested_v1_artifacts_list_get",
+      "props": {
+        "action": "list_ingested_v1_artifacts_list_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_messages_async_message_id_status",
+      "name": "get_stream_status_v1_messages_async__message_id__status_get",
+      "props": {
+        "action": "get_stream_status_v1_messages_async__message_id__status_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_messages_async_message_id_stream",
+      "name": "observe_stream_v1_messages_async__message_id__stream_get",
+      "props": {
+        "action": "observe_stream_v1_messages_async__message_id__stream_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_models",
+      "name": "list_models_v1_models_get",
+      "props": {
+        "action": "list_models_v1_models_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_models_model_id",
+      "name": "get_model_v1_models__model_id__get",
+      "props": {
+        "action": "get_model_v1_models__model_id__get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_skills",
+      "name": "list_skills_v1_skills_get",
+      "props": {
+        "action": "list_skills_v1_skills_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_skills_skill_id",
+      "name": "get_skill_v1_skills__skill_id__get",
+      "props": {
+        "action": "get_skill_v1_skills__skill_id__get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_skills_skill_id_versions",
+      "name": "list_skill_versions_v1_skills__skill_id__versions_get",
+      "props": {
+        "action": "list_skill_versions_v1_skills__skill_id__versions_get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_get_v1_skills_skill_id_versions_version",
+      "name": "get_skill_version_v1_skills__skill_id__versions__version__get",
+      "props": {
+        "action": "get_skill_version_v1_skills__skill_id__versions__version__get"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_chunked_content",
+      "name": "chunked_content_retrieval_v1_artifacts_chunked_content_post",
+      "props": {
+        "action": "chunked_content_retrieval_v1_artifacts_chunked_content_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_content",
+      "name": "content_retrieval_v1_artifacts_content_post",
+      "props": {
+        "action": "content_retrieval_v1_artifacts_content_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_delete",
+      "name": "delete_ingested_v1_artifacts_delete_post",
+      "props": {
+        "action": "delete_ingested_v1_artifacts_delete_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_delete_async",
+      "name": "delete_ingested_async_v1_artifacts_delete_async_post",
+      "props": {
+        "action": "delete_ingested_async_v1_artifacts_delete_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_ingest",
+      "name": "ingest_content_v1_artifacts_ingest_post",
+      "props": {
+        "action": "ingest_content_v1_artifacts_ingest_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_artifacts_ingest_async",
+      "name": "ingest_content_async_v1_artifacts_ingest_async_post",
+      "props": {
+        "action": "ingest_content_async_v1_artifacts_ingest_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_complete",
+      "name": "create_completion_v1_complete_post",
+      "props": {
+        "action": "create_completion_v1_complete_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_embeddings",
+      "name": "embeddings_generation_v1_embeddings_post",
+      "props": {
+        "action": "embeddings_generation_v1_embeddings_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_messages",
+      "name": "chat_messages_v1_messages_post",
+      "props": {
+        "action": "chat_messages_v1_messages_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_messages_async",
+      "name": "chat_messages_v1_messages_async_post",
+      "props": {
+        "action": "chat_messages_v1_messages_async_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_messages_async_message_id_cancel",
+      "name": "cancel_stream_v1_messages_async__message_id__cancel_post",
+      "props": {
+        "action": "cancel_stream_v1_messages_async__message_id__cancel_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_messages_count_tokens",
+      "name": "count_message_tokens_v1_messages_count_tokens_post",
+      "props": {
+        "action": "count_message_tokens_v1_messages_count_tokens_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_messages_validate",
+      "name": "validate_messages_v1_messages_validate_post",
+      "props": {
+        "action": "validate_messages_v1_messages_validate_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_primitives_search",
+      "name": "search_v1_primitives_search_post",
+      "props": {
+        "action": "search_v1_primitives_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_skills",
+      "name": "create_skill_v1_skills_post",
+      "props": {
+        "action": "create_skill_v1_skills_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_skills_skill_id_versions",
+      "name": "create_skill_version_v1_skills__skill_id__versions_post",
+      "props": {
+        "action": "create_skill_version_v1_skills__skill_id__versions_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_tools_database_query",
+      "name": "database_query_v1_tools_database_query_post",
+      "props": {
+        "action": "database_query_v1_tools_database_query_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_tools_semantic_search",
+      "name": "semantic_search_v1_tools_semantic_search_post",
+      "props": {
+        "action": "semantic_search_v1_tools_semantic_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_tools_tabular_data_analysis",
+      "name": "tabular_data_analysis_v1_tools_tabular_data_analysis_post",
+      "props": {
+        "action": "tabular_data_analysis_v1_tools_tabular_data_analysis_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_tools_web_fetch",
+      "name": "web_fetch_v1_tools_web_fetch_post",
+      "props": {
+        "action": "web_fetch_v1_tools_web_fetch_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    },
+    {
+      "id": "op_post_v1_tools_web_search",
+      "name": "web_search_v1_tools_web_search_post",
+      "props": {
+        "action": "web_search_v1_tools_web_search_post"
+      },
+      "provenance": "EXTRACTED",
+      "type": "Task"
+    }
+  ],
+  "note": "Proposed CWN mappings, confidence-tagged. Confirm against the current published control text before relying on them for audit. Enterprise control ids are mapped at onboarding by your GRC team, never auto-asserted.",
+  "source": "private-gpt",
+  "source_kind": "directory"
+}
