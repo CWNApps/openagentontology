@@ -1,0 +1,87 @@
+# Proposal — Granular Object Access (ProtectedObject)
+# A backward-compatible extension to the Agent Ontology for OBJECT-LEVEL access
+# governance. The base ontology models agents ACTING; this models the OBJECTS
+# being accessed and the trustee-first decision that gates each one — per
+# paragraph/record, not per file. This is a PROPOSAL (see PROTECTED_OBJECT.md).
+#
+# Classification is a FIRST-CLASS node so re-classification never rewrites objects;
+# a rule change marks reachable objects stale and re-scores them in place.
+# The trustee decides the visible set FIRST; vector similarity runs only inside it.
+ontology: ext_granular_access
+version: "1.0.0"
+kind: extension
+extends: agent_ontology
+namespace: pgo
+description: >
+  Object-level (paragraph/record) access governance. Adds ProtectedObject,
+  Principal, Classification, and AccessDecision; binds a trustee-first gate.
+  Maps to NIST 800-53 AC-4 (Information Flow), AC-3 (Access Enforcement), and
+  EU AI Act Art 10 (Data governance).
+governance:
+  notary: signed_receipt        # each AccessDecision mints a signed receipt
+  lineage: true
+
+types:
+  ProtectedObject:
+    description: >
+      The atomic unit access is decided on — a paragraph, section, record, or
+      message body. Extends the base Resource type (inherits the classification lattice).
+    extends: Resource
+    notarizable: true
+    properties:
+      object_id: {type: string, key: true}
+      kind: {type: enum, values: [paragraph, section, record, message, field], default: paragraph}
+      repository: {type: string}              # source system (mailbox, doc store, wiki)
+      sensitivity: {type: enum, values: [public, internal, confidential, restricted], default: internal}
+      protection_horizon_years: {type: int, default: 0}   # drives HNDL / PQ-receipt need
+      content_hash: {type: string}            # never the plaintext — hash only
+      stale: {type: bool, default: false}     # set when a governing rule changes
+
+  Principal:
+    description: A human/agent requester whose clearance bounds what it may retrieve.
+    extends: Actor
+    notarizable: false
+    properties:
+      principal_id: {type: string, key: true}
+      clearance: {type: enum, values: [public, internal, confidential, restricted], default: public}
+
+  Classification:
+    description: >
+      A first-class classification node. Objects link to it (CLASSIFIED_AS) instead
+      of carrying inline tags, so re-classification rewrites the node, not the object.
+    notarizable: false
+    properties:
+      classification_id: {type: string, key: true}
+      tag: {type: string}                     # framework anchor or reason
+      reason: {type: enum, values: [credential, pii, financial, legal, hr_sensitive, security, none], default: none}
+      confidence: {type: float, default: 1.0}
+      classified_at: {type: datetime}
+      classifier: {type: string, default: "keyword"}   # honest provenance — no "semantic" claim unless an embedding model ran
+
+  AccessDecision:
+    description: The per-object trustee verdict — the unit the gate notarizes.
+    extends: Decision
+    notarizable: true
+    properties:
+      access_decision_id: {type: string, key: true}
+      verdict: {type: enum, values: [allow, deny, escalate], default: deny}
+      reason_code: {type: string}             # e.g. sensitivity_above_clearance
+
+links:
+  - {name: HAS_OBJECT,     from: Resource,        to: ProtectedObject}
+  - {name: CLASSIFIED_AS,  from: ProtectedObject, to: Classification}
+  - {name: CLEARED_FOR,    from: Principal,       to: Classification}
+  - {name: REQUESTS,       from: Principal,       to: ProtectedObject}
+  - {name: GATES_ACCESS,   from: Gate,            to: AccessDecision}
+  - {name: DECIDES,        from: AccessDecision,  to: ProtectedObject}
+  - {name: NOTARIZED_BY,   from: AccessDecision,  to: Receipt}
+
+actions:
+  # Trustee-first: decide the visible set BEFORE retrieval; similarity runs inside it.
+  - {name: gate_access,       notarize: true}
+  - {name: reclassify_object, notarize: true}   # marks stale + re-scores
+
+# Enforcement contract for any implementation:
+binding:
+  enforcement: trustee_first            # gate before retrieval, never filter after
+  pq_receipt_when: protection_horizon_years >= 7   # PQ co-sign (e.g. ML-DSA-65) for harvest-now-decrypt-later assets
