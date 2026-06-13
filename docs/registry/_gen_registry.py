@@ -142,7 +142,7 @@ def render(rows: list[dict]) -> str:
                         "OpenAgentOntology. Each entry lists the governance tier, score, "
                         "and framework coverage (NIST 800-53, EU AI Act, OWASP LLM Top 10, "
                         "MITRE ATT&CK), with a signed, reproducible receipt."),
-        "url": "https://agent-ontology.cyberwarriornetwork.com/registry/",
+        "url": "https://agent-ontology.cyberwarriornetwork.com/docs/registry/",
         "creator": {"@type": "Organization", "name": "Cyber Warrior Network",
                     "url": "https://cyberwarriornetwork.com"},
         "isAccessibleForFree": True,
@@ -157,7 +157,7 @@ def render(rows: list[dict]) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agent Governance Registry — OpenAgentOntology (NIST · EU AI Act · MITRE ATT&CK)</title>
 <meta name="description" content="A public registry of real AI agents and MCP servers scanned for governance coverage. {n_real_ung} of {n_real} real-world agents scored UNGOVERNED — zero side-effecting actions mapped to an asserted control. Signed, reproducible.">
-<link rel="canonical" href="https://agent-ontology.cyberwarriornetwork.com/registry/">
+<link rel="canonical" href="https://agent-ontology.cyberwarriornetwork.com/docs/registry/">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <meta property="og:type" content="website">
