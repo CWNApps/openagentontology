@@ -33,3 +33,5 @@ paper/
 
 # Rendered HTML previews of markdown docs (local review only)
 docs/**/*.html
+# ...but the published registry page IS a real artifact (served by Pages), not a preview
+!docs/registry/index.html

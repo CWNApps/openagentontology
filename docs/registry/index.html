@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Governance Registry — OpenAgentOntology (NIST · EU AI Act · MITRE ATT&CK)</title>
+<meta name="description" content="A public registry of real AI agents and MCP servers scanned for governance coverage. 46 of 46 real-world agents scored UNGOVERNED — zero side-effecting actions mapped to an asserted control. Signed, reproducible.">
+<link rel="canonical" href="https://agent-ontology.cyberwarriornetwork.com/docs/registry/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agent Governance Registry — OpenAgentOntology">
+<meta property="og:description" content="46 of 46 real-world agents scanned came back UNGOVERNED. See the signed receipts.">
+<meta property="og:site_name" content="Cyber Warrior Network">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"OpenAgentOntology Agent Governance Registry","description":"A public registry of AI agents and MCP servers scanned with OpenAgentOntology. Each entry lists the governance tier, score, and framework coverage (NIST 800-53, EU AI Act, OWASP LLM Top 10, MITRE ATT&CK), with a signed, reproducible receipt.","url":"https://agent-ontology.cyberwarriornetwork.com/docs/registry/","creator":{"@type":"Organization","name":"Cyber Warrior Network","url":"https://cyberwarriornetwork.com"},"isAccessibleForFree":true,"keywords":["AI agent governance","MITRE ATT&CK","NIST 800-53","EU AI Act","ENTERPRISE_SAFE","agent security"]}</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=DM+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#0A0A0A; --orange:#FF4500; --cream:#EFEBE2;
+  --dim:rgba(239,235,226,0.55); --dimLo:rgba(239,235,226,0.30); --dimXLo:rgba(239,235,226,0.12);
+  --cardBg:rgba(239,235,226,0.04); --border:rgba(255,69,0,0.22); --line:rgba(239,235,226,0.10);
+  --head:'Archivo Black',sans-serif; --label:'Bebas Neue',sans-serif;
+  --mono:'JetBrains Mono',monospace; --body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--orange);text-decoration:none} a:hover{text-decoration:underline}
+.inner{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:clamp(34px,5vw,56px) 0;border-top:1px solid var(--border)}
+.section-label{font-family:var(--label);font-size:13px;letter-spacing:.2em;color:var(--orange);margin-bottom:14px}
+.h2{font-family:var(--head);font-size:clamp(20px,3.5vw,32px);color:var(--cream);line-height:1.14;margin-bottom:14px}
+.body-text{color:var(--dim);font-size:15px;line-height:1.66;max-width:820px}
+.muted{color:var(--dim)}
+.mono{font-family:var(--mono)}
+nav{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);padding:14px 0}
+nav .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.wordmark{font-family:var(--head);font-size:15px;color:var(--cream);letter-spacing:.02em}
+.wordmark span{color:var(--orange)}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap}
+.navlinks a{font-family:var(--mono);font-size:11px;color:var(--dim);padding:6px 12px;border:1px solid var(--border)}
+.navlinks a:hover{border-color:var(--orange);color:var(--cream);text-decoration:none}
+.hero{padding:clamp(40px,6vw,72px) 0 clamp(26px,4vw,44px)}
+.hero h1{font-family:var(--head);font-size:clamp(28px,5.4vw,52px);color:var(--cream);line-height:1.04;margin-bottom:20px;max-width:940px}
+.hero h1 span{color:var(--orange)}
+.lede{color:var(--dim);font-size:clamp(15px,2vw,18px);max-width:760px;line-height:1.6}
+.lede b{color:var(--cream)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;border:1.5px solid var(--border);margin-top:28px}
+.stat-cell{background:var(--cardBg);padding:20px}
+.stat-num{font-family:var(--head);font-size:clamp(26px,4vw,40px);line-height:1}
+.stat-cap{font-size:12px;color:var(--dim);margin-top:8px;line-height:1.4}
+.n-red{color:var(--orange)} .n-orange{color:var(--orange)} .n-cream{color:var(--cream)} .n-green{color:var(--cream)} .n-dim{color:var(--dim)}
+.tablewrap{overflow-x:auto;border:1.5px solid var(--border)}
+table{width:100%;border-collapse:collapse;min-width:860px}
+thead th{font-family:var(--label);font-size:12px;letter-spacing:.14em;color:var(--orange);text-align:left;padding:14px 14px;border-bottom:1.5px solid var(--border);white-space:nowrap}
+tbody td{padding:14px 14px;border-bottom:1px solid rgba(239,235,226,.08);vertical-align:top;font-size:13.5px}
+tbody tr:last-child td{border-bottom:none}
+.proj{font-family:var(--mono);font-size:14px;color:var(--cream)}
+.proj a{color:var(--cream)} .proj a:hover{color:var(--orange)}
+.note{font-size:11.5px;color:var(--dim);margin-top:5px;max-width:360px;line-height:1.4}
+.kind{font-family:var(--mono);font-size:10px;letter-spacing:.05em;padding:1px 6px;border:1px solid var(--dimLo)}
+.kind-real{color:var(--orange);border-color:var(--border)}
+.kind-ref{color:var(--dim)}
+/* Tier = a FILL LADDER (governance coverage), one hue: solid -> filled -> outline -> ghost */
+.tier{font-family:var(--label);font-size:14px;letter-spacing:.1em;padding:3px 11px;display:inline-block;border:1.5px solid}
+.tier.t-sov{color:var(--bg);background:var(--orange);border-color:var(--orange)}
+.tier.t-hard{color:var(--orange);background:rgba(255,69,0,.14);border-color:var(--orange)}
+.tier.t-dev{color:var(--cream);background:transparent;border-color:var(--dimLo)}
+.tier.t-ung{color:var(--dim);background:transparent;border-color:var(--dimXLo);border-style:dashed}
+.score{font-family:var(--head);font-size:20px;color:var(--cream)}
+.t-sov .score{color:var(--orange)} .t-ung .score{color:var(--dim)}
+.c-cov b{font-family:var(--head);font-size:16px;color:var(--cream)}
+.c-fw{font-family:var(--mono);font-size:11.5px;color:var(--dim);max-width:220px}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.04em;padding:4px 8px;white-space:nowrap;display:inline-block}
+.chip-safe{color:var(--bg);background:var(--orange);border:1px solid var(--orange)}
+.chip-unsafe{color:var(--dim);background:transparent;border:1px dashed var(--dimLo)}
+.c-links{font-family:var(--mono);font-size:11px;white-space:nowrap}
+.c-links a{color:var(--dim);margin-right:9px} .c-links a:hover{color:var(--orange);text-decoration:none}
+.callout{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1.5px solid var(--border);margin-top:22px}
+.callout > div{background:var(--cardBg);padding:22px}
+.callout h3{font-family:var(--head);font-size:15px;margin-bottom:8px}
+.callout .big{font-family:var(--head);font-size:clamp(26px,4vw,40px);line-height:1}
+.callout p{font-size:13px;color:var(--dim);margin-top:8px;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.legend span b{color:var(--cream)}
+.repro{font-family:var(--mono);font-size:12.5px;color:var(--dim);background:#070707;border:1px solid var(--border);padding:16px;overflow-x:auto;line-height:1.7;margin-top:14px}
+.repro .cmd{color:var(--cream)}
+.note-box{font-family:var(--mono);font-size:12px;color:var(--dim);border:1px solid var(--border);border-left:3px solid var(--orange);background:var(--cardBg);padding:12px 14px;margin-top:18px;line-height:1.6}
+.cta{display:inline-block;font-family:var(--head);font-size:14px;color:var(--bg);background:var(--orange);padding:13px 24px;margin-top:8px}
+.cta:hover{text-decoration:none;opacity:.92}
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;border:1.5px solid var(--border);margin-top:22px;background:var(--border)}
+.tier-card{background:var(--bg);padding:20px 18px;text-align:center}
+.tier-card img{width:100%;max-width:178px;height:auto;display:block;margin:0 auto 12px;border:1px solid var(--line)}
+.tier-card .tname{font-family:var(--label);font-size:15px;letter-spacing:.12em;color:var(--cream);margin-bottom:6px}
+.tier-card figcaption{font-size:12px;color:var(--dim);line-height:1.5}
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--dim);font-family:var(--mono);font-size:12px}
+@media(max-width:640px){
+  .callout{grid-template-columns:1fr}
+  .note{max-width:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="inner">
+  <div class="wordmark">Open<span>Agent</span>Ontology</div>
+  <div class="navlinks">
+    <a href="../../">Home</a>
+    <a href="../../demo/">Demo</a>
+    <a href="#registry">Registry</a>
+    <a href="#method">Method</a>
+    <a href="https://github.com/CWNApps/openagentontology" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="inner">
+  <div class="section-label">THE AGENT GOVERNANCE REGISTRY</div>
+  <h1>The agents people run in production answer to <span>no control at all.</span></h1>
+  <p class="lede">We pointed OpenAgentOntology at 46 of the most-used autonomous agents and MCP servers on GitHub. <b>46 of 46 came back UNGOVERNED</b> — across 4037 side-effecting actions, <b>0</b> mapped to an asserted governance control. Every row below is a signed, reproducible scan. Verify any of them.</p>
+  <div class="stat-grid">
+    <div class="stat-cell"><div class="stat-num n-red">46/46</div><div class="stat-cap">real-world agents scored UNGOVERNED</div></div>
+    <div class="stat-cell"><div class="stat-num n-red">0/4037</div><div class="stat-cap">side-effecting actions with an asserted control</div></div>
+    <div class="stat-cell"><div class="stat-num n-green">2</div><div class="stat-cap">entries that earn ENTERPRISE&#8209;SAFE (HARDENED+)</div></div>
+    <div class="stat-cell"><div class="stat-num n-cream">49</div><div class="stat-cap">total signed scans in this registry</div></div>
+  </div>
+</div></header>
+
+<section id="tiers"><div class="inner">
+  <div class="section-label">THE GOVERNANCE LADDER</div>
+  <div class="h2">Four tiers. One question each scan answers: who answers for the action?</div>
+  <p class="body-text">Tier is coverage made visible — how much of an agent's side-effecting surface maps to an asserted governance control. The badge fills as the governance does.</p>
+  <div class="tier-grid">
+    <figure class="tier-card"><img src="badges/sovereign.png" alt="SOVEREIGN tier badge"><div class="tname">SOVEREIGN</div><figcaption>Nearly every action maps to an asserted control. Earns ENTERPRISE&#8209;SAFE.</figcaption></figure>
+    <figure class="tier-card"><img src="badges/hardened.png" alt="HARDENED tier badge"><div class="tname">HARDENED</div><figcaption>Strong coverage with asserted controls on the high-risk actions. Also ENTERPRISE&#8209;SAFE.</figcaption></figure>
+    <figure class="tier-card"><img src="badges/developing.png" alt="DEVELOPING tier badge"><div class="tname">DEVELOPING</div><figcaption>Partial coverage — some actions mapped, the high-risk ones not yet.</figcaption></figure>
+    <figure class="tier-card"><img src="badges/ungoverned.png" alt="UNGOVERNED tier badge"><div class="tname">UNGOVERNED</div><figcaption>No asserted control answers for the side-effecting actions. Where every scan below lands.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="registry"><div class="inner">
+  <div class="section-label">LEADERBOARD</div>
+  <div class="h2">Every scan, ranked by governance coverage</div>
+  <p class="body-text">Sorted by tier, then score. <b style="color:var(--cream)">ENTERPRISE&#8209;SAFE</b> = tier HARDENED or above — the same gate the CWN hosted notary uses to certify. Coverage is <b style="color:var(--cream)">asserted</b> controls (confirmed against published framework text) over total side-effecting actions; heuristic / inferred mappings are proposed, not asserted (pol.must_do.143).</p>
+  <div class="legend">
+    <span>tier fill = governance coverage: <b class="n-orange">SOVEREIGN</b> solid &rarr; HARDENED filled &rarr; DEVELOPING outline &rarr; <b class="n-dim">UNGOVERNED</b> ghost</span>
+    <span><b class="n-orange">real third-party</b> = scanned from the public repo &middot; <b>CWN reference</b> = governed example</span>
+  </div>
+  <div class="tablewrap" style="margin-top:18px">
+  <table>
+    <thead><tr>
+      <th>Target</th><th>Tier</th><th>Score</th><th>Asserted</th><th>Frameworks</th><th>Verdict</th><th>Evidence</th>
+    </tr></thead>
+    <tbody>
+<tr class="t-sov">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/CWNApps/openagentontology" target="_blank" rel="noopener">CWN FDE Agent (reference)</a></div><div class="note"><span class="kind kind-ref">CWN&nbsp;reference</span> &middot; Governed reference agent shipped in the OAO repo. Shows the SOVEREIGN end of the scale.</div></td>
+  <td class="c-tier"><span class="tier t-sov">SOVEREIGN</span></td>
+  <td class="c-score"><span class="score">94</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>17</b><span class="muted">/18</span></td>
+  <td class="c-fw">EU AI Act, NIST SP 800-53r5, OWASP LLM Top 10 (2025)</td>
+  <td class="c-safe"><span class="chip chip-safe">ENTERPRISE&#8209;SAFE</span></td>
+  <td class="c-links"><a href="../scans/ref-agent_fde/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/ref-agent_fde/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/ref-agent_fde/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/ref-agent_fde/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-sov">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/CWNApps/openagentontology" target="_blank" rel="noopener">CWN Hardened Agent (reference)</a></div><div class="note"><span class="kind kind-ref">CWN&nbsp;reference</span> &middot; Governed reference agent. Asserted controls on nearly every side-effecting action.</div></td>
+  <td class="c-tier"><span class="tier t-sov">SOVEREIGN</span></td>
+  <td class="c-score"><span class="score">93</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>14</b><span class="muted">/15</span></td>
+  <td class="c-fw">EU AI Act, NIST SP 800-53r5, OWASP LLM Top 10 (2025)</td>
+  <td class="c-safe"><span class="chip chip-safe">ENTERPRISE&#8209;SAFE</span></td>
+  <td class="c-links"><a href="../scans/ref-hardened_agent/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/ref-hardened_agent/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/ref-hardened_agent/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/ref-hardened_agent/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/CWNApps/openagentontology" target="_blank" rel="noopener">CWN Sample Agent (reference)</a></div><div class="note"><span class="kind kind-ref">CWN&nbsp;reference</span> &middot; Partially governed reference — a mid-scale point between governed and ungoverned.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">41</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>3</b><span class="muted">/16</span></td>
+  <td class="c-fw">EU AI Act, NIST SP 800-53r5, OWASP LLM Top 10 (2025)</td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/ref-sample_agent/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/ref-sample_agent/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/ref-sample_agent/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/ref-sample_agent/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/reworkd/AgentGPT" target="_blank" rel="noopener">reworkd / AgentGPT</a> <span class="muted">@18b073a</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/5</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/agentgpt/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/agentgpt/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/agentgpt/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/agentgpt/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/agno-agi/agno" target="_blank" rel="noopener">agno-agi / agno</a> <span class="muted">@9369549</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/411</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/agno/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/agno/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/agno/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/agno/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/aider-ai/aider" target="_blank" rel="noopener">aider-ai / aider</a> <span class="muted">@5dc9490</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; AI pair-programming agent.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/19</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/aider/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/aider/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/aider/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/aider/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener">Mintplex-Labs / anything-llm</a> <span class="muted">@6442ea9</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/62</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/anything-llm/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/anything-llm/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/anything-llm/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/anything-llm/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener">microsoft / autogen</a> <span class="muted">@027ecf0</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/57</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/autogen/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/autogen/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/autogen/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/autogen/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noopener">Significant-Gravitas / AutoGPT</a> <span class="muted">@ba178a7</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/385</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/autogpt/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/autogpt/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/autogpt/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/autogpt/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/yoheinakajima/babyagi" target="_blank" rel="noopener">yoheinakajima / babyagi</a> <span class="muted">@fa8930e</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/2</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/babyagi/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/babyagi/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/babyagi/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/babyagi/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use / browser-use</a> <span class="muted">@6e08a5b</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/42</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/browser-use/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/browser-use/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/browser-use/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/browser-use/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/camel-ai/camel" target="_blank" rel="noopener">camel-ai / camel</a> <span class="muted">@1b9b6dc</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/105</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/camel/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/camel/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/camel/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/camel/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/OpenBMB/ChatDev" target="_blank" rel="noopener">OpenBMB / ChatDev</a> <span class="muted">@a6a5cda</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/21</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/chatdev/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/chatdev/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/chatdev/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/chatdev/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">crewAIInc / crewAI</a> <span class="muted">@373dca3</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/208</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/crewai/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/crewai/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/crewai/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/crewai/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/stitionai/devika" target="_blank" rel="noopener">stitionai / devika</a> <span class="muted">@80bb343</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/5</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/devika/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/devika/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/devika/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/devika/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/stanfordnlp/dspy" target="_blank" rel="noopener">stanfordnlp / dspy</a> <span class="muted">@85027b1</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/17</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/dspy/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/dspy/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/dspy/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/dspy/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/e2b-dev/e2b" target="_blank" rel="noopener">e2b-dev / e2b</a> <span class="muted">@de47dfd</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/77</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/e2b/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/e2b/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/e2b/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/e2b/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener">github / github-mcp-server</a> <span class="muted">@3422703</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/1</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/github-mcp-server/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/github-mcp-server/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/github-mcp-server/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/github-mcp-server/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/gpt-engineer-org/gpt-engineer" target="_blank" rel="noopener">gpt-engineer-org / gpt-engineer</a> <span class="muted">@a90fcd5</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Autonomous coding agent.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/6</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/gpt-engineer/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/gpt-engineer/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/gpt-engineer/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/gpt-engineer/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/Pythagora-io/gpt-pilot" target="_blank" rel="noopener">Pythagora-io / gpt-pilot</a> <span class="muted">@a372904</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/42</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/gpt-pilot/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/gpt-pilot/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/gpt-pilot/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/gpt-pilot/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/assafelovic/gpt-researcher" target="_blank" rel="noopener">assafelovic / gpt-researcher</a> <span class="muted">@b364917</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/19</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/gpt-researcher/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/gpt-researcher/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/gpt-researcher/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/gpt-researcher/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/guidance-ai/guidance" target="_blank" rel="noopener">guidance-ai / guidance</a> <span class="muted">@21b1d90</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/5</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/guidance/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/guidance/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/guidance/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/guidance/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/deepset-ai/haystack" target="_blank" rel="noopener">deepset-ai / haystack</a> <span class="muted">@0fd3fb6</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/28</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/haystack/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/haystack/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/haystack/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/haystack/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/khoj-ai/khoj" target="_blank" rel="noopener">khoj-ai / khoj</a> <span class="muted">@9258f57</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/29</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/khoj/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/khoj/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/khoj/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/khoj/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">langchain-ai / langgraph</a> <span class="muted">@93307d6</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/61</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/langgraph/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/langgraph/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/langgraph/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/langgraph/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/langroid/langroid" target="_blank" rel="noopener">langroid / langroid</a> <span class="muted">@bc113b0</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/42</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/langroid/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/langroid/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/langroid/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/langroid/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/letta-ai/letta" target="_blank" rel="noopener">letta-ai / letta</a> <span class="muted">@1131535</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/386</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/letta/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/letta/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/letta/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/letta/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/danny-avila/LibreChat" target="_blank" rel="noopener">danny-avila / LibreChat</a> <span class="muted">@8154a31</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/6</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/librechat/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/librechat/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/librechat/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/librechat/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener">BerriAI / litellm</a> <span class="muted">@1fd8ab4</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/288</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/litellm/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/litellm/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/litellm/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/litellm/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener">run-llama / llama_index</a> <span class="muted">@d8d7ffb</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/129</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/llama-index/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/llama-index/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/llama-index/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/llama-index/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/simonw/llm" target="_blank" rel="noopener">simonw / llm</a> <span class="muted">@0d593ea</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/5</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/llm/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/llm/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/llm/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/llm/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener">modelcontextprotocol / python-sdk</a> <span class="muted">@7267818</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; The official MCP Python SDK + reference servers.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/170</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/mcp-python-sdk/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/mcp-python-sdk/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/mcp-python-sdk/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/mcp-python-sdk/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener">mem0ai / mem0</a> <span class="muted">@2c796d1</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/91</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/mem0/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/mem0/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/mem0/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/mem0/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/geekan/MetaGPT" target="_blank" rel="noopener">geekan / MetaGPT</a> <span class="muted">@11cdf46</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/57</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/metagpt/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/metagpt/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/metagpt/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/metagpt/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/OpenInterpreter/open-interpreter" target="_blank" rel="noopener">OpenInterpreter / open-interpreter</a> <span class="muted">@e00f08e</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Autonomous coding agent. exec maps to no asserted control.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/21</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/open-interpreter/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/open-interpreter/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/open-interpreter/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/open-interpreter/ontology.json" target="_blank" rel="noopener">ontology</a> <a href="../scans/open-interpreter/graph_resolutions.json" target="_blank" rel="noopener">graph</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/open-webui/open-webui" target="_blank" rel="noopener">open-webui / open-webui</a> <span class="muted">@02dc3e6</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/89</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/open-webui/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/open-webui/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/open-webui/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/open-webui/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/openai/openai-agents-python" target="_blank" rel="noopener">openai / openai-agents-python</a> <span class="muted">@d8068d9</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; OpenAI Agents SDK for Python.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/235</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/openai-agents-python/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/openai-agents-python/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/openai-agents-python/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/openai-agents-python/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank" rel="noopener">All-Hands-AI / OpenHands</a> <span class="muted">@faf0e08</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/47</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/openhands/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/openhands/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/openhands/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/openhands/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/zylon-ai/private-gpt" target="_blank" rel="noopener">zylon-ai / private-gpt</a> <span class="muted">@8ac84e3</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/88</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/private-gpt/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/private-gpt/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/private-gpt/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/private-gpt/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/pydantic/pydantic-ai" target="_blank" rel="noopener">pydantic / pydantic-ai</a> <span class="muted">@025f91f</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/175</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/pydantic-ai/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/pydantic-ai/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/pydantic-ai/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/pydantic-ai/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/microsoft/semantic-kernel" target="_blank" rel="noopener">microsoft / semantic-kernel</a> <span class="muted">@61331d8</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/293</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/semantic-kernel/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/semantic-kernel/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/semantic-kernel/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/semantic-kernel/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">modelcontextprotocol / servers</a> <span class="muted">@275175c</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/1</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/servers/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/servers/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/servers/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/servers/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/huggingface/smolagents" target="_blank" rel="noopener">huggingface / smolagents</a> <span class="muted">@e8b988d</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/44</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/smolagents/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/smolagents/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/smolagents/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/smolagents/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/TransformerOptimus/SuperAGI" target="_blank" rel="noopener">TransformerOptimus / SuperAGI</a> <span class="muted">@c3c1982</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/21</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/superagi/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/superagi/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/superagi/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/superagi/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/openai/swarm" target="_blank" rel="noopener">openai / swarm</a> <span class="muted">@6af0b4c</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/25</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/swarm/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/swarm/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/swarm/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/swarm/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/princeton-nlp/SWE-agent" target="_blank" rel="noopener">princeton-nlp / SWE-agent</a> <span class="muted">@c53556f</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/44</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/swe-agent/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/swe-agent/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/swe-agent/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/swe-agent/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/fetchai/uAgents" target="_blank" rel="noopener">fetchai / uAgents</a> <span class="muted">@0f2c8a6</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/22</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/uagents/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/uagents/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/uagents/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/uagents/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/microsoft/UFO" target="_blank" rel="noopener">microsoft / UFO</a> <span class="muted">@cff307f</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">15</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/151</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/ufo/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/ufo/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/ufo/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/ufo/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+<tr class="t-ung">
+  <td class="c-proj"><div class="proj"><a href="https://github.com/mckaywrigley/chatbot-ui" target="_blank" rel="noopener">mckaywrigley / chatbot-ui</a> <span class="muted">@81328b6</span></div><div class="note"><span class="kind kind-real">real&nbsp;third&#8209;party</span> &middot; Scanned from the public repo.</div></td>
+  <td class="c-tier"><span class="tier t-ung">UNGOVERNED</span></td>
+  <td class="c-score"><span class="score">6</span><span class="muted">/100</span></td>
+  <td class="c-cov"><b>0</b><span class="muted">/0</span></td>
+  <td class="c-fw"><span class='muted'>none</span></td>
+  <td class="c-safe"><span class="chip chip-unsafe">NOT&nbsp;SAFE</span></td>
+  <td class="c-links"><a href="../scans/chatbot-ui/badge.svg" target="_blank" rel="noopener">badge</a> <a href="../scans/chatbot-ui/trust_profile.json" target="_blank" rel="noopener">profile</a> <a href="../scans/chatbot-ui/receipt.json" target="_blank" rel="noopener">receipt</a> <a href="../scans/chatbot-ui/ontology.json" target="_blank" rel="noopener">ontology</a></td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note-box">Methodology: every real-world scan is pinned to the commit shown and reproduces from it (<span class="mono">python -m openagentontology &lt;repo&gt; --json</span>). Control mappings are evaluated against a static asserted-control table — they are <b style="color:var(--cream)">proposed, not asserted-for-audit</b>; confirm against published control text before relying on them. The CWN reference agents show the governed (SOVEREIGN) end of the scale and are labeled as references, not third-party results.</div>
+</div></section>
+
+<section id="contrast"><div class="inner">
+  <div class="section-label">THE GAP</div>
+  <div class="h2">Same scanner. Opposite verdicts.</div>
+  <div class="callout">
+    <div>
+      <h3 class="n-orange">A governed agent</h3>
+      <div class="big n-orange">SOVEREIGN</div>
+      <p>The CWN reference agents map nearly every side-effecting action to an asserted NIST 800-53, EU AI Act, and OWASP LLM control. The receipt names the control for each one.</p>
+    </div>
+    <div>
+      <h3 class="n-dim">An agent you can install today</h3>
+      <div class="big n-dim">UNGOVERNED</div>
+      <p><span class="mono">exec</span> — arbitrary code execution — maps to no control at all. There is no record of which control answers for it, because there is no control.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="method"><div class="inner">
+  <div class="section-label">METHOD &amp; REPRODUCIBILITY</div>
+  <div class="h2">Reproduce any row from its pinned commit</div>
+  <p class="body-text">The scanner reads source as data (Python via <span class="mono">ast</span>, never executed), emits a deterministic typed ontology, scores it, and signs an Ed25519 cert-only receipt over the evidence hash. The same source always yields the same hash. Re-run any real-world row:</p>
+  <div class="repro">
+<span class="cmd">git clone https://github.com/OpenInterpreter/open-interpreter &amp;&amp; cd open-interpreter</span><br>
+<span class="cmd">git checkout e00f08e</span><br>
+<span class="cmd">pip install openagentontology</span><br>
+<span class="cmd">python -m openagentontology . --json</span>  <span class="muted"># tier, score, signed receipt</span>
+  </div>
+  <p class="body-text" style="margin-top:18px">Honest method note: the open-source scanner uses a static, asserted control table plus heuristic verb mapping. The CWN hosted layer (OAO-GMS) additionally grounds each action through a live NIST&times;MITRE&times;CVE knowledge graph and mints a triple-signed resolution receipt — shown as the <span class="mono">graph</span> link where present. Graph-grounded mappings are <b style="color:var(--cream)">GRAPH_INFERRED</b>, never auto-asserted.</p>
+  <a class="cta" href="https://github.com/CWNApps/openagentontology" target="_blank" rel="noopener">Scan your own agent &rarr;</a>
+</div></section>
+
+<footer><div class="inner">
+  OpenAgentOntology &middot; by <a href="https://cyberwarriornetwork.com" target="_blank" rel="noopener">Cyber Warrior Network</a> &middot;
+  Apache-2.0 &middot; every mapping is proposed, not asserted-for-audit — confirm against published control text.
+</div></footer>
+</body>
+</html>
