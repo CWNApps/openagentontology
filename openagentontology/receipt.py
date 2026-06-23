@@ -57,8 +57,10 @@ _DEFAULT_KEY = os.getenv(
 
 def _canon(obj) -> str:
     """Compact canonical JSON: sorted keys, no spaces, ASCII-only. MUST match a JS verifier's
-    canon() exactly (this is byte-for-byte identical to escape_plan_service._canon)."""
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    canon() exactly (this is byte-for-byte identical to escape_plan_service._canon).
+    allow_nan=False: a non-finite value raises here instead of emitting `NaN`/`Infinity`, which
+    is invalid JSON a strict browser verifier rejects -- keeping the receipt browser-verifiable."""
+    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=True, allow_nan=False)
 
 
 def _sha256(s: str) -> str:
