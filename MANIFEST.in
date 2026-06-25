@@ -1,0 +1,30 @@
+# MANIFEST.in -- sdist slim-down per pol.must_do.150 (codex edit #2)
+#
+# A bloated sdist on a cryptographic primitive expands the surface area that
+# downstream auditors (and any consumer pinning to a sha256) must verify. The
+# parts of this repo that are NOT part of the importable Python package (demo
+# walkthroughs, docs site source, HTML examples) belong in the GitHub tree, not
+# in the PyPI tarball.
+#
+# Kept in sdist:
+#   - openagentontology/  (the package itself)
+#   - schema/             (JSON Schemas the package consumes)
+#   - tests/              (so downstream auditors can reproduce the test suite)
+#   - LICENSE, README.md, SECURITY.md, SPEC.md, CONTRIBUTING.md, pyproject.toml
+#
+# Pruned from sdist:
+prune demo
+prune docs
+prune examples
+prune ci
+prune scripts
+
+# Defensive cleanup of common large files that should never reach PyPI:
+global-exclude .DS_Store
+global-exclude *.png
+global-exclude *.jpg
+global-exclude *.svg
+global-exclude *.gif
+
+# But we DO want LICENSE-style images and the 32x32 favicon next to the docs
+# site staying out of sdist (already pruned via prune docs).
