@@ -1,0 +1,19 @@
+{
+  "oao_version": "1.0",
+  "skill_id": "oao-skill-0001-threat-intel-summarize",
+  "name": "Threat Intel Summarizer",
+  "description": "Summarizes a threat-intel report and extracts MITRE ATT&CK techniques.",
+  "version": "1.0.0",
+  "capabilities": ["data_retrieval", "text_analysis"],
+  "governance": {
+    "requires_human_approval": false,
+    "max_credentials": 1,
+    "data_classification": "unclassified",
+    "prohibited_actions": ["delete", "exfiltrate", "lateral_move"],
+    "escalation_threshold": 0.75
+  },
+  "trust_gate": {
+    "attestation_required": true,
+    "execution_count": 0
+  }
+}

@@ -60,6 +60,45 @@ def test_failed_validation_fails():
     assert any("FAILED closed" in r for r in v["fail_reasons"])
 
 
+# ── nested CLI payload shape (tier/score/ok under summary, not top level) ──────
+def _payload_nested(tier="HARDENED", score=80, ok=True, action_maps=None):
+    """The shape the live `python -m openagentontology --json` actually emits: tier/score/ok
+    live under `summary` (and `profile`), NOT at the top level. The gate must read either."""
+    return {
+        "findings": [],
+        "summary": {"tier": tier, "score": score, "ok": ok},
+        "profile": {"tier": tier, "score": score,
+                    "subscores": {"coverage": 80, "rigor": 80, "breadth": 75, "structure": 100}},
+        "ontology": {"nodes": [{"id": "n"}], "action_maps": action_maps or []},
+    }
+
+
+def test_nested_payload_is_read_correctly():
+    # a clean, valid nested payload must PASS -- this is the real CLI output shape.
+    head = _payload_nested(action_maps=[_am("cap_wire", "wire_transfer", "asserted_table", _ASSERTED_AC5)])
+    v = pr_check.evaluate(head, base=None)
+    assert v["head_ok"] is True, "ok must be read from summary, not defaulted to False"
+    assert v["head_tier"] == "HARDENED"
+    assert v["head_score"] == 80
+    assert v["passed"] is True
+    assert not v["fail_reasons"]
+
+
+def test_nested_failed_validation_still_fails():
+    head = _payload_nested(ok=False)
+    head["findings"] = [{"level": "error", "code": "E_FRAMEWORK", "msg": "x"}]
+    v = pr_check.evaluate(head, base=None)
+    assert v["passed"] is False
+    assert any("FAILED closed" in r for r in v["fail_reasons"])
+
+
+def test_nested_tier_drop_vs_nested_base_fails():
+    base = _payload_nested(tier="HARDENED", score=80)
+    head = _payload_nested(tier="DEVELOPING", score=60)
+    v = pr_check.evaluate(head, base=base)
+    assert v["tier_dropped"] is True and v["passed"] is False
+
+
 # ── NEW ungoverned high-risk action fails; pre-existing one does not ──────────
 def test_new_ungoverned_high_risk_fails():
     base = _payload(action_maps=[_am("cap_wire", "wire_transfer", "asserted_table", _ASSERTED_AC5)])

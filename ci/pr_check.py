@@ -96,13 +96,30 @@ def _art14_gaps(payload: dict) -> dict:
     return out
 
 
+def _field(payload: dict, key: str, default):
+    """Read a profile field that may live at the top level (older/synthetic payloads) or nested
+    under `summary`/`profile` (the live `python -m openagentontology --json` shape). Top level
+    wins when present so existing callers and fixtures are unchanged; otherwise fall back to the
+    nested locations. This keeps the gate working across both payload shapes (the scan moved
+    tier/score/ok under summary; this consumer must read either)."""
+    if key in payload:
+        return payload[key]
+    summ = payload.get("summary")
+    if isinstance(summ, dict) and key in summ:
+        return summ[key]
+    prof = payload.get("profile")
+    if isinstance(prof, dict) and key in prof:
+        return prof[key]
+    return default
+
+
 def evaluate(head: dict, base: dict | None) -> dict:
     """Pure decision function. Returns the verdict dict the report + exit code read."""
     reasons_to_fail = []
 
-    head_tier = head.get("tier", "UNGOVERNED")
-    head_score = head.get("score", 0)
-    head_ok = head.get("ok", False)
+    head_tier = _field(head, "tier", "UNGOVERNED")
+    head_score = _field(head, "score", 0)
+    head_ok = _field(head, "ok", False)
 
     # 1) fail-closed validation on HEAD voids trust.
     if not head_ok:
@@ -127,7 +144,7 @@ def evaluate(head: dict, base: dict | None) -> dict:
     tier_dropped = False
     base_tier = None
     if base:
-        base_tier = base.get("tier", "UNGOVERNED")
+        base_tier = _field(base, "tier", "UNGOVERNED")
         if _TIER_RANK.get(head_tier, 3) > _TIER_RANK.get(base_tier, 3):
             tier_dropped = True
             reasons_to_fail.append(f"Trust tier DROPPED: {base_tier} -> {head_tier}")
