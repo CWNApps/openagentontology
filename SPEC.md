@@ -1,4 +1,4 @@
-# The OpenAgentOntology Standard — v0.1.0
+# The OpenAgentOntology Standard — v0.1.1
 
 A small, deterministic standard for describing what an AI agent can DO and which
 governance controls each action answers to. One ontology, every framework.
@@ -243,7 +243,7 @@ same canonicalization (sorted keys, no whitespace, ASCII) to reproduce the hash.
 body {
   atom_id        string   # oao-<sha256(source)[:12]>
   type           "OpenAgentOntologyReceipt"
-  version        "0.1.0"
+  version        "0.1.1"
   tier           string   # the Trust Profile tier
   score          int      # the Trust Profile score, 0..100
   evidence_hash  string   # sha256( canon(evidence) ), hex
@@ -321,3 +321,39 @@ Trust Profile, badge, and self-signed receipt — entirely offline. CWN's hosted
 notary and registry, which perform cross-organization verification and maintain
 a public trust ledger, are a separate hosted service and are **not** covered by
 this standard or this repository.
+
+---
+
+## 9. Sovereignty Extensions (v0.1.1)
+
+Five crosswalk rationale entries document how Trust Gate's sovereignty
+capabilities map to OAO constructs. These are **not** new deny-key reasons in
+the asserted table; they are structural patterns that compositions of existing
+reasons can enforce. All control mappings in these entries are `advisory` --
+asserted confidence remains reserved for the ten canonical deny-key reasons.
+
+Full rationale for each entry is in `docs/crosswalk-rationale/`.
+
+| Entry | Service | OAO Pattern | Wave |
+|---|---|---|---|
+| `two_phase_decision_gate` | DecisionGateService | Gate GATED_BY Policy; Decision GOVERNED_BY Gate | W0 |
+| `egress_receipt_required` | EgressGateService | Gate ENFORCES Policy; Evidence PRODUCES receipt | W1 |
+| `vendor_exit_drill` | ExitDrillService | Evidence (drill receipt); Outcome (PASS/FAIL) | W2 |
+| `loreatom_adjudication` | LoreAtom pipeline | Decision GOVERNED_BY Policy (promotion gate) | W3 |
+| `reference_node_federation` | Reference node pattern | Resource GOVERNED_BY Policy (data sovereignty) | W4 |
+
+### 9.1 Design notes
+
+- **Advisory only.** These entries map to NIST 800-53, EU AI Act, and OWASP
+  controls at advisory confidence. Promoting any to asserted would require
+  adding a new canonical deny-key reason to the asserted table, which is a
+  breaking change.
+- **Structural, not behavioral.** Each entry documents an implementation
+  architecture (two-phase commit, per-call receipt, drill-based verification,
+  human-in-loop adjudication, pointer-only federation) rather than a runtime
+  deny decision. The deny decisions use the existing ten reasons; these
+  entries describe the mechanisms that enforce them.
+- **Provenance trail.** Each sovereignty service produces signed receipts. The
+  receipt format is identical to section 5 (Ed25519, canonical JSON, same
+  `evidence_hash` construction). Sovereignty receipts are distinguishable by
+  their `type` field (e.g. `ExitDrillReceipt`, `EgressReceipt`).
