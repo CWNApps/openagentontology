@@ -75,7 +75,18 @@ and no database.
 
 ## Quickstart
 
-No install step. Pure Python, three dependencies (`pyyaml`, `cryptography`).
+Install from PyPI — pure Python, two runtime dependencies (`pyyaml`, `cryptography`):
+
+```bash
+pip install openagentontology
+python -m openagentontology ./your-agent-dir      # scan your own agent
+```
+
+Add the optional extras when you need them: `pip install "openagentontology[pq]"` for the
+post-quantum receipt legs (ML-DSA-65 + SLH-DSA), `pip install "openagentontology[mcp]"` for the
+MCP server.
+
+Or run straight from a clone with no install step (this also gets the bundled `examples/`):
 
 ```bash
 git clone https://github.com/CWNApps/openagentontology
@@ -83,9 +94,8 @@ cd openagentontology
 PYTHONPATH=. python -m openagentontology examples/sample_agent
 ```
 
-That prints the ontology summary, the Trust Profile, and writes the badge and the
-signed receipt next to the source. Run it against your own agent by swapping the
-path.
+Either way it prints the ontology summary and the Trust Profile, and writes the badge and the
+signed receipt next to the source. Run it against your own agent by swapping the path.
 
 ---
 
@@ -152,10 +162,11 @@ any MCP client (Claude Desktop, Cursor, Claude Code) can scan an agent, map an a
 verify a receipt inline — without ever executing the agent it is scanning.
 
 ```bash
-git clone https://github.com/CWNApps/openagentontology && cd openagentontology
-pip install -e ".[mcp]"
+pip install "openagentontology[mcp]"
 python -m openagentontology.mcp_server      # stdio transport
 ```
+
+(Or from a clone: `git clone https://github.com/CWNApps/openagentontology && cd openagentontology && pip install -e ".[mcp]"`.)
 
 Add it to a client (Claude Desktop `claude_desktop_config.json`):
 
