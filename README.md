@@ -75,7 +75,17 @@ and no database.
 
 ## Quickstart
 
-No install step. Pure Python, three dependencies (`pyyaml`, `cryptography`).
+```bash
+pip install openagentontology
+openagentontology path/to/your-agent
+```
+
+Pure Python, two runtime dependencies (`pyyaml`, `cryptography`).
+
+Add the post-quantum legs with `pip install "openagentontology[pq]"` — see
+[Verify a receipt yourself](#verify-a-receipt-yourself) for what each backend actually signs.
+
+Prefer to run it from source, or want the bundled example?
 
 ```bash
 git clone https://github.com/CWNApps/openagentontology
@@ -83,8 +93,8 @@ cd openagentontology
 PYTHONPATH=. python -m openagentontology examples/sample_agent
 ```
 
-That prints the ontology summary, the Trust Profile, and writes the badge and the
-signed receipt next to the source. Run it against your own agent by swapping the
+Either way it prints the ontology summary, the Trust Profile, and writes the badge and
+the signed receipt next to the source. Run it against your own agent by swapping the
 path.
 
 ---
