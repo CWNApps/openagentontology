@@ -61,9 +61,15 @@ Specification = "https://github.com/CWNApps/openagentontology/blob/main/SPEC.md"
 [project.scripts]
 openagentontology = "openagentontology.cli:main"
 openagentontology-mcp = "openagentontology.mcp_server:main"
+# One-command receipt verification: `uvx --from openagentontology oao-verify autogen`
+oao-verify = "verify_receipt:main"
 
 [tool.setuptools]
 packages = ["openagentontology"]
+# verify_receipt.py is a deliberately STANDALONE top-level module -- it must
+# import nothing from this package, so it cannot live inside it. Without this
+# line the `oao-verify` entry point installs and then fails on import.
+py-modules = ["verify_receipt"]
 
 [tool.setuptools.package-data]
 openagentontology = ["py.typed"]

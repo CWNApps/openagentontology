@@ -222,6 +222,80 @@ earns no badge. See [SPEC.md](./SPEC.md) for the full standard.
 
 ## Verify a receipt yourself
 
+**One command, one file, no clone, no account.**
+
+```bash
+pip install cryptography            # the only hard requirement
+curl -s https://raw.githubusercontent.com/CWNApps/openagentontology/main/verify_receipt.py | python - autogen
+```
+
+`cryptography` is needed for the Ed25519 leg. The post-quantum legs additionally
+need `oqs` (`pip install liboqs-python`); without it they report `SKIP` and are
+never counted as passing.
+
+```
+  receipt   oao-AUTOGEN-8e9684e60b
+  decision  GOVERNED:UNGOVERNED
+
+  [PASS] evidence hash   recomputed sha256 over canonical evidence matches
+  [PASS] Ed25519         signature valid over the canonical body
+  [PASS] ML-DSA-65       ML-DSA-65 signature valid
+  [PASS] SLH-DSA         SLH-DSA signature valid
+
+  [PASS] issuer          key matches OpenAgentOntology (CWN) scan signer
+
+  VERIFIED - downloaded from GitHub, then verified locally.
+  Unaltered since it was signed by the published OpenAgentOntology key.
+  Checked on your machine. No CWN server was contacted or trusted.
+```
+
+Swap `autogen` for any scan name in [`docs/scans/`](docs/scans). Point it at a
+local file and it makes **no network call at all**:
+
+```bash
+python verify_receipt.py docs/scans/crewai/receipt.json   # zero network calls
+uvx --from openagentontology oao-verify autogen           # via uv (resolves from PyPI)
+```
+
+Exit code `0` verified, `1` verification failed, `2` usage error -- so it drops
+straight into CI.
+
+**Try to break it.** Every one of these exits non-zero:
+
+| What you do | What you get |
+|---|---|
+| change a number inside `evidence` | `FAIL evidence hash` -- hash mismatch |
+| corrupt any signature leg | `FAIL` on that leg -- a broken leg is tamper, never a skip |
+| strip the signatures entirely | `NOT VERIFIED - carries NO signature` |
+| forge one with **your own** key | `NOT VERIFIED - signed by an UNKNOWN key` |
+
+That last row is the one that matters. A receipt carries its own public key, so
+"the signature checks out" only proves it is unaltered since *somebody* signed
+it -- anyone can generate a key and sign a fabrication. The verifier pins the
+published OpenAgentOntology signing key and **fails by default** on anything
+else, so a forged receipt cannot exit 0 in your CI. Pass `--any-issuer` to check
+integrity alone; it prints `INTEGRITY ONLY`, never `VERIFIED`.
+
+### Why this matters
+
+The standard objection to every tamper-evident audit log is that the vendor
+hosts the log, so the vendor's word is doing the work. A receipt you can only
+check by asking the vendor is that objection restated, not answered.
+
+`verify_receipt.py` imports **nothing** from this package and nothing from CWN.
+It reproduces the canonicalisation from the spec below and checks the signature
+on your machine, against a signing key pinned in the script that you can compare
+against any receipt we have published.
+
+If we altered a receipt after signing it, you would see `FAIL`. If our servers
+disappeared tomorrow, every receipt we have ever issued still verifies. And if
+someone hands you a receipt we did **not** sign, you get `NOT VERIFIED` rather
+than a green check -- which is the part a verifier that trusted the key inside
+the receipt could never tell you.
+
+### The mechanics
+
+
 The receipt is signed over canonical JSON (`sort_keys`, no whitespace, ASCII), so
 a browser or any Ed25519 tool reproduces the Python hash exactly:
 
