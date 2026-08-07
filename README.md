@@ -226,12 +226,26 @@ earns no badge. See [SPEC.md](./SPEC.md) for the full standard.
 
 ```bash
 pip install cryptography            # the only hard requirement
-curl -s https://raw.githubusercontent.com/CWNApps/openagentontology/main/verify_receipt.py | python - autogen
+curl -sO https://raw.githubusercontent.com/CWNApps/openagentontology/441104cc5c872ebda3e7cc6ab9edf2834931ace7/verify_receipt.py
+sha256sum verify_receipt.py   # 17fd9d47b4b7f165b1a13771310d2098718d4a304542fcf282cac3b5565f7480
+python verify_receipt.py autogen
 ```
 
 `cryptography` is needed for the Ed25519 leg. The post-quantum legs additionally
 need `oqs` (`pip install liboqs-python`); without it they report `SKIP` and are
 never counted as passing.
+
+**Why a commit hash and not `main`.** A branch moves; a commit does not. The one
+thing this page asks you to run locally is the one thing you should be able to
+pin and hash before running it — piping an unpinned URL into your interpreter is
+exactly the trust we are arguing you should not have to extend. Read the file
+first if you like: it is ~300 lines of stdlib plus `cryptography`, and it imports
+nothing from this package.
+
+> The hash above is the file as **git stores and GitHub serves it** (LF endings).
+> If you have the repo cloned on Windows, your working copy will be CRLF and will
+> hash differently while being byte-identical in content. Hash what you
+> downloaded, not what git checked out for you.
 
 ```
   receipt   oao-AUTOGEN-8e9684e60b
@@ -254,8 +268,13 @@ local file and it makes **no network call at all**:
 
 ```bash
 python verify_receipt.py docs/scans/crewai/receipt.json   # zero network calls
-uvx --from openagentontology oao-verify autogen           # via uv (resolves from PyPI)
 ```
+
+The packaged `oao-verify` console script is wired in `pyproject.toml` but is
+**not on PyPI yet** — the published `0.2.0` wheel predates it. Until the next
+release, use the file directly as shown above. When it does ship, pin the
+version (`uvx --from openagentontology==<version> oao-verify`) rather than
+resolving whatever PyPI serves that day.
 
 Exit code `0` verified, `1` verification failed, `2` usage error -- so it drops
 straight into CI.

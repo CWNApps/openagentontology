@@ -59,6 +59,19 @@ as a P0.
 - [ ] **Every command in the README must run exactly as written.** Copy it, paste it,
       run it. Docs that 401 or traceback are worse than no docs.
 - [ ] No claim that is not demonstrable by a command in the same section.
+- [ ] **A command that installs from PyPI/GitHub must be checked against the LIVE
+      index, not the local tree.** `pyproject.toml` declaring an entry point proves
+      nothing about what is downloadable today. This is how a broken
+      `uvx --from openagentontology oao-verify` shipped in the README on 2026-08-06:
+      the entry point existed locally, the published `0.2.0` wheel had neither it nor
+      `verify_receipt.py`, and "the command runs" was inferred from the source rather
+      than executed. Inspect the actual artifact:
+      `python -c "import json,urllib.request; print(json.load(urllib.request.urlopen('https://pypi.org/pypi/<pkg>/json'))['info']['version'])"`
+      then list the wheel's contents before believing any install line.
+- [ ] **Pin what you tell a reader to execute.** `curl … /main/… | python` and
+      `uvx --from <pkg>` (no `==`) both resolve to a moving target. On a page whose
+      argument is "do not trust the vendor", an unpinned pipe-to-interpreter is the
+      argument contradicting itself. Offer a sha256 or a commit/version pin.
 
 ## Known field-location gotchas (cost real time — do not re-derive)
 
