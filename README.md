@@ -226,8 +226,8 @@ earns no badge. See [SPEC.md](./SPEC.md) for the full standard.
 
 ```bash
 pip install cryptography            # the only hard requirement
-curl -sO https://raw.githubusercontent.com/CWNApps/openagentontology/441104cc5c872ebda3e7cc6ab9edf2834931ace7/verify_receipt.py
-sha256sum verify_receipt.py   # 17fd9d47b4b7f165b1a13771310d2098718d4a304542fcf282cac3b5565f7480
+curl -sO https://raw.githubusercontent.com/CWNApps/openagentontology/0d665ba88d08e3b3ee11ca128ccfc47caa94f810/verify_receipt.py
+sha256sum verify_receipt.py   # bfbea6bcfa3e9eac1468d9520508fce23f75b18bc083b499b8ebb21c16309bca
 python verify_receipt.py autogen
 ```
 
