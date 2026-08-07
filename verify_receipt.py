@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 """Verify an OpenAgentOntology receipt. Offline. Without trusting us.
 
-THE ONE COMMAND -- nothing to install, nothing to clone:
+THE ONE COMMAND -- nothing to clone, and nothing you cannot check first:
 
-    curl -s https://raw.githubusercontent.com/CWNApps/openagentontology/main/verify_receipt.py | python - autogen
+    python verify_receipt.py autogen          # names a scan, fetches its receipt
+    python verify_receipt.py path/to/file     # local file, zero network
 
-Already have the file?           python verify_receipt.py path/to/receipt.json
-Prefer a pinned tool?            uvx --from openagentontology oao-verify autogen
+To get this file, README.md carries a download line pinned to a COMMIT (not
+`main`) with the expected sha256 next to it. Deliberately not a pipe into your
+interpreter, and deliberately not pinned here: a hash cannot live in the file
+it is a hash of. This script's whole argument is that you should not have to
+take a vendor's word for anything, so the first thing it tells you to do
+should not be "execute this unpinned URL sight-unseen".
 
-One file. No install, no clone, no account, and no key of ours. Everything
-needed to check a receipt is inside the receipt.
+(The `oao-verify` console script is declared in pyproject.toml but is NOT in
+the published 0.2.0 wheel. Do not reach for it until a release carries it, and
+pin the version when one does.)
+
+One file. No account, and no key of ours that you cannot compare against the
+published receipts yourself.
 
 A NOTE ON "OFFLINE". Naming a scan (`autogen`) downloads that receipt from
 GitHub so you do not have to find it first. The DOWNLOAD is a convenience; the
@@ -88,8 +97,54 @@ _BODY_FIELDS = ("atom_id", "type", "decision", "evidence_hash", "signed_at")
 # https://github.com/CWNApps/openagentontology (docs/scans/*/receipt.json) --
 # and note that a verifier which took the key from the receipt alone could
 # never tell you this.
-_KNOWN_ISSUER_KEYS = {
-    "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ=": "OpenAgentOntology (CWN) scan signer",
+# PINNED PER ALGORITHM, and provenance is credited ONLY to a leg that actually
+# verified against the key pinned for THAT algorithm.
+#
+# The earlier version kept one dict keyed on `verify_pubkey_b64` and read it
+# regardless of which legs passed. That is a forgery hole, and it was not
+# theoretical -- here is the receipt that broke it:
+#
+#   1. take any published receipt, replace `evidence` wholesale, recompute
+#      `evidence_hash` so the hash check passes
+#   2. DELETE `signature_b64` and both SLH-DSA fields -- an attacker cannot
+#      forge those, so they simply remove them; absent legs were not failures
+#   3. LEAVE `verify_pubkey_b64` set to CWN's published Ed25519 key. Nothing
+#      verified against it; it is just a string sitting in the file
+#   4. sign the canonical body with an attacker-generated ML-DSA-65 keypair and
+#      write that signature and public key into the receipt
+#
+# Old result: Ed25519 "absent", SLH-DSA "absent", ML-DSA "ok" (against the
+# ATTACKER's key), issuer "PASS" (read from the untouched string in step 3) ->
+#
+#     VERIFIED - Unaltered since it was signed by the published
+#                OpenAgentOntology key.
+#
+# ...printed over a document CWN never signed. A tool whose entire purpose is
+# refusing false attestation was issuing one.
+#
+# The rule now: an unpinned key can never contribute provenance, and a key
+# field that no signature was checked against is inert data.
+_PINNED_KEYS = {
+    "Ed25519": {
+        "ig6AWna3kodv7bngRvd6hJ+AbhXGznIh6dhFlA2pfPQ=":
+            "OpenAgentOntology (CWN) scan signer",
+    },
+    "ML-DSA-65": {
+        "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":
+            "OpenAgentOntology (CWN) scan signer",
+    },
+    "SLH-DSA": {
+        "bXNhZNeO0U50ZGJz/hQQCpW03+uEluFG/BkVrNlKk1k=":
+            "OpenAgentOntology (CWN) scan signer",
+    },
+}
+
+# Which receipt field carries the public key for each leg. Needed because
+# provenance is now credited per leg, not per receipt.
+_LEG_PUBKEY_FIELD = {
+    "Ed25519": "verify_pubkey_b64",
+    "ML-DSA-65": "ml_dsa_public_key_b64",
+    "SLH-DSA": "slh_dsa_public_key_b64",
 }
 
 _GREEN, _RED, _YELLOW, _DIM, _OFF = "\033[32m", "\033[31m", "\033[33m", "\033[2m", "\033[0m"
@@ -159,16 +214,24 @@ def _check_pq(name: str, alg: str, sig_b64: str, pub_b64: str,
         return "absent", f"no {name} signature on this receipt"
     if not pub_b64:
         return "fail", f"{name} signature present but no public key"
+
+    # Decode BEFORE reaching for the backend. This was the other way round, so
+    # on a host without `oqs` -- the documented common case, since only
+    # `cryptography` is a hard requirement -- corrupt base64 in a PQ leg
+    # returned "unverifiable" and was skipped, and a receipt with a mangled PQ
+    # signature still exited 0. That contradicted the README's own promise that
+    # corrupting ANY leg fails. Malformed material is tamper whether or not we
+    # have a backend to check it with; that judgement needs no library.
+    try:
+        sig_raw, pub_raw = _b64(sig_b64), _b64(pub_b64)
+    except Exception:
+        return "fail", f"{name} signature or key is not valid base64"
+
     try:
         import oqs  # type: ignore
     except ImportError:
         return "unverifiable", f"install `oqs` (liboqs-python) to check the {name} leg"
     try:
-        try:
-            sig_raw, pub_raw = _b64(sig_b64), _b64(pub_b64)
-        except Exception:
-            # Malformed material is TAMPER, not a missing backend.
-            return "fail", f"{name} signature or key is not valid base64"
         ok = oqs.Signature(alg).verify(payload, sig_raw, pub_raw)
         return ("ok", f"{name} signature valid") if ok else (
             "fail", f"{name} SIGNATURE INVALID")
@@ -204,8 +267,22 @@ def verify(receipt: dict, *, require_known_issuer: bool = True) -> dict:
     # signature alone proves only that the receipt is unaltered since SOMEBODY
     # signed it. Anyone can generate a keypair and sign a fabrication. Matching
     # the key against a pinned issuer is what turns integrity into provenance.
+    #
+    # Credit is per LEG: a leg contributes provenance only if it VERIFIED and
+    # the key it verified against is the one pinned for that algorithm. A key
+    # field nothing was checked against is inert -- that gap is what let a
+    # PQ-only forgery inherit CWN's Ed25519 identity (see _PINNED_KEYS).
+    trusted_legs = []
+    for leg_name, (status, _msg) in legs.items():
+        if status != "ok":
+            continue
+        leg_pub = receipt.get(_LEG_PUBKEY_FIELD.get(leg_name, ""), "")
+        who = _PINNED_KEYS.get(leg_name, {}).get(leg_pub, "")
+        if who:
+            trusted_legs.append((leg_name, who))
+
+    issuer = trusted_legs[0][1] if trusted_legs else ""
     pub = receipt.get("verify_pubkey_b64", "")
-    issuer = _KNOWN_ISSUER_KEYS.get(pub, "")
 
     # `ok` now REQUIRES a verified signature. It previously allowed
     # `not signed`, so a receipt with every signature stripped printed
@@ -225,7 +302,8 @@ def verify(receipt: dict, *, require_known_issuer: bool = True) -> dict:
             "require_known_issuer": require_known_issuer,
             "hash_ok": hash_ok, "hash_msg": hash_msg,
             "legs": legs, "signed": signed, "any_ok": any_ok,
-            "any_fail": any_fail, "issuer": issuer, "pubkey": pub}
+            "any_fail": any_fail, "issuer": issuer, "pubkey": pub,
+            "trusted_legs": [name for name, _ in trusted_legs]}
 
 
 def render(receipt: dict, result: dict, fetched: bool = False) -> None:

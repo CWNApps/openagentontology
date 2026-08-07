@@ -233,7 +233,11 @@ python verify_receipt.py autogen
 
 `cryptography` is needed for the Ed25519 leg. The post-quantum legs additionally
 need `oqs` (`pip install liboqs-python`); without it they report `SKIP` and are
-never counted as passing.
+never counted as passing. **The sample output below shows all three legs, so it
+is what you get with `oqs` installed** — with only `cryptography`, the two PQ
+rows read `SKIP` and the verdict still comes out `VERIFIED` on the Ed25519 leg.
+Corrupt material in a PQ leg is a `FAIL` either way; a missing backend is a
+skip, malformed bytes never are.
 
 **Why a commit hash and not `main`.** A branch moves; a commit does not. The one
 thing this page asks you to run locally is the one thing you should be able to
@@ -287,6 +291,13 @@ straight into CI.
 | corrupt any signature leg | `FAIL` on that leg -- a broken leg is tamper, never a skip |
 | strip the signatures entirely | `NOT VERIFIED - carries NO signature` |
 | forge one with **your own** key | `NOT VERIFIED - signed by an UNKNOWN key` |
+| keep our published key in the file, delete the signature it belongs to, and sign with your own PQ key | `NOT VERIFIED` -- provenance is credited to the leg that actually verified, never to a key string sitting unused in the receipt |
+
+That last row is there because it once did the opposite. Independent review
+found a receipt could keep CWN's Ed25519 *public key* while dropping the
+Ed25519 *signature*, carry an attacker-signed ML-DSA leg, and print `VERIFIED —
+Unaltered since it was signed by the published OpenAgentOntology key`. Keys are
+now pinned per algorithm and identity follows the verified leg.
 
 That last row is the one that matters. A receipt carries its own public key, so
 "the signature checks out" only proves it is unaltered since *somebody* signed
